@@ -1,0 +1,23 @@
+# Ads.txt file for MQM Web
+# Para activar publicidad, descomentar y reemplazar con tus datos reales
+
+# Google AdSense
+# google.com, pub-XXXXXXXXXX, DIRECT, f08c47fec0942fa0
+
+# Otros ad networks
+# ejemplo.com, 12345, RESELLER, abc123def456
+
+# Notas:
+# - Reemplazar pub-XXXXXXXXXX con tu Publisher ID real
+# - Añadir otros ad networks según sea necesario
+# - Este archivo debe estar en la raíz del dominio
+# - Verificar formato en https://iabtechlab.com/ads-txt/
+
+
+
+
+
+
+
+
+

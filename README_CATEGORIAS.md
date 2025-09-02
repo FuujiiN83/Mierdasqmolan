@@ -374,3 +374,5 @@ console.log('Productos por categoría:', getAvailableCategories());
 
 
 
+
+
