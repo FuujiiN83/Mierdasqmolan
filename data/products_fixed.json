@@ -1,0 +1,60 @@
+[
+  {
+    "id": "1",
+    "slug": "kit-supervivencia-trabajo-vida-adulta",
+    "title": "Kit de Supervivencia para el Trabajo y la Vida Adulta",
+    "shortDescription": "Para esos días en los que la vida adulta te pega fuerte. Un kit de emergencia que incluye: Una botella de agua (para las lágrimas), chicles (para el mal aliento de tanto suspirar), y un pañuelo (para todo lo demás).",
+    "description": "Incluye una botella de agua (para las lágrimas), chicles (para el mal aliento de tanto suspirar), y un pañuelo (para todo lo demás).",
+    "image": "/images/kit auxilio.webp",
+    "alt": "Kit de supervivencia laboral con botella agua, chicles y pañuelo para momentos difíciles trabajo adulto",
+    "affiliateUrl": "https://amzn.to/45Y6Bz7",
+    "merchant": "Amazon",
+    "price": 7.99,
+    "currency": "EUR",
+    "categories": ["adultos", "divorciados", "facheritos"],
+    "isFeatured": false,
+    "createdAt": "2024-01-15T09:00:00Z",
+    "tags": ["kit", "supervivencia", "trabajo", "adultos", "humor", "regalo"]
+  },
+  {
+    "id": "42",
+    "slug": "rocky-balboa-figura-minix-con-capucha",
+    "title": "Rocky Balboa - Figura Coleccionable MINIX 12cm Con Capucha",
+    "shortDescription": "No te preocupes por si hay 6, 7, u 8 Rockys debido a todas sus peliculas: Rocky solo hay uno. Y con este tendras ganas de entrenar y subir las escaleras del capitolio. Piensalo, en verdad es ejercicio, te vendra bien.",
+    "description": "Rocky Balboa - El Campeon Que Te Motivara a Entrenar. No te preocupes por si hay 6, 7, u 8 Rockys debido a todas sus peliculas: Rocky solo hay uno. Y con este tendras ganas de entrenar y subir las escaleras del capitolio. Piensalo, en verdad es ejercicio, te vendra bien.",
+    "image": "/images/rocky-balboa-minix.webp",
+    "alt": "Figura Rocky Balboa MINIX 12cm con capucha, coleccionable motivacional entrenamiento boxeo pelicula",
+    "affiliateUrl": "https://amzn.to/45INn4I",
+    "merchant": "Amazon",
+    "price": 14.99,
+    "currency": "EUR",
+    "categories": ["cinefilos", "frikis", "gym-bros", "adultos"],
+    "isFeatured": false,
+    "createdAt": "2024-01-22T13:00:00Z",
+    "tags": ["rocky-balboa", "rocky", "minix", "figura", "boxeo", "motivacion"]
+  },
+  {
+    "id": "43",
+    "slug": "pou-alien-peluche-cuqui-suave",
+    "title": "Pou Alien - Peluche Cuqui y Suave",
+    "shortDescription": "Si te da miedo Alien, tienes una version mas cuqui, blandita y suave: Pou alien. No tiene nada que ver, lo sabemos, pero viene en el nombre y habia que hacer una descripcion. Miralo de nuevo, a que mola?",
+    "description": "Pou Alien - La Version Mas Cuqui del Espacio. Si te da miedo Alien, tienes una version mas cuqui, blandita y suave: Pou alien. No tiene nada que ver, lo sabemos, pero viene en el nombre y habia que hacer una descripcion. Miralo de nuevo, a que mola?",
+    "image": "/images/pou-alien-peluche.webp",
+    "alt": "Pou Alien peluche cuqui verde suave, muneco adorable no da miedo, regalo ninos felpa premium",
+    "affiliateUrl": "https://amzn.to/41uq8sw",
+    "merchant": "Amazon",
+    "price": 9.99,
+    "currency": "EUR",
+    "categories": ["niños", "cinefilos", "frikis", "ratas"],
+    "isFeatured": false,
+    "createdAt": "2024-01-22T14:00:00Z",
+    "tags": ["pou-alien", "peluche", "cuqui", "alien", "suave", "regalo"]
+  }
+]
+
+
+
+
+
+
+
