@@ -8,6 +8,10 @@ const nextConfig = {
       },
     ],
   },
+  // Configuración para asegurar UTF-8
+  experimental: {
+    forceSwwTransforms: true,
+  },
 };
 
 module.exports = nextConfig;

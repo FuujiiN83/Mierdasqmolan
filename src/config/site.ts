@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "MQM Web",
   description: "Las mejores ofertas y productos que molan",
-  url: "https://mqm-web.com",
+  url: "https://www.mierdasquemolan.com",
   ogImage: "/logo.png",
   pagination: {
     productsPerPage: 12

@@ -1,4 +1,0 @@
-Test file para verificar que GitHub actualiza correctamente.
-Creado para confirmar sincronización.
-
-
