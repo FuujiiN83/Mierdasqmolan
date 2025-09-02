@@ -3,6 +3,7 @@ import { Inter, Potta_One, Preahvihear } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { CookieConsentBanner } from '@/components/CookieConsentBanner';
 import { siteConfig } from '@/config/site';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -147,7 +148,7 @@ export default function RootLayout({
         </div>
         
         {/* Consent banner placeholder - activar cuando sea necesario */}
-        {/* <CookieConsentBanner /> */}
+        <CookieConsentBanner />
       </body>
     </html>
   );
