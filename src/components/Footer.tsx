@@ -1,6 +1,9 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { AdSlot } from './AdSlot';
+import { SocialIcons } from './SocialIcons';
 import { siteConfig } from '@/config/site';
 
 export function Footer() {
@@ -37,6 +40,13 @@ export function Footer() {
               Descubre las mejores ofertas y productos destacados. Todo lo que mola en un solo lugar, 
               cuidadosamente seleccionado para ti.
             </p>
+            
+            {/* Social Icons */}
+            <div className="mb-4">
+              <p className="text-sm text-gray-500 mb-2">Síguenos en redes sociales:</p>
+              <SocialIcons size="md" />
+            </div>
+            
             <div className="bg-amber-50 border border-amber-200 rounded-lg p-3">
               <p className="text-sm text-amber-800">
                 <strong>Aviso de afiliación:</strong> {siteConfig.affiliate.disclaimer}
@@ -95,11 +105,24 @@ export function Footer() {
                   Cookies
                 </Link>
               </li>
-              <li>
+                            <li>
                 <Link href="/legal/terminos" className="text-gray-600 hover:text-primary-600 transition-colors">
                   Términos de uso
                 </Link>
               </li>
+              <li>
+                <button 
+                  onClick={() => {
+                    if (typeof window !== 'undefined' && (window as any).showCookieSettings) {
+                      (window as any).showCookieSettings();
+                    }
+                  }}
+                  className="text-gray-600 hover:text-primary-600 transition-colors text-left w-full"
+                >
+                  ⚙️ Configuración de cookies
+                </button>
+              </li>
+ 
             </ul>
           </div>
         </div>

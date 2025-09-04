@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { SearchBar, CompactSearchBar } from './SearchBar';
 import { CategoryMenu } from './CategoryMenu';
+import { SocialIcons } from './SocialIcons';
 import { siteConfig } from '@/config/site';
 
 export function Header() {
@@ -41,6 +42,11 @@ export function Header() {
             {/* Search - Mobile */}
             <div className="md:hidden">
               <CompactSearchBar />
+            </div>
+
+            {/* Social Icons - Desktop */}
+            <div className="hidden lg:block">
+              <SocialIcons size="sm" />
             </div>
 
             {/* Destacados link */}
