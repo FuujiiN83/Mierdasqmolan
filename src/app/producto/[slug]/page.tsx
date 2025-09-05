@@ -166,7 +166,7 @@ export default function ProductPage({ params }: ProductPageProps) {
 
             <div className="mt-3">
               <h2 className="sr-only">Información del producto</h2>
-              {product.price && (
+              {product.price && !product.categories.includes('blog') && (
                 <p className="text-3xl tracking-tight font-bold font-potta-one text-header-purple">
                   {formatPrice(product.price, product.currency)}
                 </p>
@@ -202,29 +202,31 @@ export default function ProductPage({ params }: ProductPageProps) {
             {/* Metadata */}
             <div className="mt-6 text-sm text-gray-500 space-y-1">
               <p>Publicado: {formatDate(product.createdAt)}</p>
-              {product.merchant && (
+              {product.merchant && !product.categories.includes('blog') && (
                 <p>Disponible en: <span className="font-medium">{product.merchant}</span></p>
               )}
             </div>
 
-            {/* CTA Button */}
-            <div className="mt-8">
-              <a
-                href={affiliateUrl}
-                target="_blank"
-                rel="nofollow sponsored noopener"
-                className="w-full bg-primary-600 border border-transparent rounded-md py-4 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors"
-              >
-                <span className="mr-2">Ver oferta en {product.merchant || merchantDomain}</span>
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-              
-              <p className="text-xs text-gray-500 mt-3 text-center">
-                Este es un enlace de afiliación. Podemos recibir una comisión por las compras realizadas.
-              </p>
-            </div>
+            {/* CTA Button - Solo para productos que NO son de blog */}
+            {!product.categories.includes('blog') && (
+              <div className="mt-8">
+                <a
+                  href={affiliateUrl}
+                  target="_blank"
+                  rel="nofollow sponsored noopener"
+                  className="w-full bg-primary-600 border border-transparent rounded-md py-4 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors"
+                >
+                  <span className="mr-2">Ver oferta en {product.merchant || merchantDomain}</span>
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+                
+                <p className="text-xs text-gray-500 mt-3 text-center">
+                  Este es un enlace de afiliación. Podemos recibir una comisión por las compras realizadas.
+                </p>
+              </div>
+            )}
 
             {/* Ad space */}
             <div className="mt-8">
