@@ -41,17 +41,25 @@ export function CategoryMenu({
   // Separar categoría blog del resto
   const blogCategory = categories.find(cat => cat.slug === 'blog');
   const otherCategories = categories.filter(cat => cat.slug !== 'blog');
+  
+  // Si no hay productos de blog, crear la categoría manualmente
+  const blogCategoryForMenu = blogCategory || {
+    slug: 'blog' as CategorySlug,
+    name: 'Blog',
+    description: 'Artículos y contenido especial',
+    count: 0
+  };
 
   const menuItems = [
     { href: '/', label: 'Inicio', isActive: isHomePage },
     { href: '/destacados', label: 'Destacados', isActive: isFeaturedPage },
     // Blog siempre visible
-    ...(blogCategory ? [{
-      href: `/categoria/${blogCategory.slug}`,
-      label: `${blogCategory.name}${showCounts ? ` (${blogCategory.count})` : ''}`,
-      isActive: isActiveCategory(blogCategory.slug),
-      description: blogCategory.description
-    }] : []),
+    {
+      href: `/categoria/${blogCategoryForMenu.slug}`,
+      label: `${blogCategoryForMenu.name}${showCounts ? ` (${blogCategoryForMenu.count})` : ''}`,
+      isActive: isActiveCategory(blogCategoryForMenu.slug),
+      description: blogCategoryForMenu.description
+    },
     // Resto de categorías
     ...otherCategories.map(category => ({
       href: `/categoria/${category.slug}`,
