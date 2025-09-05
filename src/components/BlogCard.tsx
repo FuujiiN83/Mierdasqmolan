@@ -109,9 +109,24 @@ export function BlogCard({ product, isExpanded, onToggleExpand, priority = false
         {isExpanded && (
           <div className="mt-6 pt-6 border-t border-gray-100">
             <div 
-              className="prose prose-sm max-w-none text-gray-700 prose-p:mb-6 prose-p:leading-relaxed prose-p:text-base prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-p:whitespace-pre-line"
-              dangerouslySetInnerHTML={{ __html: product.description }}
+              className="text-gray-700 leading-relaxed"
+              style={{ 
+                lineHeight: '1.6',
+                fontSize: '16px'
+              }}
+              dangerouslySetInnerHTML={{ 
+                __html: product.description.replace(/<br><br>/g, '<br><br>')
+              }}
             />
+            <style jsx>{`
+              div :global(a) {
+                color: #2563eb !important;
+                text-decoration: none;
+              }
+              div :global(a:hover) {
+                text-decoration: underline !important;
+              }
+            `}</style>
             
             {/* Fecha de publicación */}
             <div className="mt-6 pt-4 border-t border-gray-100">
