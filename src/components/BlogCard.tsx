@@ -109,7 +109,7 @@ export function BlogCard({ product, isExpanded, onToggleExpand, priority = false
         {isExpanded && (
           <div className="mt-6 pt-6 border-t border-gray-100">
             <div 
-              className="prose prose-sm max-w-none text-gray-700"
+              className="prose prose-sm max-w-none text-gray-700 prose-p:mb-4 prose-p:leading-relaxed"
               dangerouslySetInnerHTML={{ __html: product.description }}
             />
             
