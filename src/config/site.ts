@@ -16,7 +16,7 @@ export const siteConfig = {
     inlineFrequency: 6 // Cada 6 productos
   },
   analytics: {
-    googleAnalyticsId: process.env.NEXT_PUBLIC_GA_ID || ""
+    googleAnalyticsId: "G-FCD8D2QZEZ"
   },
   affiliate: {
     disclaimer: "Este sitio contiene enlaces de afiliación. Podemos recibir una comisión por las compras realizadas a través de estos enlaces, sin coste adicional para ti. Esto nos ayuda a mantener el sitio funcionando y a seguir encontrando las mejores ofertas."
@@ -182,6 +182,12 @@ export const categoryConfig = {
     description: "Para los amantes del café y bebidas calientes",
     color: "#8B4513",
     icon: "☕"
+  },
+  blog: {
+    name: "Blog",
+    description: "Artículos y contenido especial",
+    color: "#1F2937",
+    icon: "📝"
   }
 } as const;
 

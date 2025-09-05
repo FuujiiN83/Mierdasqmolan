@@ -38,10 +38,22 @@ export function CategoryMenu({
   const isHomePage = pathname === '/';
   const isFeaturedPage = pathname === '/destacados';
 
+  // Separar categoría blog del resto
+  const blogCategory = categories.find(cat => cat.slug === 'blog');
+  const otherCategories = categories.filter(cat => cat.slug !== 'blog');
+
   const menuItems = [
     { href: '/', label: 'Inicio', isActive: isHomePage },
     { href: '/destacados', label: 'Destacados', isActive: isFeaturedPage },
-    ...categories.map(category => ({
+    // Blog siempre visible
+    ...(blogCategory ? [{
+      href: `/categoria/${blogCategory.slug}`,
+      label: `${blogCategory.name}${showCounts ? ` (${blogCategory.count})` : ''}`,
+      isActive: isActiveCategory(blogCategory.slug),
+      description: blogCategory.description
+    }] : []),
+    // Resto de categorías
+    ...otherCategories.map(category => ({
       href: `/categoria/${category.slug}`,
       label: `${category.name}${showCounts ? ` (${category.count})` : ''}`,
       isActive: isActiveCategory(category.slug),
@@ -93,8 +105,8 @@ export function CategoryMenu({
           </Link>
         ))}
         
-        {/* Menú desplegable para más categorías */}
-        {menuItems.length > 8 && (
+        {/* Menú desplegable para más categorías (excluyendo blog) */}
+        {otherCategories.length > 6 && (
           <div className="relative">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -122,22 +134,22 @@ export function CategoryMenu({
                 />
                 <div className="absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg border border-gray-200 z-20">
                   <div className="py-1" role="menu">
-                    {menuItems.slice(8).map((item) => (
+                    {otherCategories.slice(6).map((category) => (
                       <Link
-                        key={item.href}
-                        href={item.href}
+                        key={`/categoria/${category.slug}`}
+                        href={`/categoria/${category.slug}`}
                         onClick={() => setIsOpen(false)}
                         className={`
                           block px-4 py-2 text-sm transition-colors
-                          ${item.isActive
+                          ${isActiveCategory(category.slug)
                             ? 'bg-primary-50 text-primary-700'
                             : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
                           }
                         `}
                         role="menuitem"
-                        title={'description' in item ? item.description : undefined}
+                        title={category.description}
                       >
-                        {item.label}
+                        {category.name}{showCounts ? ` (${category.count})` : ''}
                       </Link>
                     ))}
                   </div>

@@ -28,6 +28,11 @@ export function getFilteredProducts(filters: ProductFilters = {}): Product[] {
   
   let filtered = [...allProducts];
 
+  // Excluir productos de blog por defecto (solo se muestran en página específica de blog)
+  if (!filters.includeBlog) {
+    filtered = filtered.filter(product => !product.categories.includes('blog'));
+  }
+
   // Filtrar por categorías
   if (filters.categories && filters.categories.length > 0) {
     filtered = filtered.filter(product =>
@@ -88,7 +93,10 @@ export function getProductBySlug(slug: string): Product | null {
  * Obtiene productos por categoría
  */
 export function getProductsByCategory(categorySlug: CategorySlug): Product[] {
-  return getFilteredProducts({ categories: [categorySlug] });
+  return getFilteredProducts({ 
+    categories: [categorySlug],
+    includeBlog: categorySlug === 'blog'
+  });
 }
 
 /**

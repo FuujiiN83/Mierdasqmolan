@@ -52,6 +52,7 @@ export interface ProductFilters {
   sortBy?: 'newest' | 'oldest' | 'title';
   limit?: number;
   offset?: number;
+  includeBlog?: boolean;
 }
 
 // Función de validación de productos
