@@ -66,8 +66,15 @@ export function validateProducts(data: any[]): Product[] {
       throw new Error(`Producto en índice ${index} no es un objeto válido`);
     }
 
-    // Validar campos requeridos
-    const requiredFields = ['id', 'title', 'description', 'price', 'image', 'affiliateUrl', 'categories'];
+    // Validar campos requeridos (excepto para productos de blog)
+    const isBlogProduct = item.categories && item.categories.includes('blog');
+    const requiredFields = ['id', 'title', 'description', 'image', 'categories'];
+    
+    // Para productos de blog, no requerir price ni affiliateUrl
+    if (!isBlogProduct) {
+      requiredFields.push('price', 'affiliateUrl');
+    }
+    
     for (const field of requiredFields) {
       if (!item[field]) {
         throw new Error(`Producto en índice ${index} no tiene el campo requerido: ${field}`);
