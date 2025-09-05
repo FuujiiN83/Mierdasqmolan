@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { Product } from '@/types';
+import styles from './BlogCard.module.css';
 
 interface BlogCardProps {
   product: Product;
@@ -109,24 +110,9 @@ export function BlogCard({ product, isExpanded, onToggleExpand, priority = false
         {isExpanded && (
           <div className="mt-6 pt-6 border-t border-gray-100">
             <div 
-              className="text-gray-700 leading-relaxed"
-              style={{ 
-                lineHeight: '1.6',
-                fontSize: '16px'
-              }}
-              dangerouslySetInnerHTML={{ 
-                __html: product.description.replace(/<br><br>/g, '<br><br>')
-              }}
+              className={`text-gray-700 text-base leading-relaxed ${styles.blogContent}`}
+              dangerouslySetInnerHTML={{ __html: product.description }}
             />
-            <style jsx>{`
-              div :global(a) {
-                color: #2563eb !important;
-                text-decoration: none;
-              }
-              div :global(a:hover) {
-                text-decoration: underline !important;
-              }
-            `}</style>
             
             {/* Fecha de publicación */}
             <div className="mt-6 pt-4 border-t border-gray-100">

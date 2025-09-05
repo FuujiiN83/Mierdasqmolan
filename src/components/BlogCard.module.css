@@ -1,0 +1,13 @@
+.blogContent a {
+  color: #2563eb !important;
+  text-decoration: none;
+}
+
+.blogContent a:hover {
+  text-decoration: underline !important;
+}
+
+.blogContent br {
+  display: block;
+  margin: 0.5em 0;
+}
