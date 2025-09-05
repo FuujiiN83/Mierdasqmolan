@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeftIcon, CalendarIcon, ClockIcon, UserIcon } from '@heroicons/react/24/outline';
+// Iconos SVG inline para evitar dependencias
 import blogData from '@/data/blog.json';
 
 interface BlogPost {
@@ -78,21 +78,29 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             href="/categoria/blog" 
             className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900 mb-4"
           >
-            <ArrowLeftIcon className="w-4 h-4 mr-2" />
+            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
             Volver al blog
           </Link>
           
           <div className="flex items-center space-x-4 text-sm text-gray-500 mb-4">
             <div className="flex items-center">
-              <UserIcon className="w-4 h-4 mr-1" />
+              <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
               {post.author}
             </div>
             <div className="flex items-center">
-              <CalendarIcon className="w-4 h-4 mr-1" />
+              <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
               {formatDate(post.publishedAt)}
             </div>
             <div className="flex items-center">
-              <ClockIcon className="w-4 h-4 mr-1" />
+              <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
               {post.readTime}
             </div>
           </div>
@@ -152,7 +160,9 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             href="/categoria/blog" 
             className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium"
           >
-            <ArrowLeftIcon className="w-4 h-4 mr-2" />
+            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
             Ver más entradas del blog
           </Link>
         </div>
