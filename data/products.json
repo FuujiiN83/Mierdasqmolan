@@ -1065,5 +1065,40 @@
       "coleccion",
       "cine"
     ]
+  },
+  {
+    "id": "49",
+    "slug": "papel-higienico-trump",
+    "title": "Papel Higiénico con la Cara de Trump",
+    "shortDescription": "El verdadero sueño americano, y de medio mundo. Restriega el oj… por la cara de este señor y empieza el día con mejor humor.",
+    "description": "<p>El verdadero sueño americano, y de medio mundo. Restriega el oj… por la cara de este señor y empieza el día con mejor humor.</p><p><strong>🚽 DIVERTIDO PAPEL HIGIÉNICO CON ESTAMPADO</strong> - Divertido papel higiénico con la huella del que probablemente sea el rostro más insufrible del planeta y la invitación: Take a Dump with Trump.</p><p><strong>🎁 GRAN IDEA DE REGALO</strong> - Este divertido papel higiénico impreso sirve como recuerdo, idea de regalo o simplemente en el baño de invitados y en el inodoro para sacar muchas sonrisas.</p><p><strong>🚾 MEJORA CADA WC</strong> - Ideal como regalo, idea de regalo para adultos, despedida de soltero - y por supuesto el equipo perfecto, más innovador, más ingenioso para su aseo de invitados o el baño.</p><p><strong>🎀 BONITO EMBALAJE DE REGALO</strong> - Viene en una bonita caja de regalo. 200 hojas; Multipliegue. Imprescindible para todos los aficionados a las bromas, los amantes de los chistes cursis y las personas con sentido del humor.</p><p><strong>🥳 ES DIVERTIDO</strong> - Por fin trae diversión y buen entretenimiento en el pequeño y tranquilo baño - ¿por qué no preferir la risa que el hedor y la presión agotadora?</p>",
+    "image": "/images/papel trump.webp",
+    "alt": "Papel higiénico con la cara de Trump - Divertido papel WC con estampado",
+    "affiliateUrl": "https://amzn.to/4oZuEcz",
+    "merchant": "Amazon",
+    "price": 9.95,
+    "currency": "EUR",
+    "categories": [
+      "frikis",
+      "adultos",
+      "random",
+      "vida-en-el-wc"
+    ],
+    "isFeatured": false,
+    "createdAt": "2024-01-22T21:00:00Z",
+    "tags": [
+      "trump",
+      "papel",
+      "higienico",
+      "wc",
+      "baño",
+      "divertido",
+      "regalo",
+      "broma",
+      "humor",
+      "adultos",
+      "frikis",
+      "random"
+    ]
   }
 ]
