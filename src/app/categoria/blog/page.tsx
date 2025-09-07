@@ -38,8 +38,10 @@ export default function BlogPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Filtrar solo los posts publicados
-    const publishedPosts = blogData.filter((post: BlogPost) => post.isPublished);
+    // Filtrar solo los posts publicados con categoría "blog"
+    const publishedPosts = blogData.filter((post: BlogPost) => 
+      post.isPublished && post.category === 'blog'
+    );
     setPosts(publishedPosts);
     setLoading(false);
   }, []);
