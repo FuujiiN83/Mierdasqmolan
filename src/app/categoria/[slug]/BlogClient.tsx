@@ -8,7 +8,7 @@ import { Pagination, ResultsInfo } from '@/components/Pagination';
 import { categoryConfig, CategorySlug } from '@/config/site';
 import { Product } from '@/types';
 import { siteConfig } from '@/config/site';
-import blogData from '../../../../data/blog.json';
+import blogData from '@/data/blog.json';
 
 interface BlogPost {
   id: string;
