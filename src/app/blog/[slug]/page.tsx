@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 // Iconos SVG inline para evitar dependencias
-import blogData from '@/data/blog.json';
+import blogData from '../../../data/blog.json';
 
 interface BlogPost {
   id: string;

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 // Iconos SVG inline para evitar dependencias
 import { AdSlot } from '@/components/AdSlot';
-import blogData from '@/data/blog.json';
+import blogData from '../../../data/blog.json';
 
 interface BlogPost {
   id: string;
