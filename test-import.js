@@ -8,3 +8,4 @@ try {
   console.log('❌ Error en importación:', error.message);
 }
 
+

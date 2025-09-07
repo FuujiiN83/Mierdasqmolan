@@ -135,6 +135,21 @@ git push
 - **ID 56**: Ambientador personalizado (9,00€)
 - **ID 49**: Papel Higiénico con la Cara de Trump (8,95€)
 
+## 📰 Artículos de Blog Actuales (2 total)
+
+### Artículos Publicados:
+- **ID 1**: "Tribuna RFEF - Nuestro Patrocinador" (3 min de lectura)
+  - **Slug**: `tribuna-rfef-nuestro-patrocinador`
+  - **Fecha**: 5 de septiembre de 2025
+  - **Tags**: tribuna, rfef, futbol, patrocinador, blog, periodismo, deportes, informacion
+  - **Imagen**: `/images/Tribuna.webp`
+
+- **ID 2**: "¿Qué es Halloween?" (2 min de lectura)
+  - **Slug**: `que-es-halloween`
+  - **Fecha**: 7 de septiembre de 2025
+  - **Tags**: halloween, disfraces, fiesta, diversion, maquillaje, accesorios, especial, blog, festividad, risas
+  - **Imagen**: `/images/Halloween 1.webp`
+
 ## 📝 Notas Importantes
 
 1. **SIEMPRE trabajar desde la carpeta `Mierdasqmolan` para GitHub**
@@ -143,15 +158,79 @@ git push
 4. **El archivo `products.json` debe estar sincronizado entre ambas carpetas**
 5. **Hacer push desde `Mierdasqmolan` para que se actualice el VPS**
 
+## 📰 Proceso para Añadir Artículos de Blog
+
+### 1. Preparación del Artículo
+- Crear el contenido del artículo en formato HTML
+- Preparar imagen destacada en formato `.webp`
+- Definir tags, categoría y metadatos
+
+### 2. Añadir Artículo al JSON
+- **ARCHIVO PRINCIPAL**: `MQM web/data/blog.json`
+- **ARCHIVO SINCRONIZADO**: `Mierdasqmolan/data/blog.json`
+
+#### Estructura del Artículo:
+```json
+{
+  "id": "XX",
+  "slug": "titulo-del-articulo",
+  "title": "Título del Artículo",
+  "excerpt": "Resumen del artículo...",
+  "content": "<p>Contenido completo con HTML...</p>",
+  "featuredImage": "/images/imagen-destacada.webp",
+  "alt": "Texto alternativo para SEO",
+  "author": "MQM Web",
+  "publishedAt": "2024-01-23TXX:00:00Z",
+  "updatedAt": "2024-01-23TXX:00:00Z",
+  "tags": ["tag1", "tag2", "tag3"],
+  "category": "blog",
+  "isPublished": true,
+  "readTime": "X min"
+}
+```
+
+### 3. Sincronización del Blog
+```powershell
+# Copiar el archivo principal a Mierdasqmolan
+copy "data\blog.json" "Mierdasqmolan\data\blog.json"
+```
+
+### 4. Arreglar Codificación UTF-8 para Blog
+```powershell
+# Cambiar a la carpeta Mierdasqmolan
+cd Mierdasqmolan
+
+# Convertir a UTF-8
+powershell -Command "Get-Content 'data\blog.json' -Encoding Default | Out-File 'data\blog_utf8.json' -Encoding UTF8"
+copy "data\blog_utf8.json" "data\blog.json"
+```
+
+### 5. Import Correcto en el Código
+- **Archivo**: `src/app/categoria/blog/page.tsx`
+- **Import correcto**: `import blogData from '@/data/blog.json';`
+- **NO usar**: `import blogData from '../../../data/blog.json';`
+
+### 6. Commit y Push del Blog
+```powershell
+# Desde la carpeta Mierdasqmolan
+git add .
+git commit -m "Añadir artículo de blog: [Título del Artículo]"
+git push
+```
+
 ## 🚨 Errores Comunes
 
 - **Error de codificación**: Usar conversión UTF-8
 - **Productos faltantes**: Verificar sincronización entre carpetas
 - **Imágenes no visibles**: Verificar que estén en ambas carpetas `public/images/`
 - **Push fallido**: Asegurarse de estar en la carpeta `Mierdasqmolan`
+- **Error "Module not found: Can't resolve './../../data/blog.json'"**: Usar import correcto `@/data/blog.json`
+- **Blog no aparece**: Verificar que `blog.json` esté en ambas carpetas y sincronizado
 
 ---
-**Última actualización**: 23 de enero de 2024
+**Última actualización**: 23 de enero de 2025
 **Total productos**: 56
-**Commit hash**: 6c8f91a
+**Total artículos de blog**: 2
+**Commit hash**: c0819dd
+**Último commit**: "Corregir import de blog.json y actualizar productos"
 
