@@ -23,5 +23,32 @@
     "category": "patrocinadores",
     "isPublished": true,
     "readTime": "3 min"
+  },
+  {
+    "id": "2",
+    "slug": "que-es-halloween",
+    "title": "¿Qué es Halloween?",
+    "excerpt": "Se acerca Halloween y en mierdas que molan vamos a preparar un especial por todo lo alto con productos dedicados para la ocasión. ¿Pero, qué es Halloween?",
+    "content": "<p>Se acerca Halloween y en mierdas que molan vamos a preparar un especial por todo lo alto con productos dedicados para la ocasión. ¿Pero, qué es Halloween?</p><p>Aquí es cuando dices… ¿Cómo que qué es Halloween? ¡Todo el mundo lo sabe! Pero no, no nos referimos a eso, no a la fecha o de donde viene. Para nosotros Halloween es alegría, diversión, festividad y risas, muchas risas. Por eso, para evitar que cuando salgas con tus amigos seas el único con algo pocho o cutre, en mierdas que molan vamos a mostrarte varios artículos relacionados con todo lo que es Halloween y pases una noche espectacular y no una escondiendo ese disfraz de marinero el cual prenderás fuego al llegar a casa de vuelta, ¡hay que informarse antes!.</p><p>Hablaremos de disfraces, (aunque hay alguno que otro que ya con su cara da mas miedo que la habitación de los Warren), maquillajes, accesorios y mucho más. Así, puedes seguir haciendo lo que te dé la gana con el móvil en la mano que nosotros te lo vamos a dar todo hecho, solo tendrás que dar clic y listo.</p><p>Ahora ya, gracias a mierdas que molan, podrás responder a la pregunta ¿Qué es Halloween? ¿Y tú me lo preguntas? Halloween… Eres tú, o bueno, una parte de ello :)</p>",
+    "featuredImage": "/images/Halloween 1.webp",
+    "alt": "¿Qué es Halloween? - Especial Halloween con productos y disfraces divertidos",
+    "author": "MQM Web",
+    "publishedAt": "2024-01-23T18:00:00Z",
+    "updatedAt": "2024-01-23T18:00:00Z",
+    "tags": [
+      "halloween",
+      "disfraces",
+      "fiesta",
+      "diversion",
+      "maquillaje",
+      "accesorios",
+      "especial",
+      "blog",
+      "festividad",
+      "risas"
+    ],
+    "category": "blog",
+    "isPublished": true,
+    "readTime": "2 min"
   }
 ]
