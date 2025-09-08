@@ -3043,5 +3043,28 @@
       "neon",
       "movimiento"
     ]
+  },
+  {
+    "id": "74",
+    "slug": "mini-simon",
+    "title": "Mini Simon",
+    "shortDescription": "El Simon de siempre, pero versión mini. Ideal para perderlo en el coche y a la mínima estar escuchando ruidos. A los peques les encanta pasarse horas con el, ¿Qué mas necesitas?",
+    "description": "<p>El Simon de siempre, pero versión mini. Ideal para perderlo en el coche y a la mínima estar escuchando ruidos. A los peques les encanta pasarse horas con el, ¿Qué mas necesitas?</p><h2>Características del producto</h2><ul><li><strong>El Simon más pequeño del mundo:</strong> Es una réplica exacta del juego de memoria electrónica original. Sigue los patrones de luz y sonido hasta 73 secuencias que aumentan en velocidad a medida que avanzas. Es la prueba definitiva de memoria y concentración</li><li><strong>Solo 2 pulgadas de diámetro:</strong> Con cuatro botones de ventana de color y sonidos tonales auténticos. ¡El juego ideal sobre la marcha!</li><li><strong>Incluye:</strong> 1 juego Simon, 3 pilas de botón LR44</li><li><strong>El juego de viaje perfecto:</strong> Relleno de calcetines, regalos de fiesta y mucho más</li><li><strong>Diversión para todas las edades:</strong> Recomendado para niños de 6 años en adelante</li></ul><h2>Especificaciones técnicas</h2><ul><li><strong>Rango de edad:</strong> Niño (6 años en adelante)</li><li><strong>Marca:</strong> World's Smallest</li><li><strong>Tema:</strong> Fantasía</li><li><strong>Material:</strong> Plástico</li><li><strong>Color:</strong> Multicolor</li><li><strong>Personaje:</strong> Simon</li><li><strong>Componentes incluidos:</strong> 1 juego Simon, 3 pilas de botón LR44</li><li><strong>Información del paquete:</strong> Paquete</li><li><strong>Cantidad de productos por paquete:</strong> 1</li><li><strong>Número de productos:</strong> 1</li><li><strong>Tamaño:</strong> Solo 2 pulgadas de diámetro</li><li><strong>Secuencias:</strong> Hasta 73 secuencias</li><li><strong>Característica especial:</strong> Aumenta en velocidad progresivamente</li></ul>",
+    "image": "/images/mini-simon.webp",
+    "alt": "Mini Simon - Juego de memoria electrónica más pequeño del mundo",
+    "affiliateUrl": "https://amzn.to/42deu5u",
+    "merchant": "Amazon",
+    "price": 14.90,
+    "currency": "EUR",
+    "categories": ["juegos-de-mesa", "niños", "adolescentes"],
+    "isFeatured": false,
+    "createdAt": "2025-09-08T23:15:00Z",
+    "tags": [
+      "simon",
+      "mini",
+      "memoria",
+      "juegos",
+      "niños"
+    ]
   }
 ]
