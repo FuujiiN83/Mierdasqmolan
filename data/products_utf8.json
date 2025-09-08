@@ -3020,5 +3020,28 @@
       "adultos",
       "friki"
     ]
+  },
+  {
+    "id": "73",
+    "slug": "led-wc",
+    "title": "LED para el WC",
+    "shortDescription": "Te gusta todo lo gamer y las lucecitas. O te gusta todo lo neon rollo fiesta, playa, las vegas o Callao. Esto es lo tuyo, sigue en tu salsa, en tu zona de confort y planta el pino en diferentes colores y con detección de movimiento.",
+    "description": "<p>Te gusta todo lo gamer y las lucecitas. O te gusta todo lo neon rollo fiesta, playa, las vegas o Callao. Esto es lo tuyo, sigue en tu salsa, en tu zona de confort y planta el pino en diferentes colores y con detección de movimiento.</p><h2>Características del producto</h2><ul><li><strong>De alta calidad:</strong> La luz nocturna del inodoro está hecha de poliestireno. Batería incorporada, no es necesario comprar ni reemplazar baterías</li><li><strong>16 luces suaves creativas:</strong> La luz del inodoro tiene 16 modos de color para elegir, lo que hace que su inodoro sea interesante y hermoso por la noche, agregando color a su vida</li><li><strong>Fácil de instalar y limpiar:</strong> Fácilmente doblado para adaptarse a cualquier tipo de inodoro. (Nota: No sumerja la lámpara en agua ni la coloque directamente debajo del grifo para limpiarla)</li><li><strong>Adecuado para ancianos, adultos y niños:</strong> Luz LED para inodoro con sensor de movimiento permiten a los ancianos y niños usar el inodoro sin encender las luces para evitar que se tropiecen</li></ul><h2>Especificaciones técnicas</h2><ul><li><strong>Material:</strong> Poliestireno</li><li><strong>Alimentación:</strong> Batería incorporada (no reemplazable)</li><li><strong>Modos de color:</strong> 16 modos diferentes</li><li><strong>Sensor:</strong> Detección de movimiento</li><li><strong>Instalación:</strong> Fácil, se adapta a cualquier inodoro</li><li><strong>Limpieza:</strong> No sumergir en agua</li><li><strong>Uso:</strong> Nocturno, ideal para evitar tropiezos</li><li><strong>Público objetivo:</strong> Ancianos, adultos y niños</li><li><strong>Efecto:</strong> Agrega color a la vida nocturna</li><li><strong>Estilo:</strong> Gamer, neon, fiesta</li></ul>",
+    "image": "/images/led-wc.webp",
+    "alt": "LED para el WC - Luz nocturna con 16 modos de color y sensor de movimiento",
+    "affiliateUrl": "https://amzn.to/3V5Ow00",
+    "merchant": "Amazon",
+    "price": 9.40,
+    "currency": "EUR",
+    "categories": ["friki", "facherito", "random"],
+    "isFeatured": false,
+    "createdAt": "2025-09-08T23:10:00Z",
+    "tags": [
+      "led",
+      "wc",
+      "gamer",
+      "neon",
+      "movimiento"
+    ]
   }
 ]
