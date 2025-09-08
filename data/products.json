@@ -2997,5 +2997,28 @@
       "fiesta",
       "ruidos"
     ]
+  },
+  {
+    "id": "72",
+    "slug": "copa-vino-invertida",
+    "title": "Copa de vino invertida",
+    "shortDescription": "¿Te han dicho alguna vez que vas al revés del mundo? Empieza a demostrarlo. Tanto que dicen, tanto que dicen, que ahora no se quejen. Desde mierdas que molan tienes nuestro apoyo.",
+    "description": "<p>¿Te han dicho alguna vez que vas al revés del mundo? Empieza a demostrarlo. Tanto que dicen, tanto que dicen, que ahora no se quejen. Desde mierdas que molan tienes nuestro apoyo.</p><h2>Características del producto</h2><ul><li><strong>Creative Upside Down High:</strong> Copa de vino tinto de vidrio de borosilicato</li><li><strong>Diseño personalizado:</strong> Copa de vino tinto invertida personalizada de último diseño</li><li><strong>Divertida y femenina:</strong> Divertida copa de vino para mujer, copa de degustación de vino femenina</li><li><strong>Versatilidad:</strong> Se aplica a vino tinto, champán, cócteles, jerez, jugo, etc</li><li><strong>Múltiples usos:</strong> Lugar de aplicación: hogar, restaurante, hotel, bar, ktv, bodega, etc</li></ul><h2>Especificaciones técnicas</h2><ul><li><strong>Material:</strong> Vidrio de borosilicato</li><li><strong>Tipo:</strong> Copa de vino invertida</li><li><strong>Uso:</strong> Vino tinto, champán, cócteles, jerez, jugo</li><li><strong>Lugares de uso:</strong> Hogar, restaurante, hotel, bar, ktv, bodega</li><li><strong>Diseño:</strong> Último diseño personalizado</li><li><strong>Estilo:</strong> Divertido y femenino</li><li><strong>Característica especial:</strong> Forma invertida única</li><li><strong>Calidad:</strong> Vidrio de borosilicato de alta calidad</li><li><strong>Versatilidad:</strong> Múltiples tipos de bebidas</li><li><strong>Ambiente:</strong> Ideal para demostrar que vas al revés del mundo</li></ul>",
+    "image": "/images/copa-vino-invertida.webp",
+    "alt": "Copa de vino invertida - Vidrio de borosilicato con diseño único",
+    "affiliateUrl": "https://amzn.to/41EM8kC",
+    "merchant": "Amazon",
+    "price": 6.25,
+    "currency": "EUR",
+    "categories": ["adultos", "friki", "random"],
+    "isFeatured": false,
+    "createdAt": "2025-09-08T23:05:00Z",
+    "tags": [
+      "copa",
+      "vino",
+      "invertida",
+      "adultos",
+      "friki"
+    ]
   }
 ]
