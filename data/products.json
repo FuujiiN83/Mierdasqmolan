@@ -3066,5 +3066,28 @@
       "juegos",
       "niños"
     ]
+  },
+  {
+    "id": "75",
+    "slug": "tapete-wc",
+    "title": "Tapete WC",
+    "shortDescription": "Relajas las posaderas, encajas en el hueco y sientes como si estuvieras en el salón de tu abuela mientras te prepara la merienda en una fría tarde de invierno. Y eso, no tiene precio, ¿verdad?",
+    "description": "<p>Relajas las posaderas, encajas en el hueco y sientes como si estuvieras en el salón de tu abuela mientras te prepara la merienda en una fría tarde de invierno. Y eso, no tiene precio, ¿verdad?</p><h2>Características del producto</h2><ul><li><strong>Cálido, saludable y bonito:</strong> Este tapete para WC aporta comodidad y calidez a tu experiencia en el baño</li><li><strong>Suave y delicado:</strong> Aporta color al cuarto de baño, adecuado para la mayoría de los inodoros familiares de tipo U</li><li><strong>Mantiene el calor:</strong> Este cubre asiento mantiene el calor en los días fríos y es saludable e higiénico</li><li><strong>Para toda la familia:</strong> Todo el mundo debería usarlo, especialmente las personas mayores y los niños</li><li><strong>Cómodo y práctico:</strong> Cómodo, saludable e higiénico con este cubre asiento para inodoro</li></ul><h2>Especificaciones técnicas</h2><ul><li><strong>Material:</strong> Suave y delicado</li><li><strong>Compatibilidad:</strong> Adecuado para la mayoría de inodoros familiares tipo U</li><li><strong>Función:</strong> Mantiene el calor en días fríos</li><li><strong>Beneficios:</strong> Saludable e higiénico</li><li><strong>Público objetivo:</strong> Personas mayores y niños</li><li><strong>Características:</strong> Cálido, saludable, bonito</li><li><strong>Uso:</strong> Cubre asiento para inodoro</li><li><strong>Efecto:</strong> Aporta color al cuarto de baño</li><li><strong>Comodidad:</strong> Suave y delicado al tacto</li><li><strong>Higiene:</strong> Fácil de limpiar y mantener</li></ul>",
+    "image": "/images/tapete-wc.webp",
+    "alt": "Tapete WC - Cubre asiento cálido y cómodo para inodoro",
+    "affiliateUrl": "https://amzn.to/3VE61EH",
+    "merchant": "Amazon",
+    "price": 29.89,
+    "currency": "EUR",
+    "categories": ["random", "friki"],
+    "isFeatured": false,
+    "createdAt": "2025-09-08T23:20:00Z",
+    "tags": [
+      "tapete",
+      "wc",
+      "cálido",
+      "cómodo",
+      "saludable"
+    ]
   }
 ]
