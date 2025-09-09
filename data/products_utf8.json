@@ -3158,5 +3158,28 @@
       "papel",
       "multifuncional"
     ]
+  },
+  {
+    "id": "79",
+    "slug": "espejo-led",
+    "title": "Espejo led",
+    "shortDescription": "A ver si te ibas a pensar que con tanto producto para el wc, no te íbamos a poner un espejo donde poder mirarte. Si por algo hemos creado la categoría vida en el wc… Pues eso, un espejo led la hostia de chulo, mira todo lo que tiene y farda ante tus amigos.",
+    "description": "<p>A ver si te ibas a pensar que con tanto producto para el wc, no te íbamos a poner un espejo donde poder mirarte. Si por algo hemos creado la categoría vida en el wc… Pues eso, un espejo led la hostia de chulo, mira todo lo que tiene y farda ante tus amigos.</p><h2>Características del producto</h2><ul><li><strong>VERY SIZE:</strong> LISA LED Espejo de baño viene en un tamaño generoso de 70 x 50/50 x 70 cm y se puede montar vertical u horizontalmente, perfecto para baños, aseos, dormitorios, pasillos o salas de estar.</li><li><strong>ILUMINACIÓN AJUSTABLE:</strong> El espejo ofrece una selección de tres colores de luz diferentes: blanco frío (6500 K) / blanco neutro (4000 K) / blanco cálido (3000 K), que se pueden ajustar con solo pulsar un botón. Además, también puedes ajustar la intensidad de la luz para crear el ambiente que desees.</li><li><strong>FUNCIÓN ANTIVAHO:</strong> Gracias a la función antivaho integrada, el espejo permanece transparente y libre de la molesta condensación, incluso después de un baño o ducha caliente. Pulse el botón de descongelación y el espejo se calentará automáticamente para evitar la condensación.</li><li><strong>DURABLE LED LIGHTING:</strong> Las tiras de LED en el espejo tienen una vida útil de hasta 50,000 horas, por lo que puede disfrutar de una iluminación de alta calidad en los próximos años. El espejo también es impermeable IP44 para garantizar un uso seguro en el baño.</li><li><strong>Mirror switch:</strong> La luz del espejo se puede encender y apagar mediante un interruptor de pared o un interruptor táctil. El interruptor de pared no cambia el color y solo enciende y apaga la luz.</li></ul><h2>Especificaciones técnicas</h2><ul><li><strong>Marca:</strong> LISA</li><li><strong>Tipo de habitación:</strong> Baño</li><li><strong>Forma:</strong> Rectangular</li><li><strong>Dimensiones del producto:</strong> 70l. x 50an. centímetros</li><li><strong>Material del marco:</strong> Aluminio</li><li><strong>Estilo:</strong> Moderno</li><li><strong>Tipo de montaje:</strong> Montaje en pared</li><li><strong>Función especial:</strong> Iluminado, Sensor táctil</li><li><strong>Color:</strong> 3 Colores Claros</li><li><strong>Usos específicos del producto:</strong> Maquillaje, Vestirse</li><li><strong>Vida útil LED:</strong> 50,000 horas</li><li><strong>Protección:</strong> IP44 impermeable</li><li><strong>Colores de luz:</strong> Blanco frío (6500K), Blanco neutro (4000K), Blanco cálido (3000K)</li><li><strong>Característica especial:</strong> Función antivaho integrada</li></ul>",
+    "image": "/images/espejo-led.webp",
+    "alt": "Espejo led - Espejo de baño con iluminación LED ajustable y función antivaho",
+    "affiliateUrl": "https://amzn.to/3I8jt0C",
+    "merchant": "Amazon",
+    "price": 79.99,
+    "currency": "EUR",
+    "categories": ["vida-en-el-wc", "adultos", "casados"],
+    "isFeatured": false,
+    "createdAt": "2025-09-08T23:40:00Z",
+    "tags": [
+      "espejo",
+      "led",
+      "baño",
+      "iluminación",
+      "antivaho"
+    ]
   }
 ]
