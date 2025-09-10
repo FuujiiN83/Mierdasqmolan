@@ -188,6 +188,12 @@ export const categoryConfig = {
     description: "Artículos y contenido especial",
     color: "#1F2937",
     icon: "📝"
+  },
+  halloween: {
+    name: "Halloween",
+    description: "Productos terroríficos y de Halloween",
+    color: "#7C2D12",
+    icon: "🎃"
   }
 } as const;
 
