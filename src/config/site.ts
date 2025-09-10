@@ -200,6 +200,12 @@ export const categoryConfig = {
     description: "Productos para reír y pasar un buen rato",
     color: "#F59E0B",
     icon: "😄"
+  },
+  ropa: {
+    name: "Ropa",
+    description: "Camisetas, calcetines y ropa divertida",
+    color: "#EC4899",
+    icon: "👕"
   }
 } as const;
 
