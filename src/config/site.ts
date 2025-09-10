@@ -212,6 +212,12 @@ export const categoryConfig = {
     description: "Decoración y accesorios para el hogar",
     color: "#10B981",
     icon: "🏠"
+  },
+  bromas: {
+    name: "Bromas",
+    description: "Productos para hacer bromas y reírse",
+    color: "#DC2626",
+    icon: "😈"
   }
 } as const;
 
