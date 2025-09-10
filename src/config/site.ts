@@ -194,6 +194,12 @@ export const categoryConfig = {
     description: "Productos terroríficos y de Halloween",
     color: "#7C2D12",
     icon: "🎃"
+  },
+  divertido: {
+    name: "Divertido",
+    description: "Productos para reír y pasar un buen rato",
+    color: "#F59E0B",
+    icon: "😄"
   }
 } as const;
 
