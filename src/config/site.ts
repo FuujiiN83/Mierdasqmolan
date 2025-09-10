@@ -206,6 +206,12 @@ export const categoryConfig = {
     description: "Camisetas, calcetines y ropa divertida",
     color: "#EC4899",
     icon: "👕"
+  },
+  hogar: {
+    name: "Hogar",
+    description: "Decoración y accesorios para el hogar",
+    color: "#10B981",
+    icon: "🏠"
   }
 } as const;
 
