@@ -13,7 +13,8 @@
     "categories": [
       "adultos",
       "ofendiditos",
-      "random"
+      "random",
+      "divertido"
     ],
     "isFeatured": true,
     "createdAt": "2024-01-20T18:30:00Z",
@@ -40,7 +41,8 @@
       "casados",
       "dejados",
       "anti-fitness",
-      "random"
+      "random",
+      "divertido"
     ],
     "isFeatured": true,
     "createdAt": "2024-01-20T17:45:00Z",
@@ -124,7 +126,8 @@
       "tazas",
       "adultos",
       "random",
-      "divorciados"
+      "divorciados",
+      "divertido"
     ],
     "isFeatured": false,
     "createdAt": "2024-01-21T12:00:00Z",
@@ -152,7 +155,8 @@
     "categories": [
       "random",
       "adultos",
-      "casados"
+      "casados",
+      "divertido"
     ],
     "isFeatured": false,
     "createdAt": "2024-01-21T13:00:00Z",
