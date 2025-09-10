@@ -13,7 +13,8 @@
     "categories": [
       "adultos",
       "ofendiditos",
-      "random"
+      "random",
+      "divertido"
     ],
     "isFeatured": true,
     "createdAt": "2024-01-20T18:30:00Z",
@@ -40,7 +41,8 @@
       "casados",
       "dejados",
       "anti-fitness",
-      "random"
+      "random",
+      "divertido"
     ],
     "isFeatured": true,
     "createdAt": "2024-01-20T17:45:00Z",
@@ -124,7 +126,8 @@
       "tazas",
       "adultos",
       "random",
-      "divorciados"
+      "divorciados",
+      "divertido"
     ],
     "isFeatured": false,
     "createdAt": "2024-01-21T12:00:00Z",
@@ -152,7 +155,8 @@
     "categories": [
       "random",
       "adultos",
-      "casados"
+      "casados",
+      "divertido"
     ],
     "isFeatured": false,
     "createdAt": "2024-01-21T13:00:00Z",
@@ -3410,6 +3414,29 @@
       "lectura",
       "led",
       "libros"
+    ]
+  },
+  {
+    "id": "90",
+    "slug": "cortador-galletas-halloween",
+    "title": "Cortador galletas para Halloween",
+    "shortDescription": "Haz galletas caseras con forma de esqueleto, fantasma, calabaza y disfruta Halloween comiendo galletas hechas por ti. ¿Qué esto no da miedo? Hazlas, guárdalas en la nevera, apaga las luces y verás como empiezan a pasar por tu lado personas ocultando su presencia para ir a coger unas cuantas.",
+    "description": "<p>Haz galletas caseras con forma de esqueleto, fantasma, calabaza y disfruta Halloween comiendo galletas hechas por ti. ¿Qué esto no da miedo? Hazlas, guárdalas en la nevera, apaga las luces y verás como empiezan a pasar por tu lado personas ocultando su presencia para ir a coger unas cuantas.</p><h2>Características del producto</h2><ul><li><strong>Material:</strong> Estos cortadores de galletas de calabaza están fabricados por fábricas profesionales con excelente artesanía. Nuestros moldes están cuidadosamente elaborados con material PP de alta calidad para garantizar que no se dañen fácilmente. Estas herramientas para hornear son resistentes y duraderas. Ya sea que prepare postres con forma de calabaza o galletas fantasma, estos moldes de grado alimenticio le garantizan una experiencia de horneado sencilla.</li><li><strong>Características:</strong> Este juego de 20 cortadores de galletas de Halloween trae el espíritu de Halloween a tu cocina. Incluye 10 moldes de calabaza (con ojos y boca) y 10 moldes de fantasma (con ojos y boca). Estos sellos te permiten crear postres con un aspecto espectacular. Su diseño preciso de bordes garantiza un corte limpio y preciso, ideal para hacer galletas con glaseado, pasteles de fondant e incluso manualidades con arcilla. Estas herramientas temáticas le darán un toque festivo a tus creaciones.</li><li><strong>Fácil de usar:</strong> Nuestros cortadores de galletas están diseñados para ser sencillos, lo que facilita hornear. Presiona el molde exterior sobre la masa, cubre el molde interior, crea expresiones faciales espeluznantes y podrás preparar galletas de Halloween. Su diseño ligero y resistente garantiza que incluso los principiantes puedan empezar fácilmente. Usa estas herramientas para hornear y ahorra tiempo para concentrarte en otras tareas.</li><li><strong>Multifunción:</strong> Además de para Halloween, estos versátiles cortadores de galletas también son ideales para otras preparaciones navideñas. Sirven para hacer galletas, fudge, chocolates y mucho más con temática navideña. Su pequeño tamaño los hace ideales para hornear y reutilizables. Ya sea que prepares postres para Navidad, cumpleaños o eventos escolares, este juego de herramientas se adaptará a tus necesidades en diversas ocasiones.</li><li><strong>Contenido:</strong> Recibirás 10 moldes de calabaza y 10 cortadores de galletas de fantasma. Este molde está hecho de PP de calidad y es fácil de limpiar; solo enjuágalo con agua fría o tibia. Usa este juego de moldes y disfruta de tus creaciones. Si tienes alguna pregunta sobre nuestro producto durante su uso, por favor, háznoslo saber y la resolveremos lo antes posible. Esperamos que tengas una experiencia agradable.</li></ul><h2>Especificaciones técnicas</h2><ul><li><strong>Marca:</strong> HINGTAI</li><li><strong>Material:</strong> PP de alta calidad</li><li><strong>Tema:</strong> Halloween</li><li><strong>Dimensiones del producto:</strong> 10 x 10 x 10 milímetros</li><li><strong>Número de productos:</strong> 20</li><li><strong>Color:</strong> Rosado</li><li><strong>Cuidado del producto:</strong> Lavado a mano</li><li><strong>Componentes incluidos:</strong> 1 juego completo</li><li><strong>Fabricante:</strong> HINGTAI</li><li><strong>Contenido del juego:</strong> 10 moldes de calabaza + 10 moldes de fantasma</li><li><strong>Material de grado alimenticio:</strong> PP seguro para alimentos</li><li><strong>Diseño:</strong> Bordes precisos para corte limpio</li><li><strong>Usos:</strong> Galletas, pasteles, fondant, manualidades con arcilla</li><li><strong>Limpieza:</strong> Enjuagar con agua fría o tibia</li><li><strong>Durabilidad:</strong> Resistente y duradero</li><li><strong>Versatilidad:</strong> Ideal para Halloween, Navidad, cumpleaños, eventos escolares</li></ul>",
+    "image": "/images/cortador-galletas-hw.webp",
+    "alt": "Cortador galletas para Halloween - Juego de 20 moldes de calabaza y fantasma",
+    "affiliateUrl": "https://amzn.to/4m5rOjH",
+    "merchant": "Amazon",
+    "price": 15.99,
+    "currency": "EUR",
+    "categories": ["halloween", "divertido", "fiesta"],
+    "isFeatured": false,
+    "createdAt": "2025-09-09T00:35:00Z",
+    "tags": [
+      "cortador",
+      "galletas",
+      "halloween",
+      "calabaza",
+      "fantasma"
     ]
   }
 ]
