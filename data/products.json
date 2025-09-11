@@ -3904,5 +3904,36 @@
       "adhesivos",
       "material PP"
     ]
+  },
+  {
+    "id": "110",
+    "slug": "camiseta-diplomatica",
+    "title": "Camiseta diplomática",
+    "shortDescription": "Esta camiseta muestra la paz, calma y tranquilidad de una persona cordial y diplomática. Muestra amor por cada costura y cordialidad en cada color. Hecha para ti.",
+    "description": "<p>Esta camiseta muestra la paz, calma y tranquilidad de una persona cordial y diplomática. Muestra amor por cada costura y cordialidad en cada color. Hecha para ti.</p><h3>Detalles del producto:</h3><ul><li><strong>Composición del material:</strong> Polyester, Spandex</li><li><strong>Instrucciones de cuidado del material:</strong> Lavar a mano</li><li><strong>Tipo de cierre:</strong> Pull on</li><li><strong>Estilo de cuello:</strong> Cuello en V</li></ul><h3>Características principales:</h3><ul><li><strong>Contenido:</strong> esta camiseta está impresa con una interesante combinación de letras. El material de esta camiseta es muy cómodo de usar. Hay muchos estilos diferentes para elegir. ¡¡ definitivamente encontrarás tu estilo favorito! Camiseta cicatrizada manchada de sangre</li><li><strong>Fabricada con algodón suave y duradero:</strong> esta camiseta garantiza comodidad y resistencia en cada uso.</li><li><strong>La impresión de alta definición:</strong> en nuestra camiseta de Halloween cuenta con motivos únicos y llamativos.</li><li><strong>Versatilidad:</strong> ya sea para fiestas, conciertos o uso diario, esta camiseta de Halloween es perfecta para cualquier ocasión.</li><li><strong>❤Nota:</strong> La ropa es de talla asiática, se recomienda tratar de comprar una talla más grande. Ideal para crear un llamativo estilo casual para destacar en tu. El diseño simple, clásico y atemporal, casual, moda, cómodo y elegante.</li></ul>",
+    "image": "/images/problema resuelto.webp",
+    "alt": "Camiseta diplomática con diseño único - Ropa casual y cómoda",
+    "affiliateUrl": "https://amzn.to/3HTr2bz",
+    "merchant": "Amazon",
+    "price": 14.99,
+    "currency": "EUR",
+    "categories": ["ropa", "halloween", "divertido", "adolescentes", "adultos", "friki"],
+    "isFeatured": false,
+    "createdAt": "2025-09-11T14:30:00Z",
+    "tags": [
+      "camiseta",
+      "diplomática",
+      "ropa",
+      "halloween",
+      "divertido",
+      "adolescentes",
+      "adultos",
+      "friki",
+      "polyester",
+      "spandex",
+      "cuello V",
+      "casual",
+      "moda"
+    ]
   }
 ]
