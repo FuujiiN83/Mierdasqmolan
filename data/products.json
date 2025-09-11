@@ -4140,5 +4140,43 @@
       "fiesta",
       "regalo"
     ]
+  },
+  {
+    "id": "117",
+    "slug": "calcetines-magneticos",
+    "title": "Calcetines magnéticos",
+    "shortDescription": "Mientras andas \"chocan los 5\" cuando estás quieto, se dan la mano como tortolitos. Encima son de murciélagos, para saciar tu sed oscura o para ponerte en Halloween, tu decides.",
+    "description": "<p>Mientras andas \"chocan los 5\" cuando estás quieto, se dan la mano como tortolitos. Encima son de murciélagos, para saciar tu sed oscura o para ponerte en Halloween, tu decides.</p><h3>Características principales:</h3><ul><li><strong>Tejido suave:</strong> nuestros calcetines magnéticos de Halloween para sostener manos están hechos de una lujosa mezcla de 65% algodón y 35% poliéster, garantizando una sensación súper suave y ligera, permitiendo que tus pies respiren y se mantengan frescos en cualquier actividad</li><li><strong>Diseño:</strong> con adorables patrones de murciélagos o fantasmas, estos calcetines largos están equipados con una conexión magnética que permite a las parejas sostenerse de las manos, incluso mientras usan zapatos</li><li><strong>Ocasiones:</strong> ya sea una salida relajada, una cita, un día de compras, una sesión de fotos, una fiesta de Halloween, un paseo u otro evento, nuestros calcetines para sostener manos son perfectos para cualquier ocasión</li><li><strong>Regalos perfectos:</strong> sorprende a tus seres queridos con estos calcetines para sostener manos como regalo para Halloween u otro día especial, les encantarán</li><li><strong>Para parejas:</strong> diseñados pensando en los enamorados, estos divertidos calcetines simbolizan la unión y difunden alegría mientras tú y tu pareja se sostienen de las manos con estilo</li></ul>",
+    "image": "/images/calcetines magneticos hw2.webp",
+    "alt": "Calcetines magnéticos Halloween - Para parejas con conexión magnética y diseño de murciélagos",
+    "affiliateUrl": "https://amzn.to/4m7lcRF",
+    "merchant": "Amazon",
+    "price": 9.99,
+    "currency": "EUR",
+    "categories": ["ropa", "friki", "adolescentes", "halloween", "divertido"],
+    "isFeatured": false,
+    "createdAt": "2025-09-11T18:00:00Z",
+    "tags": [
+      "calcetines",
+      "magnéticos",
+      "halloween",
+      "ropa",
+      "friki",
+      "adolescentes",
+      "divertido",
+      "parejas",
+      "murciélagos",
+      "fantasmas",
+      "conexión magnética",
+      "65% algodón",
+      "35% poliéster",
+      "sostener manos",
+      "regalo",
+      "cita",
+      "fiesta",
+      "enamorados",
+      "unión",
+      "estilo"
+    ]
   }
 ]
