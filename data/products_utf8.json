@@ -3775,7 +3775,7 @@
     "currency": "EUR",
     "categories": ["halloween", "fiesta", "divertido", "hogar"],
     "isFeatured": false,
-    "createdAt": "2025-01-23T12:00:00Z",
+    "createdAt": "2025-09-11T12:00:00Z",
     "tags": [
       "bruja",
       "halloween",
@@ -3787,6 +3787,34 @@
       "colgar",
       "poliéster",
       "resistente"
+    ]
+  },
+  {
+    "id": "106",
+    "slug": "telaranas-para-halloween",
+    "title": "Telarañas para Halloween",
+    "shortDescription": "¿Sientes que con calabazas, brujas, arañas y murciélagos no es suficiente? Aquí tienes estas telarañas para seguir petando tu casa con accesorios y decoración para la mejor noche del año.",
+    "description": "<p>¿Sientes que con calabazas, brujas, arañas y murciélagos no es suficiente? Aquí tienes estas telarañas para seguir petando tu casa con accesorios y decoración para la mejor noche del año.</p><p>🎃 <strong>【Decoraciones de Halloween】</strong> Obtendrás: 1 juego de 12 piezas de pegatinas de murciélagos voladores en 3D y viene con 3 piezas de tela negra aterradora y 2 piezas de tela blanca aterradora (183 * 76 cm).</p><p>🎃 <strong>【Material de Seguridad】</strong> Material suave: telas aterradoras de poliéster y algodón, fáciles de almacenar, puede usarlas varias veces. Genial para implementar los sustos en tu casa embrujada o fiesta. Los bates 3D están hechos de PVC, resistente al agua y duradero; Vienen con adhesivos de doble cara, convenientes para aplicar o quitar.</p><p>🎃 <strong>【Simple y Fácil de Usar】</strong> La gasa espeluznante negra se puede estirar o cortar fácilmente en cualquier forma que desee. para que pueda diseñar formas de gasa aterradoras de Halloween y elementos colgantes de acuerdo con sus propios intereses e ideas. Puedes fijarlos fácilmente a la pared.</p><p>🎃 <strong>【Multipropósito y Reutilizable】</strong> Estas decoraciones para exteriores de Halloween se pueden usar de muchas maneras, tanto en interiores como en exteriores. Los murciélagos adhesivos decorativos de Halloween se pueden colocar en la puerta, la pared, la ventana, el árbol del jardín, la corona rústica de Halloween o las calabazas en cualquier fiesta de Halloween para niños o adultos.</p><p>🎃 <strong>【100% SATISFACCIÓN GARANTIZADA】</strong> Haga su pedido con confianza y tenga la seguridad de que si por alguna razón no está satisfecho con nuestros accesorios de Halloween, le ofreceremos un reembolso completo o un reemplazo.</p>",
+    "image": "/images/telarañas hw.webp",
+    "alt": "Telarañas para Halloween - Decoración espeluznante con murciélagos 3D",
+    "affiliateUrl": "https://amzn.to/48aiDLd",
+    "merchant": "Amazon",
+    "price": 9.99,
+    "currency": "EUR",
+    "categories": ["fiesta", "divertido", "halloween"],
+    "isFeatured": false,
+    "createdAt": "2025-09-11T12:30:00Z",
+    "tags": [
+      "telarañas",
+      "halloween",
+      "fiesta",
+      "divertido",
+      "decoracion",
+      "murciélagos",
+      "3D",
+      "reutilizable",
+      "poliéster",
+      "algodón"
     ]
   }
 ]
