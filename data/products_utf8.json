@@ -3760,5 +3760,33 @@
       "reutilizable",
       "decoracion"
     ]
+  },
+  {
+    "id": "105",
+    "slug": "bruja-para-exteriores",
+    "title": "Bruja para exteriores",
+    "shortDescription": "Esta bruja no coordina aun muy bien los movimientos y se ha estampado contra lo primero que ha visto. Puede ser tu ventana, tu puerta o donde quieras ponerla, pero queda de maravilla entre arañas, calabazas, murciélagos y cosas verdes y moradas.",
+    "description": "<p>Esta bruja no coordina aun muy bien los movimientos y se ha estampado contra lo primero que ha visto. Puede ser tu ventana, tu puerta o donde quieras ponerla, pero queda de maravilla entre arañas, calabazas, murciélagos y cosas verdes y moradas.</p><p>🎃 🤣 <strong>DECORACIÓN DE BRUJA</strong>: Decoración de bruja para colgar o colgar. ¡Con humor, viste tu jardín o tu casa con nuestra bruja torpe!</p><p>🔮 😱 <strong>FELIZ HALLOWEEN</strong>: Original y divertida decoración de interior o exterior para Halloween.</p><p>👍 💡 <strong>FÁCIL DE USAR</strong>: Gracias a sus correas, la bruja se cuelga fácilmente de un árbol, puerta o cartel.</p><p>💎 💪 <strong>CALIDAD PREMIUM</strong>: Está hecho de poliéster de alta calidad, resistente a la intemperie y a la decoloración.</p><p>🥇 🏆 <strong>REFERENCIA</strong>: Desde hace más de 15 años, ORIGINAL CUP es una marca de referencia en productos y accesorios para fiestas. Todos nuestros productos son probados y aprobados por nuestros miembros.</p>",
+    "image": "/images/Bruja decorativa hw.webp",
+    "alt": "Bruja decorativa para exteriores de Halloween, divertida y original",
+    "affiliateUrl": "https://amzn.to/3IiKONA",
+    "merchant": "Amazon",
+    "price": 19.99,
+    "currency": "EUR",
+    "categories": ["halloween", "fiesta", "divertido", "hogar"],
+    "isFeatured": false,
+    "createdAt": "2025-01-23T12:00:00Z",
+    "tags": [
+      "bruja",
+      "halloween",
+      "fiesta",
+      "decoracion",
+      "exterior",
+      "divertido",
+      "hogar",
+      "colgar",
+      "poliéster",
+      "resistente"
+    ]
   }
 ]
