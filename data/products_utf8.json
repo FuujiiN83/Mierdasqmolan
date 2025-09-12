@@ -4306,5 +4306,43 @@
       "ajustable",
       "inflador de aire"
     ]
+  },
+  {
+    "id": "121",
+    "slug": "disfraz-de-cerveza",
+    "title": "Disfraz de cerveza",
+    "shortDescription": "Lleva tu afición por la cerveza a otro nivel. Pocas cosas hay mas épicas que ir disfrazado de una cerveza mientras te tomas una. Si hay gente que se disfraza de vampiros porque les encantan los vampiros, ¿Por qué tu no con la cerveza?",
+    "description": "<p>Lleva tu afición por la cerveza a otro nivel. Pocas cosas hay mas épicas que ir disfrazado de una cerveza mientras te tomas una. Si hay gente que se disfraza de vampiros porque les encantan los vampiros, ¿Por qué tu no con la cerveza?</p><h3>Características principales:</h3><ul><li><strong>Comprar Disfraz de botellin de cerveza en la tienda de disfraces Comarfi:</strong> la mejor tienda de disfraces desde 1980. Excelente relación calidad - precio. Envío rápido y pago seguro.</li><li><strong>Componentes incluidos:</strong> Traje</li><li><strong>Tipo de ocasión:</strong> Carnaval</li><li><strong>Material:</strong> Mezcla de poliéster</li></ul>",
+    "image": "/images/disfraz cerveza.webp",
+    "alt": "Disfraz de cerveza - Disfraz de botellín de cerveza para carnaval y fiestas",
+    "affiliateUrl": "https://amzn.to/4mX2KfH",
+    "merchant": "Amazon",
+    "price": 26.50,
+    "currency": "EUR",
+    "categories": ["divertido", "halloween", "adultos", "friki", "fiesta"],
+    "isFeatured": false,
+    "createdAt": "2025-09-11T20:00:00Z",
+    "tags": [
+      "disfraz",
+      "cerveza",
+      "divertido",
+      "halloween",
+      "adultos",
+      "friki",
+      "fiesta",
+      "botellín",
+      "carnaval",
+      "Comarfi",
+      "poliéster",
+      "traje",
+      "calidad",
+      "precio",
+      "envío rápido",
+      "pago seguro",
+      "vampiros",
+      "épico",
+      "afición",
+      "mezcla de poliéster"
+    ]
   }
 ]
