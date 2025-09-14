@@ -8,6 +8,7 @@ import { Pagination, ResultsInfo } from '@/components/Pagination';
 import { categoryConfig, CategorySlug } from '@/config/site';
 import { Product } from '@/types';
 import { siteConfig } from '@/config/site';
+import { generateCategoryStructuredData } from '@/lib/seo';
 import blogData from '@/data/blog.json';
 
 interface BlogPost {
@@ -71,6 +72,14 @@ export function BlogClient({ categorySlug, initialProducts }: BlogClientProps) {
   const totalPages = Math.ceil(totalProducts / productsPerPage);
   const inlineAdPositions = useInlineAds(paginatedPosts.length);
 
+  // Generar structured data para SEO
+  const structuredData = generateCategoryStructuredData(
+    category.name,
+    category.description,
+    categorySlug,
+    totalProducts
+  );
+
   function formatDate(dateString: string) {
     const date = new Date(dateString);
     return date.toLocaleDateString('es-ES', {
@@ -81,7 +90,16 @@ export function BlogClient({ categorySlug, initialProducts }: BlogClientProps) {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <>
+      {/* Structured Data para SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       {/* Header de la categoría */}
       <div className="mb-8">
         <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-6 sm:p-8">
@@ -347,6 +365,7 @@ export function BlogClient({ categorySlug, initialProducts }: BlogClientProps) {
           </div>
         </div>
       )}
-    </div>
+      </div>
+    </>
   );
 }

@@ -196,6 +196,52 @@ export function generateOrganizationStructuredData() {
 }
 
 /**
+ * Genera structured data para páginas de categorías (JSON-LD)
+ */
+export function generateCategoryStructuredData(
+  categoryName: string,
+  categoryDescription: string,
+  categorySlug: string,
+  productCount: number
+) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: categoryName,
+    description: categoryDescription,
+    url: `${siteConfig.url}/categoria/${categorySlug}`,
+    mainEntity: {
+      '@type': 'ItemList',
+      name: `Productos de ${categoryName}`,
+      description: categoryDescription,
+      numberOfItems: productCount,
+    },
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Inicio',
+          item: siteConfig.url,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: categoryName,
+          item: `${siteConfig.url}/categoria/${categorySlug}`,
+        },
+      ],
+    },
+    isPartOf: {
+      '@type': 'WebSite',
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  };
+}
+
+/**
  * Utilidades para mejorar SEO
  */
 export const seoUtils = {
