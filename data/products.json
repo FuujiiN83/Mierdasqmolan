@@ -11,7 +11,7 @@
     "merchant": "Amazon",
     "price": 16.10,
     "currency": "EUR",
-    "categories": ["tecnologia", "musica", "regalos"],
+    "categories": ["adolescentes", "musica", "tecnologico"],
     "isFeatured": false,
     "createdAt": "2025-09-12T04:00:00Z",
     "tags": ["nfc", "llavero", "musica", "personalizado", "regalo", "tecnologia"]
@@ -256,7 +256,7 @@
     "currency": "EUR",
     "categories": [
       "adolescentes",
-      "ratas",
+      "adultos",
       "ofendiditos"
     ],
     "isFeatured": false,
@@ -313,7 +313,7 @@
     "categories": [
       "anti-fitness",
       "ninos",
-      "ratas",
+      "adultos",
       "adolescentes",
       "adultos"
     ],
@@ -402,7 +402,7 @@
     "price": 12.95,
     "currency": "EUR",
     "categories": [
-      "rancios",
+      "adultos",
       "adultos",
       "divorciados"
     ],
@@ -431,7 +431,7 @@
     "currency": "EUR",
     "categories": [
       "random",
-      "ratas",
+      "adultos",
       "frikis",
       "facheritos",
       "gamers"
@@ -694,7 +694,7 @@
       "random",
       "adolescentes",
       "divorciados",
-      "gym-bros",
+      "deportistas",
       "fiesta",
       "frikis",
       "adultos",
@@ -1209,7 +1209,7 @@
       "adultos",
       "divorciados",
       "ofendiditos",
-      "gym-bros"
+      "deportistas"
     ],
     "isFeatured": false,
     "createdAt": "2024-01-23T12:00:00Z",
@@ -2668,7 +2668,7 @@
       "beneficio",
       "liberación",
       "adultos",
-      "rancios",
+      "adultos",
       "ofendiditos"
     ]
   },

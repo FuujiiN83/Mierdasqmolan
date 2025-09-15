@@ -111,12 +111,6 @@ export const categoryConfig = {
     color: "#6366F1",
     icon: "🔬"
   },
-  "gym-bros": {
-    name: "Gym Bros",
-    description: "Para los adictos al gimnasio",
-    color: "#EF4444",
-    icon: "💪"
-  },
   deportistas: {
     name: "Deportistas",
     description: "Para los que mueven el esqueleto",
@@ -128,18 +122,6 @@ export const categoryConfig = {
     description: "Nueva vida, nuevas oportunidades",
     color: "#84CC16",
     icon: "🆓"
-  },
-  rancios: {
-    name: "Rancios",
-    description: "Para los que van a su bola",
-    color: "#92400E",
-    icon: "🧓"
-  },
-  ratas: {
-    name: "Ratas",
-    description: "Para los tacaños profesionales",
-    color: "#374151",
-    icon: "🐭"
   },
   "juegos-de-mesa": {
     name: "Juegos de Mesa",
@@ -218,6 +200,18 @@ export const categoryConfig = {
     description: "Productos para hacer bromas y reírse",
     color: "#DC2626",
     icon: "😈"
+  },
+  musica: {
+    name: "Música",
+    description: "Productos relacionados con la música y el sonido",
+    color: "#8B5CF6",
+    icon: "🎵"
+  },
+  tecnologico: {
+    name: "Tecnológico",
+    description: "Gadgets y productos tecnológicos",
+    color: "#3B82F6",
+    icon: "📱"
   }
 } as const;
 
