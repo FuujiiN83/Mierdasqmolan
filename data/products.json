@@ -1,6 +1,6 @@
 ﻿[
   {
-    "id": "57",
+    "id": "58",
     "slug": "llavero-nfc",
     "title": "Llavero NFC",
     "shortDescription": "Eres super fan de tu grupo favorito y quieres llevarlos a todas partes. Lo acercas al teléfono, te abre la lista de canciones y solo tienes que darle al play. ¡Encima, lleva foto de tu grupo!",
@@ -13,7 +13,7 @@
     "currency": "EUR",
     "categories": ["tecnologia", "musica", "regalos"],
     "isFeatured": false,
-    "createdAt": "2025-01-23T12:00:00Z",
+    "createdAt": "2025-01-23T18:00:00Z",
     "tags": ["nfc", "llavero", "musica", "personalizado", "regalo", "tecnologia"]
   },
   {
