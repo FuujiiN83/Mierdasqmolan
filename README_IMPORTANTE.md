@@ -43,6 +43,44 @@ copy "images\[nombre-imagen].webp" "Mierdasqmolan\public\images\[nombre-imagen].
 }
 ```
 
+### 3.1. ⚠️ ORDEN DE PRODUCTOS - CRÍTICO
+
+**IMPORTANTE**: Los productos se ordenan por fecha de creación (`createdAt`) de forma descendente (más recientes primero).
+
+#### Para que un producto nuevo aparezca PRIMERO:
+
+1. **Verificar el último ID existente:**
+   ```powershell
+   # Buscar el ID más alto en el archivo
+   findstr /C:"\"id\":" "data\products.json" | findstr /V "categories" | findstr /V "isFeatured"
+   ```
+
+2. **Asignar el siguiente ID disponible:**
+   - Si el último ID es 150, el nuevo producto tendrá ID 151
+   - Si el último ID es 200, el nuevo producto tendrá ID 201
+
+3. **Asignar fecha más reciente:**
+   - **Formato**: `"2025-09-12T04:00:00Z"`
+   - **Debe ser más reciente** que cualquier producto existente
+   - **Ejemplo**: Si el producto más reciente es `2025-09-12T03:30:00Z`, usar `2025-09-12T04:00:00Z`
+
+4. **Verificar fechas existentes:**
+   ```powershell
+   # Buscar fechas recientes para comparar
+   findstr /C:"\"createdAt\":" "data\products.json" | findstr "2025-09"
+   ```
+
+#### Ejemplo de producto nuevo que aparecerá PRIMERO:
+```json
+{
+  "id": "138",
+  "slug": "nuevo-producto",
+  "title": "Nuevo Producto",
+  "createdAt": "2025-09-12T05:00:00Z",
+  // ... resto de campos
+}
+```
+
 ### 4. Sincronización Entre Carpetas
 ```powershell
 # Copiar el archivo principal a Mierdasqmolan
@@ -103,37 +141,40 @@ MQM web/                    # Carpeta principal (desarrollo local)
 
 ### Añadir un producto completo:
 ```powershell
-# 1. Copiar imagen
+# 1. Verificar último ID y fecha
+findstr /C:"\"id\":" "data\products.json" | findstr /V "categories" | findstr /V "isFeatured"
+findstr /C:"\"createdAt\":" "data\products.json" | findstr "2025-09"
+
+# 2. Copiar imagen
 copy "images\[imagen].webp" "public\images\[imagen].webp"
 copy "images\[imagen].webp" "Mierdasqmolan\public\images\[imagen].webp"
 
-# 2. Editar JSON (añadir producto manualmente)
+# 3. Editar JSON (añadir producto con ID siguiente y fecha más reciente)
 
-# 3. Sincronizar
+# 4. Sincronizar
 copy "data\products.json" "Mierdasqmolan\data\products.json"
 
-# 4. Arreglar UTF-8
+# 5. Arreglar UTF-8
 cd Mierdasqmolan
 powershell -Command "Get-Content 'data\products.json' -Encoding Default | Out-File 'data\products_utf8.json' -Encoding UTF8"
 copy "data\products_utf8.json" "data\products.json"
 
-# 5. Subir a GitHub
+# 6. Subir a GitHub
 git add .
 git commit -m "Añadir producto: [Nombre]"
 git push
 ```
 
-## 🎯 Productos Actuales (56 total)
+## 🎯 Productos Actuales (125 total)
 
 ### Productos Recientes Añadidos:
-- **ID 50**: Cinta adhesiva WC (11,95€)
-- **ID 51**: Mi cuaderno de cagadas (8,02€)
-- **ID 52**: Cepillo y peine para calvos (4,13€)
-- **ID 53**: El tonto del pueblo (19,95€)
-- **ID 54**: Me la sopla (19,90€)
-- **ID 55**: Que me estas container (19,95€)
-- **ID 56**: Ambientador personalizado (9,00€)
-- **ID 49**: Papel Higiénico con la Cara de Trump (8,95€)
+- **ID 137**: Llavero NFC (16,10€) - **MÁS RECIENTE** - Aparece PRIMERO
+- **ID 136**: Tortuga posavasos (13,34€)
+- **ID 135**: [Producto anterior]
+- **ID 134**: [Producto anterior]
+- **ID 133**: [Producto anterior]
+- **ID 132**: [Producto anterior]
+- **ID 131**: [Producto anterior]
 
 ## 📰 Artículos de Blog Actuales (2 total)
 
@@ -229,8 +270,9 @@ git push
 
 ---
 **Última actualización**: 23 de enero de 2025
-**Total productos**: 56
+**Total productos**: 125
 **Total artículos de blog**: 2
-**Commit hash**: c0819dd
-**Último commit**: "Corregir import de blog.json y actualizar productos"
+**Último ID usado**: 137 (Llavero NFC)
+**Commit hash**: a3736d0
+**Último commit**: "Actualizar fecha del llavero NFC para que aparezca primero (más reciente que la tortuga)"
 
