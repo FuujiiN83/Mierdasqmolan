@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ProductCard } from '@/components/ProductCard';
 import { CategoryChips } from '@/components/CategoryMenu';
 import { AdSlot, useInlineAds } from '@/components/AdSlot';
@@ -100,32 +101,34 @@ export default function HomeContent() {
       {/* Hero section */}
       {!searchQuery && currentPage === 1 && (
         <section className="mb-8">
-          <div className="relative rounded-2xl overflow-hidden bg-gradient-to-r from-primary-600 to-primary-800 text-white">
-            <div className="absolute inset-0">
-              <Image
-                src="/hero.webp"
-                alt="MQM Web - Las mejores ofertas"
-                fill
-                className="object-cover opacity-30"
-                priority
-                onError={(e) => {
-                  // Si la imagen no existe, ocultar el contenedor
-                  (e.target as HTMLImageElement).style.display = 'none';
-                }}
-              />
-            </div>
-            <div className="relative px-6 sm:px-12 py-12 sm:py-16">
-              <div className="max-w-3xl">
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-potta-one text-white mb-4 text-balance">
-                  ¡Las mejores ofertas y productos que molan!
-                </h1>
-                <p className="text-lg sm:text-xl text-primary-100 font-preahvihear mb-6 text-pretty">
-                  Descubre todo lo que necesitas: desde tech hasta lifestyle. 
-                  Cada producto seleccionado a mano para que no pierdas el tiempo.
-                </p>
+          <Link href="/categoria/halloween" className="block">
+            <div className="relative rounded-2xl overflow-hidden cursor-pointer hover:scale-[1.02] transition-transform duration-300">
+              <div className="absolute inset-0">
+                <Image
+                  src="/portada halloween.webp"
+                  alt="Portada Halloween - Productos terroríficos"
+                  fill
+                  className="object-cover"
+                  priority
+                  onError={(e) => {
+                    // Si la imagen no existe, ocultar el contenedor
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
+                />
+              </div>
+              <div className="relative px-6 sm:px-12 py-12 sm:py-16">
+                <div className="max-w-3xl">
+                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-potta-one text-white mb-4 text-balance drop-shadow-lg">
+                    ¡Productos de Halloween que dan miedo!
+                  </h1>
+                  <p className="text-lg sm:text-xl text-white font-preahvihear mb-6 text-pretty drop-shadow-lg">
+                    Descubre los productos más terroríficos y divertidos para Halloween. 
+                    Haz clic para ver todos los productos de Halloween.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
 
           {/* Ad space after hero */}
           <div className="mt-8">
