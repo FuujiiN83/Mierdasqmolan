@@ -102,7 +102,7 @@ export default function HomeContent() {
       {!searchQuery && currentPage === 1 && (
         <section className="mb-8">
           <Link href="/categoria/halloween" className="block">
-            <div className="relative rounded-2xl overflow-hidden cursor-pointer hover:scale-[1.02] transition-transform duration-300 h-96 sm:h-[28rem] lg:h-[32rem]">
+            <div className="relative rounded-2xl overflow-hidden cursor-pointer hover:scale-[1.02] transition-transform duration-300 h-[28rem] sm:h-[32rem] lg:h-[36rem]">
               <div className="absolute inset-0">
                 <Image
                   src="/portada halloween.webp"
