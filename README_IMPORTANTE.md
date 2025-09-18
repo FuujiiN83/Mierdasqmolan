@@ -43,7 +43,23 @@ copy "images\[nombre-imagen].webp" "Mierdasqmolan\public\images\[nombre-imagen].
 }
 ```
 
-### 3.1. ⚠️ ORDEN DE PRODUCTOS - CRÍTICO
+### 3.1. ⚠️ TAGS - MÁXIMO 5 POR PRODUCTO
+
+**IMPORTANTE**: Cada producto debe tener **MÁXIMO 5 TAGS**. No más.
+
+#### Reglas para Tags:
+- **Máximo**: 5 tags por producto
+- **Formato**: Array de strings simples
+- **Ejemplo correcto**: `["tag1", "tag2", "tag3", "tag4", "tag5"]`
+- **Ejemplo incorrecto**: `["tag1", "tag2", "tag3", "tag4", "tag5", "tag6", "tag7"]` ❌
+
+#### Tags Recomendados:
+- Usar palabras clave principales del producto
+- Evitar repeticiones innecesarias
+- Mantener tags relevantes y descriptivos
+- **NO** incluir todas las palabras de la descripción
+
+### 3.2. ⚠️ ORDEN DE PRODUCTOS - CRÍTICO
 
 **IMPORTANTE**: Los productos se ordenan por fecha de creación (`createdAt`) de forma descendente (más recientes primero).
 
