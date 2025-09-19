@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ProductCard } from '@/components/ProductCard';
 import { CategoryChips } from '@/components/CategoryMenu';
 import { AdSlot, useInlineAds } from '@/components/AdSlot';
@@ -20,6 +20,7 @@ export default function HomeContent() {
   const [currentPage, setCurrentPage] = useState(1);
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
   const [totalProducts, setTotalProducts] = useState(0);
+  const [isHalloweenMode, setIsHalloweenMode] = useState(false);
 
   const searchQuery = searchParams.get('search') || '';
   const { pagination } = siteConfig;
@@ -77,6 +78,10 @@ export default function HomeContent() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const toggleHalloweenMode = () => {
+    setIsHalloweenMode(!isHalloweenMode);
+  };
+
   const totalPages = Math.ceil(totalProducts / productsPerPage);
   const inlineAdPositions = useInlineAds(products.length);
 
@@ -96,7 +101,29 @@ export default function HomeContent() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 bg-white dark:bg-gray-900 min-h-screen">
+    <div 
+      className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 min-h-screen ${
+        isHalloweenMode 
+          ? 'bg-fixed bg-cover bg-center bg-no-repeat' 
+          : 'bg-white dark:bg-gray-900'
+      }`}
+      style={isHalloweenMode ? { backgroundImage: 'url(/images/fondo hw.webp)' } : {}}
+    >
+      {/* Halloween Mode Button */}
+      <div className="fixed top-4 right-4 z-50">
+        <button
+          onClick={toggleHalloweenMode}
+          className={`flex items-center gap-2 px-4 py-2 rounded-full font-medium transition-all duration-300 ${
+            isHalloweenMode
+              ? 'bg-orange-600 text-white shadow-lg hover:bg-orange-700'
+              : 'bg-purple-600 text-white shadow-lg hover:bg-purple-700'
+          }`}
+          title={isHalloweenMode ? 'Desactivar modo Halloween' : 'Activar modo Halloween'}
+        >
+          <span className="text-lg">🎃</span>
+          <span className="hidden sm:inline">I love Halloween</span>
+        </button>
+      </div>
 
       {/* Hero section */}
       {!searchQuery && currentPage === 1 && (
@@ -202,9 +229,9 @@ export default function HomeContent() {
           </div>
         )}
 
-        {/* Products list - LAYOUT DE DOS COLUMNAS */}
+        {/* Products list - LAYOUT DE DOS COLUMNAS FORZADO - VPS FIX */}
         {!loading && products.length > 0 && (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6" data-layout="two-columns" style={{display: 'grid !important', gridTemplateColumns: 'repeat(2, 1fr) !important', gap: '1.5rem !important'}}>
             {products.map((product, index) => (
               <div key={product.id}>
                 <ProductCard
