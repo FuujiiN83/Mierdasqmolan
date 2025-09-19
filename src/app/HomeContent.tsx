@@ -202,47 +202,37 @@ export default function HomeContent() {
           </div>
         )}
 
-        {/* Products list */}
+        {/* Products list - LAYOUT DE DOS COLUMNAS */}
         {!loading && products.length > 0 && (
-          <div className="flex lg:gap-8">
-            {/* Main products column */}
-            <div className="flex-1">
-              <div className="space-y-6">
-                {products.map((product, index) => (
-                  <div key={product.id}>
-                    <ProductCard
-                      product={product}
-                      isExpanded={expandedCard === product.id}
-                      onToggleExpand={() => handleToggleExpand(product.id)}
-                    />
-                    
-                    {/* Inline ads */}
-                    {inlineAdPositions.includes(index + 1) && (
-                      <div className="mt-6">
-                        <AdSlot position="inline" size="medium" className="text-center" />
-                      </div>
-                    )}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {products.map((product, index) => (
+              <div key={product.id}>
+                <ProductCard
+                  product={product}
+                  isExpanded={expandedCard === product.id}
+                  onToggleExpand={() => handleToggleExpand(product.id)}
+                />
+                
+                {/* Inline ads */}
+                {inlineAdPositions.includes(index + 1) && (
+                  <div className="mt-6">
+                    <AdSlot position="inline" size="medium" className="text-center" />
                   </div>
-                ))}
+                )}
               </div>
-
-              {/* Pagination */}
-              <Pagination
-                currentPage={currentPage}
-                totalPages={totalPages}
-                onPageChange={handlePageChange}
-                loading={loading}
-                className="mt-12"
-              />
-            </div>
-
-            {/* Sidebar with sticky ad */}
-            <aside className="hidden lg:block w-80 flex-shrink-0">
-              <div className="sticky top-6">
-                <AdSlot position="sidebar-sticky" size="large" />
-              </div>
-            </aside>
+            ))}
           </div>
+        )}
+
+        {/* Pagination */}
+        {!loading && products.length > 0 && (
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+            loading={loading}
+            className="mt-12"
+          />
         )}
 
         {/* Empty state */}
