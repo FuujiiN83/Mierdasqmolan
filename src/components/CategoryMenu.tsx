@@ -99,7 +99,7 @@ export function CategoryMenu({
                 block px-3 py-2 rounded-md text-sm font-medium font-potta-one transition-colors
                 ${item.isActive
                   ? 'bg-primary-100 text-primary-700 border-r-2 border-primary-500'
-                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                  : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800'
                 }
               `}
               title={'description' in item ? item.description : undefined}
@@ -113,7 +113,7 @@ export function CategoryMenu({
                   <Link
                     key={`/categoria/${subSlug}`}
                     href={`/categoria/${subSlug}`}
-                    className="block px-3 py-1 text-xs text-gray-500 hover:text-gray-700 hover:bg-gray-50 rounded transition-colors"
+                    className="block px-3 py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 rounded transition-colors"
                   >
                     {subCategory.name}
                   </Link>
@@ -138,7 +138,7 @@ export function CategoryMenu({
                 px-3 py-2 rounded-md text-sm font-medium font-potta-one transition-colors whitespace-nowrap
                 ${item.isActive
                   ? 'bg-primary-100 text-primary-700'
-                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                  : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800'
                 }
               `}
               title={'description' in item ? item.description : undefined}
@@ -185,7 +185,7 @@ export function CategoryMenu({
           <div className="relative">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="px-3 py-2 rounded-md text-sm font-medium font-potta-one text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors flex items-center gap-1"
+              className="px-3 py-2 rounded-md text-sm font-medium font-potta-one text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors flex items-center gap-1"
               aria-expanded={isOpen}
               aria-haspopup="true"
             >
@@ -218,7 +218,7 @@ export function CategoryMenu({
                           block px-4 py-2 text-sm transition-colors
                           ${isActiveCategory(category.slug)
                             ? 'bg-primary-50 text-primary-700'
-                            : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
+                            : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white'
                           }
                         `}
                         role="menuitem"
@@ -239,7 +239,7 @@ export function CategoryMenu({
       <div className="lg:hidden">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-full flex items-center justify-between px-4 py-2 text-sm font-medium font-potta-one text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500"
+          className="w-full flex items-center justify-between px-4 py-2 text-sm font-medium font-potta-one text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500"
           aria-expanded={isOpen}
         >
           <span>Categorías</span>
@@ -265,7 +265,7 @@ export function CategoryMenu({
                       block px-4 py-2 text-sm transition-colors
                       ${item.isActive
                         ? 'bg-primary-50 text-primary-700 font-medium font-potta-one'
-                        : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
+                        : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white'
                       }
                     `}
                     role="menuitem"
@@ -281,7 +281,7 @@ export function CategoryMenu({
                           key={`/categoria/${subSlug}`}
                           href={`/categoria/${subSlug}`}
                           onClick={() => setIsOpen(false)}
-                          className="block px-4 py-1 text-xs text-gray-500 hover:text-gray-700 hover:bg-gray-50 rounded transition-colors"
+                          className="block px-4 py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 rounded transition-colors"
                         >
                           <span className="mr-2">{subCategory.icon}</span>
                           {subCategory.name}
@@ -322,7 +322,7 @@ export function CategoryChips({ className = '' }: { className?: string }) {
         <Link
           key={category.slug}
           href={`/categoria/${category.slug}`}
-          className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium font-potta-one bg-white border border-gray-200 text-gray-700 hover:bg-primary-50 hover:text-primary-700 hover:border-primary-200 transition-colors"
+          className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium font-potta-one bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900 hover:text-primary-700 dark:hover:text-primary-300 hover:border-primary-200 dark:hover:border-primary-700 transition-colors"
         >
           {category.name}
           <span className="ml-1.5 text-xs text-gray-500">

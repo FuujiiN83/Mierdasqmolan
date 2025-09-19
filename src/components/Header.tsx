@@ -108,7 +108,7 @@ export function SimpleHeader({ title, showBack = false }: { title?: string; show
               />
             </div>
             <div>
-              <h1 className="text-lg font-bold font-potta-one text-gray-900">
+              <h1 className="text-lg font-bold font-potta-one text-gray-900 dark:text-white">
                 {title || 'MQM Web'}
               </h1>
             </div>
