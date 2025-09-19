@@ -104,26 +104,17 @@ export default function HomeContent() {
     <div 
       className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 min-h-screen ${
         isHalloweenMode 
-          ? 'bg-fixed bg-cover bg-center bg-no-repeat' 
+          ? 'relative' 
           : 'bg-white dark:bg-gray-900'
       }`}
-      style={isHalloweenMode ? { backgroundImage: 'url(/images/fondo hw.webp)' } : {}}
     >
-      {/* Halloween Mode Button */}
-      <div className="fixed top-4 right-4 z-50">
-        <button
-          onClick={toggleHalloweenMode}
-          className={`flex items-center gap-2 px-4 py-2 rounded-full font-medium transition-all duration-300 ${
-            isHalloweenMode
-              ? 'bg-orange-600 text-white shadow-lg hover:bg-orange-700'
-              : 'bg-purple-600 text-white shadow-lg hover:bg-purple-700'
-          }`}
-          title={isHalloweenMode ? 'Desactivar modo Halloween' : 'Activar modo Halloween'}
-        >
-          <span className="text-lg">🎃</span>
-          <span className="hidden sm:inline">I love Halloween</span>
-        </button>
-      </div>
+      {/* Halloween Background */}
+      {isHalloweenMode && (
+        <div 
+          className="fixed inset-0 bg-cover bg-center bg-no-repeat bg-fixed -z-10"
+          style={{ backgroundImage: 'url(/images/fondo hw.webp)' }}
+        />
+      )}
 
       {/* Hero section */}
       {!searchQuery && currentPage === 1 && (
@@ -159,6 +150,22 @@ export default function HomeContent() {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-potta-one text-header-purple dark:text-purple-400 mb-4">
             Productos originales y divertidos para regalar
           </h1>
+          
+          {/* Halloween Mode Button */}
+          <div className="flex justify-center mb-6">
+            <button
+              onClick={toggleHalloweenMode}
+              className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 shadow-lg hover:scale-105 ${
+                isHalloweenMode
+                  ? 'bg-orange-600 text-white hover:bg-orange-700'
+                  : 'bg-purple-600 text-white hover:bg-purple-700'
+              }`}
+              title={isHalloweenMode ? 'Desactivar modo Halloween' : 'Activar modo Halloween'}
+            >
+              <span className="text-xl">🎃</span>
+              <span>I love Halloween</span>
+            </button>
+          </div>
         </section>
       )}
 
