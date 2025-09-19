@@ -149,8 +149,8 @@ export default function HomeContent() {
               </svg>
             </a>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {featuredProducts.slice(0, 2).map((product) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {featuredProducts.slice(0, 6).map((product) => (
               <ProductCard
                 key={product.id}
                 product={product}
