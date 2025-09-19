@@ -121,7 +121,7 @@ export default function HomeContent() {
             className="fixed inset-0 bg-cover bg-center bg-no-repeat bg-fixed -z-10"
             style={{ backgroundImage: 'url("/images/fondo%20hw.webp")' }}
           />
-          <div className="fixed inset-0 bg-black bg-opacity-50 -z-10" />
+          <div className="fixed inset-0 bg-black bg-opacity-65 -z-10" />
         </>
       )}
 
