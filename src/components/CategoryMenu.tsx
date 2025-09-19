@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { categoryConfig, CategorySlug } from '@/config/site';
+import { categoryConfig, CategorySlug, CategoryConfigWithSubcategories } from '@/config/site';
 import { getAvailableCategories } from '@/lib/data';
 
 interface CategoryMenuProps {
@@ -84,7 +84,7 @@ export function CategoryMenu({
   ];
 
   const getSubcategories = (categorySlug: string) => {
-    const category = categoryConfig[categorySlug as keyof typeof categoryConfig];
+    const category = categoryConfig[categorySlug as keyof typeof categoryConfig] as CategoryConfigWithSubcategories;
     return category?.subcategories || {};
   };
 

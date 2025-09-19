@@ -194,3 +194,20 @@ export const categoryConfig = {
 } as const;
 
 export type CategorySlug = keyof typeof categoryConfig;
+
+// Tipo para subcategorías
+export type SubcategoryConfig = {
+  name: string;
+  description: string;
+  color: string;
+  icon: string;
+};
+
+// Tipo para categorías con subcategorías opcionales
+export type CategoryConfigWithSubcategories = {
+  name: string;
+  description: string;
+  color: string;
+  icon: string;
+  subcategories?: Record<string, SubcategoryConfig>;
+};
