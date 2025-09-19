@@ -1,0 +1,8 @@
+﻿/* CSS crÃ­tico inline para evitar render blocking */
+body { margin: 0; font-family: 'Preahvihear', sans-serif; background: #f9fafb; }
+.min-h-screen { min-height: 100vh; }
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-1 { flex: 1; }
+.antialiased { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.scroll-smooth { scroll-behavior: smooth; }

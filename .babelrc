@@ -1,0 +1,30 @@
+{
+  "presets": [
+    [
+      "next/babel",
+      {
+        "preset-env": {
+          "targets": {
+            "browsers": [
+              "> 1%",
+              "last 2 versions",
+              "not dead"
+            ]
+          },
+          "modules": false
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "babel-plugin-transform-imports",
+      {
+        "lucide-react": {
+          "transform": "lucide-react/dist/esm/icons/${member}",
+          "preventFullImport": true
+        }
+      }
+    ]
+  ]
+}
