@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
 import Link from 'next/link';
+import { OptimizedImage } from '@/components/OptimizedImage';
 import { getProductBySlug, getRelatedProducts, generateAffiliateUrl } from '@/lib/data';
 import { formatPrice, formatDate, markdownToHtml, getDomainFromUrl } from '@/lib/utils';
 import { categoryConfig } from '@/config/site';
@@ -96,16 +96,13 @@ export default function ProductPage({ params }: ProductPageProps) {
           {/* Image gallery */}
           <div className="flex flex-col-reverse">
             <div className="w-full aspect-square sm:aspect-[4/3] lg:aspect-square">
-              <Image
+              <OptimizedImage
                 src={product.image}
                 alt={product.title}
                 width={600}
                 height={600}
                 className="w-full h-full object-center object-cover rounded-lg"
                 priority
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = '/images/placeholder.svg';
-                }}
               />
             </div>
           </div>

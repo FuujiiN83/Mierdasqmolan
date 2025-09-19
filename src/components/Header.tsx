@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
+import { OptimizedImage } from './OptimizedImage';
 import { SearchBar, CompactSearchBar } from './SearchBar';
 import { CategoryMenu } from './CategoryMenu';
 import { SocialIcons } from './SocialIcons';
@@ -18,12 +18,13 @@ export function Header() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
               <div className="w-8 h-8 flex items-center justify-center">
-                <Image
+                <OptimizedImage
                   src="/logo.png"
                   alt="MQM Web Logo"
                   width={32}
                   height={32}
                   className="w-8 h-8 object-contain"
+                  priority
                 />
               </div>
               <div className="hidden sm:block">
