@@ -127,30 +127,6 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Categories showcase */}
-        <div className="mt-12 pt-8 border-t border-gray-200">
-          <h4 className="font-semibold text-gray-900 mb-4 text-center">Categorías populares</h4>
-          <div className="flex flex-wrap justify-center gap-2">
-            {[
-              { slug: 'viral', name: 'Viral' },
-              { slug: 'random', name: 'Random' },
-              { slug: 'facheritos', name: 'Facheritos' },
-              { slug: 'viciados', name: 'Viciados' },
-              { slug: 'otakus', name: 'Otakus' },
-              { slug: 'gym-bros', name: 'Gym Bros' },
-              { slug: 'anti-fitness', name: 'Anti Fitness' },
-              { slug: 'rancios', name: 'Rancios' },
-            ].map((category) => (
-              <Link
-                key={category.slug}
-                href={`/categoria/${category.slug}`}
-                className="inline-block bg-white border border-gray-200 hover:border-primary-200 text-gray-600 hover:text-primary-600 text-sm px-3 py-1 rounded-full transition-colors"
-              >
-                {category.name}
-              </Link>
-            ))}
-          </div>
-        </div>
 
         {/* Bottom bar */}
         <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700 flex justify-center items-center">

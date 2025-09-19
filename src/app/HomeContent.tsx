@@ -140,7 +140,7 @@ export default function HomeContent() {
       {featuredProducts.length > 0 && (
         <section className="mb-12">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold font-potta-one text-header-purple dark:text-purple-400">⭐ Productos destacados</h2>
+            <h2 className="text-2xl font-bold font-potta-one text-header-purple dark:text-purple-400">⭐ Top mierdas que molan</h2>
             <a
               href="/destacados"
               className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-medium text-sm flex items-center gap-1"
