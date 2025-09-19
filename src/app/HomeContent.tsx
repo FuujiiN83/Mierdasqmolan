@@ -106,16 +106,19 @@ export default function HomeContent() {
     <div 
       className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 min-h-screen ${
         isHalloweenMode 
-          ? 'relative' 
+          ? 'relative z-10' 
           : 'bg-white dark:bg-gray-900'
       }`}
     >
       {/* Halloween Background */}
       {isHalloweenMode && (
-        <div 
-          className="fixed inset-0 bg-cover bg-center bg-no-repeat bg-fixed -z-10"
-          style={{ backgroundImage: 'url(/images/fondo hw.webp)' }}
-        />
+        <>
+          <div 
+            className="fixed inset-0 bg-cover bg-center bg-no-repeat bg-fixed z-0"
+            style={{ backgroundImage: 'url(/images/fondo hw.webp)' }}
+          />
+          <div className="fixed inset-0 bg-black bg-opacity-30 z-0" />
+        </>
       )}
 
       {/* Hero section */}
