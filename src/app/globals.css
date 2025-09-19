@@ -34,27 +34,27 @@
 @layer components {
   /* Estilos para el contenido markdown */
   .prose {
-    @apply text-gray-700 leading-relaxed;
+    @apply text-gray-700 dark:text-gray-300 leading-relaxed;
   }
   
   .prose h1 {
-    @apply text-2xl font-bold text-gray-900 mt-8 mb-4 leading-tight;
+    @apply text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4 leading-tight;
   }
   
   .prose h2 {
-    @apply text-xl font-bold text-gray-900 mt-6 mb-3 leading-tight;
+    @apply text-xl font-bold text-gray-900 dark:text-white mt-6 mb-3 leading-tight;
   }
   
   .prose h3 {
-    @apply text-lg font-semibold text-gray-900 mt-4 mb-2 leading-tight;
+    @apply text-lg font-semibold text-gray-900 dark:text-white mt-4 mb-2 leading-tight;
   }
   
   .prose p {
-    @apply mb-4;
+    @apply mb-4 text-gray-700 dark:text-gray-300;
   }
   
   .prose strong {
-    @apply font-semibold text-gray-900;
+    @apply font-semibold text-gray-900 dark:text-white;
   }
   
   .prose em {
@@ -70,11 +70,11 @@
   }
   
   .prose li {
-    @apply text-gray-700;
+    @apply text-gray-700 dark:text-gray-300;
   }
   
   .prose a {
-    @apply text-primary-600 hover:text-primary-700 underline;
+    @apply text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 underline;
   }
   
   /* Utilidades para truncar texto */

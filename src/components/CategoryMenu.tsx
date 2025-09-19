@@ -160,7 +160,7 @@ export function CategoryMenu({
             
             {/* Subcategorías desplegables */}
             {item.hasSubcategories && hoveredCategory === item.href && (
-              <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg border border-gray-200 z-20">
+              <div className="absolute top-full left-0 mt-1 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg border border-gray-200 dark:border-gray-600 z-20">
                 <div className="py-1" role="menu">
                   {Object.entries(getSubcategories('hogar')).map(([subSlug, subCategory]) => (
                     <Link
@@ -207,7 +207,7 @@ export function CategoryMenu({
                   onClick={() => setIsOpen(false)}
                   aria-hidden="true"
                 />
-                <div className="absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg border border-gray-200 z-20">
+                <div className="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-md shadow-lg border border-gray-200 dark:border-gray-600 z-20">
                   <div className="py-1" role="menu">
                     {otherCategoriesWithoutHogar.slice(5).map((category) => (
                       <Link
