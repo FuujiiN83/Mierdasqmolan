@@ -51,6 +51,10 @@ export function CategoryMenu({
     count: 0
   };
 
+  // Separar categoría "hogar" para asegurar que aparezca en las primeras 8
+  const hogarCategory = otherCategories.find(cat => cat.slug === 'hogar');
+  const otherCategoriesWithoutHogar = otherCategories.filter(cat => cat.slug !== 'hogar');
+  
   const menuItems = [
     { href: '/', label: 'Inicio', isActive: isHomePage },
     { href: '/destacados', label: 'Destacados', isActive: isFeaturedPage },
@@ -61,13 +65,21 @@ export function CategoryMenu({
       isActive: isActiveCategory(blogCategoryForMenu.slug),
       description: blogCategoryForMenu.description
     },
-    // Resto de categorías
-    ...otherCategories.map(category => ({
+    // Hogar siempre visible si existe
+    ...(hogarCategory ? [{
+      href: `/categoria/${hogarCategory.slug}`,
+      label: `${hogarCategory.name}${showCounts ? ` (${hogarCategory.count})` : ''}`,
+      isActive: isActiveCategory(hogarCategory.slug),
+      description: hogarCategory.description,
+      hasSubcategories: true
+    }] : []),
+    // Resto de categorías (máximo 5 para que Hogar quepa en las primeras 8)
+    ...otherCategoriesWithoutHogar.slice(0, 5).map(category => ({
       href: `/categoria/${category.slug}`,
       label: `${category.name}${showCounts ? ` (${category.count})` : ''}`,
       isActive: isActiveCategory(category.slug),
       description: category.description,
-      hasSubcategories: category.slug === 'hogar'
+      hasSubcategories: false
     }))
   ];
 
@@ -168,8 +180,8 @@ export function CategoryMenu({
           </div>
         ))}
         
-        {/* Menú desplegable para más categorías (excluyendo blog) */}
-        {otherCategories.length > 6 && (
+        {/* Menú desplegable para más categorías (excluyendo blog y hogar) */}
+        {otherCategoriesWithoutHogar.length > 5 && (
           <div className="relative">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -197,7 +209,7 @@ export function CategoryMenu({
                 />
                 <div className="absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg border border-gray-200 z-20">
                   <div className="py-1" role="menu">
-                    {otherCategories.slice(6).map((category) => (
+                    {otherCategoriesWithoutHogar.slice(5).map((category) => (
                       <Link
                         key={`/categoria/${category.slug}`}
                         href={`/categoria/${category.slug}`}
