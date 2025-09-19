@@ -99,12 +99,6 @@ export const categoryConfig = {
     color: "#059669",
     icon: "⚽"
   },
-  "juegos-de-mesa": {
-    name: "Juegos de Mesa",
-    description: "Diversión analógica para todos",
-    color: "#7C3AED",
-    icon: "🎲"
-  },
   frikis: {
     name: "Frikis",
     description: "Para los amantes de la cultura geek",
@@ -129,18 +123,6 @@ export const categoryConfig = {
     color: "#6366F1",
     icon: "🚽"
   },
-  libros: {
-    name: "Libros",
-    description: "Para los amantes de la lectura",
-    color: "#DC2626",
-    icon: "📚"
-  },
-  tazas: {
-    name: "Tazas",
-    description: "Para los amantes del café y bebidas calientes",
-    color: "#8B4513",
-    icon: "☕"
-  },
   blog: {
     name: "Blog",
     description: "Artículos y contenido especial",
@@ -159,17 +141,43 @@ export const categoryConfig = {
     color: "#F59E0B",
     icon: "😄"
   },
-  ropa: {
-    name: "Ropa",
-    description: "Camisetas, calcetines y ropa divertida",
-    color: "#EC4899",
-    icon: "👕"
-  },
   hogar: {
     name: "Hogar",
     description: "Decoración y accesorios para el hogar",
     color: "#10B981",
-    icon: "🏠"
+    icon: "🏠",
+    subcategories: {
+      tazas: {
+        name: "Tazas",
+        description: "Para los amantes del café y bebidas calientes",
+        color: "#8B4513",
+        icon: "☕"
+      },
+      ropa: {
+        name: "Ropa",
+        description: "Camisetas, calcetines y ropa divertida",
+        color: "#EC4899",
+        icon: "👕"
+      },
+      tecnologico: {
+        name: "Tecnológico",
+        description: "Gadgets y productos tecnológicos",
+        color: "#3B82F6",
+        icon: "📱"
+      },
+      "juegos-de-mesa": {
+        name: "Juegos de Mesa",
+        description: "Diversión analógica para todos",
+        color: "#7C3AED",
+        icon: "🎲"
+      },
+      libros: {
+        name: "Libros",
+        description: "Para los amantes de la lectura",
+        color: "#DC2626",
+        icon: "📚"
+      }
+    }
   },
   bromas: {
     name: "Bromas",
@@ -183,12 +191,6 @@ export const categoryConfig = {
     color: "#8B5CF6",
     icon: "🎵"
   },
-  tecnologico: {
-    name: "Tecnológico",
-    description: "Gadgets y productos tecnológicos",
-    color: "#3B82F6",
-    icon: "📱"
-  }
 } as const;
 
 export type CategorySlug = keyof typeof categoryConfig;

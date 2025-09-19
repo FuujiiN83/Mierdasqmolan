@@ -19,6 +19,7 @@ export function CategoryMenu({
 }: CategoryMenuProps) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
   const [categories, setCategories] = useState<Array<{
     slug: CategorySlug;
     name: string;
@@ -65,28 +66,49 @@ export function CategoryMenu({
       href: `/categoria/${category.slug}`,
       label: `${category.name}${showCounts ? ` (${category.count})` : ''}`,
       isActive: isActiveCategory(category.slug),
-      description: category.description
+      description: category.description,
+      hasSubcategories: category.slug === 'hogar'
     }))
   ];
+
+  const getSubcategories = (categorySlug: string) => {
+    const category = categoryConfig[categorySlug as keyof typeof categoryConfig];
+    return category?.subcategories || {};
+  };
 
   if (variant === 'vertical') {
     return (
       <nav className={`space-y-1 ${className}`} aria-label="Categorías">
         {menuItems.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className={`
-              block px-3 py-2 rounded-md text-sm font-medium font-potta-one transition-colors
-              ${item.isActive
-                ? 'bg-primary-100 text-primary-700 border-r-2 border-primary-500'
-                : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
-              }
-            `}
-            title={'description' in item ? item.description : undefined}
-          >
-            {item.label}
-          </Link>
+          <div key={item.href}>
+            <Link
+              href={item.href}
+              className={`
+                block px-3 py-2 rounded-md text-sm font-medium font-potta-one transition-colors
+                ${item.isActive
+                  ? 'bg-primary-100 text-primary-700 border-r-2 border-primary-500'
+                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                }
+              `}
+              title={'description' in item ? item.description : undefined}
+            >
+              {item.label}
+            </Link>
+            {/* Subcategorías para versión vertical */}
+            {item.hasSubcategories && (
+              <div className="ml-4 space-y-1">
+                {Object.entries(getSubcategories('hogar')).map(([subSlug, subCategory]) => (
+                  <Link
+                    key={`/categoria/${subSlug}`}
+                    href={`/categoria/${subSlug}`}
+                    className="block px-3 py-1 text-xs text-gray-500 hover:text-gray-700 hover:bg-gray-50 rounded transition-colors"
+                  >
+                    {subCategory.name}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
         ))}
       </nav>
     );
@@ -97,20 +119,53 @@ export function CategoryMenu({
       {/* Versión desktop horizontal */}
       <nav className={`hidden lg:flex items-center space-x-1 ${className}`} aria-label="Categorías">
         {menuItems.slice(0, 8).map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className={`
-              px-3 py-2 rounded-md text-sm font-medium font-potta-one transition-colors whitespace-nowrap
-              ${item.isActive
-                ? 'bg-primary-100 text-primary-700'
-                : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
-              }
-            `}
-            title={'description' in item ? item.description : undefined}
-          >
-            {item.label}
-          </Link>
+          <div key={item.href} className="relative">
+            <Link
+              href={item.href}
+              className={`
+                px-3 py-2 rounded-md text-sm font-medium font-potta-one transition-colors whitespace-nowrap
+                ${item.isActive
+                  ? 'bg-primary-100 text-primary-700'
+                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                }
+              `}
+              title={'description' in item ? item.description : undefined}
+              onMouseEnter={() => item.hasSubcategories && setHoveredCategory(item.href)}
+              onMouseLeave={() => setHoveredCategory(null)}
+            >
+              {item.label}
+              {item.hasSubcategories && (
+                <svg 
+                  className="inline w-3 h-3 ml-1"
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              )}
+            </Link>
+            
+            {/* Subcategorías desplegables */}
+            {item.hasSubcategories && hoveredCategory === item.href && (
+              <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg border border-gray-200 z-20">
+                <div className="py-1" role="menu">
+                  {Object.entries(getSubcategories('hogar')).map(([subSlug, subCategory]) => (
+                    <Link
+                      key={`/categoria/${subSlug}`}
+                      href={`/categoria/${subSlug}`}
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors"
+                      role="menuitem"
+                      title={subCategory.description}
+                    >
+                      <span className="mr-2">{subCategory.icon}</span>
+                      {subCategory.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         ))}
         
         {/* Menú desplegable para más categorías (excluyendo blog) */}
@@ -190,22 +245,39 @@ export function CategoryMenu({
           <div className="mt-2 bg-white border border-gray-200 rounded-md shadow-lg">
             <nav className="py-1" role="menu">
               {menuItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className={`
-                    block px-4 py-2 text-sm transition-colors
-                    ${item.isActive
-                      ? 'bg-primary-50 text-primary-700 font-medium font-potta-one'
-                      : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
-                    }
-                  `}
-                  role="menuitem"
-                  title={'description' in item ? item.description : undefined}
-                >
-                  {item.label}
-                </Link>
+                <div key={item.href}>
+                  <Link
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`
+                      block px-4 py-2 text-sm transition-colors
+                      ${item.isActive
+                        ? 'bg-primary-50 text-primary-700 font-medium font-potta-one'
+                        : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
+                      }
+                    `}
+                    role="menuitem"
+                    title={'description' in item ? item.description : undefined}
+                  >
+                    {item.label}
+                  </Link>
+                  {/* Subcategorías para versión mobile */}
+                  {item.hasSubcategories && (
+                    <div className="ml-4 space-y-1">
+                      {Object.entries(getSubcategories('hogar')).map(([subSlug, subCategory]) => (
+                        <Link
+                          key={`/categoria/${subSlug}`}
+                          href={`/categoria/${subSlug}`}
+                          onClick={() => setIsOpen(false)}
+                          className="block px-4 py-1 text-xs text-gray-500 hover:text-gray-700 hover:bg-gray-50 rounded transition-colors"
+                        >
+                          <span className="mr-2">{subCategory.icon}</span>
+                          {subCategory.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
             </nav>
           </div>
