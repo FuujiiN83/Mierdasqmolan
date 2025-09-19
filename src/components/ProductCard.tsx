@@ -77,7 +77,7 @@ export function ProductCard({
             />
           ) : (
             <div className="w-full h-full bg-gray-100 flex items-center justify-center">
-              <div className="text-gray-400 text-center p-4">
+              <div className="text-gray-400 dark:text-gray-500 text-center p-4">
                 <svg className="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
@@ -133,7 +133,7 @@ export function ProductCard({
               </div>
 
               {/* Descripción corta */}
-              <p className="text-gray-600 text-sm sm:text-base font-preahvihear mb-3 line-clamp-2">
+              <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base font-preahvihear mb-3 line-clamp-2">
                 {product.shortDescription}
               </p>
             </div>
@@ -148,7 +148,7 @@ export function ProductCard({
                     <Link
                       key={categorySlug}
                       href={`/categoria/${categorySlug}`}
-                      className="inline-block bg-gray-100 hover:bg-primary-100 text-gray-700 hover:text-primary-700 text-xs px-2 py-1 rounded-full transition-colors"
+                      className="inline-block bg-gray-100 dark:bg-gray-700 hover:bg-primary-100 dark:hover:bg-primary-900 text-gray-700 dark:text-gray-300 hover:text-primary-700 dark:hover:text-primary-300 text-xs px-2 py-1 rounded-full transition-colors"
                       onClick={(e) => e.stopPropagation()}
                     >
                       {category?.name || categorySlug}
@@ -156,14 +156,14 @@ export function ProductCard({
                   );
                 })}
                 {product.categories.length > 3 && (
-                  <span className="inline-block bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded-full">
+                  <span className="inline-block bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 text-xs px-2 py-1 rounded-full">
                     +{product.categories.length - 3}
                   </span>
                 )}
               </div>
 
               {/* Metadatos */}
-              <div className="flex justify-between items-center text-xs text-gray-500">
+              <div className="flex justify-between items-center text-xs text-gray-500 dark:text-gray-400">
                 <div className="flex items-center gap-3">
                   <time dateTime={product.createdAt} className="font-preahvihear">
                     {formatRelativeDate(product.createdAt)}
@@ -204,11 +204,11 @@ export function ProductCard({
 
       {/* Contenido expandido */}
       {isExpanded && (
-        <div className="border-t border-gray-200 bg-gray-50 animate-slide-down">
+        <div className="border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 animate-slide-down">
           <div className="p-4 sm:p-6">
             {/* Descripción completa */}
             <div 
-              className="prose prose-sm max-w-none mb-6 text-gray-700"
+              className="prose prose-sm max-w-none mb-6 text-gray-700 dark:text-gray-300"
               dangerouslySetInnerHTML={{ 
                 __html: markdownToHtml(product.description) 
               }}
@@ -217,12 +217,12 @@ export function ProductCard({
             {/* Tags */}
             {product.tags && product.tags.length > 0 && (
               <div className="mb-6">
-                <h3 className="text-sm font-semibold text-gray-900 mb-2">Etiquetas:</h3>
+                <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">Etiquetas:</h3>
                 <div className="flex flex-wrap gap-2">
                   {product.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="bg-white border border-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full"
+                      className="bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-gray-600 dark:text-gray-300 text-xs px-2 py-1 rounded-full"
                     >
                       #{tag}
                     </span>
@@ -253,7 +253,7 @@ export function ProductCard({
             </div>
 
             {/* Disclaimer */}
-            <p className="text-xs text-gray-500 mt-4 text-center">
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 text-center">
               Este es un enlace de afiliación. Podemos recibir una comisión por las compras realizadas.
             </p>
           </div>
