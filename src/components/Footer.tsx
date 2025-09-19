@@ -153,38 +153,10 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-8 pt-6 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm">
+        <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700 flex justify-center items-center">
+          <p className="text-gray-500 dark:text-gray-400 text-sm">
             © {currentYear} MQM Web. Hecho con ❤️ para los que saben lo que mola.
           </p>
-          <div className="mt-4 sm:mt-0 flex items-center space-x-4">
-            <a 
-              href="/sitemap.xml" 
-              className="text-gray-400 hover:text-gray-600 text-sm transition-colors"
-              target="_blank"
-              rel="noopener"
-            >
-              Sitemap
-            </a>
-            <a 
-              href="/robots.txt" 
-              className="text-gray-400 hover:text-gray-600 text-sm transition-colors"
-              target="_blank"
-              rel="noopener"
-            >
-              Robots
-            </a>
-            {siteConfig.ads.enabled && (
-              <a 
-                href="/ads.txt" 
-                className="text-gray-400 hover:text-gray-600 text-sm transition-colors"
-                target="_blank"
-                rel="noopener"
-              >
-                Ads.txt
-              </a>
-            )}
-          </div>
         </div>
       </div>
     </footer>

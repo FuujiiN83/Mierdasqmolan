@@ -135,13 +135,6 @@ export default function HomeContent() {
         </section>
       )}
 
-      {/* Categories chips */}
-      {!searchQuery && currentPage === 1 && (
-        <section className="mb-8">
-          <h2 className="text-lg font-semibold font-potta-one text-header-purple dark:text-purple-400 mb-4">Categorías populares</h2>
-          <CategoryChips />
-        </section>
-      )}
 
       {/* Featured products */}
       {featuredProducts.length > 0 && (
