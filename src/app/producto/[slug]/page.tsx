@@ -2,7 +2,6 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { NoSSR } from '@/components/NoSSR';
 import { getProductBySlug, getRelatedProducts, generateAffiliateUrl } from '@/lib/data';
 import { formatPrice, formatDate, markdownToHtml, getDomainFromUrl } from '@/lib/utils';
 import { categoryConfig } from '@/config/site';
@@ -63,20 +62,28 @@ export default function ProductPage({ params }: ProductPageProps) {
   const affiliateUrl = generateAffiliateUrl(product);
   const merchantDomain = getDomainFromUrl(product.affiliateUrl);
 
+  // Structured Data para SEO
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: product.title,
     description: product.shortDescription,
     image: product.image,
-    brand: product.merchant || 'MQM Web',
-    offers: product.price ? {
+    brand: {
+      '@type': 'Brand',
+      name: product.merchant || 'MQM Web',
+    },
+    offers: {
       '@type': 'Offer',
       price: product.price,
-      priceCurrency: product.currency || 'EUR',
+      priceCurrency: product.currency,
       availability: 'https://schema.org/InStock',
       url: affiliateUrl,
-    } : undefined,
+      seller: {
+        '@type': 'Organization',
+        name: product.merchant || merchantDomain,
+      },
+    },
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.5',
@@ -85,22 +92,14 @@ export default function ProductPage({ params }: ProductPageProps) {
   };
 
   return (
-    <NoSSR fallback={
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Cargando producto...</p>
-        </div>
-      </div>
-    }>
-      <>
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
+    <>
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="lg:grid lg:grid-cols-2 lg:gap-x-8 lg:items-start">
           {/* Image gallery */}
           <div className="flex flex-col-reverse">
@@ -119,220 +118,151 @@ export default function ProductPage({ params }: ProductPageProps) {
           {/* Product info */}
           <div className="mt-10 px-4 sm:px-0 sm:mt-16 lg:mt-0">
             {/* Breadcrumb */}
-            <nav className="flex mb-4" aria-label="Breadcrumb">
-              <ol className="flex items-center space-x-2 text-sm">
-                <li>
-                  <Link href="/" className="text-gray-500 hover:text-gray-700">
+            <nav className="flex mb-8" aria-label="Breadcrumb">
+              <ol className="inline-flex items-center space-x-1 md:space-x-3">
+                <li className="inline-flex items-center">
+                  <Link href="/" className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-primary-600">
+                    <svg className="w-3 h-3 mr-2.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 0-2H4v-9.586l6.293 6.293a1 1 0 0 0 1.414 0L18 3.414V9a1 1 0 1 0 2 0V3.414l.707.707a1 1 0 0 0 1.414-1.414l-2-2Z"/>
+                    </svg>
                     Inicio
                   </Link>
                 </li>
                 <li>
-                  <svg className="flex-shrink-0 h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                  </svg>
+                  <div className="flex items-center">
+                    <svg className="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <Link href={`/categoria/${product.categories[0]}`} className="ml-1 text-sm font-medium text-gray-700 hover:text-primary-600 md:ml-2">
+                      {categoryConfig[product.categories[0] as keyof typeof categoryConfig]?.name || product.categories[0]}
+                    </Link>
+                  </div>
                 </li>
-                {product.categories[0] && (
-                  <>
-                    <li>
-                      <Link 
-                        href={`/categoria/${product.categories[0]}`}
-                        className="text-gray-500 hover:text-gray-700"
-                      >
-                        {categoryConfig[product.categories[0] as keyof typeof categoryConfig]?.name || product.categories[0]}
-                      </Link>
-                    </li>
-                    <li>
-                      <svg className="flex-shrink-0 h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </li>
-                  </>
-                )}
-                <li>
-                  <span className="text-gray-500" aria-current="page">
-                    {product.title}
-                  </span>
+                <li aria-current="page">
+                  <div className="flex items-center">
+                    <svg className="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span className="ml-1 text-sm font-medium text-gray-500 md:ml-2">{product.title}</span>
+                  </div>
                 </li>
               </ol>
             </nav>
 
-            {/* Featured badge */}
-            {product.isFeatured && (
-              <div className="mb-4">
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-accent-100 text-accent-800">
-                  ⭐ Producto destacado
-                </span>
+            <div className="lg:col-start-1 lg:row-start-2 lg:max-w-lg lg:self-start">
+              <div className="mt-4">
+                <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+                  {product.title}
+                </h1>
               </div>
-            )}
 
-            {/* Title and price */}
-            <h1 className="text-3xl font-bold font-potta-one tracking-tight text-product-orange sm:text-4xl">
-              {product.title}
-            </h1>
-
-            <div className="mt-3">
-              <h2 className="sr-only">Información del producto</h2>
-              {product.price && !product.categories.includes('blog') && (
-                <p className="text-3xl tracking-tight font-bold font-potta-one text-header-purple">
-                  {formatPrice(product.price, product.currency)}
-                </p>
-              )}
-            </div>
-
-            {/* Short description */}
-            <div className="mt-6">
-              <p className="text-lg text-gray-600 font-preahvihear leading-relaxed">
-                {product.shortDescription}
-              </p>
-            </div>
-
-            {/* Categories */}
-            <div className="mt-6">
-              <h3 className="text-sm font-medium font-potta-one text-header-purple mb-2">Categorías:</h3>
-              <div className="flex flex-wrap gap-2">
-                {product.categories.map((categorySlug) => {
-                  const category = categoryConfig[categorySlug as keyof typeof categoryConfig];
-                  return (
-                    <Link
-                      key={categorySlug}
-                      href={`/categoria/${categorySlug}`}
-                      className="inline-block bg-gray-100 hover:bg-primary-100 text-gray-700 hover:text-primary-700 text-sm px-3 py-1 rounded-full transition-colors"
-                    >
-                      {category?.name || categorySlug}
-                    </Link>
-                  );
-                })}
+              <div className="mt-6">
+                <h3 className="sr-only">Descripción</h3>
+                <div className="space-y-6">
+                  <p className="text-base text-gray-900">
+                    {product.shortDescription}
+                  </p>
+                </div>
               </div>
-            </div>
 
-            {/* Metadata */}
-            <div className="mt-6 text-sm text-gray-500 space-y-1">
-              <p>Publicado: {formatDate(product.createdAt)}</p>
-              {product.merchant && !product.categories.includes('blog') && (
-                <p>Disponible en: <span className="font-medium">{product.merchant}</span></p>
-              )}
-            </div>
-
-            {/* CTA Button - Solo para productos que NO son de blog */}
-            {!product.categories.includes('blog') && (
-              <div className="mt-8">
-                <a
-                  href={affiliateUrl}
-                  target="_blank"
-                  rel="nofollow sponsored noopener"
-                  className="w-full bg-primary-600 border border-transparent rounded-md py-4 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors"
-                >
-                  <span className="mr-2">Ver oferta en {product.merchant || merchantDomain}</span>
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </a>
-                
-                <p className="text-xs text-gray-500 mt-3 text-center">
-                  Este es un enlace de afiliación. Podemos recibir una comisión por las compras realizadas.
+              <div className="mt-6">
+                <div className="flex items-baseline space-x-2">
+                  <p className="text-3xl font-bold tracking-tight text-primary-600">
+                    {formatPrice(product.price, product.currency)}
+                  </p>
+                </div>
+                <p className="mt-1 text-sm text-gray-500">
+                  Precio en {product.merchant || merchantDomain}
                 </p>
               </div>
-            )}
 
-            {/* Ad space */}
-            <div className="mt-8">
-              <AdSlot position="inline" size="medium" />
-            </div>
-          </div>
-        </div>
-
-        {/* Product details */}
-        <div className="mt-16 lg:mt-20">
-          <div className="lg:grid lg:grid-cols-12 lg:gap-x-8">
-            <div className="lg:col-span-8">
-              <div>
-                <h2 className="text-2xl font-bold font-potta-one text-header-purple mb-6">Descripción completa</h2>
-                <div 
-                  className="prose prose-lg max-w-none text-gray-700"
-                  dangerouslySetInnerHTML={{ 
-                    __html: markdownToHtml(product.description) 
-                  }}
-                />
-
-                {/* Tags */}
-                {product.tags && product.tags.length > 0 && (
-                  <div className="mt-8">
-                    <h3 className="text-lg font-semibold font-potta-one text-header-purple mb-4">Etiquetas</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {product.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="inline-block bg-white border border-gray-200 text-gray-600 text-sm px-3 py-1 rounded-full"
-                        >
-                          #{tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* Sidebar */}
-            <div className="mt-16 lg:mt-0 lg:col-span-4">
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold font-potta-one text-header-purple mb-4">Resumen del producto</h3>
-                <dl className="space-y-3">
-                  {product.price && (
-                    <div>
-                      <dt className="text-sm font-medium text-gray-500">Precio</dt>
-                      <dd className="text-lg font-semibold font-potta-one text-header-purple">
-                        {formatPrice(product.price, product.currency)}
-                      </dd>
-                    </div>
-                  )}
-                  
-                  <div>
-                    <dt className="text-sm font-medium text-gray-500">Disponible en</dt>
-                    <dd className="text-sm text-gray-900">{product.merchant || merchantDomain}</dd>
-                  </div>
-                  
-                  <div>
-                    <dt className="text-sm font-medium text-gray-500">Categorías</dt>
-                    <dd className="text-sm text-gray-900">
-                      {product.categories.map((cat) => 
-                        categoryConfig[cat as keyof typeof categoryConfig]?.name || cat
-                      ).join(', ')}
-                    </dd>
-                  </div>
-                  
-                  <div>
-                    <dt className="text-sm font-medium text-gray-500">Última actualización</dt>
-                    <dd className="text-sm text-gray-900">{formatDate(product.updatedAt || product.createdAt)}</dd>
-                  </div>
-                </dl>
-
-                <div className="mt-6">
+              <div className="mt-6">
+                <div className="flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-3">
                   <a
                     href={affiliateUrl}
                     target="_blank"
                     rel="nofollow sponsored noopener"
-                    className="w-full bg-accent-600 border border-transparent rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium text-white hover:bg-accent-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-500 transition-colors"
+                    className="flex-1 bg-primary-600 hover:bg-primary-700 text-white text-center py-3 px-6 rounded-lg font-semibold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
                   >
-                    Ver oferta completa
+                    <span className="flex items-center justify-center gap-2">
+                      <span>Ver Oferta en {product.merchant || merchantDomain}</span>
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </span>
                   </a>
                 </div>
               </div>
 
-              {/* Ad space */}
-              <div className="mt-6">
-                <AdSlot position="sidebar-sticky" size="medium" />
+              <div className="mt-8 border-t border-gray-200 pt-8">
+                <h3 className="text-sm font-medium text-gray-900">Categorías</h3>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {product.categories.map((categorySlug) => {
+                    const category = categoryConfig[categorySlug as keyof typeof categoryConfig];
+                    return (
+                      <Link
+                        key={categorySlug}
+                        href={`/categoria/${categorySlug}`}
+                        className="inline-block bg-gray-100 hover:bg-primary-100 text-gray-700 hover:text-primary-700 text-sm px-3 py-1 rounded-full transition-colors"
+                      >
+                        {category?.name || categorySlug}
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div className="mt-8 border-t border-gray-200 pt-8">
+                <h3 className="text-sm font-medium text-gray-900">Información del producto</h3>
+                <div className="mt-2 space-y-2 text-sm text-gray-600">
+                  <div className="flex justify-between">
+                    <span>Fecha de publicación:</span>
+                    <span>{formatDate(product.createdAt)}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Tienda:</span>
+                    <span>{product.merchant || merchantDomain}</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
+        {/* Product description */}
+        <div className="mt-16">
+          <div className="max-w-4xl">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Descripción completa</h2>
+            <div 
+              className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-primary-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900"
+              dangerouslySetInnerHTML={{ __html: markdownToHtml(product.description) }}
+            />
+          </div>
+        </div>
+
+        {/* Tags */}
+        {product.tags && product.tags.length > 0 && (
+          <div className="mt-16">
+            <h3 className="text-lg font-medium text-gray-900 mb-4">Etiquetas</h3>
+            <div className="flex flex-wrap gap-2">
+              {product.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-800"
+                >
+                  #{tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Related products */}
         {relatedProducts.length > 0 && (
-          <div className="mt-16 lg:mt-20">
-            <h2 className="text-2xl font-bold font-potta-one text-header-purple mb-8">Productos relacionados</h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {relatedProducts.map((relatedProduct) => (
+          <div className="mt-16">
+            <h3 className="text-2xl font-bold text-gray-900 mb-8">Productos relacionados</h3>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {relatedProducts.slice(0, 3).map((relatedProduct) => (
                 <ProductCard
                   key={relatedProduct.id}
                   product={relatedProduct}
@@ -342,8 +272,12 @@ export default function ProductPage({ params }: ProductPageProps) {
             </div>
           </div>
         )}
+
+        {/* Ad Slot */}
+        <div className="mt-16">
+          <AdSlot position="footer" size="leaderboard" />
+        </div>
       </div>
     </>
-    </NoSSR>
   );
 }

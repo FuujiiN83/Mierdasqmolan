@@ -1,0 +1,20 @@
+[33mbbb0f61[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m SOLUCIÓN RADICAL: Deshabilitar SSR completamente - Wrapper NoSSR para todas las páginas principales
+[33m84088ca[m SOLUCIÓN DEFINITIVA: Error de hidratación - Implementar componentes dinámicos con SSR deshabilitado
+[33m78a3794[m SOLUCIONADO: Error de hidratación Next.js - Añadir renderizado condicional para evitar desajuste servidor/cliente
+[33me1acf5d[m ROLLBACK URGENTE: Revertir a configuración estable - Eliminar OptimizedImage y configuraciones problemáticas
+[33mdf668db[m URGENTE: Corregir configuración Next.js que causaba fallo del VPS - Simplificar configuraciones experimentales
+[33m7b4aa29[m Optimización final de imágenes - Reemplazar todas las instancias de next/image con OptimizedImage
+[33mc0ae67b[m Optimizaciones de rendimiento para PageSpeed Insights - Solucionar problemas de rendimiento móvil
+[33m4c1fb93[m Corregir colores del texto en parte expandible de productos
+[33m72ae1d3[m Corregir modo oscuro: mejorar contraste de encabezados y elementos de navegación
+[33mb237b1e[m Corregir modo oscuro en ProductCard: mejorar contraste de texto y fondo expandido
+[33m6725e09[m Añadir icono de TikTok a redes sociales: https://www.tiktok.com/@mierdasquemolan
+[33mb520067[m Eliminar categorías del footer y cambiar 'Productos destacados' por 'Top mierdas que molan'
+[33m2e448e5[m Simplificar UI: eliminar categorías populares y links sitemap/robots del footer
+[33m1c84208[m Corregir next.config.js: eliminar configuración experimental no válida en Next.js 14.2
+[33mebda56d[m Backup 1909.2: Estado con modo oscuro implementado y script Google Analytics corregido
+[33m3ce432b[m Corregir advertencia VPS: usar next/script en lugar de script inline para Google Analytics
+[33m63e7289[m Implementar modo oscuro completo: botón toggle, estilos dark mode, persistencia en localStorage
+[33mc2d2bcd[m Backup 1909: Estado actual con subcategorías de Hogar y H1 principal
+[33m17b8c53[m Añadir H1 principal: 'Productos originales y divertidos para regalar' debajo del banner
+[33ma95996e[m HOTFIX: Corregir tipos TypeScript para subcategorías - solucionar error del VPS

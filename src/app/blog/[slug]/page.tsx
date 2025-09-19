@@ -1,22 +1,6 @@
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
-import { NoSSR } from '@/components/NoSSR';
-
-// Importar el componente dinámico para imágenes
-const DynamicImage = dynamic(() => import('@/components/DynamicImage').then(mod => ({ default: mod.DynamicImage })), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-64 sm:h-96 bg-gray-100 animate-pulse flex items-center justify-center rounded-lg">
-      <div className="text-gray-400 text-center p-4">
-        <svg className="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-        </svg>
-        <p className="text-sm">Cargando imagen...</p>
-      </div>
-    </div>
-  )
-});
 // Iconos SVG inline para evitar dependencias
 import blogData from '@/data/blog.json';
 
@@ -30,11 +14,9 @@ interface BlogPost {
   alt: string;
   author: string;
   publishedAt: string;
-  updatedAt: string;
-  tags: string[];
-  category: string;
-  isPublished: boolean;
   readTime: string;
+  tags?: string[];
+  isPublished: boolean;
 }
 
 interface BlogPostPageProps {
@@ -43,25 +25,35 @@ interface BlogPostPageProps {
   };
 }
 
-export async function generateStaticParams() {
-  return blogData.map((post: BlogPost) => ({
-    slug: post.slug,
-  }));
-}
-
 export async function generateMetadata({ params }: BlogPostPageProps) {
   const post = blogData.find((p: BlogPost) => p.slug === params.slug);
-  
-  if (!post) {
+
+  if (!post || !post.isPublished) {
     return {
-      title: 'Entrada no encontrada',
+      title: 'Artículo no encontrado',
     };
   }
 
   return {
-    title: `${post.title} | Blog MQM Web`,
+    title: post.title,
     description: post.excerpt,
+    keywords: post.tags || [],
     openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      images: [
+        {
+          url: post.featuredImage,
+          width: 1200,
+          height: 630,
+          alt: post.alt,
+        },
+      ],
+      type: 'article',
+      publishedTime: post.publishedAt,
+    },
+    twitter: {
+      card: 'summary_large_image',
       title: post.title,
       description: post.excerpt,
       images: [post.featuredImage],
@@ -86,15 +78,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <NoSSR fallback={
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Cargando artículo...</p>
-        </div>
-      </div>
-    }>
-      <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <div className="bg-white shadow-sm">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -107,7 +91,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             </svg>
             Volver al blog
           </Link>
-          
+
           <div className="flex items-center space-x-4 text-sm text-gray-500 mb-4">
             <div className="flex items-center">
               <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -132,7 +116,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             {post.title}
           </h1>
-          
+
           <p className="text-lg text-gray-600 mb-6">
             {post.excerpt}
           </p>
@@ -142,7 +126,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Featured Image */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="relative w-full h-64 sm:h-96 rounded-lg overflow-hidden shadow-lg">
-          <DynamicImage
+          <Image
             src={post.featuredImage}
             alt={post.alt}
             fill
@@ -167,7 +151,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             <h3 className="text-sm font-medium text-gray-900 mb-3">Etiquetas:</h3>
             <div className="flex flex-wrap gap-2">
               {post.tags.map((tag) => (
-                <span
+                <span 
                   key={tag}
                   className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800"
                 >
@@ -192,6 +176,5 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       </div>
     </div>
-    </NoSSR>
   );
 }

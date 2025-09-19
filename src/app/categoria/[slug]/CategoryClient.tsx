@@ -244,3 +244,4 @@ export function CategoryClient({ categorySlug, initialProducts }: CategoryClient
   );
 }
 
+
