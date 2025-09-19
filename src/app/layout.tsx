@@ -105,9 +105,7 @@ export default function RootLayout({
         
                {/* Google Analytics temporalmente deshabilitado para debugging */}
         
-        {/* Preconnect to external domains for performance */}
-        <link rel="preconnect" href="https://amazon.es" />
-        <link rel="preconnect" href="https://www.google-analytics.com" />
+        {/* Preconnect removido para estabilidad VPS */}
         
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
