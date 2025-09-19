@@ -79,7 +79,9 @@ export default function HomeContent() {
   };
 
   const toggleHalloweenMode = () => {
+    console.log('Botón Halloween clickeado, estado actual:', isHalloweenMode);
     setIsHalloweenMode(!isHalloweenMode);
+    console.log('Nuevo estado:', !isHalloweenMode);
   };
 
   const totalPages = Math.ceil(totalProducts / productsPerPage);
@@ -144,28 +146,28 @@ export default function HomeContent() {
         </section>
       )}
 
+      {/* Halloween Mode Button - Siempre visible */}
+      <div className="flex justify-center mb-6">
+        <button
+          onClick={toggleHalloweenMode}
+          className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 shadow-lg hover:scale-105 ${
+            isHalloweenMode
+              ? 'bg-orange-600 text-white hover:bg-orange-700'
+              : 'bg-purple-600 text-white hover:bg-purple-700'
+          }`}
+          title={isHalloweenMode ? 'Desactivar modo Halloween' : 'Activar modo Halloween'}
+        >
+          <span className="text-xl">🎃</span>
+          <span>I love Halloween</span>
+        </button>
+      </div>
+
       {/* Main heading */}
       {!searchQuery && currentPage === 1 && (
         <section className="mb-8 text-center">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-potta-one text-header-purple dark:text-purple-400 mb-4">
             Productos originales y divertidos para regalar
           </h1>
-          
-          {/* Halloween Mode Button */}
-          <div className="flex justify-center mb-6">
-            <button
-              onClick={toggleHalloweenMode}
-              className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 shadow-lg hover:scale-105 ${
-                isHalloweenMode
-                  ? 'bg-orange-600 text-white hover:bg-orange-700'
-                  : 'bg-purple-600 text-white hover:bg-purple-700'
-              }`}
-              title={isHalloweenMode ? 'Desactivar modo Halloween' : 'Activar modo Halloween'}
-            >
-              <span className="text-xl">🎃</span>
-              <span>I love Halloween</span>
-            </button>
-          </div>
         </section>
       )}
 
