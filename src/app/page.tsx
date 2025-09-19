@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import HomeContent from './HomeContent';
+import { NoSSR } from '@/components/NoSSR';
 
 // Loading component para Suspense
 function LoadingHome() {
@@ -25,8 +26,10 @@ function LoadingHome() {
 
 export default function HomePage() {
   return (
-    <Suspense fallback={<LoadingHome />}>
-      <HomeContent />
-    </Suspense>
+    <NoSSR fallback={<LoadingHome />}>
+      <Suspense fallback={<LoadingHome />}>
+        <HomeContent />
+      </Suspense>
+    </NoSSR>
   );
 }

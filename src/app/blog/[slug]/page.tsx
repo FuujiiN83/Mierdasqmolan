@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import { NoSSR } from '@/components/NoSSR';
 
 // Importar el componente dinámico para imágenes
 const DynamicImage = dynamic(() => import('@/components/DynamicImage').then(mod => ({ default: mod.DynamicImage })), {
@@ -85,7 +86,15 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <NoSSR fallback={
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Cargando artículo...</p>
+        </div>
+      </div>
+    }>
+      <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <div className="bg-white shadow-sm">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -183,5 +192,6 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       </div>
     </div>
+    </NoSSR>
   );
 }

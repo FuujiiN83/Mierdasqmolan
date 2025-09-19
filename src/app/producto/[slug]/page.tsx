@@ -1,7 +1,8 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { OptimizedImage } from '@/components/OptimizedImage';
+import Image from 'next/image';
+import { NoSSR } from '@/components/NoSSR';
 import { getProductBySlug, getRelatedProducts, generateAffiliateUrl } from '@/lib/data';
 import { formatPrice, formatDate, markdownToHtml, getDomainFromUrl } from '@/lib/utils';
 import { categoryConfig } from '@/config/site';
@@ -84,19 +85,27 @@ export default function ProductPage({ params }: ProductPageProps) {
   };
 
   return (
-    <>
-      {/* Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
+    <NoSSR fallback={
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Cargando producto...</p>
+        </div>
+      </div>
+    }>
+      <>
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="lg:grid lg:grid-cols-2 lg:gap-x-8 lg:items-start">
           {/* Image gallery */}
           <div className="flex flex-col-reverse">
             <div className="w-full aspect-square sm:aspect-[4/3] lg:aspect-square">
-              <OptimizedImage
+              <Image
                 src={product.image}
                 alt={product.title}
                 width={600}
@@ -335,5 +344,6 @@ export default function ProductPage({ params }: ProductPageProps) {
         )}
       </div>
     </>
+    </NoSSR>
   );
 }
