@@ -82,6 +82,9 @@ export default function HomeContent() {
     console.log('Botón Halloween clickeado, estado actual:', isHalloweenMode);
     setIsHalloweenMode(!isHalloweenMode);
     console.log('Nuevo estado:', !isHalloweenMode);
+    if (!isHalloweenMode) {
+      console.log('Intentando cargar imagen: /images/fondo%20hw.webp');
+    }
   };
 
   const totalPages = Math.ceil(totalProducts / productsPerPage);
@@ -115,7 +118,7 @@ export default function HomeContent() {
         <>
           <div 
             className="fixed inset-0 bg-cover bg-center bg-no-repeat bg-fixed z-0"
-            style={{ backgroundImage: 'url(/images/fondo hw.webp)' }}
+            style={{ backgroundImage: 'url("/images/fondo%20hw.webp")' }}
           />
           <div className="fixed inset-0 bg-black bg-opacity-30 z-0" />
         </>
