@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ProductCard } from '@/components/ProductCard';
 import { CategoryChips } from '@/components/CategoryMenu';
 import { AdSlot, useInlineAds } from '@/components/AdSlot';

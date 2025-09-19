@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { OptimizedImage } from './OptimizedImage';
 import { SearchBar, CompactSearchBar } from './SearchBar';
 import { CategoryMenu } from './CategoryMenu';
