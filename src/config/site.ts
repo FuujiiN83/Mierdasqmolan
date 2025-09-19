@@ -39,11 +39,11 @@ export const categoryConfig = {
     color: "#8B5CF6",
     icon: "🎲"
   },
-  adultos: {
-    name: "Adultos",
-    description: "Para los que ya no son chavales",
-    color: "#6B7280",
-    icon: "👨‍💼"
+  viejoven: {
+    name: "Viejoven",
+    description: "Para los que ya no son tan jóvenes pero siguen siendo jóvenes de corazón",
+    color: "#8B5CF6",
+    icon: "👴"
   },
   ofendiditos: {
     name: "Ofendiditos",
@@ -51,23 +51,11 @@ export const categoryConfig = {
     color: "#EF4444",
     icon: "😤"
   },
-  casados: {
-    name: "Casados",
-    description: "La realidad del matrimonio",
-    color: "#10B981",
-    icon: "💍"
-  },
   dejados: {
     name: "Dejados",
     description: "Para los que han tirado la toalla",
     color: "#6B7280",
     icon: "🛋️"
-  },
-  "anti-fitness": {
-    name: "Anti Fitness",
-    description: "Orgullosamente sedentarios",
-    color: "#F97316",
-    icon: "🍕"
   },
   otakus: {
     name: "Otakus",
@@ -80,12 +68,6 @@ export const categoryConfig = {
     description: "Para los que todavía no saben nada de la vida",
     color: "#06B6D4",
     icon: "🧒"
-  },
-  facheritos: {
-    name: "Facheritos",
-    description: "Para los que se las dan de guays",
-    color: "#8B5CF6",
-    icon: "😎"
   },
   cinefilos: {
     name: "Cinéfilos",
@@ -116,12 +98,6 @@ export const categoryConfig = {
     description: "Para los que mueven el esqueleto",
     color: "#059669",
     icon: "⚽"
-  },
-  divorciados: {
-    name: "Divorciados",
-    description: "Nueva vida, nuevas oportunidades",
-    color: "#84CC16",
-    icon: "🆓"
   },
   "juegos-de-mesa": {
     name: "Juegos de Mesa",

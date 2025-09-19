@@ -11,7 +11,7 @@
     "merchant": "Amazon",
     "price": 25.99,
     "currency": "EUR",
-    "categories": ["adolescentes", "adultos", "random", "ofendiditos"],
+    "categories": ["adolescentes", "viejoven", "random", "ofendiditos"],
     "isFeatured": false,
     "createdAt": "2025-09-13T16:00:00Z",
     "tags": ["on", "air", "led", "señalización", "streaming"]
@@ -198,7 +198,7 @@
     "merchant": "Amazon",
     "price": 12.99,
     "currency": "EUR",
-    "categories": ["cinefilos", "frikis", "hogar", "adultos", "adolescentes"],
+    "categories": ["cinefilos", "frikis", "hogar", "viejoven", "adolescentes"],
     "isFeatured": false,
     "createdAt": "2025-09-13T05:00:00Z",
     "tags": ["bandeja", "marvel", "magnética", "almacenamiento", "oficial"]
@@ -354,7 +354,7 @@
     "categories": ["tecnologico", "hogar", "random"],
     "isFeatured": false,
     "createdAt": "2025-09-12T20:00:00Z",
-    "tags": ["hucha", "digital", "contador", "monedas", "pantalla", "lcd", "transparente", "ahorro", "dinero", "tecnologico", "hogar", "random", "jarra", "británico", "ue", "europa", "capacidad", "1.8L", "800-1000", "monedas", "regalo", "niños", "adultos"]
+    "tags": ["hucha", "digital", "contador", "monedas", "pantalla", "lcd", "transparente", "ahorro", "dinero", "tecnologico", "hogar", "random", "jarra", "británico", "ue", "europa", "capacidad", "1.8L", "800-1000", "monedas", "regalo", "niños", "viejoven"]
   },
   {
     "id": "152",
@@ -368,10 +368,10 @@
     "merchant": "Amazon",
     "price": 22.99,
     "currency": "EUR",
-    "categories": ["viral", "adultos", "tecnologico", "musica"],
+    "categories": ["viral", "viejoven", "tecnologico", "musica"],
     "isFeatured": false,
     "createdAt": "2025-09-12T19:00:00Z",
-    "tags": ["diadema", "dormir", "auriculares", "bluetooth", "inalámbrico", "podcast", "música", "viral", "adultos", "tecnologico", "musica", "voerou", "supraaurales", "aislamiento", "acústico", "batería", "recargable", "comodidad", "lavable"]
+    "tags": ["diadema", "dormir", "auriculares", "bluetooth", "inalámbrico", "podcast", "música", "viral", "viejoven", "tecnologico", "musica", "voerou", "supraaurales", "aislamiento", "acústico", "batería", "recargable", "comodidad", "lavable"]
   },
   {
     "id": "151",
@@ -402,10 +402,10 @@
     "merchant": "Amazon",
     "price": 138.00,
     "currency": "EUR",
-    "categories": ["tecnologico", "hogar", "adultos"],
+    "categories": ["tecnologico", "hogar", "viejoven"],
     "isFeatured": false,
     "createdAt": "2025-09-12T17:00:00Z",
-    "tags": ["masajeador", "shiatsu", "manitas", "inalámbrico", "portátil", "calor", "relajación", "dolor", "cuello", "espalda", "hombros", "tensión", "tecnologico", "hogar", "adultos", "salud", "bienestar"]
+    "tags": ["masajeador", "shiatsu", "manitas", "inalámbrico", "portátil", "calor", "relajación", "dolor", "cuello", "espalda", "hombros", "tensión", "tecnologico", "hogar", "viejoven", "salud", "bienestar"]
   },
   {
     "id": "149",
@@ -671,7 +671,7 @@
                            "tecnologico",
                            "divertido",
                            "educativo",
-                           "adultos"
+                           "viejoven"
                        ],
         "isFeatured":  false,
         "createdAt":  "2025-09-12T07:00:00Z",
@@ -736,7 +736,7 @@
         "categories":  [
                            "tecnologico",
                            "divertido",
-                           "adultos",
+                           "viejoven",
                            "hogar"
                        ],
         "isFeatured":  false,
@@ -793,7 +793,7 @@
         "price":  3.99,
         "currency":  "EUR",
         "categories":  [
-                           "adultos",
+                           "viejoven",
                            "ofendiditos",
                            "random",
                            "divertido"
@@ -820,9 +820,9 @@
         "price":  13.99,
         "currency":  "EUR",
         "categories":  [
-                           "casados",
+                           "viejoven",
                            "dejados",
-                           "anti-fitness",
+                           "viejoven",
                            "random",
                            "divertido"
                        ],
@@ -849,9 +849,9 @@
         "price":  27.99,
         "currency":  "EUR",
         "categories":  [
-                           "casados",
-                           "adultos",
-                           "facheritos"
+                           "viejoven",
+                           "viejoven",
+                           "viejoven"
                        ],
         "isFeatured":  true,
         "createdAt":  "2024-01-21T10:00:00Z",
@@ -906,9 +906,9 @@
         "currency":  "EUR",
         "categories":  [
                            "tazas",
-                           "adultos",
+                           "viejoven",
                            "random",
-                           "divorciados",
+                           "viejoven",
                            "divertido"
                        ],
         "isFeatured":  false,
@@ -936,8 +936,8 @@
         "currency":  "EUR",
         "categories":  [
                            "random",
-                           "adultos",
-                           "casados",
+                           "viejoven",
+                           "viejoven",
                            "divertido"
                        ],
         "isFeatured":  false,
@@ -964,9 +964,9 @@
         "price":  9.99,
         "currency":  "EUR",
         "categories":  [
-                           "anti-fitness",
+                           "viejoven",
                            "random",
-                           "facheritos"
+                           "viejoven"
                        ],
         "isFeatured":  true,
         "createdAt":  "2024-01-21T14:00:00Z",
@@ -992,7 +992,7 @@
         "price":  9.99,
         "currency":  "EUR",
         "categories":  [
-                           "adultos",
+                           "viejoven",
                            "dejados",
                            "random"
                        ],
@@ -1021,7 +1021,7 @@
         "currency":  "EUR",
         "categories":  [
                            "adolescentes",
-                           "adultos",
+                           "viejoven",
                            "ofendiditos"
                        ],
         "isFeatured":  false,
@@ -1048,9 +1048,9 @@
         "price":  9.99,
         "currency":  "EUR",
         "categories":  [
-                           "adultos",
+                           "viejoven",
                            "juegos-de-mesa",
-                           "anti-fitness"
+                           "viejoven"
                        ],
         "isFeatured":  false,
         "createdAt":  "2024-01-21T17:00:00Z",
@@ -1060,7 +1060,7 @@
                      "cartas",
                      "confesiones",
                      "fiesta",
-                     "adultos"
+                     "viejoven"
                  ]
     },
     {
@@ -1076,11 +1076,11 @@
         "price":  16.9,
         "currency":  "EUR",
         "categories":  [
-                           "anti-fitness",
+                           "viejoven",
                            "ninos",
-                           "adultos",
+                           "viejoven",
                            "adolescentes",
-                           "adultos"
+                           "viejoven"
                        ],
         "isFeatured":  true,
         "createdAt":  "2024-01-21T18:00:00Z",
@@ -1109,8 +1109,8 @@
                            "tazas",
                            "frikis",
                            "adolescentes",
-                           "adultos",
-                           "divorciados",
+                           "viejoven",
+                           "viejoven",
                            "cinefilos"
                        ],
         "isFeatured":  false,
@@ -1139,9 +1139,9 @@
         "categories":  [
                            "random",
                            "dejados",
-                           "adultos",
+                           "viejoven",
                            "adolescentes",
-                           "anti-fitness"
+                           "viejoven"
                        ],
         "isFeatured":  true,
         "createdAt":  "2024-01-21T20:00:00Z",
@@ -1167,9 +1167,9 @@
         "price":  12.95,
         "currency":  "EUR",
         "categories":  [
-                           "adultos",
-                           "adultos",
-                           "divorciados"
+                           "viejoven",
+                           "viejoven",
+                           "viejoven"
                        ],
         "isFeatured":  false,
         "createdAt":  "2024-01-21T21:00:00Z",
@@ -1196,9 +1196,9 @@
         "currency":  "EUR",
         "categories":  [
                            "random",
-                           "adultos",
+                           "viejoven",
                            "frikis",
-                           "facheritos",
+                           "viejoven",
                            "gamers"
                        ],
         "isFeatured":  true,
@@ -1255,10 +1255,10 @@
         "currency":  "EUR",
         "categories":  [
                            "adolescentes",
-                           "adultos",
-                           "divorciados",
+                           "viejoven",
+                           "viejoven",
                            "random",
-                           "facheritos",
+                           "viejoven",
                            "ofendiditos"
                        ],
         "isFeatured":  false,
@@ -1314,8 +1314,8 @@
         "categories":  [
                            "cinefilos",
                            "frikis",
-                           "adultos",
-                           "divorciados",
+                           "viejoven",
+                           "viejoven",
                            "fiesta"
                        ],
         "isFeatured":  false,
@@ -1400,7 +1400,7 @@
         "categories":  [
                            "tazas",
                            "random",
-                           "facheritos",
+                           "viejoven",
                            "rancios"
                        ],
         "isFeatured":  false,
@@ -1428,7 +1428,7 @@
         "currency":  "EUR",
         "categories":  [
                            "libros",
-                           "adultos",
+                           "viejoven",
                            "frikis",
                            "random"
                        ],
@@ -1458,12 +1458,12 @@
         "categories":  [
                            "random",
                            "adolescentes",
-                           "divorciados",
+                           "viejoven",
                            "deportistas",
                            "fiesta",
                            "frikis",
-                           "adultos",
-                           "facheritos"
+                           "viejoven",
+                           "viejoven"
                        ],
         "isFeatured":  false,
         "createdAt":  "2024-01-22T07:00:00Z",
@@ -1520,7 +1520,7 @@
         "categories":  [
                            "random",
                            "adolescentes",
-                           "adultos",
+                           "viejoven",
                            "regalos",
                            "accesorios"
                        ],
@@ -1552,7 +1552,7 @@
                            "hogar",
                            "decoracion",
                            "regalos",
-                           "adultos",
+                           "viejoven",
                            "familias"
                        ],
         "isFeatured":  false,
@@ -1583,7 +1583,7 @@
                            "hogar",
                            "calzado",
                            "regalos",
-                           "adultos",
+                           "viejoven",
                            "trabajadores"
                        ],
         "isFeatured":  false,
@@ -1614,7 +1614,7 @@
                            "calcetines",
                            "pizza",
                            "regalos",
-                           "adultos",
+                           "viejoven",
                            "adolescentes",
                            "frikis"
                        ],
@@ -1647,7 +1647,7 @@
                            "cine",
                            "arte",
                            "regalos",
-                           "adultos",
+                           "viejoven",
                            "frikis",
                            "hogar"
                        ],
@@ -1679,7 +1679,7 @@
                            "decoracion",
                            "musica",
                            "regalos",
-                           "adultos",
+                           "viejoven",
                            "frikis",
                            "hogar"
                        ],
@@ -1712,7 +1712,7 @@
                            "verano",
                            "eco-friendly",
                            "regalos",
-                           "adultos",
+                           "viejoven",
                            "organizacion"
                        ],
         "isFeatured":  false,
@@ -1743,7 +1743,7 @@
                            "decoracion",
                            "hogar",
                            "regalos",
-                           "adultos",
+                           "viejoven",
                            "personalidad",
                            "autentico"
                        ],
@@ -1805,7 +1805,7 @@
         "categories":  [
                            "cinefilo",
                            "friki",
-                           "adultos",
+                           "viejoven",
                            "gym bros"
                        ],
         "isFeatured":  false,
@@ -1836,7 +1836,7 @@
         "categories":  [
                            "cinefilos",
                            "frikis",
-                           "adultos",
+                           "viejoven",
                            "gym bros"
                        ],
         "isFeatured":  false,
@@ -1866,7 +1866,7 @@
         "currency":  "EUR",
         "categories":  [
                            "frikis",
-                           "adultos",
+                           "viejoven",
                            "random",
                            "vida-en-el-wc"
                        ],
@@ -1882,7 +1882,7 @@
                      "regalo",
                      "broma",
                      "humor",
-                     "adultos",
+                     "viejoven",
                      "frikis",
                      "random"
                  ]
@@ -1951,7 +1951,7 @@
                      "humor",
                      "regalo",
                      "broma",
-                     "adultos",
+                     "viejoven",
                      "random",
                      "vida-en-el-wc",
                      "libros"
@@ -1971,8 +1971,8 @@
         "currency":  "EUR",
         "categories":  [
                            "frikis",
-                           "adultos",
-                           "divorciados",
+                           "viejoven",
+                           "viejoven",
                            "ofendiditos",
                            "deportistas"
                        ],
@@ -1990,8 +1990,8 @@
                      "aseo",
                      "pelo",
                      "frikis",
-                     "adultos",
-                     "divorciados",
+                     "viejoven",
+                     "viejoven",
                      "ofendiditos",
                      "gym-bros"
                  ]
@@ -2010,10 +2010,10 @@
         "currency":  "EUR",
         "categories":  [
                            "juegos-de-mesa",
-                           "adultos",
+                           "viejoven",
                            "niños",
                            "adolescentes",
-                           "casados",
+                           "viejoven",
                            "fiesta",
                            "destacados"
                        ],
@@ -2028,10 +2028,10 @@
                      "divertido",
                      "humor",
                      "fiesta",
-                     "adultos",
+                     "viejoven",
                      "adolescentes",
                      "niños",
-                     "casados",
+                     "viejoven",
                      "regalo",
                      "republica",
                      "bananera",
@@ -2053,9 +2053,9 @@
         "categories":  [
                            "juegos-de-mesa",
                            "fiesta",
-                           "adultos",
-                           "casados",
-                           "divorciados"
+                           "viejoven",
+                           "viejoven",
+                           "viejoven"
                        ],
         "isFeatured":  false,
         "createdAt":  "2024-01-23T14:00:00Z",
@@ -2068,9 +2068,9 @@
                      "divertido",
                      "humor",
                      "fiesta",
-                     "adultos",
-                     "casados",
-                     "divorciados",
+                     "viejoven",
+                     "viejoven",
+                     "viejoven",
                      "regalo",
                      "regalador",
                      "secretos",
@@ -2091,7 +2091,7 @@
         "currency":  "EUR",
         "categories":  [
                            "fiesta",
-                           "adultos",
+                           "viejoven",
                            "adolescentes",
                            "juegos-de-mesa"
                        ],
@@ -2107,7 +2107,7 @@
                      "divertido",
                      "humor",
                      "fiesta",
-                     "adultos",
+                     "viejoven",
                      "adolescentes",
                      "regalo",
                      "familia",
@@ -2130,7 +2130,7 @@
         "currency":  "EUR",
         "categories":  [
                            "random",
-                           "casados",
+                           "viejoven",
                            "frikis"
                        ],
         "isFeatured":  false,
@@ -2153,7 +2153,7 @@
                      "frescura",
                      "recuerdos",
                      "random",
-                     "casados",
+                     "viejoven",
                      "frikis"
                  ]
     },
@@ -2212,8 +2212,8 @@
         "categories":  [
                            "friki",
                            "random",
-                           "adultos",
-                           "divorciados",
+                           "viejoven",
+                           "viejoven",
                            "viral"
                        ],
         "isFeatured":  false,
@@ -2257,8 +2257,8 @@
                      "solucion",
                      "friki",
                      "random",
-                     "adultos",
-                     "divorciados",
+                     "viejoven",
+                     "viejoven",
                      "viral"
                  ]
     },
@@ -2286,7 +2286,7 @@
                      "caja",
                      "sorpresa",
                      "broma",
-                     "adultos",
+                     "viejoven",
                      "divertido",
                      "regalo",
                      "navidad",
@@ -2325,7 +2325,7 @@
                      "sale",
                      "gasta",
                      "broma",
-                     "adultos",
+                     "viejoven",
                      "divertidos",
                      "medidas",
                      "peso",
@@ -2386,8 +2386,8 @@
         "currency":  "EUR",
         "categories":  [
                            "friki",
-                           "casados",
-                           "facheritos"
+                           "viejoven",
+                           "viejoven"
                        ],
         "isFeatured":  false,
         "createdAt":  "2025-01-23T20:00:00Z",
@@ -2472,8 +2472,8 @@
                      "testeadas",
                      "dermatológicamente",
                      "friki",
-                     "casados",
-                     "facheritos"
+                     "viejoven",
+                     "viejoven"
                  ]
     },
     {
@@ -2492,7 +2492,7 @@
                            "frikis",
                            "cinéfilos",
                            "adolescentes",
-                           "adultos"
+                           "viejoven"
                        ],
         "isFeatured":  false,
         "createdAt":  "2025-01-23T21:00:00Z",
@@ -2614,7 +2614,7 @@
                      "frikis",
                      "cinéfilos",
                      "adolescentes",
-                     "adultos"
+                     "viejoven"
                  ]
     },
     {
@@ -2745,9 +2745,9 @@
         "price":  6.99,
         "currency":  "EUR",
         "categories":  [
-                           "adultos",
+                           "viejoven",
                            "random",
-                           "facheritos"
+                           "viejoven"
                        ],
         "isFeatured":  false,
         "createdAt":  "2025-01-23T21:30:00Z",
@@ -2791,9 +2791,9 @@
                      "funcionalidad",
                      "uso",
                      "cantidad",
-                     "adultos",
+                     "viejoven",
                      "random",
-                     "facheritos"
+                     "viejoven"
                  ]
     },
     {
@@ -2811,7 +2811,7 @@
         "categories":  [
                            "friki",
                            "facherito",
-                           "adultos"
+                           "viejoven"
                        ],
         "isFeatured":  false,
         "createdAt":  "2025-01-23T21:45:00Z",
@@ -2897,7 +2897,7 @@
                      "enfoque",
                      "friki",
                      "facherito",
-                     "adultos"
+                     "viejoven"
                  ]
     },
     {
@@ -3015,7 +3015,7 @@
                            "frikis",
                            "vida-en-el-wc",
                            "niños",
-                           "adultos",
+                           "viejoven",
                            "random",
                            "viral"
                        ],
@@ -3149,7 +3149,7 @@
                      "frikis",
                      "vida-en-el-wc",
                      "niños",
-                     "adultos",
+                     "viejoven",
                      "random",
                      "viral"
                  ]
@@ -3167,7 +3167,7 @@
         "price":  10.99,
         "currency":  "EUR",
         "categories":  [
-                           "facheritos",
+                           "viejoven",
                            "random",
                            "viral",
                            "frikis",
@@ -3181,7 +3181,7 @@
                      "ideal",
                      "niños",
                      "perros",
-                     "adultos",
+                     "viejoven",
                      "guste",
                      "parte",
                      "infantil",
@@ -3297,7 +3297,7 @@
                      "látex",
                      "fácil",
                      "destruir",
-                     "facheritos",
+                     "viejoven",
                      "random",
                      "viral",
                      "frikis",
@@ -3317,7 +3317,7 @@
         "price":  25.49,
         "currency":  "EUR",
         "categories":  [
-                           "adultos",
+                           "viejoven",
                            "rancios",
                            "ofendiditos"
                        ],
@@ -3415,7 +3415,7 @@
                      "construcción",
                      "duradera",
                      "resistente",
-                     "adultos",
+                     "viejoven",
                      "estan",
                      "diseñado",
                      "durar",
@@ -3488,8 +3488,8 @@
                      "uso",
                      "beneficio",
                      "liberación",
-                     "adultos",
-                     "adultos",
+                     "viejoven",
+                     "viejoven",
                      "ofendiditos"
                  ]
     },
@@ -3506,8 +3506,8 @@
         "price":  11.95,
         "currency":  "EUR",
         "categories":  [
-                           "divorciados",
-                           "adultos"
+                           "viejoven",
+                           "viejoven"
                        ],
         "isFeatured":  false,
         "createdAt":  "2025-01-23T22:50:00Z",
@@ -3673,8 +3673,8 @@
                      "mensaje",
                      "fabricación",
                      "experiencia",
-                     "divorciados",
-                     "adultos"
+                     "viejoven",
+                     "viejoven"
                  ]
     },
     {
@@ -3692,7 +3692,7 @@
         "categories":  [
                            "frikis",
                            "random",
-                           "facheritos"
+                           "viejoven"
                        ],
         "isFeatured":  false,
         "createdAt":  "2025-01-23T22:55:00Z",
@@ -3821,7 +3821,7 @@
                      "durabilidad",
                      "frikis",
                      "random",
-                     "facheritos"
+                     "viejoven"
                  ]
     },
     {
@@ -3863,7 +3863,7 @@
         "price":  6.25,
         "currency":  "EUR",
         "categories":  [
-                           "adultos",
+                           "viejoven",
                            "friki",
                            "random"
                        ],
@@ -3873,7 +3873,7 @@
                      "copa",
                      "vino",
                      "invertida",
-                     "adultos",
+                     "viejoven",
                      "friki"
                  ]
     },
@@ -4026,7 +4026,7 @@
         "categories":  [
                            "vida-en-el-wc",
                            "adolescentes",
-                           "adultos"
+                           "viejoven"
                        ],
         "isFeatured":  false,
         "createdAt":  "2025-09-08T23:35:00Z",
@@ -4052,8 +4052,8 @@
         "currency":  "EUR",
         "categories":  [
                            "vida-en-el-wc",
-                           "adultos",
-                           "casados"
+                           "viejoven",
+                           "viejoven"
                        ],
         "isFeatured":  false,
         "createdAt":  "2025-09-08T23:40:00Z",
@@ -4080,7 +4080,7 @@
         "categories":  [
                            "fiesta",
                            "adolescentes",
-                           "adultos"
+                           "viejoven"
                        ],
         "isFeatured":  false,
         "createdAt":  "2025-09-08T23:45:00Z",
@@ -4212,7 +4212,7 @@
         "categories":  [
                            "friki",
                            "fiesta",
-                           "facheritos"
+                           "viejoven"
                        ],
         "isFeatured":  false,
         "createdAt":  "2025-09-09T00:10:00Z",
@@ -4290,9 +4290,9 @@
         "price":  26.99,
         "currency":  "EUR",
         "categories":  [
-                           "adultos",
+                           "viejoven",
                            "friki",
-                           "facheritos"
+                           "viejoven"
                        ],
         "isFeatured":  false,
         "createdAt":  "2025-09-09T00:25:00Z",
@@ -4568,7 +4568,7 @@
                            "hogar",
                            "halloween",
                            "divertido",
-                           "adultos"
+                           "viejoven"
                        ],
         "isFeatured":  false,
         "createdAt":  "2025-09-09T01:15:00Z",
@@ -4653,7 +4653,7 @@
                            "halloween",
                            "fiesta",
                            "ninos",
-                           "adultos"
+                           "viejoven"
                        ],
         "isFeatured":  false,
         "createdAt":  "2025-09-09T01:30:00Z",
@@ -4681,7 +4681,7 @@
                            "hogar",
                            "halloween",
                            "ninos",
-                           "adultos",
+                           "viejoven",
                            "divertido"
                        ],
         "isFeatured":  false,
@@ -4861,7 +4861,7 @@
                            "halloween",
                            "adolescentes",
                            "niños",
-                           "adultos"
+                           "viejoven"
                        ],
         "isFeatured":  false,
         "createdAt":  "2025-09-11T13:30:00Z",
@@ -4874,7 +4874,7 @@
                      "divertido",
                      "adolescentes",
                      "niños",
-                     "adultos",
+                     "viejoven",
                      "regalo",
                      "café",
                      "300ml"
@@ -4931,7 +4931,7 @@
                            "halloween",
                            "divertido",
                            "adolescentes",
-                           "adultos",
+                           "viejoven",
                            "friki"
                        ],
         "isFeatured":  false,
@@ -4943,7 +4943,7 @@
                      "halloween",
                      "divertido",
                      "adolescentes",
-                     "adultos",
+                     "viejoven",
                      "friki",
                      "polyester",
                      "spandex",
@@ -5246,7 +5246,7 @@
         "price":  12.99,
         "currency":  "EUR",
         "categories":  [
-                           "adultos",
+                           "viejoven",
                            "halloween",
                            "hogar"
                        ],
@@ -5255,7 +5255,7 @@
         "tags":  [
                      "cuadros",
                      "siniestros",
-                     "adultos",
+                     "viejoven",
                      "halloween",
                      "hogar",
                      "TAIYOU",
@@ -5344,7 +5344,7 @@
         "categories":  [
                            "halloween",
                            "divertido",
-                           "adultos",
+                           "viejoven",
                            "friki"
                        ],
         "isFeatured":  false,
@@ -5354,7 +5354,7 @@
                      "café",
                      "halloween",
                      "divertido",
-                     "adultos",
+                     "viejoven",
                      "friki",
                      "inflable",
                      "taza de café",
@@ -5390,7 +5390,7 @@
         "categories":  [
                            "divertido",
                            "halloween",
-                           "adultos",
+                           "viejoven",
                            "friki",
                            "fiesta"
                        ],
@@ -5401,7 +5401,7 @@
                      "cerveza",
                      "divertido",
                      "halloween",
-                     "adultos",
+                     "viejoven",
                      "friki",
                      "fiesta",
                      "botellín",
@@ -5516,7 +5516,7 @@
                            "halloween",
                            "bromas",
                            "fiesta",
-                           "adultos"
+                           "viejoven"
                        ],
         "isFeatured":  false,
         "createdAt":  "2025-09-11T21:00:00Z",
@@ -5528,7 +5528,7 @@
                      "halloween",
                      "bromas",
                      "fiesta",
-                     "adultos",
+                     "viejoven",
                      "vampiros",
                      "pelis",
                      "amor eterno",
@@ -5607,7 +5607,7 @@
                            "broma",
                            "fiesta",
                            "halloween",
-                           "adultos"
+                           "viejoven"
                        ],
         "isFeatured":  false,
         "createdAt":  "2025-09-11T21:30:00Z",
@@ -5617,7 +5617,7 @@
                      "broma",
                      "fiesta",
                      "halloween",
-                     "adultos",
+                     "viejoven",
                      "heridas",
                      "cortes",
                      "golpes fuertes",
@@ -5743,7 +5743,7 @@
         "currency":  "EUR",
         "categories":  [
                            "broma",
-                           "adultos",
+                           "viejoven",
                            "frikis",
                            "fiesta",
                            "halloween"
@@ -5754,7 +5754,7 @@
                      "vendas",
                      "sangrientas",
                      "broma",
-                     "adultos",
+                     "viejoven",
                      "frikis",
                      "fiesta",
                      "halloween",
@@ -5846,7 +5846,7 @@
         "categories":  [
                            "niños",
                            "adolescentes",
-                           "adultos",
+                           "viejoven",
                            "broma",
                            "halloween",
                            "divertido"
@@ -5858,7 +5858,7 @@
                      "vampiro",
                      "niños",
                      "adolescentes",
-                     "adultos",
+                     "viejoven",
                      "broma",
                      "halloween",
                      "divertido",
@@ -6044,7 +6044,7 @@
         "categories":  [
                            "hogar",
                            "friki",
-                           "adultos"
+                           "viejoven"
                        ],
         "isFeatured":  false,
         "createdAt":  "2025-09-12T00:00:00Z",
@@ -6053,7 +6053,7 @@
                      "zombi",
                      "hogar",
                      "friki",
-                     "adultos",
+                     "viejoven",
                      "pasada de busto",
                      "Japón feudal",
                      "samuráis",
@@ -6212,7 +6212,7 @@
         "currency":  "EUR",
         "categories":  [
                            "halloween",
-                           "adultos",
+                           "viejoven",
                            "divertido",
                            "fiesta"
                        ],
@@ -6222,7 +6222,7 @@
                      "máscara",
                      "demonio",
                      "halloween",
-                     "adultos",
+                     "viejoven",
                      "divertido",
                      "fiesta",
                      "mascaras de carnaval",
@@ -6777,7 +6777,7 @@
                            "friki",
                            "divertido",
                            "adolescentes",
-                           "adultos",
+                           "viejoven",
                            "tazas"
                        ],
         "isFeatured":  false,
@@ -6789,7 +6789,7 @@
                      "friki",
                      "divertido",
                      "adolescentes",
-                     "adultos",
+                     "viejoven",
                      "tazas",
                      "No hay mejor posavasos que este",
                      "Molón",
@@ -6862,3 +6862,4 @@
                  ]
     }
 ]
+
