@@ -103,34 +103,7 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         
-        {/* Google tag (gtag.js) */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-FCD8D2QZEZ"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            
-            // Configuración inicial con consentimiento denegado
-            gtag('consent', 'default', {
-              analytics_storage: 'denied',
-              ad_storage: 'denied',
-              personalization_storage: 'denied',
-              functionality_storage: 'granted',
-              security_storage: 'granted'
-            });
-            
-            gtag('config', 'G-FCD8D2QZEZ', {
-              page_title: document.title,
-              page_location: window.location.href,
-              anonymize_ip: true,
-              cookie_flags: 'SameSite=None;Secure'
-            });
-          `}
-        </Script>
+               {/* Google Analytics temporalmente deshabilitado para debugging */}
         
         {/* Preconnect to external domains for performance */}
         <link rel="preconnect" href="https://amazon.es" />

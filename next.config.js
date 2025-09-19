@@ -8,8 +8,12 @@ const nextConfig = {
       },
     ],
   },
-  // Configuración para optimización
-  swcMinify: true,
+  // Configuración básica para VPS
+  output: 'standalone',
+  swcMinify: false,
+  experimental: {
+    serverComponentsExternalPackages: [],
+  },
 };
 
 module.exports = nextConfig;
