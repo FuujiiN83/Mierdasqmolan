@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
-import { OptimizedImage } from './OptimizedImage';
 import { Product } from '@/types';
 import { formatPrice, formatRelativeDate, markdownToHtml, getDomainFromUrl } from '@/lib/utils';
 import { generateAffiliateUrl } from '@/lib/data';
