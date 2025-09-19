@@ -112,15 +112,16 @@ export default function HomeContent() {
           ? 'relative z-10' 
           : 'bg-white dark:bg-gray-900'
       }`}
+      style={isHalloweenMode ? { position: 'relative', zIndex: 10 } : {}}
     >
       {/* Halloween Background */}
       {isHalloweenMode && (
         <>
           <div 
-            className="fixed inset-0 bg-cover bg-center bg-no-repeat bg-fixed z-0"
+            className="fixed inset-0 bg-cover bg-center bg-no-repeat bg-fixed -z-10"
             style={{ backgroundImage: 'url("/images/fondo%20hw.webp")' }}
           />
-          <div className="fixed inset-0 bg-black bg-opacity-30 z-0" />
+          <div className="fixed inset-0 bg-black bg-opacity-30 -z-10" />
         </>
       )}
 
@@ -153,10 +154,10 @@ export default function HomeContent() {
       )}
 
       {/* Halloween Mode Button - Siempre visible */}
-      <div className="flex justify-center mb-6">
+      <div className="flex justify-center mb-6 relative z-50">
         <button
           onClick={toggleHalloweenMode}
-          className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 shadow-lg hover:scale-105 ${
+          className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 shadow-lg hover:scale-105 relative z-50 ${
             isHalloweenMode
               ? 'bg-orange-600 text-white hover:bg-orange-700'
               : 'bg-purple-600 text-white hover:bg-purple-700'
