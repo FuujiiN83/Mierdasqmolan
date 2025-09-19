@@ -32,7 +32,7 @@
 }
 
 @layer components {
-  /* Estilos para el contenido markdown */
+  /* Estilos para el contenido markdown - Optimizados */
   .prose {
     @apply text-gray-700 dark:text-gray-300 leading-relaxed;
   }
@@ -75,6 +75,25 @@
   
   .prose a {
     @apply text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 underline;
+  }
+  
+  /* Optimizaciones de rendimiento */
+  .will-change-transform {
+    will-change: transform;
+  }
+  
+  .will-change-opacity {
+    will-change: opacity;
+  }
+  
+  /* Lazy loading optimizado */
+  .lazy-load {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .lazy-load.loaded {
+    opacity: 1;
   }
   
   /* Utilidades para truncar texto */
