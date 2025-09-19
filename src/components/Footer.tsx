@@ -10,7 +10,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-50 border-t border-gray-200">
+    <footer className="bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
       {/* Ad space before footer */}
       <div className="py-8">
         <AdSlot position="footer" size="leaderboard" className="text-center" />

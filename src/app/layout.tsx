@@ -6,11 +6,11 @@ import { Footer } from '@/components/Footer';
 import { CookieConsentBanner } from '@/components/CookieConsentBanner';
 import { siteConfig } from '@/config/site';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin', 'latin-ext'] });
 
 const pottaOne = Potta_One({
   weight: '400',
-  subsets: ['latin'],
+  subsets: ['latin', 'latin-ext'],
   variable: '--font-potta-one',
   display: 'swap',
 });
@@ -100,6 +100,36 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <head>
+        <meta charSet="utf-8" />
+        
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-FCD8D2QZEZ"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              
+              // Configuración inicial con consentimiento denegado
+              gtag('consent', 'default', {
+                analytics_storage: 'denied',
+                ad_storage: 'denied',
+                personalization_storage: 'denied',
+                functionality_storage: 'granted',
+                security_storage: 'granted'
+              });
+              
+              gtag('config', 'G-FCD8D2QZEZ', {
+                page_title: document.title,
+                page_location: window.location.href,
+                anonymize_ip: true,
+                cookie_flags: 'SameSite=None;Secure'
+              });
+            `,
+          }}
+        />
+        
         {/* Preconnect to external domains for performance */}
         <link rel="preconnect" href="https://amazon.es" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
@@ -114,31 +144,8 @@ export default function RootLayout({
         {/* Theme color for mobile browsers */}
         <meta name="theme-color" content="#3b82f6" />
         <meta name="msapplication-TileColor" content="#3b82f6" />
-        
-        {/* Analytics */}
-        {siteConfig.analytics.googleAnalyticsId && (
-          <>
-            <script
-              async
-              src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.analytics.googleAnalyticsId}`}
-            />
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-                  gtag('config', '${siteConfig.analytics.googleAnalyticsId}', {
-                    page_title: document.title,
-                    page_location: window.location.href,
-                  });
-                `,
-              }}
-            />
-          </>
-        )}
       </head>
-      <body className={`${preahvihear.className} ${pottaOne.variable} ${preahvihear.variable} antialiased bg-gray-50`}>
+      <body className={`${preahvihear.className} ${pottaOne.variable} ${preahvihear.variable} antialiased bg-gray-50 dark:bg-gray-900`}>
         <div className="min-h-screen flex flex-col">
           <Header />
           <main className="flex-1">
@@ -147,7 +154,7 @@ export default function RootLayout({
           <Footer />
         </div>
         
-        {/* Consent banner placeholder - activar cuando sea necesario */}
+        {/* Banner de consentimiento de cookies */}
         <CookieConsentBanner />
       </body>
     </html>

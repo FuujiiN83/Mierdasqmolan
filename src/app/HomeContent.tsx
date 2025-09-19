@@ -96,7 +96,7 @@ export default function HomeContent() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 bg-white dark:bg-gray-900 min-h-screen">
 
       {/* Hero section */}
       {!searchQuery && currentPage === 1 && (
@@ -129,7 +129,7 @@ export default function HomeContent() {
       {/* Main heading */}
       {!searchQuery && currentPage === 1 && (
         <section className="mb-8 text-center">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-potta-one text-header-purple mb-4">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-potta-one text-header-purple dark:text-purple-400 mb-4">
             Productos originales y divertidos para regalar
           </h1>
         </section>
@@ -138,7 +138,7 @@ export default function HomeContent() {
       {/* Categories chips */}
       {!searchQuery && currentPage === 1 && (
         <section className="mb-8">
-          <h2 className="text-lg font-semibold font-potta-one text-header-purple mb-4">Categorías populares</h2>
+          <h2 className="text-lg font-semibold font-potta-one text-header-purple dark:text-purple-400 mb-4">Categorías populares</h2>
           <CategoryChips />
         </section>
       )}
@@ -147,10 +147,10 @@ export default function HomeContent() {
       {featuredProducts.length > 0 && (
         <section className="mb-12">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold font-potta-one text-header-purple">⭐ Productos destacados</h2>
+            <h2 className="text-2xl font-bold font-potta-one text-header-purple dark:text-purple-400">⭐ Productos destacados</h2>
             <a
               href="/destacados"
-              className="text-primary-600 hover:text-primary-700 font-medium text-sm flex items-center gap-1"
+              className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-medium text-sm flex items-center gap-1"
             >
               Ver todos
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -176,8 +176,8 @@ export default function HomeContent() {
       <section id="produtos">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h2 className="text-2xl font-bold font-potta-one text-header-purple">{getPageTitle()}</h2>
-            <p className="text-gray-600 font-preahvihear mt-1">{getPageSubtitle()}</p>
+            <h2 className="text-2xl font-bold font-potta-one text-header-purple dark:text-purple-400">{getPageTitle()}</h2>
+            <p className="text-gray-600 dark:text-gray-300 font-preahvihear mt-1">{getPageSubtitle()}</p>
           </div>
           
           {/* Results info */}

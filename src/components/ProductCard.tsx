@@ -49,7 +49,7 @@ export function ProductCard({
   return (
     <article 
       className={`
-        bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden
+        bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden
         transition-all duration-300 hover:shadow-md
         ${showExpandButton ? 'cursor-pointer' : ''}
         ${isExpanded ? 'ring-2 ring-primary-500' : ''}
