@@ -126,6 +126,15 @@ export default function HomeContent() {
         </section>
       )}
 
+      {/* Main heading */}
+      {!searchQuery && currentPage === 1 && (
+        <section className="mb-8 text-center">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-potta-one text-header-purple mb-4">
+            Productos originales y divertidos para regalar
+          </h1>
+        </section>
+      )}
+
       {/* Categories chips */}
       {!searchQuery && currentPage === 1 && (
         <section className="mb-8">
