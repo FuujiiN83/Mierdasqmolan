@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { getProductBySlug, getRelatedProducts, generateAffiliateUrl } from '@/lib/data';
+import { getProductBySlug, getRelatedProducts, generateAffiliateUrl, getAllProducts } from '@/lib/data';
 import { formatPrice, formatDate, markdownToHtml, getDomainFromUrl } from '@/lib/utils';
 import { categoryConfig } from '@/config/site';
 import { ProductCard } from '@/components/ProductCard';
@@ -12,6 +12,15 @@ interface ProductPageProps {
   params: {
     slug: string;
   };
+}
+
+// Generar todas las páginas estáticamente
+export async function generateStaticParams() {
+  const products = getAllProducts();
+  
+  return products.map((product) => ({
+    slug: product.slug,
+  }));
 }
 
 export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
