@@ -26,22 +26,20 @@ export function ProductCard({
   const [imageError, setImageError] = useState(false);
 
   const handleCardClick = (e: React.MouseEvent) => {
-    // No expandir si se hace clic en enlaces
-    if ((e.target as HTMLElement).closest('a')) {
+    // No hacer nada si se hace clic en enlaces o botones
+    if ((e.target as HTMLElement).closest('a, button')) {
       return;
     }
     
-    if (showExpandButton && onToggleExpand) {
-      onToggleExpand();
-    }
+    // Navegar a la página del producto
+    window.location.href = `/producto/${product.slug}`;
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      if (showExpandButton && onToggleExpand) {
-        onToggleExpand();
-      }
+      // Navegar a la página del producto
+      window.location.href = `/producto/${product.slug}`;
     }
   };
 
@@ -56,16 +54,14 @@ export function ProductCard({
     <article 
       className={`
         bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden
-        transition-all duration-300 hover:shadow-md
-        ${showExpandButton ? 'cursor-pointer' : ''}
+        transition-all duration-300 hover:shadow-md cursor-pointer
         ${isExpanded ? 'ring-2 ring-primary-500' : ''}
       `}
       onClick={handleCardClick}
       onKeyDown={handleKeyDown}
-      tabIndex={showExpandButton ? 0 : -1}
-      role={showExpandButton ? 'button' : 'article'}
-      aria-expanded={showExpandButton ? isExpanded : undefined}
-      aria-label={showExpandButton ? `Ver detalles de ${product.title}` : undefined}
+      tabIndex={0}
+      role="button"
+      aria-label={`Ver página de ${product.title}`}
     >
       {/* Header de la tarjeta */}
       <div className="flex flex-col sm:flex-row">
