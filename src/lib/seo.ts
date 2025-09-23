@@ -41,8 +41,6 @@ export function generateProductMetadata(product: Product): Metadata {
       images: [product.image],
     },
     other: {
-      'product:price:amount': product.price?.toString() || '',
-      'product:price:currency': product.currency || 'EUR',
       'product:brand': product.merchant || siteConfig.name,
       'product:availability': 'in stock',
     },
@@ -106,17 +104,15 @@ export function generateProductStructuredData(product: Product, affiliateUrl: st
       '@type': 'Brand',
       name: product.merchant || siteConfig.name,
     },
-    offers: product.price ? {
+    offers: {
       '@type': 'Offer',
-      price: product.price,
-      priceCurrency: product.currency || 'EUR',
       availability: 'https://schema.org/InStock',
       url: affiliateUrl,
       seller: {
         '@type': 'Organization',
         name: product.merchant || siteConfig.name,
       },
-    } : undefined,
+    },
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.5',

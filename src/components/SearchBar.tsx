@@ -171,11 +171,6 @@ export function SearchBar({
                       <p className="text-sm text-gray-500 truncate">
                         {product.shortDescription}
                       </p>
-                      {product.price && (
-                        <p className="text-sm font-semibold font-potta-one text-header-purple">
-                          {product.price}€
-                        </p>
-                      )}
                     </div>
                   </div>
                 </a>

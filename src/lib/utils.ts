@@ -17,16 +17,6 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(...inputs));
 }
 
-/**
- * Formatea precio con moneda
- */
-export function formatPrice(price: number, currency = 'EUR'): string {
-  return new Intl.NumberFormat('es-ES', {
-    style: 'currency',
-    currency,
-    minimumFractionDigits: 2,
-  }).format(price);
-}
 
 /**
  * Formatea fecha relativa (ej: "hace 2 días")
