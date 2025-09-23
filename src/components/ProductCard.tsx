@@ -85,12 +85,19 @@ export function ProductCard({
         {/* Contenido principal */}
         <div className="flex-1 p-4 sm:p-6">
           <div className="flex flex-col h-full">
-            {/* Título */}
+            {/* Título y precio */}
             <div className="flex-1">
               <div className="flex justify-between items-start gap-3 mb-2">
                 <h2 className="text-lg sm:text-xl font-bold font-potta-one text-product-orange line-clamp-2 leading-tight">
                   {product.title}
                 </h2>
+                {product.price && (
+                  <div className="flex-shrink-0 text-right">
+                    <span className="text-xl sm:text-2xl font-bold font-potta-one text-header-purple">
+                      {formatPrice(product.price, product.currency)}
+                    </span>
+                  </div>
+                )}
               </div>
 
               {/* Botón Ver Oferta - SIEMPRE VISIBLE */}
