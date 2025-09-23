@@ -4,6 +4,10 @@ export interface Product {
   slug: string;
   description: string;
   shortDescription: string;
+  price: number;
+  currency?: string;
+  originalPrice?: number;
+  discount?: string;
   image: string;
   alt?: string;
   affiliateUrl: string;
@@ -66,9 +70,9 @@ export function validateProducts(data: any[]): Product[] {
     const isBlogProduct = item.categories && item.categories.includes('blog');
     const requiredFields = ['id', 'title', 'description', 'image', 'categories'];
     
-    // Para productos de blog, no requerir affiliateUrl
+    // Para productos de blog, no requerir price ni affiliateUrl
     if (!isBlogProduct) {
-      requiredFields.push('affiliateUrl');
+      requiredFields.push('price', 'affiliateUrl');
     }
     
     for (const field of requiredFields) {
@@ -90,6 +94,10 @@ export function validateProducts(data: any[]): Product[] {
       slug,
       description: String(item.description),
       shortDescription: item.shortDescription || item.description.substring(0, 150) + '...',
+      price: Number(item.price),
+      currency: item.currency || 'EUR',
+      originalPrice: item.originalPrice ? Number(item.originalPrice) : undefined,
+      discount: item.discount ? String(item.discount) : undefined,
       image: String(item.image),
       affiliateUrl: String(item.affiliateUrl),
       amazonUrl: item.amazonUrl ? String(item.amazonUrl) : undefined,
