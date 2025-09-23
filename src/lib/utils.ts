@@ -19,6 +19,13 @@ export function cn(...inputs: ClassValue[]) {
 
 
 /**
+ * Formatea precio con moneda (función dummy para compatibilidad)
+ */
+export function formatPrice(price: number, currency = 'EUR'): string {
+  return ''; // No mostrar precios
+}
+
+/**
  * Formatea fecha relativa (ej: "hace 2 días")
  */
 export function formatRelativeDate(date: string | Date): string {
