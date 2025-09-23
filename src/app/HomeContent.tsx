@@ -8,7 +8,7 @@ import { ProductCard } from '@/components/ProductCard';
 import { CategoryChips } from '@/components/CategoryMenu';
 import { AdSlot, useInlineAds } from '@/components/AdSlot';
 import { Pagination, ResultsInfo } from '@/components/Pagination';
-import { getFilteredProducts, getFeaturedProducts } from '@/lib/data';
+import { getFilteredProducts, getFeaturedProducts, clearProductsCache } from '@/lib/data';
 import { Product } from '@/types';
 import { siteConfig } from '@/config/site';
 
@@ -35,6 +35,9 @@ export default function HomeContent() {
   const loadProducts = async () => {
     setLoading(true);
     try {
+      // Limpiar cache para asegurar datos actualizados
+      clearProductsCache();
+      
       // Obtener productos filtrados
       const allProducts = getFilteredProducts({
         search: searchQuery,

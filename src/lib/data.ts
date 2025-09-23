@@ -5,6 +5,11 @@ import productsData from '../../data/products.json';
 // Cache para productos validados
 let validatedProducts: Product[] | null = null;
 
+// Función para limpiar el cache
+export function clearProductsCache() {
+  validatedProducts = null;
+}
+
 /**
  * Obtiene todos los productos validados
  */
