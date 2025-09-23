@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { debounce } from '@/lib/utils';
 import { searchProducts } from '@/lib/data';
@@ -152,11 +152,13 @@ export function SearchBar({
                   className="block px-4 py-3 hover:bg-gray-50 transition-colors"
                 >
                   <div className="flex items-center space-x-3">
-                    <div className="flex-shrink-0 w-12 h-12 bg-gray-100 rounded overflow-hidden">
-                      <img
+                    <div className="flex-shrink-0 w-12 h-12 bg-gray-100 rounded overflow-hidden relative">
+                      <Image
                         src={product.image}
                         alt={product.alt || `${product.title} - Buscar oferta`}
-                        className="w-full h-full object-cover"
+                        fill
+                        className="object-cover"
+                        sizes="48px"
                         onError={(e) => {
                           (e.target as HTMLImageElement).src = '/images/placeholder.svg';
                         }}

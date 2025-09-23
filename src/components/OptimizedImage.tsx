@@ -25,7 +25,7 @@ export function OptimizedImage({
   fill = false,
 }: OptimizedImageProps) {
   const [imageError, setImageError] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   if (imageError) {
     return (
