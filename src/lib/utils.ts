@@ -17,15 +17,12 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(...inputs));
 }
 
+
 /**
- * Formatea precio con moneda
+ * Formatea precio con moneda (función dummy para compatibilidad)
  */
 export function formatPrice(price: number, currency = 'EUR'): string {
-  return new Intl.NumberFormat('es-ES', {
-    style: 'currency',
-    currency,
-    minimumFractionDigits: 2,
-  }).format(price);
+  return ''; // No mostrar precios
 }
 
 /**

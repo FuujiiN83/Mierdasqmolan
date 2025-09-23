@@ -34,8 +34,6 @@ copy "images\[nombre-imagen].webp" "Mierdasqmolan\public\images\[nombre-imagen].
   "alt": "Texto alternativo para SEO",
   "affiliateUrl": "https://amzn.to/XXXXX",
   "merchant": "Amazon",
-  "price": XX.XX,
-  "currency": "EUR",
   "categories": ["categoria1", "categoria2"],
   "isFeatured": false,
   "createdAt": "2024-01-23TXX:00:00Z",
@@ -43,23 +41,52 @@ copy "images\[nombre-imagen].webp" "Mierdasqmolan\public\images\[nombre-imagen].
 }
 ```
 
-### 3.1. ⚠️ TAGS - MÁXIMO 5 POR PRODUCTO
+## 🚫 POLÍTICA DE PRECIOS - IMPORTANTE
 
-**IMPORTANTE**: Cada producto debe tener **MÁXIMO 5 TAGS**. No más.
+**A PARTIR DE ENERO 2025, LOS PRODUCTOS NO MUESTRAN PRECIOS**
 
-#### Reglas para Tags:
-- **Máximo**: 5 tags por producto
-- **Formato**: Array de strings simples
-- **Ejemplo correcto**: `["tag1", "tag2", "tag3", "tag4", "tag5"]`
-- **Ejemplo incorrecto**: `["tag1", "tag2", "tag3", "tag4", "tag5", "tag6", "tag7"]` ❌
+### ⚠️ CAMBIOS IMPLEMENTADOS:
+- ❌ **Eliminados campos `price` y `currency`** de todos los productos
+- ❌ **No se muestran precios** en ninguna parte de la web
+- ❌ **Eliminada función `formatPrice`** del código
+- ❌ **Actualizados componentes** para no mostrar precios
+- ❌ **Actualizado SEO** para no incluir información de precios
 
-#### Tags Recomendados:
-- Usar palabras clave principales del producto
-- Evitar repeticiones innecesarias
-- Mantener tags relevantes y descriptivos
-- **NO** incluir todas las palabras de la descripción
+### 📋 ESTRUCTURA ACTUAL DE PRODUCTOS:
+Los productos ahora tienen esta estructura simplificada:
+```json
+{
+  "id": "XX",
+  "slug": "nombre-del-producto", 
+  "title": "Nombre del Producto",
+  "shortDescription": "Descripción corta...",
+  "description": "<p>Descripción completa...</p>",
+  "image": "/images/nombre-imagen.webp",
+  "alt": "Texto alternativo para SEO",
+  "affiliateUrl": "https://amzn.to/XXXXX",
+  "merchant": "Amazon",
+  "categories": ["categoria1", "categoria2"],
+  "isFeatured": false,
+  "createdAt": "2024-01-23TXX:00:00Z",
+  "tags": ["tag1", "tag2", "tag3"]
+}
+```
 
-### 3.2. ⚠️ ORDEN DE PRODUCTOS - CRÍTICO
+### 🔧 COMPONENTES ACTUALIZADOS:
+- ✅ `ProductCard.tsx` - Eliminada sección de precios
+- ✅ `SearchBar.tsx` - Eliminados precios de resultados
+- ✅ `producto/[slug]/page.tsx` - Eliminados precios de página individual
+- ✅ `types/index.ts` - Eliminados campos de precio de la interfaz
+- ✅ `lib/seo.ts` - Eliminados metadatos de precios
+- ✅ `lib/utils.ts` - Eliminada función `formatPrice`
+
+### ⚠️ IMPORTANTE PARA FUTUROS PRODUCTOS:
+- **NO añadir campos `price` o `currency`** a nuevos productos
+- **NO usar función `formatPrice`** en el código
+- **NO mostrar precios** en ningún componente
+- **Los usuarios deben hacer clic en "Ver Oferta"** para ver precios en la tienda externa
+
+### 3.1. ⚠️ ORDEN DE PRODUCTOS - CRÍTICO
 
 **IMPORTANTE**: Los productos se ordenan por fecha de creación (`createdAt`) de forma descendente (más recientes primero).
 
