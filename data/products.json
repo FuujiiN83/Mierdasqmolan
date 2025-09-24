@@ -1,5 +1,22 @@
 ﻿[
   {
+    "id": "201",
+    "slug": "bloques-construccion",
+    "title": "Bloques de construcción",
+    "shortDescription": "Desde siempre te ha gustado montar cosas. Vas al bar y montas figuritas con los palillos. En casa con los macarrones hacías granjas y en la tienda de juguetes veías felicidad por todas partes. Con este set de construcción volverás a ser ese niño que disfrutaba construyendo, pero ahora con piezas para ello y mas calidad.",
+    "description": "<p>Desde siempre te ha gustado montar cosas. Vas al bar y montas figuritas con los palillos. En casa con los macarrones hacías granjas y en la tienda de juguetes veías felicidad por todas partes. Con este set de construcción volverás a ser ese niño que disfrutaba construyendo, pero ahora con piezas para ello y mas calidad.</p><h2>Características del producto</h2><ul><li><strong>Valor educativo y de exhibición:</strong> Combina el aprendizaje STEM con un desafío práctico, lo que lo hace ideal para proyectos escolares o educación en el hogar. La réplica terminada de la Casa Blanca sirve como una pieza decorativa llamativa para estanterías o oficinas.</li><li><strong>Alivio del Estrés y Atención Plena:</strong> Diseñado para adultos y adolescentes que buscan una escapatoria terapéutica, la construcción de 2300 piezas fomenta la concentración y la paciencia, ofreciendo un gratificante outlets creativo lejos de las pantallas.</li><li><strong>Premium Quality & Safety:</strong> Premium ABS Plastic Micro Blocks – Safe, Durable & No Sharp Edges, Designed for Ages 14+ to Create a Museum-Worthy White House Replica</li><li><strong>Collector's Pride:</strong> Collectible White House Model Kit – High-Quality Mini Blocks Perfect for History Buffs & Architecture Enthusiasts to Display Proudly</li><li><strong>Actividad para Fortalecer los Lazos Familiares:</strong> Adecuada para familiares o amigos, es una excelente oportunidad para que los miembros de la familia se reúnan, construyan el modelo de la Casa Blanca y creen recuerdos inolvidables.</li></ul><h2>Especificaciones técnicas</h2><ul><li><strong>Marca:</strong> Alltogetho</li><li><strong>Edad mínima:</strong> 168 meses (14 años)</li><li><strong>Material:</strong> Plástico ABS</li><li><strong>Objetivo educativo:</strong> Coordinación mano-ojo</li><li><strong>Número de piezas:</strong> 2000</li><li><strong>Tema:</strong> Arquitectura</li><li><strong>Dimensiones:</strong> 20,1 x 20,1 x 16,5 centímetros</li><li><strong>Rango de edad:</strong> Adulto</li><li><strong>Tamaño:</strong> 20.06 cm x 20.06 cm x 16.51 cm</li><li><strong>Tipo:</strong> Bloques de construcción de juguete que se unen</li></ul>",
+    "image": "/images/bloques const.webp",
+    "alt": "Bloques de construcción - Set de construcción premium con 2000 piezas para adultos",
+    "affiliateUrl": "https://amzn.to/3W3XuLs",
+    "merchant": "Amazon",
+    "price": 45.50,
+    "currency": "EUR",
+    "categories": ["divertido", "hogar", "viejoven", "niños", "educativo"],
+    "isFeatured": false,
+    "createdAt": "2025-09-14T20:00:00Z",
+    "tags": ["bloques", "construcción", "educativo", "STEM", "arquitectura", "Casa Blanca", "premium", "adultos", "terapéutico", "familia"]
+  },
+  {
     "id": "200",
     "slug": "accesorios-mujer-noventera",
     "title": "Accesorios para mujer noventera",
