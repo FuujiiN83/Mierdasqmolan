@@ -8,7 +8,11 @@ let validatedProducts: Product[] | null = null;
 // Función para limpiar el cache
 export function clearProductsCache() {
   validatedProducts = null;
+  console.log('🧹 Cache de productos limpiado');
 }
+
+// Limpiar caché automáticamente al cargar el módulo
+clearProductsCache();
 
 /**
  * Obtiene todos los productos validados
@@ -16,7 +20,9 @@ export function clearProductsCache() {
 export function getAllProducts(): Product[] {
   if (validatedProducts === null) {
     try {
+      console.log(`📊 Cargando productos desde archivo: ${productsData.length}`);
       validatedProducts = validateProducts(productsData);
+      console.log(`✅ Productos validados: ${validatedProducts.length}`);
     } catch (error) {
       console.error('Error validando productos:', error);
       return [];
@@ -30,12 +36,15 @@ export function getAllProducts(): Product[] {
  */
 export function getFilteredProducts(filters: ProductFilters = {}): Product[] {
   const allProducts = getAllProducts();
+  console.log(`🔍 Filtrando productos: ${allProducts.length} productos iniciales`);
   
   let filtered = [...allProducts];
 
   // Excluir productos de blog por defecto (solo se muestran en página específica de blog)
   if (!filters.includeBlog) {
+    const beforeBlog = filtered.length;
     filtered = filtered.filter(product => !product.categories.includes('blog'));
+    console.log(`📝 Después de excluir blog: ${filtered.length} (eliminados: ${beforeBlog - filtered.length})`);
   }
 
   // Filtrar por categorías
@@ -81,8 +90,10 @@ export function getFilteredProducts(filters: ProductFilters = {}): Product[] {
   if (filters.limit !== undefined) {
     const offset = filters.offset || 0;
     filtered = filtered.slice(offset, offset + filters.limit);
+    console.log(`📄 Después de paginación: ${filtered.length} productos`);
   }
 
+  console.log(`🎯 Resultado final: ${filtered.length} productos`);
   return filtered;
 }
 

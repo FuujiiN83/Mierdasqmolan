@@ -25,8 +25,8 @@ export function OptimizedImage({
   fill = false,
 }: OptimizedImageProps) {
   const [imageError, setImageError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
 
+  // Fallback simple para errores
   if (imageError) {
     return (
       <div className={`bg-gray-100 dark:bg-gray-800 flex items-center justify-center ${className}`}>
@@ -40,39 +40,36 @@ export function OptimizedImage({
     );
   }
 
-  return (
-    <div className={`relative ${isLoading ? 'animate-pulse bg-gray-200 dark:bg-gray-700' : ''} ${className}`}>
-      {fill ? (
+  // Configuración simplificada sin blur placeholder que puede causar problemas
+  const imageProps = {
+    src,
+    alt,
+    priority,
+    onError: () => setImageError(true),
+    quality: 80,
+    className: "object-cover",
+  };
+
+  if (fill) {
+    return (
+      <div className={`relative ${className}`}>
         <Image
-          src={src}
-          alt={alt}
+          {...imageProps}
           fill
           sizes={sizes || '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'}
-          className="object-cover"
-          priority={priority}
-          onError={() => setImageError(true)}
-          onLoad={() => setIsLoading(false)}
-          quality={85}
-          placeholder="blur"
-          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
         />
-      ) : (
-        <Image
-          src={src}
-          alt={alt}
-          width={width}
-          height={height}
-          sizes={sizes || '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'}
-          className="object-cover"
-          priority={priority}
-          onError={() => setImageError(true)}
-          onLoad={() => setIsLoading(false)}
-          quality={85}
-          placeholder="blur"
-          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-        />
-      )}
+      </div>
+    );
+  }
+
+  return (
+    <div className={className}>
+      <Image
+        {...imageProps}
+        width={width || 400}
+        height={height || 300}
+        sizes={sizes || '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'}
+      />
     </div>
   );
 }
-
