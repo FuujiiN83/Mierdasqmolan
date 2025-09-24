@@ -34,57 +34,14 @@ copy "images\[nombre-imagen].webp" "Mierdasqmolan\public\images\[nombre-imagen].
   "alt": "Texto alternativo para SEO",
   "affiliateUrl": "https://amzn.to/XXXXX",
   "merchant": "Amazon",
+  "price": XX.XX,
+  "currency": "EUR",
   "categories": ["categoria1", "categoria2"],
   "isFeatured": false,
   "createdAt": "2024-01-23TXX:00:00Z",
   "tags": ["tag1", "tag2", "tag3"]
 }
 ```
-
-## 🚫 POLÍTICA DE PRECIOS - IMPORTANTE
-
-**A PARTIR DE ENERO 2025, LOS PRODUCTOS NO MUESTRAN PRECIOS**
-
-### ⚠️ CAMBIOS IMPLEMENTADOS:
-- ❌ **Eliminados campos `price` y `currency`** de todos los productos
-- ❌ **No se muestran precios** en ninguna parte de la web
-- ❌ **Eliminada función `formatPrice`** del código
-- ❌ **Actualizados componentes** para no mostrar precios
-- ❌ **Actualizado SEO** para no incluir información de precios
-
-### 📋 ESTRUCTURA ACTUAL DE PRODUCTOS:
-Los productos ahora tienen esta estructura simplificada:
-```json
-{
-  "id": "XX",
-  "slug": "nombre-del-producto", 
-  "title": "Nombre del Producto",
-  "shortDescription": "Descripción corta...",
-  "description": "<p>Descripción completa...</p>",
-  "image": "/images/nombre-imagen.webp",
-  "alt": "Texto alternativo para SEO",
-  "affiliateUrl": "https://amzn.to/XXXXX",
-  "merchant": "Amazon",
-  "categories": ["categoria1", "categoria2"],
-  "isFeatured": false,
-  "createdAt": "2024-01-23TXX:00:00Z",
-  "tags": ["tag1", "tag2", "tag3"]
-}
-```
-
-### 🔧 COMPONENTES ACTUALIZADOS:
-- ✅ `ProductCard.tsx` - Eliminada sección de precios
-- ✅ `SearchBar.tsx` - Eliminados precios de resultados
-- ✅ `producto/[slug]/page.tsx` - Eliminados precios de página individual
-- ✅ `types/index.ts` - Eliminados campos de precio de la interfaz
-- ✅ `lib/seo.ts` - Eliminados metadatos de precios
-- ✅ `lib/utils.ts` - Eliminada función `formatPrice`
-
-### ⚠️ IMPORTANTE PARA FUTUROS PRODUCTOS:
-- **NO añadir campos `price` o `currency`** a nuevos productos
-- **NO usar función `formatPrice`** en el código
-- **NO mostrar precios** en ningún componente
-- **Los usuarios deben hacer clic en "Ver Oferta"** para ver precios en la tienda externa
 
 ### 3.1. ⚠️ ORDEN DE PRODUCTOS - CRÍTICO
 
@@ -311,11 +268,61 @@ git push
 - **Error "Module not found: Can't resolve './../../data/blog.json'"**: Usar import correcto `@/data/blog.json`
 - **Blog no aparece**: Verificar que `blog.json` esté en ambas carpetas y sincronizado
 
+## 🔧 Solución de Problemas UTF-8 (CRÍTICO)
+
+### Problema: Caracteres especiales se muestran incorrectamente
+**Síntomas**: Los caracteres como `ñ`, `á`, `é`, `í`, `ó`, `ú`, `¿`, `¡` se muestran como `Ã±`, `Ã¡`, `Ã©`, `Ã­`, `Ã³`, `Ãº`, `Â¿`, `Â¡`
+
+**Solución URGENTE**:
+```powershell
+# 1. Ir a la carpeta Mierdasqmolan
+cd Mierdasqmolan
+
+# 2. Aplicar reemplazo directo de caracteres corruptos
+powershell -Command "(Get-Content 'data\products.json' -Raw) -replace 'Â¿', '¿' -replace 'Â¡', '¡' -replace 'Ã¡', 'á' -replace 'Ã©', 'é' -replace 'Ã­', 'í' -replace 'Ã³', 'ó' -replace 'Ãº', 'ú' -replace 'Ã±', 'ñ' -replace 'Ã¼', 'ü' -replace 'â€¦', '...' -replace 'â€!!', '!!' | Set-Content 'data\products.json' -Encoding UTF8"
+
+# 3. Commit y push inmediato
+git add .
+git commit -m "CRITICAL: Fix UTF-8 encoding - replace corrupted characters"
+git push
+
+# 4. Sincronizar con carpeta principal
+cd ..
+copy "Mierdasqmolan\data\products.json" "data\products.json"
+
+# 5. Reiniciar aplicación
+# Terminar proceso actual y reiniciar
+```
+
+### Prevención de Problemas UTF-8:
+1. **Siempre usar** la conversión UTF-8 del paso 5 del proceso normal
+2. **Verificar caracteres** después de cada sincronización
+3. **Si aparecen caracteres corruptos**, usar la solución urgente inmediatamente
+4. **Reiniciar aplicación** después de correcciones UTF-8
+
+### Caracteres que se corrompen frecuentemente:
+- `¿` → `Â¿`
+- `¡` → `Â¡`
+- `á` → `Ã¡`
+- `é` → `Ã©`
+- `í` → `Ã­`
+- `ó` → `Ã³`
+- `ú` → `Ãº`
+- `ñ` → `Ã±`
+- `ü` → `Ã¼`
+- `...` → `â€¦`
+- `!!` → `â€!!`
+
 ---
 **Última actualización**: 23 de enero de 2025
-**Total productos**: 125
+**Total productos**: 182
 **Total artículos de blog**: 2
-**Último ID usado**: 137 (Llavero NFC)
-**Commit hash**: a3736d0
-**Último commit**: "Actualizar fecha del llavero NFC para que aparezca primero (más reciente que la tortuga)"
+**Último ID usado**: 194 (Fantasma)
+**Commit hash**: 01c5480
+**Último commit**: "CRITICAL: Fix UTF-8 encoding - replace corrupted characters"
+**Problemas solucionados**: 
+- ✅ Layout de productos de dos en dos
+- ✅ Codificación UTF-8 corregida
+- ✅ 182 productos visibles
+- ✅ Aplicación funcionando en puerto 3001
 
