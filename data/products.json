@@ -1,5 +1,22 @@
 ﻿[
   {
+    "id": "206",
+    "slug": "taza-divertida",
+    "title": "Taza divertida",
+    "shortDescription": "Esta taza hace lo que no haces tu por las mañanas, algo divertido o alegre. Que tu con sobrevivir hasta que el café te hace efecto te basta. Pues pobre taza, te sonríe, tiene hueco para las galletas o la magdalena y encima nunca se queja. ¡Buenos días!",
+    "description": "<p>Esta taza hace lo que no haces tu por las mañanas, algo divertido o alegre. Que tu con sobrevivir hasta que el café te hace efecto te basta. Pues pobre taza, te sonríe, tiene hueco para las galletas o la magdalena y encima nunca se queja. ¡Buenos días!</p><h2>Características del producto</h2><ul><li><strong>Taza divertida:</strong> Despierta tu lado más divertido cada mañana con esta taza original. En un vibrante color y con ojitos, esta taza de 240 ml tiene algo único: un agujero para galletas que simula una boca hambrienta. ¡Es como tener un compañero de desayuno con personalidad propia!</li><li><strong>Taza para desayuno:</strong> Disfruta tu desayuno o merienda sin migas ni platos adicionales con esta taza de café. Guarda tus galletas en su hueco, mantén la mesa limpia y ¡ten las manos libres para saborear tu bebida favorita y cada deliciosa galleta!! También puedes usarlo para dejar la bolsa de tu infusión. ¡Practicidad y placer en cada sorbo!</li><li><strong>Regalo original:</strong> Sorprende a los amantes de las galletas con este regalo perfecto. Cada vez que lo usen, les arrancará una sonrisa mientras disfrutan de su dulce favorito con estilo. Es un detalle que hará sus momentos aún más especiales.</li><li><strong>Características:</strong> Con su capacidad de 240 ml podrás disfrutar tu bebida y tener dos cookies en el hueco. Sus dimensiones de 8 x 8 x 10,5 cm la hacen compacta y práctica para guardarla en cualquier rincón o decorar tu cocina. Recuerda lavarla a mano para mantenerla en óptimas condiciones.</li><li><strong>FISURA:</strong> Descubre nuestros productos divertidos de hogar y decoración. Cuando necesites hacer un regalo piensa en FISURA. Originalidad y diseños únicos nos caracterizan. Otros productos disponibles en nuestra tienda.</li></ul><h2>Especificaciones técnicas</h2><ul><li><strong>Marca:</strong> Fisura</li><li><strong>Color:</strong> Naranja</li><li><strong>Función especial:</strong> Hueco para galletas</li><li><strong>Estilo:</strong> Dibujos animados</li><li><strong>Tema:</strong> Frutas</li><li><strong>Usos recomendados:</strong> Desayuno o merienda</li><li><strong>Componentes incluidos:</strong> Soporte, Taza</li><li><strong>Usos específicos:</strong> Desayunos, Meriendas, Regalos</li><li><strong>Forma:</strong> Irregular shape</li><li><strong>Patrón:</strong> Dibujo animado</li><li><strong>Material:</strong> Cerámica</li><li><strong>Capacidad:</strong> 240 Mililitros</li></ul>",
+    "image": "/images/taza divertida.webp",
+    "alt": "Taza divertida - Taza con hueco para galletas y ojitos divertidos",
+    "affiliateUrl": "https://amzn.to/3VujGyj",
+    "merchant": "Amazon",
+    "price": 9.95,
+    "currency": "EUR",
+    "categories": ["hogar", "niños", "viejoven", "tazas"],
+    "isFeatured": false,
+    "createdAt": "2025-09-15T01:00:00Z",
+    "tags": ["taza", "divertida", "galletas", "desayuno", "hogar", "niños", "viejoven", "regalo", "cerámica", "ojitos"]
+  },
+  {
     "id": "205",
     "slug": "guantes-led",
     "title": "Guantes led",
