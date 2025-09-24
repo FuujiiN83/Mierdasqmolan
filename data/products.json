@@ -1,5 +1,22 @@
 ﻿[
   {
+    "id": "202",
+    "slug": "nostalgia",
+    "title": "Nostalgia",
+    "shortDescription": "La sabiduría milenial recogida por primera vez en un espectacular estuche. Vuelven la nostalgia, el humor gamberro y la lagrimita fácil en este maravilloso viaje a las profundidades de la generación más auténtica de la historia: los milenials.",
+    "description": "<p>La sabiduría milenial recogida por primera vez en un espectacular estuche. Vuelven la nostalgia, el humor gamberro y la lagrimita fácil en este maravilloso viaje a las profundidades de la generación más auténtica de la historia: los milenials.</p><p>¿Guarreabas en el chat de Terra? ¿Consultabas los test de la Súper Pop para descubrir cómo besabas? ¿Te sabes de memoria el mítico \"mocasines saltarines\"? ¡El estuche nostálgico definitivo para la mejor generación de la historia humana ya está aquí!</p><p>Querido milenial: si creciste alimentando a una mascota digital llamada Tamagotchi, te comunicaste con zumbidos de Messenger, veías La banda del patio y cantabas (y sigues cantando a pleno pulmón) \"Yo quiero bailar\", ¡este estuche es para ti!</p><p>TODAS las fotos, TODAS las canciones, TODAS las series y TODOS los productos habidos y por haber, pero el MISMO amor por la cultura milenial de SIEMPRE.</p><p>Directo al corazón (L)</p>",
+    "image": "/images/nostalgia.webp",
+    "alt": "Nostalgia - Estuche milenial con sabiduría de la generación más auténtica",
+    "affiliateUrl": "https://amzn.to/4mvdWiA",
+    "merchant": "Amazon",
+    "price": 54.10,
+    "currency": "EUR",
+    "categories": ["libros", "divertido", "viejoven"],
+    "isFeatured": false,
+    "createdAt": "2025-09-14T21:00:00Z",
+    "tags": ["nostalgia", "milenial", "estuche", "libros", "divertido", "viejoven", "humor", "cultura", "Tamagotchi", "Messenger"]
+  },
+  {
     "id": "201",
     "slug": "bloques-construccion",
     "title": "Bloques de construcción",
