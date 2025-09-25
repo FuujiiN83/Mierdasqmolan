@@ -1,5 +1,22 @@
 ﻿[
   {
+    "id": "213",
+    "slug": "luz-pacman",
+    "title": "Luz pacman",
+    "shortDescription": "Esta luz de pacman y sus fantasmas te llevará a los años 80 y 90 donde te dejabas hasta el botón del pantalón en la recreativa. Para unos es un trofeo y algo digno de recuerdo, ¿eres uno de ellos?",
+    "description": "<p>Esta luz de pacman y sus fantasmas te llevará a los años 80 y 90 donde te dejabas hasta el botón del pantalón en la recreativa. Para unos es un trofeo y algo digno de recuerdo, ¿eres uno de ellos?</p><h2>Características del producto</h2><ul><li><strong>Producto oficial:</strong> Lámpara Pac Man Iconos oficial con licencia de la marca.</li><li><strong>Coleccionable único:</strong> Este coleccionable es una adición única a cualquier conjunto de fans de Pac-Man.</li><li><strong>Tradición e innovación:</strong> Producto que combina tradición e innovación, perfecto para los amantes de los videojuegos clásicos.</li><li><strong>Material de calidad:</strong> Hecho de material de calidad que es lo suficientemente resistente para un uso prolongado.</li><li><strong>Diseño icónico:</strong> Lámpara Pac Man Iconos que representa perfectamente el espíritu de los años 80 y 90.</li></ul><h2>Especificaciones técnicas</h2><ul><li><strong>Material de la base:</strong> Plástico</li><li><strong>Base de la bombilla:</strong> E5</li><li><strong>Dimensiones:</strong> 7f. x 31,9an. x 15,4al. centímetros</li><li><strong>Peso:</strong> 340 Gramos</li><li><strong>Tipo de lámpara:</strong> LED</li><li><strong>Color de la pantalla:</strong> Multicolor</li><li><strong>Material de la pantalla:</strong> Plástico</li><li><strong>Tipo de interruptor:</strong> Pulsador</li><li><strong>Estilo:</strong> Lámpara</li><li><strong>Marca:</strong> Paladone</li><li><strong>Nombre de estilo:</strong> Lámpara</li></ul>",
+    "image": "/images/luz pacman.webp",
+    "alt": "Luz pacman - Lámpara LED oficial de Pac-Man con diseño retro de los años 80",
+    "affiliateUrl": "https://amzn.to/429w9uY",
+    "merchant": "Amazon",
+    "price": 27.33,
+    "currency": "EUR",
+    "categories": ["friki", "viejoven", "hogar"],
+    "isFeatured": false,
+    "createdAt": "2025-09-15T08:00:00Z",
+    "tags": ["luz", "pacman", "led", "retro", "videojuegos", "friki", "viejoven", "hogar", "coleccionable", "oficial"]
+  },
+  {
     "id": "212",
     "slug": "lampara-personalizada",
     "title": "Lámpara personalizada",
