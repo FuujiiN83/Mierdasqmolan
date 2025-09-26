@@ -79,7 +79,7 @@ export function ProductCard({ product, priority = false, className = '' }: Produ
                     className="inline-block bg-primary-600 hover:bg-primary-700 text-white text-base font-semibold py-3 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
                     onClick={(e) => e.stopPropagation()}
                   >
-                    Ver Oferta en Amazon
+                    Comprar
                   </a>
                 </div>
 
