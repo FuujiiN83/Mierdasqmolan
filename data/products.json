@@ -1,5 +1,22 @@
 ﻿[
   {
+    "id": "225",
+    "slug": "capsulas-sorpresa",
+    "title": "Cápsulas sorpresa",
+    "shortDescription": "Cápsulas con sorpresa. Pues eso, ¿cuál es la sorpresa? Si te lo digo ya no lo sería, no lo intentes.",
+    "description": "<p>Cápsulas con sorpresa. Pues eso, ¿cuál es la sorpresa? Si te lo digo ya no lo sería, no lo intentes.</p><h2>Características del producto</h2><ul><li><strong>Contenido del kit:</strong> Gadget de cumpleaños infantil que contiene 12 cápsulas de 5,5 cm con varios regalos y sorpresas en su interior, pero siempre en la siguiente proporción: 3 unidades Pelotas de malla antiestrés, 3 unidades Squish 'n Slow, 3 unidades Cordones elásticos, 3 unidades Manos pegajosas</li><li><strong>Ideal para cualquier ocasión:</strong> Perfecto como regalo al final de la fiesta, comunión o confirmación, para fiestas de pijamas, carnaval o halloween, como premio escolar o simplemente como sorpresa para tus hijos, nietos o pequeños invitados</li><li><strong>Lo que encontrarás:</strong> 3x BOLAS DE MALLA: bolas para aplastar con la red que las deforma; 3x SQUISH 'N SLOW: marionetas aplastantes, tipo antiestrés, se reforman lentamente; 3x CUERDA DE ESTIRAMIENTO: cuerdas de colores y trenzadas, extensibles; 3x STICKY HAND: las legendarias manos pegajosas</li><li><strong>Educativo y divertido:</strong> Los juegos para niños están diseñados para estimular la creatividad y la motricidad fina, al mismo tiempo que ofrecen horas de diversión.</li><li><strong>Favorece la interacción:</strong> Los juegos incluidos promueven el juego en grupo y la interacción social, ayudando a los niños a desarrollar habilidades de comunicación y colaboración de una manera divertida.</li></ul><h2>Especificaciones técnicas</h2><ul><li><strong>Color:</strong> Multicolor</li><li><strong>Material:</strong> Polipropileno (PP), Elastómero termoplástico (TPE), Cloruro de polivinilo (PVC), Plástico, Caucho termoplástico (TPR), Poliuretano (PU)</li><li><strong>Marca:</strong> Lavatelli</li><li><strong>Número de unidades:</strong> 12.0 unidad</li><li><strong>Tema:</strong> Juegos sorpresa</li><li><strong>Dimensiones:</strong> 15 x 10 x 8 centímetros</li><li><strong>Ocasión:</strong> Christmas</li><li><strong>Peso del producto:</strong> 50 Gramos</li><li><strong>Fabricante:</strong> CAPSULE55 12pz</li><li><strong>Rango de edad:</strong> Bebé</li><li><strong>Contenido:</strong> 12 cápsulas de 5,5 cm</li><li><strong>Proporción:</strong> 3 pelotas malla, 3 squish, 3 cordones, 3 manos pegajosas</li><li><strong>Uso:</strong> Fiestas, regalos, premios, sorpresas</li></ul>",
+    "image": "/images/capsula sorpresa.webp",
+    "alt": "Cápsulas sorpresa - Kit de 12 cápsulas con juguetes sorpresa para niños",
+    "affiliateUrl": "https://amzn.to/483HSz6",
+    "merchant": "Amazon",
+    "price": 10.99,
+    "currency": "EUR",
+    "categories": ["niños", "divertido", "fiesta"],
+    "isFeatured": false,
+    "createdAt": "2025-09-15T20:00:00Z",
+    "tags": ["cápsulas", "sorpresa", "juguetes", "niños", "divertido", "fiesta", "regalo", "premio", "comunión", "halloween"]
+  },
+  {
     "id": "224",
     "slug": "piezas-silicona",
     "title": "Piezas de silicona",
