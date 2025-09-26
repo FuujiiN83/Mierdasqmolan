@@ -1,5 +1,22 @@
 ﻿[
   {
+    "id": "227",
+    "slug": "caja-regalo",
+    "title": "Caja para regalo",
+    "shortDescription": "Te gusta gastar broma hasta cuando es un regalo para un ser querido. Esta caja le hará soltar un \"WTF\" ya que como su nombre indica, es de broma y que se piense que es un auténtico pelador de gambas llamado pelamba. De todas maneras, ya te digo yo que alguno cuando vea que es una broma hasta que pilla una decepción.",
+    "description": "<p>Te gusta gastar broma hasta cuando es un regalo para un ser querido. Esta caja le hará soltar un \"WTF\" ya que como su nombre indica, es de broma y que se piense que es un auténtico pelador de gambas llamado pelamba. De todas maneras, ya te digo yo que alguno cuando vea que es una broma hasta que pilla una decepción.</p><h2>Características del producto</h2><ul><li><strong>Broma perfecta:</strong> Esta caja de regalo está diseñada para gastar una broma divertida a tus seres queridos. Con su apariencia de pelador de gambas llamado \"pelamba\", hará que la persona que lo reciba se quede con cara de \"WTF\" al abrirlo.</li><li><strong>Diseño realista:</strong> La caja está diseñada para parecer un producto auténtico de pelador de gambas, con todos los detalles necesarios para que la broma sea creíble y efectiva.</li><li><strong>Material de calidad:</strong> Fabricada en papel de alta calidad con patrón tartán, asegurando que la caja se vea profesional y convincente.</li><li><strong>Ideal para ocasiones especiales:</strong> Perfecta para regalos de Navidad, cumpleaños, o cualquier ocasión donde quieras sorprender a alguien con una broma inofensiva pero divertida.</li><li><strong>Componentes incluidos:</strong> La caja incluye un pelador real, lo que hace que la broma sea aún más convincente cuando la persona abra el regalo.</li></ul><h2>Especificaciones técnicas</h2><ul><li><strong>Marca:</strong> Bromabox</li><li><strong>Color:</strong> Multicolor</li><li><strong>Material:</strong> Papel</li><li><strong>Ocasión:</strong> Navidad</li><li><strong>Componentes incluidos:</strong> Pelador</li><li><strong>Número de productos:</strong> 1</li><li><strong>Número de unidades:</strong> 1 unidad</li><li><strong>Patrón:</strong> Tartán</li><li><strong>Tamaño:</strong> 1 unidad (Paquete de 1)</li><li><strong>Total de unidades:</strong> 1</li><li><strong>Uso:</strong> Broma, regalo, sorpresa</li><li><strong>Público objetivo:</strong> Amigos, familia, seres queridos</li><li><strong>Efecto:</strong> Sorpresa, risa, diversión</li></ul>",
+    "image": "/images/caja de broma.webp",
+    "alt": "Caja para regalo - Caja de broma con pelador de gambas para sorprender a tus seres queridos",
+    "affiliateUrl": "https://amzn.to/4pFrIlx",
+    "merchant": "Amazon",
+    "price": 9.95,
+    "currency": "EUR",
+    "categories": ["fiesta", "divertido", "random"],
+    "isFeatured": false,
+    "createdAt": "2025-09-15T22:00:00Z",
+    "tags": ["caja", "regalo", "broma", "pelador", "gambas", "sorpresa", "divertido", "navidad", "fiesta", "random"]
+  },
+  {
     "id": "226",
     "slug": "pompas-jabon",
     "title": "Pompas de jabón",
