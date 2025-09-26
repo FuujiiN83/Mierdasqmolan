@@ -76,7 +76,7 @@ export function ProductCard({ product, priority = false, className = '' }: Produ
                     href={affiliateUrl}
                     target="_blank"
                     rel="nofollow sponsored noopener"
-                    className="inline-block bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+                    className="inline-block bg-primary-600 hover:bg-primary-700 text-white text-base font-semibold py-3 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
                     onClick={(e) => e.stopPropagation()}
                   >
                     Ver Oferta en Amazon
