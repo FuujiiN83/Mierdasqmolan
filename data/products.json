@@ -1,5 +1,22 @@
 ﻿[
   {
+    "id": "230",
+    "slug": "juego-sonidos",
+    "title": "Juego de sonidos",
+    "shortDescription": "Durante años has entrenado. Lo hacías mientras hablabas con la boca llena y nadie te entendía, salvo tu mejor amigo. Gracias a eso ganarás en este juego. Se trata de hacer sonidos y adivinar cual es, eh, juego de sonidos, es fácil de pillar.",
+    "description": "<p>Durante años has entrenado. Lo hacías mientras hablabas con la boca llena y nadie te entendía, salvo tu mejor amigo. Gracias a eso ganarás en este juego. Se trata de hacer sonidos y adivinar cual es, eh, juego de sonidos, es fácil de pillar.</p><h2>Características del producto</h2><ul><li><strong>Juego de fiesta frenético:</strong> Ese juego de los sonidos es un juego de fiesta frenético, interactivo y muy ruidoso. El objetivo es conseguir que tu equipo adivine tantas respuestas en las cartas de categoría como pueda en un minuto. Utiliza cualquier combinación de sonidos y movimientos, pero debes tener las manos a la espalda. También recibirás comodines. Úsalos estratégicamente para ganar.</li><li><strong>Para grupos grandes:</strong> Dirigido a mayores de 14+. Para más de 2 jugadores, este extraño y maravilloso juego te hará reír a carcajadas y te sacará de tu caparazón.</li><li><strong>Versión en español:</strong> Esta es la versión en español, perfecta para jugar con amigos y familia en nuestro idioma.</li><li><strong>Componentes completos:</strong> Incluye 1 carta de resumen, 1 dado, 1 reloj de arena de un minuto, 1 rotulador borrable, 1 tarjeta de puntuación reutilizable, 16 comodines, 325 cartas de categoría.</li><li><strong>Diversión garantizada:</strong> Un juego que pondrá a prueba tu capacidad de comunicación no verbal y te hará pasar momentos inolvidables con tus seres queridos.</li></ul><h2>Especificaciones técnicas</h2><ul><li><strong>Rango de edad:</strong> Adulto (14+)</li><li><strong>Número de jugadores:</strong> 2+</li><li><strong>Marca:</strong> That Sound Game A noisy game for weird people</li><li><strong>Tema:</strong> Humor</li><li><strong>Material:</strong> Cartón</li><li><strong>Componentes incluidos:</strong> 1 carta de resumen, 1 dado, 1 reloj de arena de un minuto, 1 rotulador borrable, 1 tarjeta de puntuación reutilizable, 16 comodines, 325 cartas de categoría</li><li><strong>Información del paquete:</strong> Caja</li><li><strong>Dimensiones:</strong> 19,5l. x 10,4an. centímetros</li><li><strong>Cantidad de productos por paquete:</strong> 1</li><li><strong>Estilo:</strong> Contemporáneo</li><li><strong>Idioma:</strong> Español</li><li><strong>Duración de partida:</strong> Variable</li><li><strong>Tiempo por ronda:</strong> 1 minuto</li><li><strong>Mecánica:</strong> Sonidos y movimientos con manos a la espalda</li></ul>",
+    "image": "/images/juego de los sonidos.webp",
+    "alt": "Juego de sonidos - Juego de fiesta frenético para adivinar sonidos y movimientos",
+    "affiliateUrl": "https://amzn.to/46psonQ",
+    "merchant": "Amazon",
+    "price": 24.95,
+    "currency": "EUR",
+    "categories": ["divertido", "fiesta", "viejoven"],
+    "isFeatured": false,
+    "createdAt": "2025-09-16T01:00:00Z",
+    "tags": ["juego", "sonidos", "fiesta", "divertido", "viejoven", "grupo", "comunicación", "humor", "interactivo", "ruidoso"]
+  },
+  {
     "id": "229",
     "slug": "ruleta-grajeas",
     "title": "Ruleta de grajeas",
