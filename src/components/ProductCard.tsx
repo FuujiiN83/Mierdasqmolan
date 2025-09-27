@@ -106,14 +106,27 @@ export function ProductCard({ product, priority = false, className = '' }: Produ
                 {product.categories && product.categories.length > 0 && (
                   <div className="flex flex-wrap gap-1 mb-4">
                     {product.categories.slice(0, 3).map((category) => {
-                      const categoryName = categoryConfig[category as keyof typeof categoryConfig]?.name || category;
+                      // Mapear nombre de categoría a slug
+                      const categorySlugMap: Record<string, string> = {
+                        'Regalos originales para casa': 'regalos-originales-para-casa',
+                        'Regalos frikis': 'regalos-frikis',
+                        'Regalos WTF': 'regalos-wtf',
+                        'Regalos para todo tipo de edades': 'regalos-para-todo-tipo-de-edades',
+                        'Regalos para pasarlo bien': 'regalos-para-pasarlo-bien',
+                        'blog': 'blog'
+                      };
+                      
+                      const categorySlug = categorySlugMap[category] || category;
+                      
                       return (
-                        <span
+                        <Link
                           key={category}
-                          className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300"
+                          href={`/categoria/${categorySlug}`}
+                          className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
+                          onClick={(e) => e.stopPropagation()}
                         >
-                          {categoryName}
-                        </span>
+                          {category}
+                        </Link>
                       );
                     })}
                     {product.categories.length > 3 && (

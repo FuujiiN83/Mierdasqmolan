@@ -257,9 +257,31 @@ export default function ProductPage({ params }: ProductPageProps) {
                   <div>
                     <dt className="text-sm font-medium text-gray-500">Categorías</dt>
                     <dd className="text-sm text-gray-900 dark:text-white">
-                      {product.categories.map(cat => 
-                        categoryConfig[cat as keyof typeof categoryConfig]?.name || cat
-                      ).join(', ')}
+                      <div className="flex flex-wrap gap-1 mt-1">
+                        {product.categories.map((category) => {
+                          // Mapear nombre de categoría a slug
+                          const categorySlugMap: Record<string, string> = {
+                            'Regalos originales para casa': 'regalos-originales-para-casa',
+                            'Regalos frikis': 'regalos-frikis',
+                            'Regalos WTF': 'regalos-wtf',
+                            'Regalos para todo tipo de edades': 'regalos-para-todo-tipo-de-edades',
+                            'Regalos para pasarlo bien': 'regalos-para-pasarlo-bien',
+                            'blog': 'blog'
+                          };
+                          
+                          const categorySlug = categorySlugMap[category] || category;
+                          
+                          return (
+                            <Link
+                              key={category}
+                              href={`/categoria/${categorySlug}`}
+                              className="inline-block bg-gray-100 dark:bg-gray-700 hover:bg-primary-100 dark:hover:bg-primary-900 text-gray-700 dark:text-gray-300 hover:text-primary-700 dark:hover:text-primary-300 text-xs px-2 py-1 rounded-full transition-colors"
+                            >
+                              {category}
+                            </Link>
+                          );
+                        })}
+                      </div>
                     </dd>
                   </div>
                   
