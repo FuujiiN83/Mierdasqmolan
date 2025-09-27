@@ -123,6 +123,22 @@ export function getFeaturedProducts(): Product[] {
 }
 
 /**
+ * Mapea categorías del JSON a slugs de configuración
+ */
+function mapCategoryToSlug(category: string): string {
+  const categoryMap: Record<string, string> = {
+    'Regalos originales para casa': 'regalos-originales-para-casa',
+    'Regalos frikis': 'regalos-frikis',
+    'Regalos WTF': 'regalos-wtf',
+    'Regalos para todo tipo de edades': 'regalos-para-todo-tipo-de-edades',
+    'Regalos para pasarlo bien': 'regalos-para-pasarlo-bien',
+    'blog': 'blog'
+  };
+  
+  return categoryMap[category] || category;
+}
+
+/**
  * Obtiene categorías disponibles con conteo de productos
  */
 export function getAvailableCategories(): Array<{
@@ -135,7 +151,7 @@ export function getAvailableCategories(): Array<{
   
   return Object.entries(categoryConfig).map(([slug, config]) => {
     const count = products.filter(product =>
-      product.categories.includes(slug)
+      product.categories.some(cat => mapCategoryToSlug(cat) === slug)
     ).length;
     
     return {
