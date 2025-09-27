@@ -25,172 +25,44 @@ export const siteConfig = {
 
 export type SiteConfig = typeof siteConfig;
 
-// Configuración de categorías basada en los productos existentes
+// Configuración de categorías unificadas
 export const categoryConfig = {
-  viral: {
-    name: "Viral",
-    description: "Lo que está de moda y arrasa en redes",
-    color: "#F59E0B",
-    icon: "🔥"
-  },
-  random: {
-    name: "Random",
-    description: "Productos curiosos y sorprendentes",
-    color: "#8B5CF6",
-    icon: "🎲"
-  },
-  viejoven: {
-    name: "Viejoven",
-    description: "Para los que ya no son tan jóvenes pero siguen siendo jóvenes de corazón",
-    color: "#8B5CF6",
-    icon: "👴"
-  },
-  ofendiditos: {
-    name: "Ofendiditos",
-    description: "Para los que se ofenden por todo",
-    color: "#EF4444",
-    icon: "😤"
-  },
-  dejados: {
-    name: "Dejados",
-    description: "Para los que han tirado la toalla",
-    color: "#6B7280",
-    icon: "🛋️"
-  },
-  otakus: {
-    name: "Otakus",
-    description: "Anime, manga y cultura japonesa",
-    color: "#EC4899",
-    icon: "🎌"
-  },
-  adolescentes: {
-    name: "Adolescentes",
-    description: "Para los que todavía no saben nada de la vida",
-    color: "#06B6D4",
-    icon: "🧒"
-  },
-  cinefilos: {
-    name: "Cinéfilos",
-    description: "Para los amantes del séptimo arte",
-    color: "#1F2937",
-    icon: "🎬"
-  },
-  ninos: {
-    name: "Niños",
-    description: "Para los pequeños de la casa",
+  "regalos-originales-para-casa": {
+    name: "Regalos originales para casa",
+    description: "Productos únicos para decorar y mejorar tu hogar",
     color: "#10B981",
-    icon: "🧸"
+    icon: "🏠"
   },
-  educativo: {
-    name: "Educativo",
-    description: "Aprender jugando",
-    color: "#3B82F6",
-    icon: "📚"
-  },
-  steam: {
-    name: "STEAM",
-    description: "Ciencia, tecnología, ingeniería, arte y matemáticas",
-    color: "#6366F1",
-    icon: "🔬"
-  },
-  deportistas: {
-    name: "Deportistas",
-    description: "Para los que mueven el esqueleto",
-    color: "#059669",
-    icon: "⚽"
-  },
-  frikis: {
-    name: "Frikis",
-    description: "Para los amantes de la cultura geek",
-    color: "#10B981",
+  "regalos-frikis": {
+    name: "Regalos frikis",
+    description: "Para los amantes de la cultura geek, gaming y cine",
+    color: "#8B5CF6",
     icon: "🤓"
   },
-  gamers: {
-    name: "Gamers",
-    description: "Para los adictos a los videojuegos",
-    color: "#8B5CF6",
-    icon: "🎮"
-  },
-  fiesta: {
-    name: "Fiesta",
-    description: "Para animar cualquier celebración",
+  "regalos-wtf": {
+    name: "Regalos WTF",
+    description: "Productos locos, virales y que te harán decir WTF",
     color: "#F59E0B",
-    icon: "🎉"
+    icon: "🤯"
   },
-  "vida-en-el-wc": {
-    name: "Vida en el WC",
-    description: "Para los momentos más íntimos",
-    color: "#6366F1",
-    icon: "🚽"
+  "regalos-para-todo-tipo-de-edades": {
+    name: "Regalos para todo tipo de edades",
+    description: "Productos perfectos para niños, adolescentes y adultos",
+    color: "#06B6D4",
+    icon: "👥"
+  },
+  "regalos-para-pasarlo-bien": {
+    name: "Regalos para pasarlo bien",
+    description: "Para fiestas, música, Halloween y diversión garantizada",
+    color: "#EF4444",
+    icon: "🎉"
   },
   blog: {
     name: "Blog",
     description: "Artículos y contenido especial",
     color: "#1F2937",
     icon: "📝"
-  },
-  halloween: {
-    name: "Halloween",
-    description: "Productos terroríficos y de Halloween",
-    color: "#7C2D12",
-    icon: "🎃"
-  },
-  divertido: {
-    name: "Divertido",
-    description: "Productos para reír y pasar un buen rato",
-    color: "#F59E0B",
-    icon: "😄"
-  },
-  hogar: {
-    name: "Hogar",
-    description: "Decoración y accesorios para el hogar",
-    color: "#10B981",
-    icon: "🏠",
-    subcategories: {
-      tazas: {
-        name: "Tazas",
-        description: "Para los amantes del café y bebidas calientes",
-        color: "#8B4513",
-        icon: "☕"
-      },
-      ropa: {
-        name: "Ropa",
-        description: "Camisetas, calcetines y ropa divertida",
-        color: "#EC4899",
-        icon: "👕"
-      },
-      tecnologico: {
-        name: "Tecnológico",
-        description: "Gadgets y productos tecnológicos",
-        color: "#3B82F6",
-        icon: "📱"
-      },
-      "juegos-de-mesa": {
-        name: "Juegos de Mesa",
-        description: "Diversión analógica para todos",
-        color: "#7C3AED",
-        icon: "🎲"
-      },
-      libros: {
-        name: "Libros",
-        description: "Para los amantes de la lectura",
-        color: "#DC2626",
-        icon: "📚"
-      }
-    }
-  },
-  bromas: {
-    name: "Bromas",
-    description: "Productos para hacer bromas y reírse",
-    color: "#DC2626",
-    icon: "😈"
-  },
-  musica: {
-    name: "Música",
-    description: "Productos relacionados con la música y el sonido",
-    color: "#8B5CF6",
-    icon: "🎵"
-  },
+  }
 } as const;
 
 export type CategorySlug = keyof typeof categoryConfig;
