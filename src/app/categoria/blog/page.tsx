@@ -73,7 +73,7 @@ export default function BlogPage() {
       <div className="mb-8">
         <div className="bg-gradient-to-r from-primary-50 to-primary-100 rounded-2xl p-6 sm:p-8">
           <div className="max-w-3xl">
-            <h1 className="text-3xl sm:text-4xl font-bold font-potta-one text-header-purple dark:text-white mb-4">
+            <h1 className="text-3xl sm:text-4xl font-bold font-potta-one text-product-orange mb-4">
               Blog MQM Web
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 font-preahvihear mb-6">
