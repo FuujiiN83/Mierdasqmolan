@@ -109,8 +109,20 @@ export function getProductBySlug(slug: string): Product | null {
  * Obtiene productos por categoría
  */
 export function getProductsByCategory(categorySlug: CategorySlug): Product[] {
+  // Mapear el slug de la categoría a los nombres en el JSON
+  const categoryNameMap: Record<string, string> = {
+    'regalos-originales-para-casa': 'Regalos originales para casa',
+    'regalos-frikis': 'Regalos frikis',
+    'regalos-wtf': 'Regalos WTF',
+    'regalos-para-todo-tipo-de-edades': 'Regalos para todo tipo de edades',
+    'regalos-para-pasarlo-bien': 'Regalos para pasarlo bien',
+    'blog': 'blog'
+  };
+  
+  const categoryName = categoryNameMap[categorySlug] || categorySlug;
+  
   return getFilteredProducts({ 
-    categories: [categorySlug],
+    categories: [categoryName],
     includeBlog: categorySlug === 'blog'
   });
 }
