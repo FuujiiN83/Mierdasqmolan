@@ -1,5 +1,35 @@
 ﻿[
     {
+        "id":  "241",
+        "slug":  "slime",
+        "title":  "Slime",
+        "shortDescription":  "¿Qué tendrá el slime que les gusta tantísimo a los niños? Estira, aprieta, clava el dedo, amasa… como un masaje del fisio, pero en un formato mucho mas pequeño y sin quejarse.",
+        "description":  "<p>¿Qué tendrá el slime que les gusta tantísimo a los niños? Estira, aprieta, clava el dedo, amasa… como un masaje del fisio, pero en un formato mucho mas pequeño y sin quejarse.</p><h2>Características del producto</h2><ul><li><strong>24 Pack Kit de Slime Galáctico:</strong> El Kit de Slime incluye 24 mini contenedores que vienen con maravillosos colores galácticos, añadiendo más diversión a su tiempo de juego.</li><li><strong>Perfecto para fiestas y regalos:</strong> Regalos perfectos para todo tipo de fiestas, incluyendo regalos de Navidad, favores de fiesta de Pascua, regalos de Easter, regalos de Halloween, regalos de cumpleaños, goodie bolsas de relleno.</li><li><strong>Juguete para todas las edades:</strong> ¡Ideal juguete slime, puede aplastar y tirar de la baba para relajarse, adecuado para adultos y niños!</li><li><strong>Textura no pegajosa y sorprendente:</strong> Con una textura acuosa, este slime galaxia no se pegue y no-messy a sus manos, siempre para mantener sus manos limpias y perfecto para reutilizar y guardar.</li><li><strong>No recomendado para niños menores de 3 años y debe utilizarse bajo la supervisión de un adulto.</strong></li></ul><h2>Especificaciones técnicas</h2><ul><li><strong>Marca:</strong> YOPINSAND</li><li><strong>Color:</strong> 24 Colores</li><li><strong>Edad mínima según el fabricante:</strong> 36 meses</li><li><strong>Forma del producto:</strong> Líquido</li><li><strong>Volumen del producto:</strong> 1998,88 Centímetros cúbicos</li><li><strong>Información del paquete:</strong> Lata</li><li><strong>Número de productos:</strong> 24</li><li><strong>Función especial:</strong> Larga duración, No pegajoso</li><li><strong>Componentes incluidos:</strong> Slime</li><li><strong>Material:</strong> Plastic</li><li><strong>Uso:</strong> Relajación, entretenimiento, fiestas</li><li><strong>Beneficios:</strong> Reduce estrés, mejora la motricidad fina, diversión</li><li><strong>Conservación:</strong> Reutilizable y fácil de guardar</li><li><strong>Seguridad:</strong> No pegajoso, mantiene las manos limpias</li><li><strong>Durabilidad:</strong> Larga duración</li></ul>",
+        "image":  "/images/slime.webp",
+        "alt":  "Slime - Kit de 24 colores galácticos para relajación y entretenimiento, perfecto para todas las edades",
+        "affiliateUrl":  "https://amzn.to/3KLUz7K",
+        "merchant":  "Amazon",
+        "price":  14.99,
+        "currency":  "EUR",
+        "categories":  [
+                           "Regalos para todo tipo de edades"
+                       ],
+        "isFeatured":  false,
+        "createdAt":  "2025-09-29T12:00:00Z",
+        "tags":  [
+                     "slime",
+                     "relajación",
+                     "niños",
+                     "adultos",
+                     "colores",
+                     "galáctico",
+                     "fiesta",
+                     "regalo",
+                     "entretenimiento",
+                     "masaje"
+                 ]
+    },
+    {
         "id":  "240",
         "slug":  "hitster",
         "title":  "Hitster",
