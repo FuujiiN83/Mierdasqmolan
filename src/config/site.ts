@@ -57,6 +57,12 @@ export const categoryConfig = {
     color: "#EF4444",
     icon: "🎉"
   },
+  "regalos-para-cumpleanos": {
+    name: "Regalos para cumpleaños",
+    description: "Experiencias y regalos especiales para celebrar cumpleaños",
+    color: "#EC4899",
+    icon: "🎂"
+  },
   blog: {
     name: "Blog",
     description: "Artículos y contenido especial",
