@@ -76,7 +76,8 @@ export function getFilteredProducts(filters: ProductFilters = {}): Product[] {
   const sortBy = filters.sortBy || 'newest';
   switch (sortBy) {
     case 'newest':
-      filtered.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+      // Ordenar por ID (de mayor a menor) en lugar de por fecha
+      filtered.sort((a, b) => parseInt(b.id) - parseInt(a.id));
       break;
     case 'oldest':
       filtered.sort((a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime());
@@ -116,6 +117,7 @@ export function getProductsByCategory(categorySlug: CategorySlug): Product[] {
     'regalos-wtf': 'Regalos WTF',
     'regalos-para-todo-tipo-de-edades': 'Regalos para todo tipo de edades',
     'regalos-para-pasarlo-bien': 'Regalos para pasarlo bien',
+    'regalos-para-cumpleanos': 'Regalos para cumpleaños',
     'blog': 'blog'
   };
   
@@ -144,6 +146,7 @@ function mapCategoryToSlug(category: string): string {
     'Regalos WTF': 'regalos-wtf',
     'Regalos para todo tipo de edades': 'regalos-para-todo-tipo-de-edades',
     'Regalos para pasarlo bien': 'regalos-para-pasarlo-bien',
+    'Regalos para cumpleaños': 'regalos-para-cumpleanos',
     'blog': 'blog'
   };
   
