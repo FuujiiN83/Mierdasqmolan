@@ -1,5 +1,36 @@
 ﻿[
     {
+        "id":  "275",
+        "slug":  "patas-de-peluche",
+        "title":  "Patas de peluche",
+        "shortDescription":  "Furros por aquí, furros por allá. Estas patas de peluche son super monas y para muchas ocasiones y fiestas vienen de maravilla, aunque los ruidos de ronroneo los haces tu.",
+        "description":  "<p>Furros por aquí, furros por allá. Estas patas de peluche son super monas y para muchas ocasiones y fiestas vienen de maravilla, aunque los ruidos de ronroneo los haces tu.</p><h2>Características del producto</h2><ul><li><strong>Comodidad:</strong> Cómodas patas terianas con un interior suave y acogedor. Un forro en el interior de las patas peludas para absorber el sudor y garantizar la comodidad durante un uso prolongado.</li><li><strong>Durabilidad:</strong> Patas de pelo de alta calidad diseñadas para durar. Las patas vienen con piel sintética esponjosa y exuberante, almohadillas rosas cosidas de forma segura y bien rellenas y garras duras resistentes para un uso prolongado.</li><li><strong>Diseño realista:</strong> Diseño auténtico y adorable, desde la textura sedosa esponjosa hasta las elegantes garras bien elaboradas y almohadillas realistas para las patas. Guantes de pata visualmente llamativos y realistas para disfraz y juego diario.</li><li><strong>Versatilidad:</strong> El tamaño versátil de los guantes Therian garantiza un ajuste cómodo pero agradable para una amplia gama de tamaños de mano, adultos y niños. Fácil de llevar y flexible para mover los dedos.</li><li><strong>Eficacia económica:</strong> Elección inteligente tanto para cosplayers experimentados como para entusiastas casuales. Combinando asequibilidad con características de alta calidad.</li></ul><h2>Especificaciones técnicas</h2><ul><li><strong>Composición del material:</strong> Piel sintética de felpa</li><li><strong>Instrucciones de cuidado:</strong> Lavado a mano</li><li><strong>Interior:</strong> Suave y acogedor, forro para absorber sudor</li><li><strong>Material exterior:</strong> Piel sintética esponjosa y exuberante</li><li><strong>Almohadillas:</strong> Rosas cosidas de forma segura y bien rellenas</li><li><strong>Garras:</strong> Duras resistentes para uso prolongado</li><li><strong>Textura:</strong> Sedosa esponjosa</li><li><strong>Diseño:</strong> Auténtico y adorable, garras elegantes bien elaboradas</li><li><strong>Uso:</strong> Disfraz y juego diario</li><li><strong>Tamaño:</strong> Versátil, ajuste cómodo para adultos y niños</li><li><strong>Flexibilidad:</strong> Fácil de llevar, flexible para mover dedos</li><li><strong>Beneficiarios:</strong> Cosplayers experimentados, entusiastas casuales</li><li><strong>Características:</strong> Asequibilidad, alta calidad</li><li><strong>Resultado:</strong> Guantes de pata visualmente llamativos y realistas</li></ul>",
+        "image":  "/images/patas de peluche.webp",
+        "alt":  "Patas de peluche - Guantes de pata realistas con piel sintética de felpa y garras resistentes",
+        "affiliateUrl":  "https://amzn.to/3Kslbe8",
+        "merchant":  "Amazon",
+        "price":  29.99,
+        "currency":  "EUR",
+        "categories":  [
+                           "Regalos frikis",
+                           "Regalos WTF"
+                       ],
+        "isFeatured":  false,
+        "createdAt":  "2025-09-29T12:35:00Z",
+        "tags":  [
+                     "patas",
+                     "peluche",
+                     "furros",
+                     "disfraz",
+                     "guantes",
+                     "piel sintética",
+                     "garras",
+                     "cosplay",
+                     "regalo",
+                     "WTF"
+                 ]
+    },
+    {
         "id":  "274",
         "slug":  "faro-proyector",
         "title":  "Faro proyector",
