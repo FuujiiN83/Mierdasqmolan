@@ -1,5 +1,37 @@
 ﻿[
     {
+        "id":  "270",
+        "slug":  "lampara-luna",
+        "title":  "Lámpara luna",
+        "shortDescription":  "¡Que la luna no es morada! ¡Que te digo yo que sí! ¡Y ahora me dices que la luna es amarilla, estás fatal! ¡Pasa y mira, verás! Esta lámpara con forma de la luna tiene varios colores para elegir y ayudarte a tener razón y si dicen que eso es una lámpara tu puedes decir: yo me refería a esta luna.",
+        "description":  "<p>¡Que la luna no es morada! ¡Que te digo yo que sí! ¡Y ahora me dices que la luna es amarilla, estás fatal! ¡Pasa y mira, verás! Esta lámpara con forma de la luna tiene varios colores para elegir y ayudarte a tener razón y si dicen que eso es una lámpara tu puedes decir: yo me refería a esta luna.</p><h2>Características del producto</h2><ul><li><strong>Lámpara de luna flotante magnética:</strong> Utilice la tecnología de levitación magnética, suspendida y girando automáticamente en el aire libremente sin apoyo, capaz de atraer los ojos de las personas.</li><li><strong>Luna verdadera:</strong> Utiliza la tecnología de impresión 3D más avanzada para reproducir con precisión la superficie lunar con datos astronómicos de alta resolución para crear una textura muy similar a la luna real. La luna era un símbolo divino y encantador, trae buena suerte y felicidad.</li><li><strong>Transmisión de energía inalámbrica:</strong> La lámpara de luna es alimentada por inducción electromagnética, sin necesidad de cables o batería incorporada, luz LED suave, sin daño a la vista, con larga vida útil. Consumo de energía extremadamente bajo en comparación con las lámparas convencionales. Luces controladas por el botón táctil: encendido/apagado</li><li><strong>Luz de luna atractiva y decorativa:</strong> Un concepto genial. Decoración muy inusual y única para su hogar, oficina, sala de conferencias, auditorio, cantina y casa de huéspedes, tiene efectos visuales únicos</li><li><strong>Regalo perfecto:</strong> Gran regalo para amantes, amigos, padres, niños en Navidad, cumpleaños, vacaciones, bodas, aniversarios y negocios. Añadir a la cesta de la compra. Cuando reciba y abra la caja, les traerá mucha sorpresa</li></ul><h2>Especificaciones técnicas</h2><ul><li><strong>Material de la base:</strong> Madera</li><li><strong>Base de la bombilla:</strong> E14</li><li><strong>Dimensiones del producto:</strong> 24f. x 140,5an. x 7,6al. centímetros</li><li><strong>Peso del producto:</strong> 1 Kilogramos</li><li><strong>Tipo de lámpara:</strong> Diodo emisor de luz</li><li><strong>Color de la pantalla de la lámpara:</strong> Blanco</li><li><strong>Material de la pantalla:</strong> Madera</li><li><strong>Tipo de interruptor:</strong> Táctil</li><li><strong>Estilo:</strong> Moderno</li><li><strong>Marca:</strong> VGAzer</li><li><strong>Tecnología:</strong> Levitación magnética, impresión 3D avanzada</li><li><strong>Alimentación:</strong> Inducción electromagnética, sin cables</li><li><strong>Iluminación:</strong> LED suave, sin daño a la vista</li><li><strong>Consumo:</strong> Extremadamente bajo</li><li><strong>Control:</strong> Botón táctil encendido/apagado</li><li><strong>Características:</strong> Suspensión automática, rotación libre, efectos visuales únicos</li><li><strong>Beneficios:</strong> Buena suerte, felicidad, decoración inusual</li><li><strong>Uso:</strong> Hogar, oficina, sala de conferencias, auditorio, cantina, casa de huéspedes</li><li><strong>Beneficiarios:</strong> Amantes, amigos, padres, niños</li><li><strong>Ocasiones:</strong> Navidad, cumpleaños, vacaciones, bodas, aniversarios, negocios</li><li><strong>Resultado:</strong> Gran sorpresa, regalo perfecto</li></ul>",
+        "image":  "/images/lampara luna.webp",
+        "alt":  "Lámpara luna - Lámpara flotante magnética con tecnología de levitación y superficie lunar 3D",
+        "affiliateUrl":  "https://amzn.to/46KyUUR",
+        "merchant":  "Amazon",
+        "price":  79.98,
+        "currency":  "EUR",
+        "categories":  [
+                           "Regalos para cumpleaños",
+                           "Regalos originales para casa",
+                           "Destacados"
+                       ],
+        "isFeatured":  true,
+        "createdAt":  "2025-09-29T12:30:00Z",
+        "tags":  [
+                     "lámpara",
+                     "luna",
+                     "flotante",
+                     "magnética",
+                     "levitación",
+                     "3D",
+                     "LED",
+                     "decoración",
+                     "regalo",
+                     "destacado"
+                 ]
+    },
+    {
         "id":  "269",
         "slug":  "lampara-bola-de-cristal",
         "title":  "Lámpara bola de cristal",
