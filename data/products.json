@@ -1879,6 +1879,7 @@
         "price":  9.99,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos para pasarlo bien",
                            "Regalos para todo tipo de edades"
                        ],
