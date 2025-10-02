@@ -63,6 +63,12 @@ export const categoryConfig = {
     color: "#EC4899",
     icon: "🎂"
   },
+  "halloween": {
+    name: "Halloween",
+    description: "Productos espeluznantes y divertidos para la noche más terrorífica del año",
+    color: "#7C2D12",
+    icon: "🎃"
+  },
   blog: {
     name: "Blog",
     description: "Artículos y contenido especial",

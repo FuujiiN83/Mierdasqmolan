@@ -4323,6 +4323,7 @@
         "price":  7.99,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos para pasarlo bien",
                            "Regalos para todo tipo de edades"
                        ],
@@ -4354,6 +4355,7 @@
         "price":  9.99,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos WTF",
                            "Regalos para pasarlo bien"
                        ],
@@ -4385,6 +4387,7 @@
         "price":  14.59,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos para pasarlo bien"
                        ],
         "isFeatured":  false,
@@ -4415,6 +4418,7 @@
         "price":  11.99,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos para pasarlo bien"
                        ],
         "isFeatured":  true,
@@ -4445,6 +4449,7 @@
         "price":  11.99,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos para pasarlo bien",
                            "Regalos originales para casa"
                        ],
@@ -4476,6 +4481,7 @@
         "price":  14.95,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos originales para casa",
                            "Regalos para pasarlo bien",
                            "Regalos frikis"
@@ -8377,6 +8383,7 @@
         "price":  11.99,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos originales para casa",
                            "Regalos para pasarlo bien"
                        ],
@@ -8403,6 +8410,7 @@
         "price":  10.32,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos para pasarlo bien",
                            "Regalos originales para casa"
                        ],
@@ -8429,6 +8437,7 @@
         "price":  19.99,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos para pasarlo bien",
                            "Regalos originales para casa"
                        ],
@@ -8460,6 +8469,7 @@
         "price":  9.99,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos para pasarlo bien"
                        ],
         "isFeatured":  false,
@@ -8490,6 +8500,7 @@
         "price":  9.99,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos para pasarlo bien"
                        ],
         "isFeatured":  false,
@@ -8520,6 +8531,7 @@
         "price":  21.99,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos originales para casa",
                            "Regalos para pasarlo bien",
                            "Regalos para todo tipo de edades"
@@ -8554,6 +8566,7 @@
         "price":  16.99,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos originales para casa",
                            "Regalos para pasarlo bien"
                        ],
@@ -8587,6 +8600,7 @@
         "price":  14.99,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos originales para casa",
                            "Regalos para pasarlo bien",
                            "Regalos para todo tipo de edades"
@@ -8622,6 +8636,7 @@
         "price":  59.99,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos para pasarlo bien"
                        ],
         "isFeatured":  false,
@@ -8656,6 +8671,7 @@
         "price":  19,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos frikis",
                            "Regalos para pasarlo bien"
                        ],
@@ -8691,6 +8707,7 @@
         "price":  6.99,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos para pasarlo bien"
                        ],
         "isFeatured":  false,
@@ -8726,6 +8743,7 @@
         "price":  6.26,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos para pasarlo bien",
                            "Regalos para todo tipo de edades"
                        ],
@@ -8762,6 +8780,7 @@
         "price":  13.99,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos para pasarlo bien"
                        ],
         "isFeatured":  false,
@@ -8799,6 +8818,7 @@
         "price":  52.99,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos para pasarlo bien",
                            "Regalos para todo tipo de edades",
                            "Regalos originales para casa"
@@ -8843,6 +8863,7 @@
         "price":  9.99,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos originales para casa",
                            "Regalos para todo tipo de edades",
                            "Regalos para pasarlo bien"
@@ -8885,6 +8906,7 @@
         "price":  12.99,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos para todo tipo de edades",
                            "Regalos para pasarlo bien",
                            "Regalos originales para casa"
@@ -8931,6 +8953,7 @@
         "price":  6.99,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos para pasarlo bien"
                        ],
         "isFeatured":  false,
@@ -8978,6 +9001,7 @@
         "price":  34.49,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos para pasarlo bien",
                            "Regalos para todo tipo de edades"
                        ],
@@ -9022,6 +9046,7 @@
         "price":  26.5,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos para pasarlo bien",
                            "Regalos para todo tipo de edades"
                        ],
@@ -9063,6 +9088,7 @@
         "price":  7.99,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos para pasarlo bien"
                        ],
         "isFeatured":  false,
@@ -9141,6 +9167,7 @@
         "price":  17.99,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos para pasarlo bien",
                            "Regalos para todo tipo de edades"
                        ],
@@ -9230,6 +9257,7 @@
         "price":  7.58,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos para pasarlo bien",
                            "Regalos para todo tipo de edades"
                        ],
@@ -9291,6 +9319,7 @@
         "price":  22.98,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos para pasarlo bien"
                        ],
         "isFeatured":  false,
@@ -9364,6 +9393,7 @@
         "price":  10.99,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos para todo tipo de edades",
                            "Regalos frikis",
                            "Regalos para pasarlo bien"
@@ -9464,6 +9494,7 @@
         "price":  7.59,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos para todo tipo de edades",
                            "Regalos para pasarlo bien"
                        ],
@@ -9548,6 +9579,7 @@
         "price":  5.19,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos para pasarlo bien",
                            "Regalos originales para casa"
                        ],
@@ -9656,6 +9688,7 @@
         "price":  48.91,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos originales para casa",
                            "Regalos para todo tipo de edades"
                        ],
@@ -9753,6 +9786,7 @@
         "price":  19.19,
         "currency":  "EUR",
         "categories":  [
+                           "Halloween",
                            "Regalos para pasarlo bien"
                        ],
         "isFeatured":  false,

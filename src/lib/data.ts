@@ -118,6 +118,7 @@ export function getProductsByCategory(categorySlug: CategorySlug): Product[] {
     'regalos-para-todo-tipo-de-edades': 'Regalos para todo tipo de edades',
     'regalos-para-pasarlo-bien': 'Regalos para pasarlo bien',
     'regalos-para-cumpleanos': 'Regalos para cumpleaños',
+    'halloween': 'Halloween',
     'blog': 'blog'
   };
   
