@@ -1,5 +1,48 @@
 ﻿[
     {
+        "id":  "290",
+        "slug":  "masajeador-cuello",
+        "title":  "Masajeador de cuello",
+        "shortDescription":  "Siiii, te lo mereces. Te mereces un descanso. Te mereces un masajito en el cuello pero no quieres ir al masajista. Aquí pagas una vez y lo tienes para siempre. Vale, si, no es lo mismo que un masajista, pero te ahorras pasar frío o calor de camino a uno y eso es una mierda que mola bastante.",
+        "description":  "<p>Siiii, te lo mereces. Te mereces un descanso. Te mereces un masajito en el cuello pero no quieres ir al masajista. Aquí pagas una vez y lo tienes para siempre. Vale, si, no es lo mismo que un masajista, pero te ahorras pasar frío o calor de camino a uno y eso es una mierda que mola bastante.</p><h2>Características del producto</h2><ul><li><strong>Tecnología de amasado 3D:</strong> La nueva generación de movimiento 3D actualizado, la combinación de las técnicas de masaje tradicionales y la tecnología inteligente, equipado con 8 cabezas de masaje, todo el masaje preciso hombro y la espalda, más técnicas tridimensionales, simulando la experiencia de masaje real de amasar, agarrar y amasar</li><li><strong>Función de compresión caliente:</strong> La compresa de calor alivia la tensión muscular y proporciona la máxima relajación. 15 minutos de temporización inteligente y un chip de protección contra el sobrecalentamiento incorporado alargan la vida del producto y cuidan de su salud</li><li><strong>Tres niveles de intensidad y poco ruido:</strong> Botones de control sencillos, tres ajustes de velocidad, bajo nivel de ruido para un chal de masaje agradablemente silencioso</li><li><strong>Apto para todo el cuerpo:</strong> El material de PU es resistente al desgaste y a la suciedad, fácil de limpiar; adecuado para el masaje de todo el cuerpo, para el cuello, los hombros, la cintura, las piernas, las plantas de los pies, etc., práctico y versátil</li><li><strong>El regalo perfecto:</strong> Con su diseño ligero y su bonita funda de transporte, el masajeador sólo pesa 2,1 kg netos, lo que lo convierte en el regalo de cumpleaños o de vacaciones perfecto para familiares y amigos</li><li><strong>Te lo mereces:</strong> Un descanso merecido sin salir de casa, sin pasar frío o calor, pagas una vez y lo tienes para siempre</li></ul><h2>Especificaciones técnicas</h2><ul><li><strong>Utilizar para:</strong> Cuello, Espalda, Hombro, Pie, Todo el cuerpo</li><li><strong>Fuente de alimentación:</strong> Cable eléctrico</li><li><strong>Material:</strong> Poliéster</li><li><strong>Peso del producto:</strong> 1,3 Kilogramos</li><li><strong>Marca:</strong> Careboda</li><li><strong>Color:</strong> Negro</li><li><strong>Función especial:</strong> Calor</li><li><strong>Tipo de masajeador:</strong> Esterilla de masaje</li><li><strong>Usos específicos:</strong> Cuello, hombros, espalda, piernas y plantas de los pies</li><li><strong>Dimensiones:</strong> 36l. x 17an. x 12al. centímetros</li><li><strong>Tecnología:</strong> Amasado 3D con 8 cabezas de masaje</li><li><strong>Movimiento:</strong> Técnicas tridimensionales</li><li><strong>Simulación:</strong> Experiencia de masaje real</li><li><strong>Calor:</strong> Compresión caliente para relajación</li><li><strong>Temporizador:</strong> 15 minutos inteligente</li><li><strong>Protección:</strong> Chip contra sobrecalentamiento</li><li><strong>Niveles:</strong> Tres niveles de intensidad</li><li><strong>Ruido:</strong> Bajo nivel para uso silencioso</li><li><strong>Material PU:</strong> Resistente al desgaste y suciedad</li><li><strong>Limpieza:</strong> Fácil de limpiar</li><li><strong>Peso neto:</strong> 2,1 kg</li><li><strong>Transporte:</strong> Funda de transporte incluida</li><li><strong>Regalo:</strong> Perfecto para cumpleaños y vacaciones</li></ul>",
+        "image":  "/images/masajeador cuello.webp",
+        "alt":  "Masajeador de cuello Careboda - Esterilla de masaje con tecnología 3D y función de calor para cuello, espalda y todo el cuerpo",
+        "affiliateUrl":  "https://amzn.to/46xr7eq",
+        "merchant":  "Amazon",
+        "price":  49.99,
+        "currency":  "EUR",
+        "categories":  [
+                           "Regalos para todo tipo de edades",
+                           "Regalos para cumpleaños"
+                       ],
+        "isFeatured":  false,
+        "createdAt":  "2025-01-23T12:00:00Z",
+        "tags":  [
+                     "masajeador",
+                     "cuello",
+                     "masaje",
+                     "relajación",
+                     "descanso",
+                     "calor",
+                     "3D",
+                     "amasado",
+                     "cabezas",
+                     "intensidad",
+                     "silencioso",
+                     "cuerpo",
+                     "hombros",
+                     "espalda",
+                     "pies",
+                     "poliéster",
+                     "eléctrico",
+                     "regalo",
+                     "cumpleaños",
+                     "edades",
+                     "mereces",
+                     "descanso"
+                 ]
+    },
+    {
         "id":  "289",
         "slug":  "despertador-ruedas",
         "title":  "Despertador con ruedas",
