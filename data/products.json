@@ -1,5 +1,48 @@
 ﻿[
     {
+        "id":  "286",
+        "slug":  "kit-cocina-rocky",
+        "title":  "Kit de cocina Rocky",
+        "shortDescription":  "Cuenta la leyenda que Rocky, antes de volverse campeón, entrenaba con este kit de cocina. Algunos dirán que me lo estoy inventando, otros que quieren este kit. ¿tu de cual eres?",
+        "description":  "<p>Cuenta la leyenda que Rocky, antes de volverse campeón, entrenaba con este kit de cocina. Algunos dirán que me lo estoy inventando, otros que quieren este kit. ¿tu de cual eres?</p><h2>Características del producto</h2><ul><li><strong>Manoplas de Cocina Rocky:</strong> Un regalo original para hombres que quieran protegerse en la cocina al estilo de unos guantes de boxeo y un regalo de auténtico cine por tener el estilo de los del mítico Rocky Balboa, un producto oficial bajo licencia MGM</li><li><strong>Regalo perfecto:</strong> Puede ser un regalo perfecto para sorprender a tu hombre, para que así se sienta aún más feliz cuando se enfrenta al horno y a sus labores de cocina con la tranquilidad de tener unas manoplas de calidad acolchadas y con acabado en tela de un diseño único que tanto le guste</li><li><strong>Para fans del boxeo:</strong> Con ellas querré ser él siempre el que saque y lleve la comida a la mesa. Pero también es el regalo perfecto para cualquier fan del boxeo, Stallone o simplemente de los regalos originales de cine</li><li><strong>Para sentirse como el potro italiano:</strong> También en los momentos de cocina, presumir ante los invitados y salir victorioso celebrándolo puños arriba</li><li><strong>Completa tu regalo:</strong> Para completar aún más tu regalo también si lo deseas puedes sorprenderle con el Delantal de Cocina de Rocky que hace juego, también producto oficial de alta calidad que encontrarás en nuestra tienda</li><li><strong>Unas manoplas de cocina de auténtico cine:</strong> Para ser también el campeón en la cocina</li></ul><h2>Especificaciones técnicas</h2><ul><li><strong>Marca:</strong> Mustard</li><li><strong>Número de modelo:</strong> NG4061</li><li><strong>Color:</strong> Gris</li><li><strong>Dimensiones del producto:</strong> 28,8 x 21,79 x 5 cm</li><li><strong>Peso:</strong> 140,61 g</li><li><strong>Material:</strong> Algodón</li><li><strong>Peso del producto:</strong> 141 g</li><li><strong>Licencia:</strong> Oficial MGM</li><li><strong>Personaje:</strong> Rocky Balboa</li><li><strong>Estilo:</strong> Guantes de boxeo</li><li><strong>Uso:</strong> Protección en la cocina</li><li><strong>Calidad:</strong> Acolchadas y con acabado en tela</li><li><strong>Diseño:</strong> Único y auténtico cine</li><li><strong>Perfecto para:</strong> Fans del boxeo, Stallone, regalos originales de cine</li><li><strong>Resultado:</strong> Sentirse como el potro italiano en la cocina</li><li><strong>Celebración:</strong> Salir victorioso celebrándolo puños arriba</li><li><strong>Complemento:</strong> Delantal de Cocina de Rocky disponible</li><li><strong>Objetivo:</strong> Ser también el campeón en la cocina</li></ul>",
+        "image":  "/images/kit cocina rocky.webp",
+        "alt":  "Kit de cocina Rocky - Manoplas de cocina oficiales con estilo de guantes de boxeo de Rocky Balboa",
+        "affiliateUrl":  "https://amzn.to/3IsKdJz",
+        "merchant":  "Amazon",
+        "price":  45.00,
+        "currency":  "EUR",
+        "categories":  [
+                           "Regalos frikis",
+                           "Regalos WTF",
+                           "Regalos para cumpleaños"
+                       ],
+        "isFeatured":  false,
+        "createdAt":  "2025-01-23T08:00:00Z",
+        "tags":  [
+                     "rocky",
+                     "balboa",
+                     "cocina",
+                     "manoplas",
+                     "boxeo",
+                     "guantes",
+                     "stallone",
+                     "cine",
+                     "mgm",
+                     "oficial",
+                     "regalo",
+                     "hombres",
+                     "protección",
+                     "hornos",
+                     "acolchadas",
+                     "tela",
+                     "diseño",
+                     "único",
+                     "frikis",
+                     "WTF",
+                     "cumpleaños"
+                 ]
+    },
+    {
         "id":  "285",
         "slug":  "terminator",
         "title":  "Terminator",
