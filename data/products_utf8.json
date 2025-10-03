@@ -1,5 +1,44 @@
 ﻿[
     {
+        "id":  "288",
+        "slug":  "gizmo",
+        "title":  "Gizmo",
+        "shortDescription":  "El alter ego de los gremlins. La oveja blanca de la familia. El patito guapo. Eso es Gizmo. Este adorable ser te lo traemos en formato adorno navideño, para que vayas preparando tu hogar con cosas cuquis y chulas… y frikis también, claro.",
+        "description":  "<p>El alter ego de los gremlins. La oveja blanca de la familia. El patito guapo. Eso es Gizmo. Este adorable ser te lo traemos en formato adorno navideño, para que vayas preparando tu hogar con cosas cuquis y chulas… y frikis también, claro.</p><h2>Características del producto</h2><ul><li><strong>Adorno decorativo navideño:</strong> Gizmo en formato adorno para decorar tu hogar durante las fiestas navideñas</li><li><strong>El patito guapo de la familia:</strong> La oveja blanca de los gremlins, el alter ego bueno y adorable</li><li><strong>Decoración cuqui y chula:</strong> Perfecto para preparar tu hogar con cosas adorables y frikis</li><li><strong>Tamaño compacto:</strong> 12 cm de altura, ideal para decorar cualquier rincón</li><li><strong>Color navideño:</strong> Rojo tradicional de Navidad para ambientar las fiestas</li><li><strong>Material de calidad:</strong> Resina de alta calidad para mayor durabilidad</li></ul><h2>Especificaciones técnicas</h2><ul><li><strong>Color:</strong> Rojo</li><li><strong>Marca:</strong> Nemesis Now</li><li><strong>Ocasión:</strong> Navidad</li><li><strong>Material:</strong> Resina</li><li><strong>Tema:</strong> Vacaciones</li><li><strong>Personaje:</strong> Gizmo</li><li><strong>Estilo:</strong> Gizmo en calcetín</li><li><strong>Dimensiones:</strong> 4f. x 9,6an. x 12al. centímetros</li><li><strong>Audiencia:</strong> Adulto</li><li><strong>Componentes:</strong> Adorno</li><li><strong>Tamaño:</strong> 12 cm</li><li><strong>Uso:</strong> Decoración navideña</li><li><strong>Características:</strong> Adorable y cuqui</li><li><strong>Público:</strong> Fans de Gremlins, decoración friki</li><li><strong>Resultado:</strong> Hogar preparado con cosas chulas y frikis</li><li><strong>Estilo:</strong> Navideño y adorable</li><li><strong>Calidad:</strong> Resina de alta calidad</li><li><strong>Durabilidad:</strong> Resistente y duradero</li></ul>",
+        "image":  "/images/gizmo.webp",
+        "alt":  "Gizmo - Adorno navideño de resina roja con el adorable personaje de Gremlins para decoración de hogar",
+        "affiliateUrl":  "https://amzn.to/488PEYr",
+        "merchant":  "Amazon",
+        "price":  18.85,
+        "currency":  "EUR",
+        "categories":  [
+                           "Regalos frikis"
+                       ],
+        "isFeatured":  false,
+        "createdAt":  "2025-01-23T10:00:00Z",
+        "tags":  [
+                     "gizmo",
+                     "gremlins",
+                     "adorno",
+                     "navideño",
+                     "navidad",
+                     "rojo",
+                     "resina",
+                     "decoración",
+                     "hogar",
+                     "cuqui",
+                     "chulo",
+                     "frikis",
+                     "oveja",
+                     "blanca",
+                     "patito",
+                     "guapo",
+                     "alter",
+                     "ego",
+                     "regalo"
+                 ]
+    },
+    {
         "id":  "287",
         "slug":  "gremlin",
         "title":  "Gremlin",
