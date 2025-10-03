@@ -103,9 +103,23 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         
-               {/* Google Analytics temporalmente deshabilitado para debugging */}
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-FCD8D2QZEZ"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-FCD8D2QZEZ');
+            `,
+          }}
+        />
         
-        {/* Preconnect removido para estabilidad VPS */}
+        {/* Preconnect to external domains for performance */}
+        <link rel="preconnect" href="https://amazon.es" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
         
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
