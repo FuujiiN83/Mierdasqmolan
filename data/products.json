@@ -1,5 +1,39 @@
 ﻿[
     {
+        "id":  "283",
+        "slug":  "mc-lovin",
+        "title":  "Mc lovin",
+        "shortDescription":  "Nada como bandera y carnet para ir a comprar a la tienda de enfrente \"guiño guiño\" Eso si, ten cuidado con algunos clientes \"guiño guiño\". No nos hacemos responsables de su uso.",
+        "description":  "<p>Nada como bandera y carnet para ir a comprar a la tienda de enfrente \"guiño guiño\" Eso si, ten cuidado con algunos clientes \"guiño guiño\". No nos hacemos responsables de su uso.</p><h2>Características del producto</h2><ul><li><strong>Material:</strong> Poliéster 90g, suave y resistente al desgaste, anti-arrugas</li><li><strong>Tamaño:</strong> 3x5ft / 150x90 cm, con agujeros y costuras reforzadas, tela suave</li><li><strong>Color:</strong> Colorido y resistente a la descoloración, todo impreso en un lado de la tela, no en ambos lados</li><li><strong>Técnica:</strong> Doble puntada en todos los bordes, reforzada con cinta de lona y dos ojales, lo suficientemente fuerte como para resistir el vuelo</li><li><strong>Paquete:</strong> El paquete contiene una bandera, Peso incluyendo el embalaje aprox. 90g</li></ul><h2>Especificaciones técnicas</h2><ul><li><strong>Tema:</strong> Ave</li><li><strong>Color:</strong> Multicolor</li><li><strong>Marca:</strong> Stormflag</li><li><strong>Usos recomendados:</strong> Exteriores</li><li><strong>Ocasión:</strong> Humorístico/entretenimiento</li><li><strong>Material:</strong> Poliéster</li><li><strong>Función especial:</strong> Resistente al desgaste, Antiarrugas, a la descoloración</li><li><strong>Usos específicos:</strong> Exteriores</li><li><strong>Dimensiones del producto:</strong> 90l. x 150an. centímetros</li><li><strong>Tipo Tejido:</strong> Poliéster</li><li><strong>Peso:</strong> Aprox. 90g incluyendo embalaje</li><li><strong>Impresión:</strong> Todo impreso en un lado de la tela</li><li><strong>Refuerzo:</strong> Doble puntada en todos los bordes</li><li><strong>Ojales:</strong> Dos ojales para colgar</li><li><strong>Resistencia:</strong> Suficientemente fuerte para resistir el vuelo</li></ul>",
+        "image":  "/images/Mc lovin.webp",
+        "alt":  "Mc lovin - Bandera humorística con diseño colorido para exteriores, resistente al desgaste y antiarrugas",
+        "affiliateUrl":  "https://amzn.to/42kQWMm",
+        "merchant":  "Amazon",
+        "price":  12.99,
+        "currency":  "EUR",
+        "categories":  [
+                           "Regalos frikis",
+                           "Regalos para cumpleaños"
+                       ],
+        "isFeatured":  false,
+        "createdAt":  "2025-01-23T05:00:00Z",
+        "tags":  [
+                     "mc",
+                     "lovin",
+                     "bandera",
+                     "carnet",
+                     "tienda",
+                     "guiño",
+                     "humor",
+                     "exteriores",
+                     "poliéster",
+                     "multicolor",
+                     "regalo",
+                     "frikis",
+                     "cumpleaños"
+                 ]
+    },
+    {
         "id":  "282",
         "slug":  "perro-colgante-coche",
         "title":  "Perro colgante para el coche",
@@ -4323,7 +4357,6 @@
         "price":  7.99,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos para pasarlo bien",
                            "Regalos para todo tipo de edades"
                        ],
@@ -4355,7 +4388,6 @@
         "price":  9.99,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos WTF",
                            "Regalos para pasarlo bien"
                        ],
@@ -4387,7 +4419,6 @@
         "price":  14.59,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos para pasarlo bien"
                        ],
         "isFeatured":  false,
@@ -4418,7 +4449,6 @@
         "price":  11.99,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos para pasarlo bien"
                        ],
         "isFeatured":  true,
@@ -4449,7 +4479,6 @@
         "price":  11.99,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos para pasarlo bien",
                            "Regalos originales para casa"
                        ],
@@ -4481,7 +4510,6 @@
         "price":  14.95,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos originales para casa",
                            "Regalos para pasarlo bien",
                            "Regalos frikis"
@@ -8383,7 +8411,6 @@
         "price":  11.99,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos originales para casa",
                            "Regalos para pasarlo bien"
                        ],
@@ -8410,7 +8437,6 @@
         "price":  10.32,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos para pasarlo bien",
                            "Regalos originales para casa"
                        ],
@@ -8437,7 +8463,6 @@
         "price":  19.99,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos para pasarlo bien",
                            "Regalos originales para casa"
                        ],
@@ -8469,7 +8494,6 @@
         "price":  9.99,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos para pasarlo bien"
                        ],
         "isFeatured":  false,
@@ -8500,7 +8524,6 @@
         "price":  9.99,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos para pasarlo bien"
                        ],
         "isFeatured":  false,
@@ -8531,7 +8554,6 @@
         "price":  21.99,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos originales para casa",
                            "Regalos para pasarlo bien",
                            "Regalos para todo tipo de edades"
@@ -8566,7 +8588,6 @@
         "price":  16.99,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos originales para casa",
                            "Regalos para pasarlo bien"
                        ],
@@ -8600,7 +8621,6 @@
         "price":  14.99,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos originales para casa",
                            "Regalos para pasarlo bien",
                            "Regalos para todo tipo de edades"
@@ -8636,7 +8656,6 @@
         "price":  59.99,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos para pasarlo bien"
                        ],
         "isFeatured":  false,
@@ -8671,7 +8690,6 @@
         "price":  19,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos frikis",
                            "Regalos para pasarlo bien"
                        ],
@@ -8707,7 +8725,6 @@
         "price":  6.99,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos para pasarlo bien"
                        ],
         "isFeatured":  false,
@@ -8743,7 +8760,6 @@
         "price":  6.26,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos para pasarlo bien",
                            "Regalos para todo tipo de edades"
                        ],
@@ -8780,7 +8796,6 @@
         "price":  13.99,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos para pasarlo bien"
                        ],
         "isFeatured":  false,
@@ -8818,7 +8833,6 @@
         "price":  52.99,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos para pasarlo bien",
                            "Regalos para todo tipo de edades",
                            "Regalos originales para casa"
@@ -8863,7 +8877,6 @@
         "price":  9.99,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos originales para casa",
                            "Regalos para todo tipo de edades",
                            "Regalos para pasarlo bien"
@@ -8906,7 +8919,6 @@
         "price":  12.99,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos para todo tipo de edades",
                            "Regalos para pasarlo bien",
                            "Regalos originales para casa"
@@ -8953,7 +8965,6 @@
         "price":  6.99,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos para pasarlo bien"
                        ],
         "isFeatured":  false,
@@ -9001,7 +9012,6 @@
         "price":  34.49,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos para pasarlo bien",
                            "Regalos para todo tipo de edades"
                        ],
@@ -9046,7 +9056,6 @@
         "price":  26.5,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos para pasarlo bien",
                            "Regalos para todo tipo de edades"
                        ],
@@ -9088,7 +9097,6 @@
         "price":  7.99,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos para pasarlo bien"
                        ],
         "isFeatured":  false,
@@ -9167,7 +9175,6 @@
         "price":  17.99,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos para pasarlo bien",
                            "Regalos para todo tipo de edades"
                        ],
@@ -9257,7 +9264,6 @@
         "price":  7.58,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos para pasarlo bien",
                            "Regalos para todo tipo de edades"
                        ],
@@ -9319,7 +9325,6 @@
         "price":  22.98,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos para pasarlo bien"
                        ],
         "isFeatured":  false,
@@ -9393,7 +9398,6 @@
         "price":  10.99,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos para todo tipo de edades",
                            "Regalos frikis",
                            "Regalos para pasarlo bien"
@@ -9494,7 +9498,6 @@
         "price":  7.59,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos para todo tipo de edades",
                            "Regalos para pasarlo bien"
                        ],
@@ -9579,7 +9582,6 @@
         "price":  5.19,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos para pasarlo bien",
                            "Regalos originales para casa"
                        ],
@@ -9688,7 +9690,6 @@
         "price":  48.91,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos originales para casa",
                            "Regalos para todo tipo de edades"
                        ],
@@ -9786,7 +9787,6 @@
         "price":  19.19,
         "currency":  "EUR",
         "categories":  [
-                           "Halloween",
                            "Regalos para pasarlo bien"
                        ],
         "isFeatured":  false,
