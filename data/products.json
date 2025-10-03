@@ -1,5 +1,41 @@
 ﻿[
     {
+        "id":  "284",
+        "slug":  "photocall",
+        "title":  "Photocall",
+        "shortDescription":  "Te flipa \"insta\" y encima quieres fotos chulas, pero con su marco. ¿Y para que estamos el equipo de mierdas que molan? Hemos buscado y encontrado este photocall para bodas, fiestas y celebraciones para ti. Eso sí, los likes y los comentarios por privado no suelen funcionar muy bien aquí, tener cuidado.",
+        "description":  "<p>Te flipa \"insta\" y encima quieres fotos chulas, pero con su marco. ¿Y para que estamos el equipo de mierdas que molan? Hemos buscado y encontrado este photocall para bodas, fiestas y celebraciones para ti. Eso sí, los likes y los comentarios por privado no suelen funcionar muy bien aquí, tener cuidado.</p><h2>Características del producto</h2><ul><li><strong>Personalizaciones:</strong> 1 imagen, 4 entradas de texto</li><li><strong>Información de personalización:</strong> Ha de hacerla al mismo tiempo que realiza el pedido</li><li><strong>Importante:</strong> Sin personalización no se enviará el producto</li><li><strong>Atrezzo:</strong> Sin suplementos para apoyar en el suelo</li><li><strong>Medidas:</strong> 80cm de ancho x 100 cm de alto</li><li><strong>Material:</strong> Photocall realizado en cartón Microcanal Doble de 2,6 mm, eventos o celebraciones puntuales</li></ul><h2>Especificaciones técnicas</h2><ul><li><strong>Uso:</strong> Bodas, fiestas y celebraciones</li><li><strong>Personalización:</strong> 1 imagen personalizada</li><li><strong>Texto:</strong> 4 entradas de texto personalizable</li><li><strong>Proceso:</strong> Personalización al realizar el pedido</li><li><strong>Requisito:</strong> Personalización obligatoria para envío</li><li><strong>Atrezzo:</strong> Incluido sin suplementos</li><li><strong>Instalación:</strong> Para apoyar en el suelo</li><li><strong>Dimensiones:</strong> 80cm ancho x 100cm alto</li><li><strong>Material:</strong> Cartón Microcanal Doble</li><li><strong>Grosor:</strong> 2,6 mm</li><li><strong>Uso recomendado:</strong> Eventos o celebraciones puntuales</li><li><strong>Perfecto para:</strong> Instagram y fotos chulas</li><li><strong>Marco:</strong> Incluido para fotos con estilo</li><li><strong>Celebraciones:</strong> Bodas, fiestas, eventos especiales</li><li><strong>Resultado:</strong> Fotos chulas con marco personalizado</li></ul>",
+        "image":  "/images/photocall.webp",
+        "alt":  "Photocall personalizable para bodas y fiestas - Marco de cartón con personalización de imagen y texto para celebraciones",
+        "affiliateUrl":  "https://amzn.to/3ISWMxJ",
+        "merchant":  "Amazon",
+        "price":  28.99,
+        "currency":  "EUR",
+        "categories":  [
+                           "Regalo para pasarlo bien",
+                           "Regalos para cumpleaños",
+                           "Regalos frikis"
+                       ],
+        "isFeatured":  false,
+        "createdAt":  "2025-01-23T06:00:00Z",
+        "tags":  [
+                     "photocall",
+                     "fotos",
+                     "insta",
+                     "instagram",
+                     "bodas",
+                     "fiestas",
+                     "celebraciones",
+                     "personalizable",
+                     "marco",
+                     "cartón",
+                     "eventos",
+                     "regalo",
+                     "cumpleaños",
+                     "frikis"
+                 ]
+    },
+    {
         "id":  "283",
         "slug":  "mc-lovin",
         "title":  "Mc lovin",
