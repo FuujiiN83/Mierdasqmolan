@@ -30,7 +30,7 @@ export default function HomeContent() {
 
   useEffect(() => {
     loadProducts();
-  }, [searchQuery, currentPage]);
+  }, [searchQuery, currentPage, isHalloweenMode]);
 
   const loadProducts = async () => {
     setLoading(true);
@@ -38,25 +38,34 @@ export default function HomeContent() {
       // Limpiar cache para asegurar datos actualizados
       clearProductsCache();
       
-      // Obtener productos filtrados
-      const allProducts = getFilteredProducts({
+      // Si está activo el modo Halloween, filtrar solo productos de categoría Halloween
+      const filters: any = {
         search: searchQuery,
         sortBy: 'newest',
         limit: productsPerPage,
         offset: (currentPage - 1) * productsPerPage,
-      });
+      };
+
+      // Si está activo el modo Halloween, filtrar por categoría Halloween
+      if (isHalloweenMode) {
+        filters.categories = ['Halloween'];
+      }
+      
+      // Obtener productos filtrados
+      const allProducts = getFilteredProducts(filters);
 
       // Obtener el total para paginación
       const totalFiltered = getFilteredProducts({
         search: searchQuery,
         sortBy: 'newest',
+        ...(isHalloweenMode && { categories: ['Halloween'] })
       });
 
       setProducts(allProducts);
       setTotalProducts(totalFiltered.length);
 
-      // Obtener productos destacados solo en la primera página sin búsqueda
-      if (currentPage === 1 && !searchQuery) {
+      // Obtener productos destacados solo en la primera página sin búsqueda y sin modo Halloween
+      if (currentPage === 1 && !searchQuery && !isHalloweenMode) {
         const featured = getFeaturedProducts();
         setFeaturedProducts(featured);
       } else {

@@ -49,11 +49,17 @@ export function getFilteredProducts(filters: ProductFilters = {}): Product[] {
 
   // Filtrar por categorías
   if (filters.categories && filters.categories.length > 0) {
-    filtered = filtered.filter(product =>
-      filters.categories!.some(category =>
+    filtered = filtered.filter(product => {
+      // Para Halloween, buscar tanto en categorías como en tags
+      if (filters.categories!.includes('Halloween')) {
+        return product.categories.includes('Halloween') || 
+               (product.tags && product.tags.some(tag => tag.toLowerCase() === 'halloween'));
+      }
+      // Para otras categorías, buscar solo en categorías
+      return filters.categories!.some(category =>
         product.categories.includes(category)
-      )
-    );
+      );
+    });
   }
 
   // Filtrar por búsqueda
@@ -123,6 +129,15 @@ export function getProductsByCategory(categorySlug: CategorySlug): Product[] {
   };
   
   const categoryName = categoryNameMap[categorySlug] || categorySlug;
+  
+  // Para Halloween, buscar tanto en categorías como en tags
+  if (categorySlug === 'halloween') {
+    const allProducts = getAllProducts();
+    return allProducts.filter(product => 
+      product.categories.includes('Halloween') || 
+      (product.tags && product.tags.some(tag => tag.toLowerCase() === 'halloween'))
+    );
+  }
   
   return getFilteredProducts({ 
     categories: [categoryName],
