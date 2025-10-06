@@ -164,7 +164,7 @@ export function mapCategoryToSlug(category: string): string {
     'Regalos para todo tipo de edades': 'regalos-para-todo-tipo-de-edades',
     'Regalos para pasarlo bien': 'regalos-para-pasarlo-bien',
     'Regalos para cumpleaños': 'regalos-para-cumpleanos',
-    'regalos originales para parejas': 'regalos-originales-para-parejas',
+    'Regalos originales para parejas': 'regalos-originales-para-parejas',
     'blog': 'blog'
   };
   
