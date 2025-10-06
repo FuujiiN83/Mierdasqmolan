@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { OptimizedImage } from '@/components/OptimizedImage';
-import { getProductBySlug, getRelatedProducts, generateAffiliateUrl, getAllProducts } from '@/lib/data';
+import { getProductBySlug, getRelatedProducts, generateAffiliateUrl, getAllProducts, mapCategoryToSlug } from '@/lib/data';
 import { Product } from '@/types';
 import { formatPrice, formatDate, markdownToHtml, getDomainFromUrl } from '@/lib/utils';
 import { categoryConfig } from '@/config/site';
@@ -127,7 +127,7 @@ export default function ProductPage({ params }: ProductPageProps) {
                       <>
                         <li>
                           <Link 
-                            href={`/categoria/${product.categories[0]}`}
+                            href={`/categoria/${mapCategoryToSlug(product.categories[0])}`}
                             className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                           >
                             {categoryConfig[product.categories[0] as keyof typeof categoryConfig]?.name || product.categories[0]}

@@ -156,7 +156,7 @@ export function getFeaturedProducts(): Product[] {
 /**
  * Mapea categorías del JSON a slugs de configuración
  */
-function mapCategoryToSlug(category: string): string {
+export function mapCategoryToSlug(category: string): string {
   const categoryMap: Record<string, string> = {
     'Regalos originales para casa': 'regalos-originales-para-casa',
     'Regalos frikis': 'regalos-frikis',
