@@ -125,6 +125,7 @@ export function getProductsByCategory(categorySlug: CategorySlug): Product[] {
     'regalos-para-pasarlo-bien': 'Regalos para pasarlo bien',
     'regalos-para-cumpleanos': 'Regalos para cumpleaños',
     'halloween': 'Halloween',
+    'regalos-originales-para-parejas': 'Regalos originales para parejas',
     'blog': 'blog'
   };
   
