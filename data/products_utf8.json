@@ -11247,5 +11247,45 @@
                      "magnético",
                      "diseño"
                  ]
+    },
+    {
+        "id":  "299",
+        "slug":  "talonario-parejas",
+        "title":  "Talonario de parejas",
+        "shortDescription":  "Si te cuesta decidir que hacer y muchas veces te quedas con las ganas de hacer algo por no decirlo, te mostramos este talonario. No, no es para ingresar dinero, pero si para acabar mas caliente (con final feliz) que una tarde de agosto en Sevilla.",
+        "description":  "<p>Si te cuesta decidir que hacer y muchas veces te quedas con las ganas de hacer algo por no decirlo, te mostramos este talonario. No, no es para ingresar dinero, pero si para acabar mas caliente (con final feliz) que una tarde de agosto en Sevilla.</p><h2>Características del producto</h2><ul><li><strong>🔥RETOS HOT:</strong> Incluye 22 vales para innovar en pareja, con retos desde los más sencillos hasta los más picantes. Además, cada talonario cuenta con 2 vales en blanco para que puedas escribir el reto a tu gusto.</li><li><strong>💘REGALO PARA PAREJAS:</strong> Estos talonarios de vales son perfectos para regalar en San Valentín, Navidad o en vuestro aniversario. A tu pareja le encantará. No dejes escapar esta oportunidad.</li><li><strong>🕹️ROMÁNTICA Y SENSUAL:</strong> Hay 2 variaciones de estos talonarios. Puedes optar por la versión romántica para disfrutar de los pequeños detalles en pareja, o por la versión sensual con retos eróticos más picantes.</li><li><strong>✋HECHO CON AMOR:</strong> Fabricado con mucho cariño en España. Sus dimensiones son 20cm x 8cm, impresos a color y perforados para que puedan ser arrancados.</li><li><strong>GARANTÍA:</strong> Este producto tiene una garantía de hasta 30 días. En caso de que no quedes satisfecho con la compra, puedes devolverlo dentro de este plazo. Sin preguntas incómodas.</li></ul>",
+        "image":  "/images/talonario parejas.webp",
+        "alt":  "Talonario de parejas - 22 vales románticos y sensuales para innovar en pareja",
+        "affiliateUrl":  "https://amzn.to/4pVbnJR",
+        "merchant":  "Amazon",
+        "price":  11.95,
+        "currency":  "EUR",
+        "categories":  [
+                           "Regalos originales para parejas"
+                       ],
+        "isFeatured":  false,
+        "createdAt":  "2025-01-23T18:00:00Z",
+        "tags":  [
+                     "talonario",
+                     "parejas",
+                     "romántico",
+                     "sensual",
+                     "vales",
+                     "retos",
+                     "regalo",
+                     "aniversario",
+                     "san valentín",
+                     "navidad",
+                     "innovar",
+                     "picante",
+                     "españa",
+                     "garantía",
+                     "perforado",
+                     "color",
+                     "20cm",
+                     "8cm",
+                     "pareja",
+                     "amor"
+                 ]
     }
 ]

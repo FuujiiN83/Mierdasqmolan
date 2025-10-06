@@ -69,6 +69,12 @@ export const categoryConfig = {
     color: "#7C2D12",
     icon: "🎃"
   },
+  "regalos-originales-para-parejas": {
+    name: "Regalos originales para parejas",
+    description: "Productos románticos y sensuales para parejas que buscan experiencias únicas",
+    color: "#E91E63",
+    icon: "💕"
+  },
   blog: {
     name: "Blog",
     description: "Artículos y contenido especial",
