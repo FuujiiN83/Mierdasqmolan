@@ -140,6 +140,14 @@ export function getProductsByCategory(categorySlug: CategorySlug): Product[] {
     );
   }
   
+  // Para regalos originales para parejas, buscar ambas versiones (mayúsculas y minúsculas)
+  if (categorySlug === 'regalos-originales-para-parejas') {
+    return getFilteredProducts({ 
+      categories: ['Regalos originales para parejas', 'regalos originales para parejas'],
+      includeBlog: false
+    });
+  }
+  
   return getFilteredProducts({ 
     categories: [categoryName],
     includeBlog: categorySlug === 'blog'
