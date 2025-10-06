@@ -137,6 +137,7 @@ export function ProductCard({
                     'Regalos para todo tipo de edades': 'regalos-para-todo-tipo-de-edades',
                     'Regalos para pasarlo bien': 'regalos-para-pasarlo-bien',
                     'Regalos originales para parejas': 'regalos-originales-para-parejas',
+                    'regalos originales para parejas': 'regalos-originales-para-parejas',
                     'blog': 'blog'
                   };
                   
