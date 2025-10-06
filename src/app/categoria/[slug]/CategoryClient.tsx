@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { ProductCard } from '@/components/ProductCard';
-import { AdSlot, useInlineAds } from '@/components/AdSlot';
+// import { AdSlot, useInlineAds } from '@/components/AdSlot';
 import { Pagination, ResultsInfo } from '@/components/Pagination';
 import { categoryConfig, CategorySlug } from '@/config/site';
 import { Product } from '@/types';
@@ -40,7 +40,7 @@ export function CategoryClient({ categorySlug, initialProducts }: CategoryClient
   };
 
   const totalPages = Math.ceil(totalProducts / productsPerPage);
-  const inlineAdPositions = useInlineAds(products.length);
+  // const inlineAdPositions = useInlineAds(products.length);
 
   // Generar structured data para SEO
   const structuredData = generateCategoryStructuredData(
@@ -84,9 +84,9 @@ export function CategoryClient({ categorySlug, initialProducts }: CategoryClient
         </div>
 
         {/* Ad space after header */}
-        <div className="mt-8">
+        {/* <div className="mt-8">
           <AdSlot position="hero-under" size="leaderboard" className="text-center" />
-        </div>
+        </div> */}
       </div>
 
       {/* Breadcrumb */}
@@ -135,11 +135,11 @@ export function CategoryClient({ categorySlug, initialProducts }: CategoryClient
                   />
                   
                   {/* Inline ads */}
-                  {inlineAdPositions.includes(index + 1) && (
+                  {/* {inlineAdPositions.includes(index + 1) && (
                     <div className="mt-6">
                       <AdSlot position="inline" size="medium" className="text-center" />
                     </div>
-                  )}
+                  )} */}
                 </div>
               ))}
             </div>
@@ -159,7 +159,7 @@ export function CategoryClient({ categorySlug, initialProducts }: CategoryClient
           {/* Sidebar with sticky ad */}
           <aside className="hidden lg:block w-80 flex-shrink-0">
             <div className="sticky top-6 space-y-6">
-              <AdSlot position="sidebar-sticky" size="large" />
+              {/* <AdSlot position="sidebar-sticky" size="large" /> */}
               
               {/* Category info card */}
               <div className="bg-white rounded-lg border border-gray-200 p-6">
