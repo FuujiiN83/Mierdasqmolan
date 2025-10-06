@@ -136,8 +136,11 @@ export function ProductCard({
                     'Regalos WTF': 'regalos-wtf',
                     'Regalos para todo tipo de edades': 'regalos-para-todo-tipo-de-edades',
                     'Regalos para pasarlo bien': 'regalos-para-pasarlo-bien',
+                    'Regalos para cumpleaños': 'regalos-para-cumpleanos',
                     'Regalos originales para parejas': 'regalos-originales-para-parejas',
                     'regalos originales para parejas': 'regalos-originales-para-parejas',
+                    'regalos para pasarlo bien': 'regalos-para-pasarlo-bien',
+                    'regalos para cumpleaños': 'regalos-para-cumpleanos',
                     'blog': 'blog'
                   };
                   
