@@ -1,10 +1,6 @@
-$content = Get-Content 'data\products_backup.json' -Raw -Encoding UTF8 | ConvertFrom-Json
-$filteredProducts = @()
-foreach ($product in $content) {
-    if ($product.image -notlike '*placeholder.svg') {
-        $filteredProducts += $product
-    }
-}
-$json = $filteredProducts | ConvertTo-Json -Depth 10
-[System.IO.File]::WriteAllText((Join-Path (Get-Location) 'data\products.json'), $json, [System.Text.Encoding]::UTF8)
-Write-Host "Productos filtrados: $($filteredProducts.Count)"
+# Script para arreglar la codificación UTF-8 del blog.json
+$content = Get-Content "data\blog.json" -Raw -Encoding UTF8
+$content | Out-File "data\blog_fixed.json" -Encoding UTF8 -NoNewline
+Copy-Item "data\blog_fixed.json" "data\blog.json" -Force
+Remove-Item "data\blog_fixed.json"
+Write-Host "Codificación UTF-8 arreglada correctamente"
