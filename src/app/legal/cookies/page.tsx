@@ -78,65 +78,221 @@ export default function CookiesPage() {
 
         <div className="space-y-6">
           <div className="border-l-4 border-blue-500 pl-4">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">🔧 Cookies técnicas</h3>
-            <p className="text-gray-700">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">🔧 Cookies técnicas (Necesarias)</h3>
+            <p className="text-gray-700 mb-3">
               Son aquellas que permiten al usuario la navegación a través de una página web, plataforma o 
               aplicación y la utilización de las diferentes opciones o servicios que en ella existan como, 
               por ejemplo, controlar el tráfico y la comunicación de datos, identificar la sesión, acceder 
               a partes de acceso restringido, recordar los elementos que integran un pedido, etc.
             </p>
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
+              <p className="text-blue-800 text-sm font-medium mb-2">Cookies específicas incluidas:</p>
+              <ul className="text-blue-800 text-sm space-y-1">
+                <li>• <strong>Session cookies:</strong> Para mantener la sesión del usuario activa</li>
+                <li>• <strong>Authentication cookies:</strong> Para verificar la identidad del usuario</li>
+                <li>• <strong>Security cookies:</strong> Para proteger contra ataques CSRF y otros</li>
+                <li>• <strong>Functionality cookies:</strong> Para características básicas del sitio</li>
+              </ul>
+            </div>
           </div>
 
           <div className="border-l-4 border-green-500 pl-4">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">⚙️ Cookies de personalización</h3>
-            <p className="text-gray-700">
+            <p className="text-gray-700 mb-3">
               Son aquellas que permiten al usuario acceder al servicio con algunas características de 
               carácter general predefinidas en función de una serie de criterios en el terminal del usuario 
               como por ejemplo el idioma, el tipo de navegador, la configuración regional, etc.
             </p>
+            <div className="bg-green-50 border border-green-200 rounded-lg p-3">
+              <p className="text-green-800 text-sm font-medium mb-2">Cookies específicas incluidas:</p>
+              <ul className="text-green-800 text-sm space-y-1">
+                <li>• <strong>Language preference:</strong> Para recordar el idioma seleccionado</li>
+                <li>• <strong>Region settings:</strong> Para configuraciones regionales</li>
+                <li>• <strong>UI preferences:</strong> Para preferencias de interfaz de usuario</li>
+                <li>• <strong>Cookie consent:</strong> Para recordar las preferencias de cookies</li>
+              </ul>
+            </div>
           </div>
 
           <div className="border-l-4 border-purple-500 pl-4">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">📊 Cookies de análisis</h3>
-            <p className="text-gray-700">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">📊 Cookies de análisis (Google Analytics)</h3>
+            <p className="text-gray-700 mb-3">
               Son aquellas que bien tratadas por nosotros o por terceros, nos permiten cuantificar el número 
               de usuarios y así realizar la medición y análisis estadístico de la utilización que hacen los 
               usuarios del servicio ofertado.
             </p>
+            <div className="bg-purple-50 border border-purple-200 rounded-lg p-3">
+              <p className="text-purple-800 text-sm font-medium mb-2">Cookies específicas de Google Analytics (G-FCD8D2QZEZ):</p>
+              <ul className="text-purple-800 text-sm space-y-1">
+                <li>• <strong>_ga:</strong> Se usa para distinguir usuarios únicos (duración: 2 años)</li>
+                <li>• <strong>_gid:</strong> Se usa para distinguir usuarios únicos (duración: 24 horas)</li>
+                <li>• <strong>_gat:</strong> Se usa para limitar la tasa de solicitudes (duración: 1 minuto)</li>
+                <li>• <strong>_ga_[CONTAINER_ID]:</strong> Se usa para persistir la sesión del estado (duración: 2 años)</li>
+                <li>• <strong>_gac_[PROPERTY_ID]:</strong> Se usa para información de campañas (duración: 90 días)</li>
+              </ul>
+              <p className="text-purple-800 text-sm mt-2">
+                <strong>Propósito:</strong> Analizar el tráfico del sitio, entender el comportamiento del usuario, 
+                medir el rendimiento de las páginas y mejorar la experiencia del usuario.
+              </p>
+            </div>
           </div>
 
           <div className="border-l-4 border-orange-500 pl-4">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">📢 Cookies publicitarias</h3>
-            <p className="text-gray-700">
+            <p className="text-gray-700 mb-3">
               Son aquellas que, bien tratadas por nosotros o por terceros, nos permiten gestionar de la forma 
               más eficaz posible la oferta de los espacios publicitarios que hay en la página web, adecuando 
               el contenido del anuncio al contenido del servicio solicitado.
             </p>
+            <div className="bg-orange-50 border border-orange-200 rounded-lg p-3">
+              <p className="text-orange-800 text-sm font-medium mb-2">Cookies específicas incluidas:</p>
+              <ul className="text-orange-800 text-sm space-y-1">
+                <li>• <strong>Google Ads cookies:</strong> Para mostrar anuncios relevantes</li>
+                <li>• <strong>Facebook Pixel cookies:</strong> Para seguimiento de conversiones</li>
+                <li>• <strong>Retargeting cookies:</strong> Para recordar productos visitados</li>
+                <li>• <strong>Affiliate cookies:</strong> Para seguimiento de enlaces de afiliación</li>
+              </ul>
+            </div>
           </div>
 
           <div className="border-l-4 border-red-500 pl-4">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">🎯 Cookies de publicidad comportamental</h3>
-            <p className="text-gray-700">
+            <p className="text-gray-700 mb-3">
               Son aquellas que permiten la gestión, de la forma más eficaz posible, de los espacios 
               publicitarios. Estas cookies almacenan información del comportamiento de los usuarios obtenida 
               a través de la observación continuada de sus hábitos de navegación.
             </p>
+            <div className="bg-red-50 border border-red-200 rounded-lg p-3">
+              <p className="text-red-800 text-sm font-medium mb-2">Cookies específicas incluidas:</p>
+              <ul className="text-red-800 text-sm space-y-1">
+                <li>• <strong>User behavior tracking:</strong> Para analizar patrones de navegación</li>
+                <li>• <strong>Interest-based ads:</strong> Para mostrar contenido relevante</li>
+                <li>• <strong>Conversion tracking:</strong> Para medir efectividad de campañas</li>
+                <li>• <strong>Audience segmentation:</strong> Para segmentar usuarios por intereses</li>
+              </ul>
+            </div>
           </div>
 
           <div className="border-l-4 border-gray-500 pl-4">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">🔗 Cookies de terceros</h3>
             <p className="text-gray-700 mb-4">
-              Esta web puede utilizar servicios de terceros que, por cuenta de Google, recopilarán información 
-              con fines estadísticos, de uso del sitio por parte del usuario y para la prestación de otros servicios.
+              Esta web utiliza servicios de terceros que recopilan información con fines estadísticos, 
+              de uso del sitio por parte del usuario y para la prestación de otros servicios.
             </p>
             <div className="bg-gray-50 border rounded-lg p-4">
-              <p className="text-gray-700 text-sm">
-                <strong>Google Analytics:</strong> Este sitio web utiliza Google Analytics, un servicio 
-                analítico de web prestado por Google, Inc. con domicilio en los Estados Unidos con sede 
-                central en 1600 Amphitheatre Parkway, Mountain View, California 94043.
+              <h4 className="font-semibold text-gray-900 mb-2">Google Analytics (G-FCD8D2QZEZ)</h4>
+              <p className="text-gray-700 text-sm mb-3">
+                Este sitio web utiliza Google Analytics, un servicio analítico de web prestado por Google, Inc. 
+                con domicilio en los Estados Unidos con sede central en 1600 Amphitheatre Parkway, Mountain View, California 94043.
               </p>
+              <div className="bg-white border rounded p-3">
+                <p className="text-gray-700 text-sm font-medium mb-2">Información recopilada:</p>
+                <ul className="text-gray-700 text-sm space-y-1">
+                  <li>• Páginas visitadas y tiempo de permanencia</li>
+                  <li>• Origen del tráfico (buscadores, enlaces directos, redes sociales)</li>
+                  <li>• Dispositivo y navegador utilizado</li>
+                  <li>• Ubicación geográfica aproximada (país/ciudad)</li>
+                  <li>• Comportamiento de navegación y interacciones</li>
+                </ul>
+              </div>
+              <div className="bg-white border rounded p-3 mt-3">
+                <p className="text-gray-700 text-sm font-medium mb-2">Finalidad del tratamiento:</p>
+                <ul className="text-gray-700 text-sm space-y-1">
+                  <li>• Análisis estadístico del uso del sitio web</li>
+                  <li>• Mejora de la experiencia del usuario</li>
+                  <li>• Optimización del rendimiento del sitio</li>
+                  <li>• Análisis de tendencias y comportamiento de usuarios</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-gray-50 border rounded-lg p-4 mt-4">
+              <h4 className="font-semibold text-gray-900 mb-2">Microsoft Clarity</h4>
+              <p className="text-gray-700 text-sm mb-3">
+                Este sitio web utiliza Microsoft Clarity, un servicio de análisis de comportamiento web 
+                proporcionado por Microsoft Corporation con domicilio en One Microsoft Way, Redmond, WA 98052, Estados Unidos.
+              </p>
+              <div className="bg-white border rounded p-3">
+                <p className="text-gray-700 text-sm font-medium mb-2">Información recopilada por Clarity:</p>
+                <ul className="text-gray-700 text-sm space-y-1">
+                  <li>• Grabaciones de sesiones de usuario (clicks, scrolls, movimientos del mouse)</li>
+                  <li>• Mapas de calor (heatmaps) de interacciones en la página</li>
+                  <li>• Tiempo de permanencia en cada sección</li>
+                  <li>• Rutas de navegación y flujos de usuario</li>
+                  <li>• Errores de JavaScript y problemas de rendimiento</li>
+                  <li>• Información del dispositivo y navegador</li>
+                  <li>• Ubicación geográfica aproximada</li>
+                </ul>
+              </div>
+              <div className="bg-white border rounded p-3 mt-3">
+                <p className="text-gray-700 text-sm font-medium mb-2">Cookies específicas de Microsoft Clarity:</p>
+                <ul className="text-gray-700 text-sm space-y-1">
+                  <li>• <strong>_clck:</strong> Persiste la ID de Clarity (duración: 1 año)</li>
+                  <li>• <strong>_clsk:</strong> Conecta múltiples vistas de página por sesión (duración: 1 día)</li>
+                  <li>• <strong>_cltk:</strong> Almacena la configuración de Clarity (duración: 1 año)</li>
+                  <li>• <strong>_clck:</strong> Identificador único de sesión (duración: 1 año)</li>
+                </ul>
+              </div>
+              <div className="bg-white border rounded p-3 mt-3">
+                <p className="text-gray-700 text-sm font-medium mb-2">Finalidad del tratamiento:</p>
+                <ul className="text-gray-700 text-sm space-y-1">
+                  <li>• Análisis del comportamiento de navegación de los usuarios</li>
+                  <li>• Identificación de problemas de usabilidad en el sitio web</li>
+                  <li>• Mejora de la experiencia del usuario basada en datos reales</li>
+                  <li>• Optimización del diseño y funcionalidad del sitio</li>
+                  <li>• Detección de errores técnicos y problemas de rendimiento</li>
+                </ul>
+              </div>
+              <div className="bg-blue-50 border border-blue-200 rounded p-3 mt-3">
+                <p className="text-blue-800 text-sm font-medium mb-2">🔒 Privacidad y protección de datos:</p>
+                <ul className="text-blue-800 text-sm space-y-1">
+                  <li>• Los datos se procesan de forma anónima y agregada</li>
+                  <li>• No se recopilan datos personales identificables</li>
+                  <li>• Las grabaciones de sesión se almacenan de forma segura en servidores de Microsoft</li>
+                  <li>• Los datos se utilizan únicamente para fines analíticos y de mejora del sitio</li>
+                  <li>• Cumple con las normativas de protección de datos (RGPD, CCPA)</li>
+                </ul>
+              </div>
             </div>
           </div>
+        </div>
+
+        <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Gestión del consentimiento de cookies</h2>
+        <p className="text-gray-700 mb-4">
+          Este sitio web utiliza un sistema de gestión de consentimiento de cookies que te permite controlar 
+          qué tipos de cookies aceptas. Al acceder al sitio, verás un banner que te permite:
+        </p>
+        <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+          <ul className="text-green-800 space-y-2">
+            <li>• <strong>Aceptar todas las cookies:</strong> Incluye cookies técnicas, de análisis, personalización y marketing</li>
+            <li>• <strong>Aceptar solo las necesarias:</strong> Solo cookies técnicas esenciales para el funcionamiento del sitio</li>
+            <li>• <strong>Personalizar configuración:</strong> Control granular sobre cada tipo de cookie</li>
+          </ul>
+        </div>
+
+        <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Consentimiento específico para servicios de análisis</h3>
+        <p className="text-gray-700 mb-4">
+          Las cookies de Google Analytics y Microsoft Clarity solo se activan cuando das tu consentimiento explícito a través del banner. 
+          Sin este consentimiento, estos servicios no recopilan datos de tu navegación.
+        </p>
+        <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 mb-4">
+          <h4 className="font-semibold text-purple-900 mb-2">Google Analytics</h4>
+          <p className="text-purple-800 text-sm mb-2">
+            Se utiliza para análisis estadísticos y medición del rendimiento del sitio web.
+          </p>
+        </div>
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
+          <h4 className="font-semibold text-blue-900 mb-2">Microsoft Clarity</h4>
+          <p className="text-blue-800 text-sm mb-2">
+            Se utiliza para análisis de comportamiento de usuario, grabaciones de sesión y mapas de calor 
+            para mejorar la experiencia del usuario.
+          </p>
+        </div>
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <p className="text-blue-800 text-sm">
+            <strong>Importante:</strong> Puedes cambiar tu consentimiento en cualquier momento haciendo clic en 
+            el enlace "Configuración de cookies" en el pie de página del sitio web.
+          </p>
         </div>
 
         <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Gestionar y rechazar el uso de cookies</h2>
@@ -149,6 +305,30 @@ export default function CookiesPage() {
           únicamente las cookies de terceros. Y también puedes eliminar cualquiera de las cookies que ya 
           se encuentren en tu equipo.
         </p>
+
+        <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Duración y almacenamiento de cookies</h3>
+        <div className="bg-gray-50 border rounded-lg p-4 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-2">Cookies de sesión:</h4>
+              <p className="text-gray-700 text-sm">Se eliminan automáticamente al cerrar el navegador</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-2">Cookies persistentes:</h4>
+              <p className="text-gray-700 text-sm">Permanecen hasta su fecha de expiración o eliminación manual</p>
+            </div>
+          </div>
+          <div className="mt-4 p-3 bg-white border rounded">
+            <p className="text-gray-700 text-sm font-medium mb-2">Duración específica por tipo:</p>
+            <ul className="text-gray-700 text-sm space-y-1">
+              <li>• <strong>Cookies técnicas:</strong> Hasta 1 año o hasta el cierre de sesión</li>
+              <li>• <strong>Google Analytics (_ga):</strong> 2 años</li>
+              <li>• <strong>Google Analytics (_gid):</strong> 24 horas</li>
+              <li>• <strong>Preferencias de usuario:</strong> 1 año</li>
+              <li>• <strong>Consentimiento de cookies:</strong> 1 año</li>
+            </ul>
+          </div>
+        </div>
 
         <div className="bg-gray-50 border rounded-lg p-6 mb-8">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Configuración por navegador:</h3>
@@ -196,23 +376,55 @@ export default function CookiesPage() {
           </ul>
         </div>
 
+        <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Tus derechos y cómo ejercerlos</h2>
+        <p className="text-gray-700 mb-4">
+          Como usuario, tienes derecho a controlar el uso de cookies en este sitio web. Puedes ejercer estos derechos de las siguientes maneras:
+        </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+            <h4 className="font-semibold text-yellow-900 mb-2">🎯 Derecho de consentimiento</h4>
+            <ul className="text-yellow-800 text-sm space-y-1">
+              <li>• Aceptar o rechazar cookies no esenciales</li>
+              <li>• Cambiar tu consentimiento en cualquier momento</li>
+              <li>• Revocar consentimientos previamente otorgados</li>
+            </ul>
+          </div>
+          
+          <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+            <h4 className="font-semibold text-green-900 mb-2">🗑️ Derecho de eliminación</h4>
+            <ul className="text-green-800 text-sm space-y-1">
+              <li>• Eliminar cookies existentes de tu navegador</li>
+              <li>• Configurar el navegador para rechazar cookies</li>
+              <li>• Limpiar datos de navegación regularmente</li>
+            </ul>
+          </div>
+        </div>
+
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
           <h3 className="text-lg font-semibold text-blue-900 mb-2">¿Tienes dudas?</h3>
-          <p className="text-blue-800 mb-0">
-            Si tienes cualquier duda sobre esta Política de Cookies, puedes contactar con nosotros 
-            enviándonos un email a{' '}
-            <a 
+          <p className="text-blue-800 mb-2">
+            Si tienes cualquier duda sobre esta Política de Cookies o quieres ejercer tus derechos, 
+            puedes contactar con nosotros:
+          </p>
+          <ul className="text-blue-800 space-y-1">
+            <li>• <strong>Email:</strong> <a 
               href="mailto:info@mierdasquemolan.com" 
               className="text-blue-600 hover:text-blue-800 underline"
             >
               info@mierdasquemolan.com
-            </a>
-          </p>
+            </a></li>
+            <li>• <strong>Formulario de contacto:</strong> A través de la página de contacto del sitio web</li>
+            <li>• <strong>Configuración de cookies:</strong> Haciendo clic en "Configuración de cookies" en el pie de página</li>
+          </ul>
         </div>
       </div>
     </div>
   );
 }
+
+
+
 
 
 
