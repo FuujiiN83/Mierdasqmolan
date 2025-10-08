@@ -107,7 +107,7 @@ export function Footer() {
               </li>
                             <li>
                 <Link href="/legal/terminos" className="text-gray-600 hover:text-primary-600 transition-colors">
-                  Términos de uso
+                  Aviso Legal
                 </Link>
               </li>
               <li>
