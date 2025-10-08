@@ -1,0 +1,17 @@
+# Navegadores modernos que soportan ES2020+
+# Esto evita la transpilación innecesaria de JavaScript moderno
+
+# Chrome, Edge, Safari, Firefox modernos
+chrome >= 90
+edge >= 90
+firefox >= 88
+safari >= 14
+
+# Versiones modernas de navegadores móviles
+ios_saf >= 14
+android >= 90
+
+# No soportar navegadores legacy
+not ie 11
+not dead
+
