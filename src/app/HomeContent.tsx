@@ -318,6 +318,70 @@ export default function HomeContent() {
           </div>
         )}
       </section>
+
+      {/* SEO Content Section - Solo en primera página sin búsqueda */}
+      {!searchQuery && currentPage === 1 && !loading && (
+        <section className="mt-16 mb-12 max-w-4xl mx-auto px-4">
+          <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl p-8 border border-blue-100 dark:border-blue-800">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+              Descubre los Regalos Más Originales y Divertidos
+            </h2>
+            
+            <div className="prose prose-lg dark:prose-invert max-w-none">
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
+                Bienvenido a <strong>Mierdas que Molan</strong>, tu tienda online de <strong>regalos originales y divertidos</strong> para todos los públicos. 
+                Nos especializamos en encontrar los productos más únicos, creativos y sorprendentes para que siempre tengas el regalo perfecto 
+                para cualquier ocasión.
+              </p>
+
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mt-6 mb-4">
+                ¿Por Qué Elegir Nuestros Regalos Originales?
+              </h3>
+
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
+                En nuestra tienda encontrarás una <strong>selección cuidadosa de productos únicos</strong> que van desde gadgets tecnológicos 
+                innovadores hasta regalos para parejas que harán que cada momento sea especial. Cada artículo ha sido seleccionado pensando 
+                en sorprender y hacer sonreír a quien lo recibe.
+              </p>
+
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mt-6 mb-4">
+                Nuestras Categorías de Regalos
+              </h3>
+
+              <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2 mb-4">
+                <li><strong>Regalos para parejas:</strong> Juguetes sexuales, juegos íntimos y productos para momentos especiales</li>
+                <li><strong>Gadgets originales:</strong> Tecnología innovadora y productos únicos para el día a día</li>
+                <li><strong>Regalos divertidos:</strong> Productos que arrancarán una sonrisa garantizada</li>
+                <li><strong>Ideas creativas:</strong> Artículos sorprendentes para regalar en cualquier ocasión</li>
+                <li><strong>Ofertas y chollos:</strong> Los mejores precios en productos originales</li>
+              </ul>
+
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
+                Todos nuestros productos incluyen enlaces de <strong>afiliación a Amazon</strong>, lo que nos permite ofrecerte los mejores 
+                precios y la garantía de compra segura que ofrece la plataforma. Encuentra desde <strong>juguetes sexuales discretos</strong> 
+                hasta los gadgets más innovadores del mercado.
+              </p>
+
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mt-6 mb-4">
+                Compra Segura y Envío Rápido
+              </h3>
+
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
+                Al comprar a través de nuestros enlaces de afiliados, disfrutas de todas las ventajas de Amazon: envío rápido, 
+                devoluciones fáciles y atención al cliente de primera. Además, navegando por nuestra tienda descubrirás constantemente 
+                <strong> nuevos productos y ofertas exclusivas</strong> actualizadas regularmente.
+              </p>
+
+              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 mt-6 border-l-4 border-blue-500">
+                <p className="text-gray-700 dark:text-gray-300 font-medium mb-2">
+                  💡 <strong>Consejo:</strong> Explora nuestras diferentes categorías y descubre regalos originales que nunca imaginaste. 
+                  ¡Tenemos algo especial para cada persona y cada ocasión!
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
     </div>
   );
 }

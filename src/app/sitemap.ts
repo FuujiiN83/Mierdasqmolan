@@ -21,7 +21,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/blog`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/legal/afiliados`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/legal/privacidad`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/legal/cookies`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/legal/terminos`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
       priority: 0.3,
@@ -48,6 +72,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [...staticPages, ...productPages, ...categoryPages];
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

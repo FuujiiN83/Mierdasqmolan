@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { Inter, Potta_One, Preahvihear } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
@@ -30,16 +30,24 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: [
+    'regalos originales',
+    'regalos divertidos',
+    'regalos para todos los públicos',
+    'juguetes sexuales',
+    'productos originales',
+    'regalos curiosos',
+    'regalos para parejas',
+    'gadgets originales',
+    'regalos únicos',
+    'tienda de regalos',
+    'ideas de regalo',
+    'regalos creativos',
+    'productos divertidos',
+    'regalos sorpresa',
     'ofertas',
-    'productos',
-    'afiliaciÃ³n',
     'chollos',
     'descuentos',
-    'compras',
-    'tecnologÃ­a',
-    'hogar',
-    'moda',
-    'gaming'
+    'Amazon afiliados'
   ],
   authors: [{ name: 'MQM Web' }],
   creator: 'MQM Web',
@@ -88,8 +96,8 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: '', // AÃ±adir Google Search Console verification
-    yandex: '', // AÃ±adir Yandex verification si aplica
+    google: '', // Añadir Google Search Console verification
+    yandex: '', // Añadir Yandex verification si aplica
   },
 };
 
@@ -144,6 +152,64 @@ export default function RootLayout({
         {/* Theme color for mobile browsers */}
         <meta name="theme-color" content="#3b82f6" />
         <meta name="msapplication-TileColor" content="#3b82f6" />
+        
+        {/* Schema.org structured data - WebSite */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Mierdas que molan",
+              "alternateName": "MQM",
+              "url": "https://www.mierdasquemolan.com",
+              "description": "Regalos originales y divertidos para todos los públicos. ¡Entra y descubre tu regalo original favorito!",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "https://www.mierdasquemolan.com/?search={search_term_string}"
+                },
+                "query-input": "required name=search_term_string"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "Mierdas que molan",
+                "url": "https://www.mierdasquemolan.com",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://www.mierdasquemolan.com/logo.png"
+                }
+              }
+            })
+          }}
+        />
+        
+        {/* Schema.org structured data - Organization */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Mierdas que molan",
+              "alternateName": "MQM",
+              "url": "https://www.mierdasquemolan.com",
+              "logo": "https://www.mierdasquemolan.com/logo.png",
+              "description": "Tienda online de regalos originales y divertidos para todos los públicos",
+              "sameAs": [
+                "https://www.facebook.com/mierdasquemolan",
+                "https://www.instagram.com/mierdasquemolan"
+              ],
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer service",
+                "email": "info@mierdasquemolan.com",
+                "availableLanguage": "Spanish"
+              }
+            })
+          }}
+        />
       </head>
       <body className={`${preahvihear.className} ${pottaOne.variable} ${preahvihear.variable} antialiased bg-gray-50 dark:bg-gray-900`}>
         <div className="min-h-screen flex flex-col">
