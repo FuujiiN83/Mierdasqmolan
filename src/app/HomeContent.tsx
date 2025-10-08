@@ -20,7 +20,6 @@ export default function HomeContent() {
   const [currentPage, setCurrentPage] = useState(1);
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
   const [totalProducts, setTotalProducts] = useState(0);
-  const [isHalloweenMode, setIsHalloweenMode] = useState(false);
 
   const searchQuery = searchParams.get('search') || '';
   const { pagination } = siteConfig;
@@ -30,7 +29,7 @@ export default function HomeContent() {
 
   useEffect(() => {
     loadProducts();
-  }, [searchQuery, currentPage, isHalloweenMode]);
+  }, [searchQuery, currentPage]);
 
   const loadProducts = async () => {
     setLoading(true);
@@ -38,18 +37,12 @@ export default function HomeContent() {
       // Limpiar cache para asegurar datos actualizados
       clearProductsCache();
       
-      // Si está activo el modo Halloween, filtrar solo productos de categoría Halloween
       const filters: any = {
         search: searchQuery,
         sortBy: 'newest',
         limit: productsPerPage,
         offset: (currentPage - 1) * productsPerPage,
       };
-
-      // Si está activo el modo Halloween, filtrar por categoría Halloween
-      if (isHalloweenMode) {
-        filters.categories = ['Halloween'];
-      }
       
       // Obtener productos filtrados
       const allProducts = getFilteredProducts(filters);
@@ -57,15 +50,14 @@ export default function HomeContent() {
       // Obtener el total para paginación
       const totalFiltered = getFilteredProducts({
         search: searchQuery,
-        sortBy: 'newest',
-        ...(isHalloweenMode && { categories: ['Halloween'] })
+        sortBy: 'newest'
       });
 
       setProducts(allProducts);
       setTotalProducts(totalFiltered.length);
 
-      // Obtener productos destacados solo en la primera página sin búsqueda y sin modo Halloween
-      if (currentPage === 1 && !searchQuery && !isHalloweenMode) {
+      // Obtener productos destacados solo en la primera página sin búsqueda
+      if (currentPage === 1 && !searchQuery) {
         const featured = getFeaturedProducts();
         setFeaturedProducts(featured);
       } else {
@@ -90,14 +82,6 @@ export default function HomeContent() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const toggleHalloweenMode = () => {
-    console.log('Botón Halloween clickeado, estado actual:', isHalloweenMode);
-    setIsHalloweenMode(!isHalloweenMode);
-    console.log('Nuevo estado:', !isHalloweenMode);
-    if (!isHalloweenMode) {
-      console.log('Intentando cargar imagen: /images/fondo%20hw.webp');
-    }
-  };
 
   const totalPages = Math.ceil(totalProducts / productsPerPage);
   const inlineAdPositions = useInlineAds(products.length);
@@ -118,68 +102,8 @@ export default function HomeContent() {
   };
 
   return (
-    <div 
-      className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 min-h-screen ${
-        isHalloweenMode 
-          ? 'relative z-10' 
-          : 'bg-white dark:bg-gray-900'
-      }`}
-      style={isHalloweenMode ? { position: 'relative', zIndex: 10 } : {}}
-    >
-      {/* Halloween Background */}
-      {isHalloweenMode && (
-        <>
-          <div 
-            className="fixed inset-0 bg-cover bg-center bg-no-repeat bg-fixed -z-10"
-            style={{ backgroundImage: 'url("/images/fondo%20hw.webp")' }}
-          />
-          <div className="fixed inset-0 bg-black bg-opacity-65 -z-10" />
-        </>
-      )}
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 min-h-screen bg-white dark:bg-gray-900">
 
-      {/* Hero section */}
-      {!searchQuery && currentPage === 1 && (
-        <section className="mb-8">
-          <Link href="/categoria/halloween" className="block">
-            <div className="relative rounded-2xl overflow-hidden cursor-pointer hover:scale-[1.02] transition-transform duration-300 h-[30rem] sm:h-[34rem] lg:h-[38rem]">
-              <div className="absolute inset-0">
-                <Image
-                  src="/portada halloween.webp"
-                  alt="Portada Halloween - Productos terroríficos"
-                  fill
-                  className="object-cover"
-                  priority
-                  onError={(e) => {
-                    // Si la imagen no existe, ocultar el contenedor
-                    (e.target as HTMLImageElement).style.display = 'none';
-                  }}
-                />
-              </div>
-            </div>
-          </Link>
-
-          {/* Ad space after hero */}
-          <div className="mt-8">
-            <AdSlot position="hero-under" size="leaderboard" className="text-center" />
-          </div>
-        </section>
-      )}
-
-      {/* Halloween Mode Button - Siempre visible */}
-      <div className="flex justify-center mb-6 relative z-50">
-        <button
-          onClick={toggleHalloweenMode}
-          className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 shadow-lg hover:scale-105 relative z-50 ${
-            isHalloweenMode
-              ? 'bg-orange-600 text-white hover:bg-orange-700'
-              : 'bg-purple-600 text-white hover:bg-purple-700'
-          }`}
-          title={isHalloweenMode ? 'Desactivar modo Halloween' : 'Activar modo Halloween'}
-        >
-          <span className="text-xl">🎃</span>
-          <span>I love Halloween</span>
-        </button>
-      </div>
 
       {/* Main heading */}
       {!searchQuery && currentPage === 1 && (
