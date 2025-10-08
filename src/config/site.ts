@@ -1,6 +1,6 @@
 export const siteConfig = {
-  name: "MQM Web",
-  description: "Las mejores ofertas y productos que molan",
+  name: "Mierdas que molan",
+  description: "Regalos originales y divertidos para todos los públicos. ¡Entra y descubre tu regalo original favorito!",
   url: "https://www.mierdasquemolan.com",
   ogImage: "/logo.png",
   pagination: {
