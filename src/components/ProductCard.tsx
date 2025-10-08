@@ -62,12 +62,13 @@ export function ProductCard({
       {/* Header de la tarjeta */}
       <div className="flex flex-col sm:flex-row">
         {/* Imagen */}
-        <div className="relative w-full sm:w-48 h-48 sm:h-auto flex-shrink-0">
+        <div className="relative w-full sm:w-48 h-48 sm:h-auto flex-shrink-0" style={{ minHeight: '192px' }}>
           <OptimizedImage
             src={product.image}
             alt={product.alt || `${product.title} - Oferta en ${product.merchant || 'tienda online'}`}
             fill
-            sizes="(max-width: 640px) 100vw, 192px"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 256px"
+            quality={80}
             priority={priority}
             className="w-full h-full"
           />

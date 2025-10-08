@@ -12,6 +12,7 @@ interface OptimizedImageProps {
   className?: string;
   sizes?: string;
   fill?: boolean;
+  quality?: number;
 }
 
 export function OptimizedImage({
@@ -23,6 +24,7 @@ export function OptimizedImage({
   className = '',
   sizes,
   fill = false,
+  quality = 80,
 }: OptimizedImageProps) {
   const [imageError, setImageError] = useState(false);
 
@@ -40,36 +42,38 @@ export function OptimizedImage({
     );
   }
 
-  // Configuración simplificada sin blur placeholder que puede causar problemas
-  const imageProps = {
+  // Configuración optimizada con fetchPriority
+  const imageProps: any = {
     src,
     alt,
     priority,
     onError: () => setImageError(true),
-    quality: 80,
-    className: "object-cover",
+    quality,
+    className: className || "object-cover",
+    loading: priority ? 'eager' : 'lazy',
   };
+
+  // Añadir fetchPriority para imágenes priority
+  if (priority) {
+    imageProps.fetchPriority = 'high';
+  }
 
   if (fill) {
     return (
-      <div className={`relative ${className}`}>
-        <Image
-          {...imageProps}
-          fill
-          sizes={sizes || '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'}
-        />
-      </div>
+      <Image
+        {...imageProps}
+        fill
+        sizes={sizes || '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'}
+      />
     );
   }
 
   return (
-    <div className={className}>
-      <Image
-        {...imageProps}
-        width={width || 400}
-        height={height || 300}
-        sizes={sizes || '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'}
-      />
-    </div>
+    <Image
+      {...imageProps}
+      width={width || 400}
+      height={height || 300}
+      sizes={sizes || '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'}
+    />
   );
 }

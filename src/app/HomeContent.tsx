@@ -108,13 +108,15 @@ export default function HomeContent() {
       {!searchQuery && currentPage === 1 && (
         <section className="mb-8">
           <Link href="/categoria/halloween" className="block">
-            <div className="relative rounded-2xl overflow-hidden cursor-pointer hover:scale-[1.02] transition-transform duration-300 h-[30rem] sm:h-[34rem] lg:h-[38rem]">
+            <div className="relative rounded-2xl overflow-hidden cursor-pointer hover:scale-[1.02] transition-transform duration-300 h-[30rem] sm:h-[34rem] lg:h-[38rem]" style={{ aspectRatio: '16/9' }}>
               <div className="absolute inset-0">
                 <Image
                   src="/portada halloween.webp"
                   alt="Portada Halloween - Productos terroríficos"
                   fill
                   className="object-cover"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1216px"
+                  quality={75}
                   priority
                   onError={(e) => {
                     // Si la imagen no existe, ocultar el contenedor
@@ -141,7 +143,7 @@ export default function HomeContent() {
           </Link>
 
           {/* Ad space after hero */}
-          <div className="mt-8">
+          <div className="mt-8" style={{ minHeight: '90px' }}>
             <AdSlot position="hero-under" size="leaderboard" className="text-center" />
           </div>
         </section>
@@ -172,14 +174,14 @@ export default function HomeContent() {
               </svg>
             </a>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {featuredProducts.slice(0, 4).map((product) => (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6" style={{ minHeight: '400px' }}>
+            {featuredProducts.slice(0, 4).map((product, index) => (
               <ProductCard
                 key={product.id}
                 product={product}
                 isExpanded={expandedCard === product.id}
                 onToggleExpand={() => handleToggleExpand(product.id)}
-                priority={true}
+                priority={index < 2}
               />
             ))}
           </div>

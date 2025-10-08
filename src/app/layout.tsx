@@ -111,36 +111,14 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         
-        {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-FCD8D2QZEZ"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-
-              gtag('config', 'G-FCD8D2QZEZ');
-            `,
-          }}
-        />
+        {/* DNS Prefetch y Preconnect para dominios críticos */}
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://www.clarity.ms" />
+        <link rel="dns-prefetch" href="https://scripts.clarity.ms" />
         
-        {/* Microsoft Clarity */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-              })(window, document, "clarity", "script", "tmauglnsdb");
-            `,
-          }}
-        />
-        
-        {/* Preconnect to external domains for performance */}
-        <link rel="preconnect" href="https://amazon.es" />
-        <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
         
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
@@ -222,6 +200,42 @@ export default function RootLayout({
         
         {/* Banner de consentimiento de cookies */}
         <CookieConsentBanner />
+        
+        {/* Google Analytics - Cargado con estrategia afterInteractive para no bloquear */}
+        <Script
+          id="gtag-base"
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-FCD8D2QZEZ"
+        />
+        <Script
+          id="gtag-config"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-FCD8D2QZEZ', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
+        
+        {/* Microsoft Clarity - Cargado con estrategia afterInteractive */}
+        <Script
+          id="clarity-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "tmauglnsdb");
+            `,
+          }}
+        />
       </body>
     </html>
   );
