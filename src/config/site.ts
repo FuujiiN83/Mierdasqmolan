@@ -1,6 +1,6 @@
 export const siteConfig = {
-  name: "Mierdas que molan",
-  description: "Regalos originales y divertidos para todos los públicos. ¡Entra y descubre tu regalo original favorito!",
+  name: "Mierdas que molan - Los mejores regalos originales",
+  description: "Regalos originales y divertidos frikis, para fiestas, reuniones, parejas y mucho más. ¡Entra en mierdas que molan y encuentra tu regalo favorito!",
   url: "https://www.mierdasquemolan.com",
   ogImage: "/logo.png",
   pagination: {

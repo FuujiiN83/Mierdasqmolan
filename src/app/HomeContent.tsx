@@ -126,9 +126,9 @@ export default function HomeContent() {
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-4">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-4">
                   🎃 Halloween Special
-                </h1>
+                </h2>
                 <p className="text-lg sm:text-xl text-white/90 mb-4 sm:mb-6">
                   Productos terroríficos y divertidos para la noche más espeluznante del año
                 </p>
