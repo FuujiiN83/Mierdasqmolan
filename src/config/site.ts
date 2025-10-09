@@ -29,13 +29,13 @@ export type SiteConfig = typeof siteConfig;
 export const categoryConfig = {
   "regalos-originales-para-casa": {
     name: "Regalos originales para casa",
-    description: "Productos únicos para decorar y mejorar tu hogar",
+    description: "Productos únicos y originales para decorar y mejorar tu hogar con un toque muy especial.",
     color: "#10B981",
     icon: "🏠"
   },
   "regalos-frikis": {
     name: "Regalos frikis",
-    description: "Para los amantes de la cultura geek, gaming y cine",
+    description: "Regalos originales para frikis. porque no es una moda, es un estilo de vida que nos encanta. ¡Viva el orgullo friki!",
     color: "#8B5CF6",
     icon: "🤓"
   },
@@ -47,19 +47,19 @@ export const categoryConfig = {
   },
   "regalos-para-todo-tipo-de-edades": {
     name: "Regalos para todo tipo de edades",
-    description: "Productos perfectos para niños, adolescentes y adultos",
+    description: "regalos originales para niños, adolescentes, adultos y para pasar buenos momentos.",
     color: "#06B6D4",
     icon: "👥"
   },
   "regalos-para-pasarlo-bien": {
     name: "Regalos para pasarlo bien",
-    description: "Para fiestas, música, Halloween y diversión garantizada",
+    description: "Regalos originales para pasar momentos muy divertidos con amigos o en familia.",
     color: "#EF4444",
     icon: "🎉"
   },
   "regalos-para-cumpleanos": {
     name: "Regalos para cumpleaños",
-    description: "Experiencias y regalos especiales para celebrar cumpleaños",
+    description: "Regalos originales para cumpleaños. Regala algo distinto y con encanto a esa persona que tanto aprecias.",
     color: "#EC4899",
     icon: "🎂"
   },
@@ -71,7 +71,7 @@ export const categoryConfig = {
   },
   "regalos-originales-para-parejas": {
     name: "Regalos originales para parejas",
-    description: "Productos románticos y sensuales para parejas que buscan experiencias únicas",
+    description: "Regalos originales para disfrutar grandes momentos con tu pareja. Experiencias únicas, divertidas y sensoriales para recordar y repetir en mas de una ocasión",
     color: "#E91E63",
     icon: "💕"
   },
