@@ -138,10 +138,10 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "name": "Mierdas que molan",
+              "name": "Mierdas que molan - Regalos originales y mucho más",
               "alternateName": "MQM",
               "url": "https://www.mierdasquemolan.com",
-              "description": "Regalos originales y divertidos para todos los públicos. ¡Entra y descubre tu regalo original favorito!",
+              "description": "Regalos originales frikis, para parejas, fiestas, grandes ratos de diversión y mucho. Entra y busca tu regalo favorito.",
               "potentialAction": {
                 "@type": "SearchAction",
                 "target": {
@@ -152,7 +152,7 @@ export default function RootLayout({
               },
               "publisher": {
                 "@type": "Organization",
-                "name": "Mierdas que molan",
+                "name": "Mierdas que molan - Regalos originales y mucho más",
                 "url": "https://www.mierdasquemolan.com",
                 "logo": {
                   "@type": "ImageObject",
