@@ -25,33 +25,22 @@ const preahvihear = Preahvihear({
 
 export const metadata: Metadata = {
   title: {
-    default: siteConfig.name,
-    template: `%s | ${siteConfig.name}`,
+    default: "Mierdas que molan, regalos originales para frikis, parejas, pasarlo bien, fiestas y mucho más.",
+    template: `%s | Mierdas que molan`,
   },
-  description: siteConfig.description,
+  description: "regalos originales para frikis, parejas, pasarlo bien, fiestas y mucho más. Entra ahora y encuentra tu regalo original favorito",
   keywords: [
-    'regalos originales',
+    'Regalos originales',
     'regalos divertidos',
-    'regalos para todos los públicos',
-    'juguetes sexuales',
-    'productos originales',
-    'regalos curiosos',
+    'regalos frikis',
     'regalos para parejas',
-    'gadgets originales',
-    'regalos únicos',
-    'tienda de regalos',
-    'ideas de regalo',
-    'regalos creativos',
-    'productos divertidos',
-    'regalos sorpresa',
-    'ofertas',
-    'chollos',
-    'descuentos',
-    'Amazon afiliados'
+    'regalos originales para parejas',
+    'regalos para cumpleaños',
+    'regalos originales para casa'
   ],
-  authors: [{ name: 'MQM Web' }],
-  creator: 'MQM Web',
-  publisher: 'MQM Web',
+  authors: [{ name: 'Deep code studio' }],
+  creator: 'Deep code studio',
+  publisher: 'Deep code studio',
   formatDetection: {
     email: false,
     address: false,
@@ -130,6 +119,16 @@ export default function RootLayout({
         {/* Theme color for mobile browsers */}
         <meta name="theme-color" content="#3b82f6" />
         <meta name="msapplication-TileColor" content="#3b82f6" />
+        
+        {/* SEO Meta Tags */}
+        <meta name="title" content="Mierdas que molan, regalos originales para frikis, parejas, pasarlo bien, fiestas y mucho más." />
+        <meta name="description" content="regalos originales para frikis, parejas, pasarlo bien, fiestas y mucho más. Entra ahora y encuentra tu regalo original favorito" />
+        <meta name="keywords" content="Regalos originales, regalos divertidos, regalos frikis, regalos para parejas, regalos originales para parejas, regalos para cumpleaños, regalos originales para casa" />
+        <meta name="robots" content="index, follow" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="Spanish" />
+        <meta name="revisit-after" content="1 days" />
+        <meta name="author" content="Deep code studio" />
         
         {/* Schema.org structured data - WebSite */}
         <script
