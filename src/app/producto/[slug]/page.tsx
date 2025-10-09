@@ -8,6 +8,7 @@ import { formatPrice, formatDate, markdownToHtml, getDomainFromUrl } from '@/lib
 import { categoryConfig } from '@/config/site';
 import { ProductCard } from '@/components/ProductCard';
 import { AdSlot } from '@/components/AdSlot';
+import { ShareButtons } from '@/components/ShareButtons';
 
 interface ProductPageProps {
   params: {
@@ -206,6 +207,13 @@ export default function ProductPage({ params }: ProductPageProps) {
                     </svg>
                   </a>
                 </div>
+
+                {/* Share buttons */}
+                <ShareButtons 
+                  productTitle={product.title}
+                  productUrl={`/producto/${product.slug}`}
+                  productImage={product.image}
+                />
 
                 {/* Tags */}
                 {product.tags && product.tags.length > 0 && (
