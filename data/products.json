@@ -11,7 +11,7 @@
         "merchant": "Amazon",
         "price": 13.99,
         "currency": "EUR",
-        "categories": ["Halloween"],
+        "categories": ["halloween"],
         "isFeatured": false,
         "createdAt": "2025-01-10T14:00:00Z",
         "tags": ["tela", "decorativa", "halloween", "telaranas", "dracula"]
@@ -28,7 +28,7 @@
         "merchant": "Amazon",
         "price": 54.99,
         "currency": "EUR",
-        "categories": ["Halloween", "Destacados"],
+        "categories": ["halloween", "Destacados"],
         "isFeatured": true,
         "createdAt": "2025-01-10T13:00:00Z",
         "tags": ["payaso", "aterrador", "halloween", "decoracion", "terrorifico"]
@@ -62,7 +62,7 @@
         "merchant": "Amazon",
         "price": 114.99,
         "currency": "EUR",
-        "categories": ["Halloween", "Regalos para pasarlo bien"],
+        "categories": ["halloween", "Regalos para pasarlo bien"],
         "isFeatured": false,
         "createdAt": "2025-01-10T11:00:00Z",
         "tags": ["halloween", "inflable", "decoracion", "jardin", "terrorifico"]
