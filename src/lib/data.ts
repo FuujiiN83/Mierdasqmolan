@@ -118,14 +118,14 @@ export function getProductBySlug(slug: string): Product | null {
 export function getProductsByCategory(categorySlug: CategorySlug): Product[] {
   // Mapear el slug de la categoría a los nombres en el JSON
   const categoryNameMap: Record<string, string> = {
-    'regalos-originales-para-casa': 'regalos originales para casa',
-    'regalos-frikis': 'regalos frikis',
-    'regalos-wtf': 'regalos wtf',
-    'regalos-para-todo-tipo-de-edades': 'regalos para todo tipo de edades',
-    'regalos-para-pasarlo-bien': 'regalos para pasarlo bien',
-    'regalos-para-cumpleanos': 'regalos para cumpleaños',
+    'regalos-originales-para-casa': 'Regalos originales para casa',
+    'regalos-frikis': 'Regalos frikis',
+    'regalos-wtf': 'Regalos WTF',
+    'regalos-para-todo-tipo-de-edades': 'Regalos para todo tipo de edades',
+    'regalos-para-pasarlo-bien': 'Regalos para pasarlo bien',
+    'regalos-para-cumpleanos': 'Regalos para cumpleaños',
     'halloween': 'Halloween',
-    'regalos-originales-para-parejas': 'regalos originales para parejas',
+    'regalos-originales-para-parejas': 'Regalos originales para parejas',
     'blog': 'blog'
   };
   
