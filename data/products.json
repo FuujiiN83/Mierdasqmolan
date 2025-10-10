@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "328",
+        "slug": "calavera-realista",
+        "title": "Calavera realista - Regalos originales | Mierdas que molan",
+        "shortDescription": "Sirve como decoración divertida para Halloween o como regalo original decorativo para aquellos que la cocina no es lo suyo y sus guisos son como brebajes de bruja. ¿En cuál te encaja más?",
+        "description": "<p>Sirve como decoración divertida para Halloween o como regalo original decorativo para aquellos que la cocina no es lo suyo y sus guisos son como brebajes de bruja. ¿En cuál te encaja más?</p><h2>Características del producto</h2><ul><li><strong>Decoración divertida:</strong> Perfecta para Halloween</li><li><strong>Regalo original:</strong> Decorativo para cocinas</li><li><strong>Para cocineros:</strong> Ideal para aquellos que la cocina no es lo suyo</li><li><strong>Brebajes de bruja:</strong> Para guisos que parecen pociones</li><li><strong>Diseño realista:</strong> Calavera con aspecto auténtico</li></ul>",
+        "image": "/images/calavera hw.webp",
+        "alt": "Calavera realista - Decoración terrorífica para Halloween",
+        "affiliateUrl": "https://amzn.to/3WCh69L",
+        "merchant": "Amazon",
+        "price": 18.99,
+        "currency": "EUR",
+        "categories": ["halloween"],
+        "isFeatured": false,
+        "createdAt": "2025-01-10T18:00:00Z",
+        "tags": ["calavera", "realista", "halloween", "decoracion", "cocina"]
+    },
+    {
         "id": "327",
         "slug": "decoracion-exterior-halloween",
         "title": "Decoración exterior para Halloween - Regalos originales | Mierdas que molan",
