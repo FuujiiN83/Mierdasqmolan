@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, lazy, Suspense } from 'react';
+import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -11,10 +11,6 @@ import { Pagination, ResultsInfo } from '@/components/Pagination';
 import { getFilteredProducts, getFeaturedProducts, clearProductsCache } from '@/lib/data';
 import { Product } from '@/types';
 import { siteConfig } from '@/config/site';
-
-// Lazy loading para componentes pesados
-const LazyProductCard = lazy(() => import('@/components/ProductCard').then(module => ({ default: module.ProductCard })));
-const LazyAdSlot = lazy(() => import('@/components/AdSlot').then(module => ({ default: module.AdSlot })));
 
 export default function HomeContent() {
   const searchParams = useSearchParams();

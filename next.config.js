@@ -35,11 +35,9 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  // Configuración experimental conservadora
+  // Configuración experimental simplificada
   experimental: {
     typedRoutes: false,
-    // Optimizar CSS automáticamente
-    optimizeCss: true,
   },
   // Configuración de compilación con target moderno
   compiler: {
