@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "320",
+        "slug": "garra-de-oso",
+        "title": "Garra de oso - Regalos originales | Mierdas que molan",
+        "shortDescription": "¿Buscas las cortezas de los árboles para rascarte? ¿No te llegas a lugares donde SIEMPRE te pica? Pues ni cortezas de árbol ni \"cariño ráscame aquí por fi\" sino la garra de oso para solucionarte ese momento sin necesitar de nadie más.",
+        "description": "<p>¿Buscas las cortezas de los árboles para rascarte? ¿No te llegas a lugares donde SIEMPRE te pica? Pues ni cortezas de árbol ni \"cariño ráscame aquí por fi\" sino la garra de oso para solucionarte ese momento sin necesitar de nadie más.</p><h2>Características del producto</h2><ul><li><strong>Garra de oso funcional:</strong> Perfecta para rascarte en lugares difíciles de alcanzar</li><li><strong>Diseño ergonómico:</strong> Fácil de usar y cómodo para el agarre</li><li><strong>Material resistente:</strong> Duradero y de alta calidad</li><li><strong>Uso personal:</strong> Solución independiente para picores molestos</li><li><strong>Regalo original:</strong> Perfecto para personas que buscan soluciones prácticas y divertidas</li></ul>",
+        "image": "/images/rascador oso.webp",
+        "alt": "Garra de oso - Rascador funcional para lugares difíciles de alcanzar",
+        "affiliateUrl": "https://amzn.to/4nK1w80",
+        "merchant": "Amazon",
+        "price": 5.99,
+        "currency": "EUR",
+        "categories": ["regalos-wtf", "regalos-para-todo-tipo-de-edades", "regalos-frikis"],
+        "isFeatured": false,
+        "createdAt": "2025-01-10T10:00:00Z",
+        "tags": ["garra", "oso", "rascador", "util", "divertido"]
+    },
+    {
         "id": "319",
         "slug": "ruleta-posturas-sexuales",
         "title": "Ruleta de posturas sexuales",
