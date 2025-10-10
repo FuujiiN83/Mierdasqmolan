@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "321",
+        "slug": "inflable-halloween",
+        "title": "Inflable Halloween - Regalos originales | Mierdas que molan",
+        "shortDescription": "Lo tuyo es pegar sustos de los buenos y además, una decoración que destaque sobre el resto, quieres gobernar sobre todas las decoraciones del vecindario; pues empieza por aquí. Este enorme inflable para Halloween es un producto bastante original que hará de tu jardín, el jardín mas molón de todos.",
+        "description": "<p>Lo tuyo es pegar sustos de los buenos y además, una decoración que destaque sobre el resto, quieres gobernar sobre todas las decoraciones del vecindario; pues empieza por aquí. Este enorme inflable para Halloween es un producto bastante original que hará de tu jardín, el jardín mas molón de todos.</p><h2>Características del producto</h2><ul><li><strong>Inflable gigante:</strong> Decoración impresionante para Halloween</li><li><strong>Diseño original:</strong> Destaca sobre todas las decoraciones del vecindario</li><li><strong>Perfecto para jardín:</strong> Hará de tu jardín el más molón de todos</li><li><strong>Decoración temática:</strong> Ideal para crear ambiente de Halloween</li><li><strong>Regalo perfecto:</strong> Para amantes de las decoraciones terroríficas</li></ul>",
+        "image": "/images/inflable Halloween.webp",
+        "alt": "Inflable Halloween - Decoración gigante para jardín terrorífico",
+        "affiliateUrl": "https://amzn.to/46L9WGn",
+        "merchant": "Amazon",
+        "price": 114.99,
+        "currency": "EUR",
+        "categories": ["Halloween", "Regalos para pasarlo bien"],
+        "isFeatured": false,
+        "createdAt": "2025-01-10T11:00:00Z",
+        "tags": ["halloween", "inflable", "decoracion", "jardin", "terrorifico"]
+    },
+    {
         "id": "320",
         "slug": "garra-de-oso",
         "title": "Garra de oso - Regalos originales | Mierdas que molan",
