@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "332",
+        "slug": "arco-halloween",
+        "title": "Arco Halloween - Regalos originales | Mierdas que molan",
+        "shortDescription": "A LO GRANDE. ¿pa' que tener una calabaza? Lo tuyo es entrada de castillo y que se vea desde el primer momento que Halloween y tu os lleváis bien. Pues nada, empieza asustando a los chavales con este arco de Halloween y ahorra en caramelos.",
+        "description": "<p>A LO GRANDE. ¿pa' que tener una calabaza? Lo tuyo es entrada de castillo y que se vea desde el primer momento que Halloween y tu os lleváis bien. Pues nada, empieza asustando a los chavales con este arco de Halloween y ahorra en caramelos.</p><h2>Características del producto</h2><ul><li><strong>Entrada de castillo:</strong> Para que se vea desde el primer momento</li><strong>Halloween a lo grande:</strong> No una calabaza, sino un arco completo</li><li><strong>Asusta a los chavales:</strong> Perfecto para empezar asustando</li><li><strong>Ahorra en caramelos:</strong> Con este arco no necesitarás tantos</li><li><strong>Decoración épica:</strong> Para amantes de Halloween que se llevan bien con él</li></ul>",
+        "image": "/images/arco entrada hw.webp",
+        "alt": "Arco Halloween - Entrada de castillo para Halloween",
+        "affiliateUrl": "https://amzn.to/3KGzwnf",
+        "merchant": "Amazon",
+        "price": 82.99,
+        "currency": "EUR",
+        "categories": ["halloween"],
+        "isFeatured": false,
+        "createdAt": "2025-01-10T22:00:00Z",
+        "tags": ["arco", "halloween", "entrada", "castillo", "terrorifico"]
+    },
+    {
         "id": "331",
         "slug": "mascara-de-pez",
         "title": "Máscara de pez - Regalos originales | Mierdas que molan",
