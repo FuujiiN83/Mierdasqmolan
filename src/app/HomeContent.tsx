@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ProductCard } from '@/components/ProductCard';
@@ -13,17 +12,28 @@ import { Product } from '@/types';
 import { siteConfig } from '@/config/site';
 
 export default function HomeContent() {
-  const searchParams = useSearchParams();
   const [products, setProducts] = useState<Product[]>([]);
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
   const [totalProducts, setTotalProducts] = useState(0);
+  const [searchQuery, setSearchQuery] = useState('');
 
-  const searchQuery = searchParams.get('search') || '';
   const { pagination } = siteConfig;
   const productsPerPage = pagination.productsPerPage;
+
+  // Manejar searchParams de forma segura
+  useEffect(() => {
+    try {
+      const searchParams = new URLSearchParams(window.location.search);
+      const query = searchParams.get('search') || '';
+      setSearchQuery(query);
+    } catch (error) {
+      console.error('Error getting search params:', error);
+      setSearchQuery('');
+    }
+  }, []);
 
 
 
@@ -44,22 +54,37 @@ export default function HomeContent() {
         offset: (currentPage - 1) * productsPerPage,
       };
       
-      // Obtener productos filtrados
+      // Obtener productos filtrados con manejo de errores
       const allProducts = getFilteredProducts(filters);
+      if (!Array.isArray(allProducts)) {
+        throw new Error('getFilteredProducts no devolvió un array');
+      }
 
       // Obtener el total para paginación
       const totalFiltered = getFilteredProducts({
         search: searchQuery,
         sortBy: 'newest'
       });
+      if (!Array.isArray(totalFiltered)) {
+        throw new Error('getFilteredProducts para total no devolvió un array');
+      }
 
       setProducts(allProducts);
       setTotalProducts(totalFiltered.length);
 
       // Obtener productos destacados solo en la primera página sin búsqueda
       if (currentPage === 1 && !searchQuery) {
-        const featured = getFeaturedProducts();
-        setFeaturedProducts(featured);
+        try {
+          const featured = getFeaturedProducts();
+          if (Array.isArray(featured)) {
+            setFeaturedProducts(featured);
+          } else {
+            setFeaturedProducts([]);
+          }
+        } catch (featuredError) {
+          console.error('Error cargando productos destacados:', featuredError);
+          setFeaturedProducts([]);
+        }
       } else {
         setFeaturedProducts([]);
       }
@@ -67,6 +92,7 @@ export default function HomeContent() {
       console.error('Error cargando productos:', error);
       setProducts([]);
       setTotalProducts(0);
+      setFeaturedProducts([]);
     } finally {
       setLoading(false);
     }
@@ -230,20 +256,16 @@ export default function HomeContent() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6" data-layout="two-columns" style={{display: 'grid !important', gridTemplateColumns: 'repeat(2, 1fr) !important', gap: '1.5rem !important'}}>
             {products.map((product, index) => (
               <div key={product.id}>
-                <Suspense fallback={<div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 animate-pulse"><div className="h-4 bg-gray-200 rounded w-3/4 mb-2"></div><div className="h-3 bg-gray-200 rounded w-1/2"></div></div>}>
-                  <ProductCard
-                    product={product}
-                    isExpanded={expandedCard === product.id}
-                    onToggleExpand={() => handleToggleExpand(product.id)}
-                  />
-                </Suspense>
+                <ProductCard
+                  product={product}
+                  isExpanded={expandedCard === product.id}
+                  onToggleExpand={() => handleToggleExpand(product.id)}
+                />
                 
-                {/* Inline ads - Lazy loaded */}
+                {/* Inline ads */}
                 {inlineAdPositions.includes(index + 1) && (
                   <div className="mt-6">
-                    <Suspense fallback={<div className="h-32 bg-gray-100 rounded animate-pulse"></div>}>
-                      <AdSlot position="inline" size="medium" className="text-center" />
-                    </Suspense>
+                    <AdSlot position="inline" size="medium" className="text-center" />
                   </div>
                 )}
               </div>
