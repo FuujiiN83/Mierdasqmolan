@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "323",
+        "slug": "payaso-aterrador",
+        "title": "Payaso aterrador - Regalos originales | Mierdas que molan",
+        "shortDescription": "Lo tuyo no son las calabazas pequeñitas ni una tela de araña con unas arañas rondando no, lo tuyo es asustar al propio miedo y que tu casa resalte muy por encima del resto. Y para eso está este payaso aterrador, para ser una decoración original para Halloween y la gente pase señalando y haciendo fotos de lo mucho que mola tu decoración.",
+        "description": "<p>Lo tuyo no son las calabazas pequeñitas ni una tela de araña con unas arañas rondando no, lo tuyo es asustar al propio miedo y que tu casa resalte muy por encima del resto. Y para eso está este payaso aterrador, para ser una decoración original para Halloween y la gente pase señalando y haciendo fotos de lo mucho que mola tu decoración.</p><h2>Características del producto</h2><ul><li><strong>Payaso aterrador:</strong> Decoración original para Halloween que asusta al propio miedo</li><li><strong>Decoración impactante:</strong> Tu casa resaltará muy por encima del resto</li><li><strong>Perfecto para Halloween:</strong> Decoración que llama la atención</li><li><strong>Fotos y señalamientos:</strong> La gente pasará señalando y haciendo fotos</li><li><strong>Regalo perfecto:</strong> Para amantes de las decoraciones terroríficas</li></ul>",
+        "image": "/images/payaso aterrador.webp",
+        "alt": "Payaso aterrador - Decoración terrorífica para Halloween",
+        "affiliateUrl": "https://amzn.to/4nTNelp",
+        "merchant": "Amazon",
+        "price": 54.99,
+        "currency": "EUR",
+        "categories": ["Halloween", "Destacados"],
+        "isFeatured": true,
+        "createdAt": "2025-01-10T13:00:00Z",
+        "tags": ["payaso", "aterrador", "halloween", "decoracion", "terrorifico"]
+    },
+    {
         "id": "322",
         "slug": "gafas-led",
         "title": "Gafas led - Regalos originales | Mierdas que molan",
