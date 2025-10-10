@@ -39,9 +39,31 @@ copy "images\[nombre-imagen].webp" "Mierdasqmolan\public\images\[nombre-imagen].
   "categories": ["categoria1", "categoria2"],
   "isFeatured": false,
   "createdAt": "2024-01-23TXX:00:00Z",
-  "tags": ["tag1", "tag2", "tag3"]
+  "tags": ["tag1", "tag2", "tag3", "tag4", "tag5"]
 }
 ```
+
+### 3.2. ⚠️ FORMATO DE TÍTULOS - CRÍTICO
+
+**IMPORTANTE**: A partir de ahora, todos los productos deben seguir este formato de título:
+
+#### Formato Correcto:
+```
+"[Título del producto]" - Regalos originales | Mierdas que molan
+```
+
+#### Ejemplos:
+- ✅ **Correcto**: "Contesta esto - Regalos originales | Mierdas que molan"
+- ✅ **Correcto**: "Juego de mesa divertido - Regalos originales | Mierdas que molan"
+- ❌ **Incorrecto**: "Contesta esto - Oferta en amzn.to | Mierdas que molan"
+- ❌ **Incorrecto**: "Juego de mesa - Oferta en Amazon | Mierdas que molan"
+
+#### Aplicación:
+- **SEO**: Mejora el posicionamiento con "Regalos originales"
+- **Consistencia**: Formato uniforme en todos los productos
+- **Branding**: Refuerza la marca "Mierdas que molan"
+
+**⚠️ IMPORTANTE**: Cada producto tendrá un **máximo de 5 etiquetas** en el array `tags`.
 
 ### 3.1. ⚠️ ORDEN DE PRODUCTOS - CRÍTICO
 
@@ -268,61 +290,11 @@ git push
 - **Error "Module not found: Can't resolve './../../data/blog.json'"**: Usar import correcto `@/data/blog.json`
 - **Blog no aparece**: Verificar que `blog.json` esté en ambas carpetas y sincronizado
 
-## 🔧 Solución de Problemas UTF-8 (CRÍTICO)
-
-### Problema: Caracteres especiales se muestran incorrectamente
-**Síntomas**: Los caracteres como `ñ`, `á`, `é`, `í`, `ó`, `ú`, `¿`, `¡` se muestran como `Ã±`, `Ã¡`, `Ã©`, `Ã­`, `Ã³`, `Ãº`, `Â¿`, `Â¡`
-
-**Solución URGENTE**:
-```powershell
-# 1. Ir a la carpeta Mierdasqmolan
-cd Mierdasqmolan
-
-# 2. Aplicar reemplazo directo de caracteres corruptos
-powershell -Command "(Get-Content 'data\products.json' -Raw) -replace 'Â¿', '¿' -replace 'Â¡', '¡' -replace 'Ã¡', 'á' -replace 'Ã©', 'é' -replace 'Ã­', 'í' -replace 'Ã³', 'ó' -replace 'Ãº', 'ú' -replace 'Ã±', 'ñ' -replace 'Ã¼', 'ü' -replace 'â€¦', '...' -replace 'â€!!', '!!' | Set-Content 'data\products.json' -Encoding UTF8"
-
-# 3. Commit y push inmediato
-git add .
-git commit -m "CRITICAL: Fix UTF-8 encoding - replace corrupted characters"
-git push
-
-# 4. Sincronizar con carpeta principal
-cd ..
-copy "Mierdasqmolan\data\products.json" "data\products.json"
-
-# 5. Reiniciar aplicación
-# Terminar proceso actual y reiniciar
-```
-
-### Prevención de Problemas UTF-8:
-1. **Siempre usar** la conversión UTF-8 del paso 5 del proceso normal
-2. **Verificar caracteres** después de cada sincronización
-3. **Si aparecen caracteres corruptos**, usar la solución urgente inmediatamente
-4. **Reiniciar aplicación** después de correcciones UTF-8
-
-### Caracteres que se corrompen frecuentemente:
-- `¿` → `Â¿`
-- `¡` → `Â¡`
-- `á` → `Ã¡`
-- `é` → `Ã©`
-- `í` → `Ã­`
-- `ó` → `Ã³`
-- `ú` → `Ãº`
-- `ñ` → `Ã±`
-- `ü` → `Ã¼`
-- `...` → `â€¦`
-- `!!` → `â€!!`
-
 ---
 **Última actualización**: 23 de enero de 2025
-**Total productos**: 182
+**Total productos**: 125
 **Total artículos de blog**: 2
-**Último ID usado**: 194 (Fantasma)
-**Commit hash**: 01c5480
-**Último commit**: "CRITICAL: Fix UTF-8 encoding - replace corrupted characters"
-**Problemas solucionados**: 
-- ✅ Layout de productos de dos en dos
-- ✅ Codificación UTF-8 corregida
-- ✅ 182 productos visibles
-- ✅ Aplicación funcionando en puerto 3001
+**Último ID usado**: 137 (Llavero NFC)
+**Commit hash**: a3736d0
+**Último commit**: "Actualizar fecha del llavero NFC para que aparezca primero (más reciente que la tortuga)"
 
