@@ -35,46 +35,15 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  // Configuración experimental para code splitting
+  // Configuración experimental conservadora
   experimental: {
     typedRoutes: false,
     // Optimizar CSS automáticamente
     optimizeCss: true,
-    // Mejorar el code splitting
-    optimizePackageImports: ['@next/font', 'lucide-react'],
   },
   // Configuración de compilación con target moderno
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
-  },
-  // Configuración de webpack para optimización
-  webpack: (config, { dev, isServer }) => {
-    // Optimización de chunks para mejor code splitting
-    if (!dev && !isServer) {
-      config.optimization.splitChunks = {
-        chunks: 'all',
-        cacheGroups: {
-          default: {
-            minChunks: 2,
-            priority: -20,
-            reuseExistingChunk: true,
-          },
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendors',
-            priority: -10,
-            chunks: 'all',
-          },
-          common: {
-            name: 'common',
-            minChunks: 2,
-            priority: -5,
-            reuseExistingChunk: true,
-          },
-        },
-      };
-    }
-    return config;
   },
   // Headers para optimización de caché y performance
   async headers() {
