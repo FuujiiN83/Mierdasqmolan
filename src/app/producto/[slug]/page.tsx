@@ -156,7 +156,7 @@ export default function ProductPage({ params }: ProductPageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Imagen del producto */}
-            <div className="lg:col-span-8">
+            <div className="lg:col-span-12">
               <div className="flex flex-col-reverse">
                 <div className="w-full aspect-square sm:aspect-[4/3] lg:aspect-square">
                   <OptimizedImage
@@ -243,63 +243,6 @@ export default function ProductPage({ params }: ProductPageProps) {
               </div>
             </div>
 
-            {/* Sidebar */}
-            <div className="mt-16 lg:mt-0 lg:col-span-4">
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold font-potta-one text-header-purple mb-4">Resumen del producto</h3>
-                <dl className="space-y-3">
-                  {product.price && (
-                    <div className="hidden">
-                      <dt className="text-sm font-medium text-gray-500">Precio</dt>
-                      <dd className="text-lg font-semibold font-potta-one text-header-purple">
-                        {formatPrice(product.price, product.currency)}
-                      </dd>
-                    </div>
-                  )}
-                  
-                  <div>
-                    <dt className="text-sm font-medium text-gray-500">Disponible en</dt>
-                    <dd className="text-sm text-gray-900 dark:text-white">{product.merchant || merchantDomain}</dd>
-                  </div>
-                  
-                  <div>
-                    <dt className="text-sm font-medium text-gray-500">Categorías</dt>
-                    <dd className="text-sm text-gray-900 dark:text-white">
-                      <div className="flex flex-wrap gap-1 mt-1">
-                        {product.categories.map((category) => {
-                          // Mapear nombre de categoría a slug
-                          const categorySlugMap: Record<string, string> = {
-                            'Regalos originales para casa': 'regalos-originales-para-casa',
-                            'Regalos frikis': 'regalos-frikis',
-                            'Regalos WTF': 'regalos-wtf',
-                            'Regalos para todo tipo de edades': 'regalos-para-todo-tipo-de-edades',
-                            'Regalos para pasarlo bien': 'regalos-para-pasarlo-bien',
-                            'blog': 'blog'
-                          };
-                          
-                          const categorySlug = categorySlugMap[category] || category;
-                          
-                          return (
-                            <Link
-                              key={category}
-                              href={`/categoria/${categorySlug}`}
-                              className="inline-block bg-gray-100 dark:bg-gray-700 hover:bg-primary-100 dark:hover:bg-primary-900 text-gray-700 dark:text-gray-300 hover:text-primary-700 dark:hover:text-primary-300 text-xs px-2 py-1 rounded-full transition-colors"
-                            >
-                              {category}
-                            </Link>
-                          );
-                        })}
-                      </div>
-                    </dd>
-                  </div>
-                  
-                  <div>
-                    <dt className="text-sm font-medium text-gray-500">Añadido</dt>
-                    <dd className="text-sm text-gray-900 dark:text-white">{formatDate(product.createdAt)}</dd>
-                  </div>
-                </dl>
-              </div>
-            </div>
           </div>
 
           {/* Related products */}
