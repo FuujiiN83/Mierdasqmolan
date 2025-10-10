@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "322",
+        "slug": "gafas-led",
+        "title": "Gafas led - Regalos originales | Mierdas que molan",
+        "shortDescription": "Ay las fiestas, ¡Cómo nos gustan! Ya sea en casa, en una discoteca, en el pueblo o donde, la fiesta es la fiesta y como no podía ser menos, en mierdas que molan hemos pensado en algún regalo original para fiestas, o para momentos en los que el photocall te está llamando. Y aquí está, unas gafas led para brillar en cualquier momento mientras tu disfrutas como nunca.",
+        "description": "<p>Ay las fiestas, ¡Cómo nos gustan! Ya sea en casa, en una discoteca, en el pueblo o donde, la fiesta es la fiesta y como no podía ser menos, en mierdas que molan hemos pensado en algún regalo original para fiestas, o para momentos en los que el photocall te está llamando. Y aquí está, unas gafas led para brillar en cualquier momento mientras tu disfrutas como nunca.</p><h2>Características del producto</h2><ul><li><strong>Gafas LED brillantes:</strong> Perfectas para fiestas y photocall</li><li><strong>Diseño original:</strong> Regalo único para momentos especiales</li><li><strong>Ideal para fiestas:</strong> Casa, discoteca, pueblo o donde sea</li><li><strong>Photocall perfecto:</strong> Para brillar en cualquier momento</li><li><strong>Diversión garantizada:</strong> Disfruta como nunca con estas gafas</li></ul>",
+        "image": "/images/Gafas led.webp",
+        "alt": "Gafas led - Gafas brillantes para fiestas y photocall",
+        "affiliateUrl": "https://amzn.to/3KLAw9C",
+        "merchant": "Amazon",
+        "price": 16.99,
+        "currency": "EUR",
+        "categories": ["Regalos para cumpleaños", "Regalos para pasarlo bien", "Regalos para todo tipo de edades"],
+        "isFeatured": false,
+        "createdAt": "2025-01-10T12:00:00Z",
+        "tags": ["gafas", "led", "fiestas", "photocall", "brillante"]
+    },
+    {
         "id": "321",
         "slug": "inflable-halloween",
         "title": "Inflable Halloween - Regalos originales | Mierdas que molan",
