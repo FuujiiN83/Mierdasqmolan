@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "330",
+        "slug": "gafas-con-dedito",
+        "title": "Gafas con dedito - Regalos originales | Mierdas que molan",
+        "shortDescription": "Sirve tanto para fiestas como para aquellos rancios que no quieren que se les hable, pero sobre todo como regalo original para fiestas. Estás gafas le subirán el nivel al photocall y tendrás unos recuerdos y unas fotos memorables, a no ser que te pases y el recuerdo se esfume, que también puede pasar.",
+        "description": "<p>Sirve tanto para fiestas como para aquellos rancios que no quieren que se les hable, pero sobre todo como regalo original para fiestas. Estás gafas le subirán el nivel al photocall y tendrás unos recuerdos y unas fotos memorables, a no ser que te pases y el recuerdo se esfume, que también puede pasar.</p><h2>Características del producto</h2><ul><li><strong>Perfectas para fiestas:</strong> Regalo original para fiestas</li><li><strong>Para rancios:</strong> Para aquellos que no quieren que se les hable</li><li><strong>Photocall mejorado:</strong> Le subirán el nivel al photocall</li><li><strong>Fotos memorables:</strong> Tendrás recuerdos y fotos inolvidables</li><li><strong>Diversión garantizada:</strong> A no ser que te pases y el recuerdo se esfume</li></ul>",
+        "image": "/images/gafas con dedo.webp",
+        "alt": "Gafas con dedito - Gafas divertidas para fiestas y photocall",
+        "affiliateUrl": "https://amzn.to/3WugHWX",
+        "merchant": "Amazon",
+        "price": 7.99,
+        "currency": "EUR",
+        "categories": ["Regalos para pasarlo bien", "Regalos WTF"],
+        "isFeatured": false,
+        "createdAt": "2025-01-10T20:00:00Z",
+        "tags": ["gafas", "dedo", "fiestas", "photocall", "divertido"]
+    },
+    {
         "id": "329",
         "slug": "luces-calavera",
         "title": "Luces calavera - Regalos originales | Mierdas que molan",
