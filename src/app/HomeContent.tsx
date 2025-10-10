@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -11,6 +11,10 @@ import { Pagination, ResultsInfo } from '@/components/Pagination';
 import { getFilteredProducts, getFeaturedProducts, clearProductsCache } from '@/lib/data';
 import { Product } from '@/types';
 import { siteConfig } from '@/config/site';
+
+// Lazy loading para componentes pesados
+const LazyProductCard = lazy(() => import('@/components/ProductCard').then(module => ({ default: module.ProductCard })));
+const LazyAdSlot = lazy(() => import('@/components/AdSlot').then(module => ({ default: module.AdSlot })));
 
 export default function HomeContent() {
   const searchParams = useSearchParams();
@@ -230,16 +234,20 @@ export default function HomeContent() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6" data-layout="two-columns" style={{display: 'grid !important', gridTemplateColumns: 'repeat(2, 1fr) !important', gap: '1.5rem !important'}}>
             {products.map((product, index) => (
               <div key={product.id}>
-                <ProductCard
-                  product={product}
-                  isExpanded={expandedCard === product.id}
-                  onToggleExpand={() => handleToggleExpand(product.id)}
-                />
+                <Suspense fallback={<div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 animate-pulse"><div className="h-4 bg-gray-200 rounded w-3/4 mb-2"></div><div className="h-3 bg-gray-200 rounded w-1/2"></div></div>}>
+                  <ProductCard
+                    product={product}
+                    isExpanded={expandedCard === product.id}
+                    onToggleExpand={() => handleToggleExpand(product.id)}
+                  />
+                </Suspense>
                 
-                {/* Inline ads */}
+                {/* Inline ads - Lazy loaded */}
                 {inlineAdPositions.includes(index + 1) && (
                   <div className="mt-6">
-                    <AdSlot position="inline" size="medium" className="text-center" />
+                    <Suspense fallback={<div className="h-32 bg-gray-100 rounded animate-pulse"></div>}>
+                      <AdSlot position="inline" size="medium" className="text-center" />
+                    </Suspense>
                   </div>
                 )}
               </div>
