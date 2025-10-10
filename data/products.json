@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "335",
+        "slug": "disfraz-de-mostaza",
+        "title": "Disfraz de mostaza - Regalos originales | Mierdas que molan",
+        "shortDescription": "¿Buscas tu medio kétchup? Quizás se haya ido con su media BBQ. Lo bueno de este original disfraz de mostaza, es que hay salsas de todo tipo y seguro que alguna encaja contigo.",
+        "description": "<p>¿Buscas tu medio kétchup? Quizás se haya ido con su media BBQ. Lo bueno de este original disfraz de mostaza, es que hay salsas de todo tipo y seguro que alguna encaja contigo.</p><h2>Características del producto</h2><ul><li><strong>Disfraz original:</strong> Disfraz de mostaza único y divertido</li><li><strong>Variedad de salsas:</strong> Hay salsas de todo tipo</li><li><strong>Seguro que encaja:</strong> Alguna salsa encajará contigo</li><li><strong>Medio kétchup:</strong> Para buscar tu media naranja</li><li><strong>Media BBQ:</strong> Quizás se haya ido con su pareja</li></ul>",
+        "image": "/images/disfraz mostaza.webp",
+        "alt": "Disfraz de mostaza - Disfraz original de salsa",
+        "affiliateUrl": "https://amzn.to/3IRpXkW",
+        "merchant": "Amazon",
+        "price": 18.19,
+        "currency": "EUR",
+        "categories": ["Regalos WTF", "Regalos para pasarlo bien", "Regalos para todo tipo de edades"],
+        "isFeatured": false,
+        "createdAt": "2025-01-11T01:00:00Z",
+        "tags": ["disfraz", "mostaza", "salsa", "ketchup", "bbq"]
+    },
+    {
         "id": "334",
         "slug": "felpudo-de-terror",
         "title": "Felpudo de terror - Regalos originales | Mierdas que molan",
