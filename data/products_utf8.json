@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "334",
+        "slug": "felpudo-de-terror",
+        "title": "Felpudo de terror - Regalos originales | Mierdas que molan",
+        "shortDescription": "Te gustan las pelis de terror, te gusta el miedo, te gusta Halloween y quieres fardar de ello, pero no encuentras algo que cumpla todo en un mismo producto. ¡Pues te equivocas! Este felpudo es tan original como aterrador y eso para visitas incomodas y para Halloween es oro puro.",
+        "description": "<p>Te gustan las pelis de terror, te gusta el miedo, te gusta Halloween y quieres fardar de ello, pero no encuentras algo que cumpla todo en un mismo producto. ¡Pues te equivocas! Este felpudo es tan original como aterrador y eso para visitas incomodas y para Halloween es oro puro.</p><h2>Características del producto</h2><ul><li><strong>Pelis de terror:</strong> Para amantes de las películas de terror</li><li><strong>Amor al miedo:</strong> Para los que les gusta el miedo</li><li><strong>Halloween perfecto:</strong> Para fardar de Halloween</li><li><strong>Visitas incómodas:</strong> Oro puro para incomodar visitas</li><li><strong>Original y aterrador:</strong> Cumple todo en un mismo producto</li></ul>",
+        "image": "/images/Felpudo terror.webp",
+        "alt": "Felpudo de terror - Felpudo aterrador para Halloween",
+        "affiliateUrl": "https://amzn.to/43eldN0",
+        "merchant": "Amazon",
+        "price": 11.99,
+        "currency": "EUR",
+        "categories": ["Regalos frikis", "halloween"],
+        "isFeatured": false,
+        "createdAt": "2025-01-11T00:00:00Z",
+        "tags": ["felpudo", "terror", "halloween", "aterrador", "frikis"]
+    },
+    {
         "id": "333",
         "slug": "sombrero-de-pavo",
         "title": "Sombrero de pavo - Regalos originales | Mierdas que molan",
