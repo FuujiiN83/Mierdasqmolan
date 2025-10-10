@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "333",
+        "slug": "sombrero-de-pavo",
+        "title": "Sombrero de pavo - Regalos originales | Mierdas que molan",
+        "shortDescription": "Que no se diga que no te gusta comer ni acción de gracias. Lo llevas a otro nivel y dijiste ¿\"habrá algún regalo lo suficientemente original para demostrar mi amor por el pavo al horno? Realmente no debería, pero aquí está y te está esperando. ¡Dale a comprar!",
+        "description": "<p>Que no se diga que no te gusta comer ni acción de gracias. Lo llevas a otro nivel y dijiste ¿\"habrá algún regalo lo suficientemente original para demostrar mi amor por el pavo al horno? Realmente no debería, pero aquí está y te está esperando. ¡Dale a comprar!</p><h2>Características del producto</h2><ul><li><strong>Amor por el pavo:</strong> Para demostrar tu amor por el pavo al horno</li><li><strong>Acción de gracias:</strong> Perfecto para celebrar en grande</li><li><strong>Regalo original:</strong> Lo suficientemente original para ti</li><li><strong>Nivel superior:</strong> Llevas la celebración a otro nivel</li><li><strong>Sombrero único:</strong> Para los amantes de la comida</li></ul>",
+        "image": "/images/pollo asado.webp",
+        "alt": "Sombrero de pavo - Sombrero divertido para amantes del pavo",
+        "affiliateUrl": "https://amzn.to/3VZgxGT",
+        "merchant": "Amazon",
+        "price": 9.89,
+        "currency": "EUR",
+        "categories": ["Regalos WTF"],
+        "isFeatured": false,
+        "createdAt": "2025-01-10T23:00:00Z",
+        "tags": ["sombrero", "pavo", "comida", "accion", "gracias"]
+    },
+    {
         "id": "332",
         "slug": "arco-halloween",
         "title": "Arco Halloween - Regalos originales | Mierdas que molan",
