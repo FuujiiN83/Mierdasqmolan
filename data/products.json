@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "329",
+        "slug": "luces-calavera",
+        "title": "Luces calavera - Regalos originales | Mierdas que molan",
+        "shortDescription": "Hay quien tiene la sarta de ajos y tú, como amante de Halloween quieres decorar todo para que asuste, que el ambiente sea de fiesta y terror a partes iguales y disfrutar de ese día como nadie. Con estás luces lo vas a conseguir ya que son bastante molonas, como decorativo de Halloween encajan a la perfección y como sustituto de los ajos… ya no tanto.",
+        "description": "<p>Hay quien tiene la sarta de ajos y tú, como amante de Halloween quieres decorar todo para que asuste, que el ambiente sea de fiesta y terror a partes iguales y disfrutar de ese día como nadie. Con estás luces lo vas a conseguir ya que son bastante molonas, como decorativo de Halloween encajan a la perfección y como sustituto de los ajos… ya no tanto.</p><h2>Características del producto</h2><ul><li><strong>Luces molonas:</strong> Para decorar y asustar en Halloween</li><li><strong>Ambiente perfecto:</strong> Fiesta y terror a partes iguales</li><li><strong>Decorativo ideal:</strong> Para Halloween encajan a la perfección</li><li><strong>Disfrute garantizado:</strong> Para disfrutar del día como nadie</li><li><strong>Mejor que ajos:</strong> Aunque como sustituto de los ajos... ya no tanto</li></ul>",
+        "image": "/images/luces calavera.webp",
+        "alt": "Luces calavera - Luces decorativas para Halloween",
+        "affiliateUrl": "https://amzn.to/4770A6L",
+        "merchant": "Amazon",
+        "price": 13.99,
+        "currency": "EUR",
+        "categories": ["halloween", "Destacados"],
+        "isFeatured": true,
+        "createdAt": "2025-01-10T19:00:00Z",
+        "tags": ["luces", "calavera", "halloween", "decoracion", "terror"]
+    },
+    {
         "id": "328",
         "slug": "calavera-realista",
         "title": "Calavera realista - Regalos originales | Mierdas que molan",
