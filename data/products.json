@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "346",
+        "slug": "boligrafo-que-moja",
+        "title": "Bolígrafo que moja - Regalos originales | Mierdas que molan",
+        "shortDescription": "\"Bro, algo me está mojando y no sé qué es\" \"está chispeando\" Son algunos de los usos que se le puede dar, pero como todo, la imaginación al poder. Además, vale como boli para escribir, ¡increíble!.",
+        "description": "<p>\"Bro, algo me está mojando y no sé qué es\" \"está chispeando\" Son algunos de los usos que se le puede dar, pero como todo, la imaginación al poder. Además, vale como boli para escribir, ¡increíble!.</p><h2>Características del producto</h2><ul><li><strong>Algo me está mojando:</strong> Bro, algo me está mojando y no sé qué es</li><li><strong>Está chispeando:</strong> Efecto de chispeo</li><li><strong>Imaginación al poder:</strong> Como todo, la imaginación al poder</li><li><strong>Boli para escribir:</strong> Vale como boli para escribir</li><li><strong>¡Increíble!</strong> Funcionalidad sorprendente</li></ul>",
+        "image": "/images/boli agua.webp",
+        "alt": "Bolígrafo que moja - Bolígrafo con efecto de agua",
+        "affiliateUrl": "https://amzn.to/473Boy2",
+        "merchant": "Amazon",
+        "price": 7.29,
+        "currency": "EUR",
+        "categories": ["Regalos para pasarlo bien", "Regalos para todo tipo de edades"],
+        "isFeatured": false,
+        "createdAt": "2025-10-12T12:00:00Z",
+        "tags": ["boligrafo", "agua", "moja", "chispeo", "escribir"]
+    },
+    {
         "id": "345",
         "slug": "peluca-ochentera",
         "title": "Peluca ochentera - Regalos originales | Mierdas que molan",
