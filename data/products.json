@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "340",
+        "slug": "maquina-de-boxeo",
+        "title": "Máquina de boxeo - Regalos originales | Mierdas que molan",
+        "shortDescription": "Pim pam, pim pam pero con ritmo y música. Ponte los guantes y empieza a darle a esta máquina de boxeo que te va señalando por donde tienes que darle para ir mejorando tu estilo y técnica. Sirve para todo: Ejercicio, bienestar, antiestrés, decoración moderna de paredes, ¡incluso sirve hasta para aprender a boxear!",
+        "description": "<p>Pim pam, pim pam pero con ritmo y música. Ponte los guantes y empieza a darle a esta máquina de boxeo que te va señalando por donde tienes que darle para ir mejorando tu estilo y técnica. Sirve para todo: Ejercicio, bienestar, antiestrés, decoración moderna de paredes, ¡incluso sirve hasta para aprender a boxear!</p><h2>Características del producto</h2><ul><li><strong>Con ritmo y música:</strong> Pim pam con ritmo y música</li><li><strong>Señala dónde golpear:</strong> Te indica por dónde darle</li><li><strong>Mejora técnica:</strong> Para ir mejorando tu estilo</li><li><strong>Múltiples usos:</strong> Ejercicio, bienestar, antiestrés</li><li><strong>Decoración moderna:</strong> Para decorar paredes</li><li><strong>Aprende a boxear:</strong> Incluso sirve para aprender</li></ul>",
+        "image": "/images/maquina boxeo.webp",
+        "alt": "Máquina de boxeo - Máquina de boxeo con ritmo y música",
+        "affiliateUrl": "https://amzn.to/4h7t1pK",
+        "merchant": "Amazon",
+        "price": 45.59,
+        "currency": "EUR",
+        "categories": ["Regalos originales para casa", "Regalos para cumpleaños", "Regalos para pasarlo bien"],
+        "isFeatured": false,
+        "createdAt": "2025-01-11T06:00:00Z",
+        "tags": ["boxeo", "ejercicio", "musica", "ritmo", "decoracion"]
+    },
+    {
         "id": "339",
         "slug": "protector-de-manijas",
         "title": "Protector de manijas - Regalos originales | Mierdas que molan",
