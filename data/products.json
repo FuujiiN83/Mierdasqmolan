@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "343",
+        "slug": "morro-de-cerdo",
+        "title": "Morro de cerdo - Regalos originales | Mierdas que molan",
+        "shortDescription": "Que estás cansado de no ligar y escuchaste \"del cerdo se comen hasta los andares\" y pensaste que esto te ayudaría, pero no, esto es para disfrazarte, lo sentimos. Este morro de cerdo es para hacer bromas, completar disfraces o jugar con él. ¡Ánimo, lo conseguirás!",
+        "description": "<p>Que estás cansado de no ligar y escuchaste \"del cerdo se comen hasta los andares\" y pensaste que esto te ayudaría, pero no, esto es para disfrazarte, lo sentimos. Este morro de cerdo es para hacer bromas, completar disfraces o jugar con él. ¡Ánimo, lo conseguirás!</p><h2>Características del producto</h2><ul><li><strong>Para disfrazarse:</strong> Morro de cerdo para disfraces</li><li><strong>Hacer bromas:</strong> Perfecto para bromas divertidas</li><li><strong>Completar disfraces:</strong> Ideal para completar disfraces</li><li><strong>Jugar con él:</strong> Para jugar y divertirse</li><li><strong>¡Ánimo!</strong> Lo conseguirás</li></ul>",
+        "image": "/images/nariz cerdo.webp",
+        "alt": "Morro de cerdo - Nariz de cerdo para disfraces y bromas",
+        "affiliateUrl": "https://amzn.to/3IVTha0",
+        "merchant": "Amazon",
+        "price": 11.94,
+        "currency": "EUR",
+        "categories": ["Regalos WTF"],
+        "isFeatured": false,
+        "createdAt": "2025-01-11T09:00:00Z",
+        "tags": ["morro", "cerdo", "disfraz", "bromas", "nariz"]
+    },
+    {
         "id": "342",
         "slug": "culito-de-pollito",
         "title": "Culito de pollito - Regalos originales | Mierdas que molan",
