@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "345",
+        "slug": "peluca-ochentera",
+        "title": "Peluca ochentera - Regalos originales | Mierdas que molan",
+        "shortDescription": "Antes todo era mejor, ya lo decía la canción. Pelo largo con volumen, bigote, cadenas de oro, gafas que ocupaban media cara y unos andares únicos en la historia de la humanidad. Y ahora, para que sientas lo que sentían nuestros padres, te traemos esta peluca ochentera con todo el kit para que puedas \"fardar\" con estilo y volver a una época donde el bro, literal, buah chaval quedan aun muy muy lejos.",
+        "description": "<p>Antes todo era mejor, ya lo decía la canción. Pelo largo con volumen, bigote, cadenas de oro, gafas que ocupaban media cara y unos andares únicos en la historia de la humanidad. Y ahora, para que sientas lo que sentían nuestros padres, te traemos esta peluca ochentera con todo el kit para que puedas \"fardar\" con estilo y volver a una época donde el bro, literal, buah chaval quedan aun muy muy lejos.</p><h2>Características del producto</h2><ul><li><strong>Pelo largo con volumen:</strong> Estilo ochentero auténtico</li><li><strong>Todo el kit:</strong> Peluca ochentera completa</li><li><strong>Fardar con estilo:</strong> Para lucir como en los 80</li><li><strong>Volver a una época:</strong> Revive los años 80</li><li><strong>Antes todo era mejor:</strong> Como decía la canción</li></ul>",
+        "image": "/images/peluca ochentera.webp",
+        "alt": "Peluca ochentera - Peluca de los años 80 con todo el kit",
+        "affiliateUrl": "https://amzn.to/4q7QhrK",
+        "merchant": "Amazon",
+        "price": 15.99,
+        "currency": "EUR",
+        "categories": ["Regalos para pasarlo bien", "Regalos WTF", "Regalos para cumpleaños"],
+        "isFeatured": false,
+        "createdAt": "2025-10-12T11:00:00Z",
+        "tags": ["peluca", "ochentera", "años80", "fardar", "estilo"]
+    },
+    {
         "id": "344",
         "slug": "peine-enorme",
         "title": "Peine enorme - Regalos originales | Mierdas que molan",
