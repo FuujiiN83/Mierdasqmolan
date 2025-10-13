@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import { Inter, Potta_One, Preahvihear } from 'next/font/google';
-import Script from 'next/script';
 import './globals.css';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { CookieConsentBanner } from '@/components/CookieConsentBanner';
+import Analytics from '@/components/Analytics';
 import { siteConfig } from '@/config/site';
 
 const inter = Inter({ subsets: ['latin', 'latin-ext'] });
@@ -25,7 +25,7 @@ const preahvihear = Preahvihear({
 
 export const metadata: Metadata = {
   title: {
-    default: "Mierdas que molan, regalos originales para frikis, parejas, pasarlo bien, fiestas y mucho más.",
+    default: "Mierdas que molan, regalos originales para pasarlo bien",
     template: `%s | Mierdas que molan`,
   },
   description: "regalos originales para frikis, parejas, pasarlo bien, fiestas y mucho más. Entra ahora y encuentra tu regalo original favorito",
@@ -121,7 +121,7 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#3b82f6" />
         
         {/* SEO Meta Tags */}
-        <meta name="title" content="Mierdas que molan, regalos originales para frikis, parejas, pasarlo bien, fiestas y mucho más." />
+        <meta name="title" content="Mierdas que molan, regalos originales para pasarlo bien" />
         <meta name="description" content="regalos originales para frikis, parejas, pasarlo bien, fiestas y mucho más. Entra ahora y encuentra tu regalo original favorito" />
         <meta name="keywords" content="Regalos originales, regalos divertidos, regalos frikis, regalos para parejas, regalos originales para parejas, regalos para cumpleaños, regalos originales para casa" />
         <meta name="robots" content="index, follow" />
@@ -200,41 +200,8 @@ export default function RootLayout({
         {/* Banner de consentimiento de cookies */}
         <CookieConsentBanner />
         
-        {/* Google Analytics - Cargado con estrategia afterInteractive para no bloquear */}
-        <Script
-          id="gtag-base"
-          strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-FCD8D2QZEZ"
-        />
-        <Script
-          id="gtag-config"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-FCD8D2QZEZ', {
-                page_path: window.location.pathname,
-              });
-            `,
-          }}
-        />
-        
-        {/* Microsoft Clarity - Cargado con estrategia afterInteractive */}
-        <Script
-          id="clarity-init"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-              })(window, document, "clarity", "script", "tmauglnsdb");
-            `,
-          }}
-        />
+        {/* Analytics optimizado - Carga diferida para no bloquear LCP/FCP */}
+        <Analytics />
       </body>
     </html>
   );
