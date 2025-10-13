@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { OptimizedImage } from './OptimizedImage';
 import { SearchBar, CompactSearchBar } from './SearchBar';
 import { CategoryMenu } from './CategoryMenu';
@@ -29,7 +28,7 @@ export function Header() {
                 />
               </div>
               <div className="hidden sm:block">
-                <h1 className="text-xl font-bold font-potta-one text-gray-900 dark:text-white">MQM Web</h1>
+                <div className="text-xl font-bold font-potta-one text-gray-900 dark:text-white">MQM Web</div>
                 <p className="text-xs text-gray-500 dark:text-gray-400 -mt-1">Las mejores ofertas</p>
               </div>
             </Link>
@@ -101,12 +100,13 @@ export function SimpleHeader({ title, showBack = false }: { title?: string; show
           
           <Link href="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 flex items-center justify-center">
-              <Image
+              <OptimizedImage
                 src="/logo.png"
                 alt="MQM Web Logo"
                 width={32}
                 height={32}
                 className="w-8 h-8 object-contain"
+                priority
               />
             </div>
             <div>
