@@ -188,7 +188,7 @@ export default function ProductPage({ params }: ProductPageProps) {
 
                 {/* Short description */}
                 <div className="mt-6">
-                  <p className="text-lg text-gray-600 font-preahvihear leading-relaxed">
+                  <p className="text-lg text-gray-600 dark:text-white font-preahvihear leading-relaxed">
                     {product.shortDescription}
                   </p>
                 </div>
