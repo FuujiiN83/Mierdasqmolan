@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, memo, useCallback } from 'react';
 import Link from 'next/link';
 import { OptimizedImage } from './OptimizedImage';
 import { Product } from '@/types';
@@ -16,7 +16,8 @@ interface ProductCardProps {
   priority?: boolean;
 }
 
-export function ProductCard({ 
+// Optimizado con memo para evitar re-renders innecesarios de cards
+export const ProductCard = memo(function ProductCard({ 
   product, 
   isExpanded = false, 
   onToggleExpand,
@@ -25,7 +26,8 @@ export function ProductCard({
 }: ProductCardProps) {
   const [imageError, setImageError] = useState(false);
 
-  const handleCardClick = (e: React.MouseEvent) => {
+  // Usar useCallback para evitar crear nuevas funciones en cada render
+  const handleCardClick = useCallback((e: React.MouseEvent) => {
     // No hacer nada si se hace clic en enlaces o botones
     if ((e.target as HTMLElement).closest('a, button')) {
       return;
@@ -33,15 +35,15 @@ export function ProductCard({
     
     // Navegar a la página del producto
     window.location.href = `/producto/${product.slug}`;
-  };
+  }, [product.slug]);
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
+  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       // Navegar a la página del producto
       window.location.href = `/producto/${product.slug}`;
     }
-  };
+  }, [product.slug]);
 
   const affiliateUrl = generateAffiliateUrl(product);
   const merchantDomain = getDomainFromUrl(product.affiliateUrl);
@@ -120,7 +122,7 @@ export function ProductCard({
               </div>
 
               {/* Descripción corta */}
-              <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base font-preahvihear mb-3 line-clamp-2">
+              <p className="text-gray-600 dark:text-white text-sm sm:text-base font-preahvihear mb-3 line-clamp-2">
                 {product.shortDescription}
               </p>
             </div>
@@ -264,4 +266,4 @@ export function ProductCard({
       )}
     </article>
   );
-}
+});
