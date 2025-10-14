@@ -11,7 +11,7 @@
         "merchant": "Amazon",
         "price": 12.99,
         "currency": "EUR",
-        "categories": ["Regalos para cumpleaños", "Regalos para todo tipo de edades"],
+        "categories": ["Regalos para cumpleaños", "Regalos para todo tipo de edades", "destacados"],
         "isFeatured": false,
         "createdAt": "2025-10-12T12:00:00Z",
         "tags": ["proyector", "estrellas", "galaxia", "habitacion", "ambiente"]
