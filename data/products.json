@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "349",
+        "slug": "proyector-de-estrellas",
+        "title": "Proyector de estrellas - Regalos originales | Mierdas que molan",
+        "shortDescription": "Las lamparitas de toda la vida han quedado tan atrás como el que va diciendo \"efectiviwonder\" o \"pues ya vestruz\". Ahora se lleva tener tu propia galaxia dentro de la habitación. ¿Contar ovejas? Mejor contar estrellas.",
+        "description": "<p>Las lamparitas de toda la vida han quedado tan atrás como el que va diciendo \"efectiviwonder\" o \"pues ya vestruz\". Ahora se lleva tener tu propia galaxia dentro de la habitación. ¿Contar ovejas? Mejor contar estrellas, hay muchas más y es mas bonito todo.</p><h2>Características del producto</h2><ul><li><strong>Tu propia galaxia:</strong> Tener tu propia galaxia dentro de la habitación</li><li><strong>Contar estrellas:</strong> Mejor contar estrellas que ovejas</li><li><strong>Muchas más:</strong> Hay muchas más estrellas que ovejas</li><li><strong>Más bonito:</strong> Es mas bonito todo</li><li><strong>Moderno:</strong> Las lamparitas de toda la vida han quedado atrás</li></ul>",
+        "image": "/images/proyector estrellas.webp",
+        "alt": "Proyector de estrellas - Proyector para crear ambiente estelar",
+        "affiliateUrl": "https://amzn.to/4nOUjDR",
+        "merchant": "Amazon",
+        "price": 12.99,
+        "currency": "EUR",
+        "categories": ["Regalos para cumpleaños", "Regalos para todo tipo de edades"],
+        "isFeatured": false,
+        "createdAt": "2025-10-12T12:00:00Z",
+        "tags": ["proyector", "estrellas", "galaxia", "habitacion", "ambiente"]
+    },
+    {
         "id": "348",
         "slug": "mascara-realista",
         "title": "Máscara realista - Regalos originales | Mierdas que molan",
