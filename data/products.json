@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "352",
+        "slug": "ratas-falsas",
+        "title": "Ratas falsas - Regalos originales | Mierdas que molan",
+        "shortDescription": "Para regalo y adorno de Halloween, bien, mola y le da un toque distinto a las arañas, telarañas, calabazas y tal, pero prueba fuera de esa fecha y dejarlas en la entrada de tu casa, el susto está casi garantizado.",
+        "description": "<p>Para regalo y adorno de Halloween, bien, mola y le da un toque distinto a las arañas, telarañas, calabazas y tal, pero prueba fuera de esa fecha y dejarlas en la entrada de tu casa, el susto está casi garantizado. Eso sí, dependiendo del susto, el escobazo te lo puedes llevar tu en vez de ellas.</p><h2>Características del producto</h2><ul><li><strong>Regalo y adorno:</strong> Para regalo y adorno de Halloween</li><li><strong>Toque distinto:</strong> Le da un toque distinto a las arañas, telarañas, calabazas y tal</li><li><strong>Fuera de Halloween:</strong> Prueba fuera de esa fecha y dejarlas en la entrada de tu casa</li><li><strong>Susto garantizado:</strong> El susto está casi garantizado</li><li><strong>Cuidado con el escobazo:</strong> Dependiendo del susto, el escobazo te lo puedes llevar tu en vez de ellas</li></ul>",
+        "image": "/images/ratas falsas.webp",
+        "alt": "Ratas falsas - Adorno de Halloween para asustar",
+        "affiliateUrl": "https://amzn.to/475HwFU",
+        "merchant": "Amazon",
+        "price": 12.45,
+        "currency": "EUR",
+        "categories": ["halloween"],
+        "isFeatured": false,
+        "createdAt": "2025-10-12T12:00:00Z",
+        "tags": ["ratas", "falsas", "halloween", "susto", "adorno"]
+    },
+    {
         "id": "351",
         "slug": "grasshead",
         "title": "Grasshead - Regalos originales | Mierdas que molan",
