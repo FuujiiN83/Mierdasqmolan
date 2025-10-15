@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "351",
+        "slug": "grasshead",
+        "title": "Grasshead - Regalos originales | Mierdas que molan",
+        "shortDescription": "El trabajo del cole pero mas profesional y con carita. También sirve para recordar tiempos mejores ante tu incipiente calvicie y pensar…\"ya te tocará ya…\" sea como sea, este Grasshead a quien seguro que le gusta mucho, es a los niños.",
+        "description": "<p>El trabajo del cole pero mas profesional y con carita. También sirve para recordar tiempos mejores ante tu incipiente calvicie y pensar…\"ya te tocará ya…\" sea como sea, este Grasshead a quien seguro que le gusta mucho, es a los niños, ya que es un regalo bastante original y estarán muy pendientes de como le crece el pelo, digo…el césped.</p><h2>Características del producto</h2><ul><li><strong>Trabajo del cole profesional:</strong> El trabajo del cole pero mas profesional y con carita</li><li><strong>Recordar tiempos mejores:</strong> Sirve para recordar tiempos mejores ante tu incipiente calvicie</li><li><strong>Ya te tocará:</strong> Pensar \"ya te tocará ya…\"</li><li><strong>Regalo original:</strong> Es un regalo bastante original</li><li><strong>Para niños:</strong> A quien seguro que le gusta mucho, es a los niños</li><li><strong>Crecer el pelo:</strong> Estarán muy pendientes de como le crece el pelo, digo…el césped</li></ul>",
+        "image": "/images/pelocesped.webp",
+        "alt": "Grasshead - Cabeza de césped para cultivar",
+        "affiliateUrl": "https://amzn.to/4q8Z0d4",
+        "merchant": "Amazon",
+        "price": 16.00,
+        "currency": "EUR",
+        "categories": ["Regalos para todo tipo de edades", "Regalos originales para casa"],
+        "isFeatured": false,
+        "createdAt": "2025-10-12T12:00:00Z",
+        "tags": ["grasshead", "cesped", "pelocesped", "jardin", "cultivar"]
+    },
+    {
         "id": "350",
         "slug": "diadema-con-tijeras",
         "title": "Diadema con tijeras - Regalos originales | Mierdas que molan",
