@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "355",
+        "slug": "lampara-de-bruja",
+        "title": "Lámpara de bruja - Regalos originales | Mierdas que molan",
+        "shortDescription": "Ésta lampara va más allá de un regalo original para Halloween, es todo una muestra de lo que te gustan estos personajes. La lámpara mola, las cosas como son y tiene diferentes colores y alguna que otra chulada más.",
+        "description": "<p>Ésta lampara va más allá de un regalo original para Halloween, es todo una muestra de lo que te gustan estos personajes. La lámpara mola, las cosas como son y tiene diferentes colores y alguna que otra chulada más. Saca tu lado oscuro, aparca la escoba y disfruta de una lámpara hecha para ti.</p><h2>Características del producto</h2><ul><li><strong>Más allá de Halloween:</strong> Va más allá de un regalo original para Halloween</li><li><strong>Muestra de gustos:</strong> Es todo una muestra de lo que te gustan estos personajes</li><li><strong>La lámpara mola:</strong> La lámpara mola, las cosas como son</li><li><strong>Diferentes colores:</strong> Tiene diferentes colores y alguna que otra chulada más</li><li><strong>Saca tu lado oscuro:</strong> Saca tu lado oscuro, aparca la escoba</li><li><strong>Hecha para ti:</strong> Disfruta de una lámpara hecha para ti</li></ul>",
+        "image": "/images/lampara de bruja.webp",
+        "alt": "Lámpara de bruja - Lámpara decorativa para Halloween",
+        "affiliateUrl": "https://amzn.to/3W6pDlq",
+        "merchant": "Amazon",
+        "price": 24.90,
+        "currency": "EUR",
+        "categories": ["Regalos originales para casa", "halloween"],
+        "isFeatured": false,
+        "createdAt": "2025-10-12T12:00:00Z",
+        "tags": ["lampara", "bruja", "halloween", "decoracion", "casa"]
+    },
+    {
         "id": "354",
         "slug": "sombreros-de-bruja-decorativos",
         "title": "Sombreros de bruja decorativos - Regalos originales | Mierdas que molan",
