@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "358",
+        "slug": "led-hexagonal",
+        "title": "Led hexagonal - Regalos originales | Mierdas que molan",
+        "shortDescription": "Vale, vamos con lo importante. ¿mola? Si está en mierdas que molan, si, mola, obviamente. Segundo. ¿Este led hexagonal tiene una única forma? No, puedes darle la forma que quieras, algo así como la arcilla de aquel curso al que acudiste y decepcionaste al profesor con formas abstractas pero en este caso siempre queda bien.",
+        "description": "<p>Vale, vamos con lo importante. ¿mola? Si está en mierdas que molan, si, mola, obviamente. Segundo. ¿Este led hexagonal tiene una única forma? No, puedes darle la forma que quieras, algo así como la arcilla de aquel curso al que acudiste y decepcionaste al profesor con formas abstractas pero en este caso siempre queda bien. Los led hexagonales valen para el salón, para la habitación, para el baño, para toda la casa. ¿Como regalo? Como regalo es bastante original, ya que no es el típico libro o colonia y además siempre está visible y no te abandona a las tres horas.</p><h2>Características del producto</h2><ul><li><strong>Forma personalizable:</strong> Puedes darle la forma que quieras</li><li><strong>Versátil:</strong> Valen para el salón, habitación, baño, toda la casa</li><li><strong>Regalo original:</strong> No es el típico libro o colonia</li><li><strong>Siempre visible:</strong> Siempre está visible y no te abandona</li><li><strong>Decoración moderna:</strong> Iluminación LED moderna y elegante</li><li><strong>Fácil instalación:</strong> Fácil de instalar y configurar</li></ul>",
+        "image": "/images/led hexagonal.webp",
+        "alt": "Led hexagonal - Iluminación LED personalizable para decoración",
+        "affiliateUrl": "https://amzn.to/47oP7Rf",
+        "merchant": "Amazon",
+        "price": 29.99,
+        "currency": "EUR",
+        "categories": ["regalos originales para la casa", "regalos para cumpleaños", "regalos para todo tipo de edades"],
+        "isFeatured": false,
+        "createdAt": "2025-10-16T15:00:00Z",
+        "tags": ["led", "hexagonal", "iluminacion", "decoracion", "casa"]
+    },
+    {
         "id": "357",
         "slug": "monocular",
         "title": "Monocular - Regalos originales | Mierdas que molan",
