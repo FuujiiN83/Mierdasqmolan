@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "368",
+        "slug": "felpudo-mando-nes",
+        "title": "Felpudo mando NES - Regalos originales | Mierdas que molan",
+        "shortDescription": "Lo retro te mola, pero te molan mas los videojuegos. Te entendemos, nosotros somos iguales. Algunos de los mas creciditos, empezamos en este mundo con el mando rectangular de la primera Nintendo.",
+        "description": "<p>Lo retro te mola, pero te molan mas los videojuegos. Te entendemos, nosotros somos iguales. Algunos de los mas creciditos, empezamos en este mundo con el mando rectangular de la primera Nintendo, (si, la que tuvo la culpa que después toda madre a toda consola la llamara \"la Nintendo esa\") y en el que pasamos horas y horas jugando a sus juegos. Pues si te mola todo eso, aquí te dejamos el felpudo inspirado en él. Se acabo el mensaje de \"cuidado con el perro\", el originalísimo \"bienvenido\" que nunca se ve en ninguna casa o algún mensaje que ya no es tan original. Ahora serás tu quien destaque entre todos los vecinos.</p><h2>Características del producto</h2><ul><li><strong>Diseño retro NES:</strong> Felpudo inspirado en el mando rectangular de la primera Nintendo</li><li><strong>Nostalgia gaming:</strong> Para los que empezamos en este mundo con la primera Nintendo</li><li><strong>Horas de juego:</strong> El mando en el que pasamos horas y horas jugando</li><li><strong>Original y único:</strong> Se acabó el mensaje de \"cuidado con el perro\" o \"bienvenido\"</li><li><strong>Destacar entre vecinos:</strong> Ahora serás tú quien destaque entre todos los vecinos</li><li><strong>Calidad:</strong> Material resistente para uso diario</li></ul>",
+        "image": "/images/felpudo mando nes.webp",
+        "alt": "Felpudo mando NES - Felpudo retro inspirado en el mando de Nintendo",
+        "affiliateUrl": "https://amzn.to/3WhnSls",
+        "merchant": "Amazon",
+        "price": 22.90,
+        "currency": "EUR",
+        "categories": ["regalos-originales-para-casa", "mierdas-gamers", "destacados"],
+        "isFeatured": true,
+        "createdAt": "2025-10-21T13:00:00Z",
+        "tags": ["felpudo", "nes", "nintendo", "retro", "gaming"]
+    },
+    {
         "id": "367",
         "slug": "pantuflas-super-mario",
         "title": "Pantuflas Super Mario - Regalos originales | Mierdas que molan",
