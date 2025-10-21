@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "369",
+        "slug": "mario-chess",
+        "title": "Mario Chess - Regalos originales | Mierdas que molan",
+        "shortDescription": "¡Mamá, quiero el Mario! Si a tu hijo le encanta el super Mario pero no te gusta tanto que juegue con videojuegos tenemos este ajedrez de Mario con sus personajes mas carismáticos.",
+        "description": "<p>¡Mamá, quiero el Mario! Si a tu hijo le encanta el super Mario pero no te gusta tanto que juegue con videojuegos (ya va tocando adaptarse eh) tenemos este ajedrez de Mario con sus personajes mas carismáticos y que se divierta sin tantas \"pantallitas\".</p><h2>Características del producto</h2><ul><li><strong>Personajes carismáticos:</strong> Ajedrez de Mario con sus personajes más carismáticos</li><li><strong>Alternativa a videojuegos:</strong> Para que se divierta sin tantas \"pantallitas\"</li><li><strong>Super Mario:</strong> Si a tu hijo le encanta el super Mario</li><li><strong>Adaptación necesaria:</strong> Ya va tocando adaptarse a los nuevos tiempos</li><li><strong>Diversión sin pantallas:</strong> Juego tradicional con temática moderna</li><li><strong>Calidad:</strong> Piezas de ajedrez de alta calidad</li></ul>",
+        "image": "/images/mario chess.webp",
+        "alt": "Mario Chess - Ajedrez de Super Mario con personajes carismáticos",
+        "affiliateUrl": "https://amzn.to/4qmndg8",
+        "merchant": "Amazon",
+        "price": 61.22,
+        "currency": "EUR",
+        "categories": ["regalos-para-cumpleanos", "mierdas-gamers", "regalos-frikis"],
+        "isFeatured": false,
+        "createdAt": "2025-10-21T14:00:00Z",
+        "tags": ["mario", "chess", "ajedrez", "nintendo", "juego"]
+    },
+    {
         "id": "368",
         "slug": "felpudo-mando-nes",
         "title": "Felpudo mando NES - Regalos originales | Mierdas que molan",
