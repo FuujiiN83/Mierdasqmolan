@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "373",
+        "slug": "taza-super-mario",
+        "title": "Taza Super Mario - Regalos originales | Mierdas que molan",
+        "shortDescription": "Las tazas normales no son lo tuyo. Lo tuyo son los videojuegos desde hace muchos años. Recuerdas esos vicios al super Mario y de como costaban algunos niveles.",
+        "description": "<p>Las tazas normales no son lo tuyo. Lo tuyo son los videojuegos desde hace muchos años. Recuerdas esos vicios al super Mario y de como costaban algunos niveles (y de como odiabas el nivel acuático) y los trys y trys que hacías hasta pasártelo completamente. Pues deja a un lado las tazas \"coach\" y aduéñate de esta taza que te transporta a esos momentos donde eras feliz con un videojuego que pasó a la historia.</p><h2>Características del producto</h2><ul><li><strong>Para gamers:</strong> Las tazas normales no son lo tuyo. Lo tuyo son los videojuegos</li><li><strong>Recuerdos de infancia:</strong> Recuerdas esos vicios al super Mario</li><li><strong>Niveles difíciles:</strong> De como costaban algunos niveles</li><li><strong>Nivel acuático:</strong> Y de como odiabas el nivel acuático</li><li><strong>Intentos y más intentos:</strong> Los trys y trys que hacías hasta pasártelo completamente</li><li><strong>Adiós tazas coach:</strong> Deja a un lado las tazas \"coach\"</li><li><strong>Transporte al pasado:</strong> Te transporta a esos momentos donde eras feliz</li><li><strong>Historia del gaming:</strong> Con un videojuego que pasó a la historia</li></ul>",
+        "image": "/images/taza super mario.webp",
+        "alt": "Taza Super Mario - Taza gaming con diseño de Super Mario",
+        "affiliateUrl": "https://amzn.to/3Jf78s2",
+        "merchant": "Amazon",
+        "price": 12.35,
+        "currency": "EUR",
+        "categories": ["regalos-originales-para-casa", "regalos-para-cumpleanos", "mierdas-gamers"],
+        "isFeatured": false,
+        "createdAt": "2025-10-21T18:00:00Z",
+        "tags": ["super mario", "taza", "nintendo", "gaming", "nostalgia"]
+    },
+    {
         "id": "372",
         "slug": "portalapices-donkey-kong",
         "title": "Portalápices Donkey Kong - Regalos originales | Mierdas que molan",
