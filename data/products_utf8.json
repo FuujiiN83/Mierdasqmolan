@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "374",
+        "slug": "taza-sonic",
+        "title": "Taza Sonic - Regalos originales | Mierdas que molan",
+        "shortDescription": "El (posiblemente) erizo mas famoso del planeta y su larga lista de videojuegos en el que a este, por hacer ciertas cosas si \"se le caen los anillos\".",
+        "description": "<p>El (posiblemente) erizo mas famoso del planeta y su larga lista de videojuegos en el que a este, por hacer ciertas cosas si \"se le caen los anillos\".</p><h2>Características del producto</h2><ul><li><strong>Erizo más famoso:</strong> El (posiblemente) erizo mas famoso del planeta</li><li><strong>Larga lista de juegos:</strong> Su larga lista de videojuegos</li><li><strong>Se le caen los anillos:</strong> Por hacer ciertas cosas si \"se le caen los anillos\"</li><li><strong>Diseño icónico:</strong> Taza con el diseño del erizo azul más rápido</li><li><strong>Nostalgia gaming:</strong> Perfecta para fans de Sonic</li><li><strong>Calidad:</strong> Material resistente para uso diario</li></ul>",
+        "image": "/images/taza sonic.webp",
+        "alt": "Taza Sonic - Taza gaming con diseño del erizo azul más famoso",
+        "affiliateUrl": "https://amzn.to/42Pq1Za",
+        "merchant": "Amazon",
+        "price": 16.95,
+        "currency": "EUR",
+        "categories": ["regalos-originales-para-casa", "regalos-para-cumpleanos", "regalos-frikis", "mierdas-gamers"],
+        "isFeatured": false,
+        "createdAt": "2025-10-21T19:00:00Z",
+        "tags": ["sonic", "taza", "sega", "gaming", "erizo"]
+    },
+    {
         "id": "373",
         "slug": "taza-super-mario",
         "title": "Taza Super Mario - Regalos originales | Mierdas que molan",
