@@ -75,6 +75,12 @@ export const categoryConfig = {
     color: "#E91E63",
     icon: "💕"
   },
+  "mierdas-gamers": {
+    name: "Mierdas gamers",
+    description: "Productos gaming, frikis y de videojuegos para los verdaderos gamers. Desde consolas retro hasta accesorios únicos para tu setup gaming.",
+    color: "#00D4AA",
+    icon: "🎮"
+  },
   blog: {
     name: "Blog",
     description: "Artículos y contenido especial",
