@@ -11,7 +11,7 @@
         "merchant": "Amazon",
         "price": 14.60,
         "currency": "EUR",
-        "categories": ["mierdas gamers"],
+        "categories": ["mierdas-gamers"],
         "isFeatured": false,
         "createdAt": "2025-10-21T12:00:00Z",
         "tags": ["pantuflas", "super mario", "gaming", "comodidad", "regalo"]
