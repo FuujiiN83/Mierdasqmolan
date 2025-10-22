@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "385",
+        "slug": "beat-that",
+        "title": "Beat That! - Regalos originales | Mierdas que molan",
+        "shortDescription": "Uno de los juegos de mesa mas divertidos y que es para todas las edades, se dice pronto. Aquí hay piques sanos sin necesidad de acabar repartiendo la herencia ni cosas de esas, solo diversión.",
+        "description": "<p>Uno de los juegos de mesa mas divertidos y que es para todas las edades, se dice pronto. Aquí hay piques sanos sin necesidad de acabar repartiendo la herencia ni cosas de esas, solo diversión. Ideal para fiestas, reuniones con amigos y familiares y momentos en los que queráis pasar buenos y divertidos ratos. Probarlo, visitar nuestras redes y contadnos que os ha parecido.</p><h2>Características del producto</h2><ul><li><strong>Diversión garantizada:</strong> Uno de los juegos de mesa mas divertidos</li><li><strong>Para todas las edades:</strong> Y que es para todas las edades, se dice pronto</li><li><strong>Piques sanos:</strong> Aquí hay piques sanos sin necesidad de acabar repartiendo la herencia</li><li><strong>Solo diversión:</strong> Ni cosas de esas, solo diversión</li><li><strong>Ideal para fiestas:</strong> Ideal para fiestas, reuniones con amigos y familiares</li><li><strong>Momentos especiales:</strong> Y momentos en los que queráis pasar buenos y divertidos ratos</li><li><strong>Probarlo:</strong> Probarlo, visitar nuestras redes y contadnos que os ha parecido</li><li><strong>Competencia sana:</strong> Perfecto para crear momentos inolvidables</li></ul>",
+        "image": "/images/beat that.webp",
+        "alt": "Beat That! - Juego de mesa divertido para todas las edades",
+        "affiliateUrl": "https://amzn.to/4nkufzr",
+        "merchant": "Amazon",
+        "price": 29.99,
+        "currency": "EUR",
+        "categories": ["regalos-para-pasarlo-bien", "regalos-para-cumpleanos"],
+        "isFeatured": false,
+        "createdAt": "2025-10-22T13:00:00Z",
+        "tags": ["beat that", "juego", "mesa", "diversion", "fiestas"]
+    },
+    {
         "id": "384",
         "slug": "consola-retro",
         "title": "Consola retro - Regalos originales | Mierdas que molan",
