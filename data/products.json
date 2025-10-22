@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "386",
+        "slug": "cojin-pata-jamon-iberica",
+        "title": "Cojín pata de jamón ibérica - Regalos originales | Mierdas que molan",
+        "shortDescription": "El rey de los eventos y de los buffets libres en formato cojín ultra realista. Sirve tanto para apoyarse como para presumir de tener un jamón ibérico en tu casa.",
+        "description": "<p>El rey de los eventos y de los buffets libres en formato cojín ultra realista. Sirve tanto para apoyarse como para presumir de tener un jamón ibérico en tu casa. Es de algodón, no intentes pegarle un corte porque no te va a servir. Por lo demás, poco mas podemos decir de este regalo tan original, salvo que es muy distinto del resto de cojines y le dará un toque distinto a tu hogar.</p><h2>Características del producto</h2><ul><li><strong>Rey de eventos:</strong> El rey de los eventos y de los buffets libres</li><li><strong>Ultra realista:</strong> En formato cojín ultra realista</li><li><strong>Doble función:</strong> Sirve tanto para apoyarse como para presumir</li><li><strong>Jamón en casa:</strong> De tener un jamón ibérico en tu casa</li><li><strong>Material algodón:</strong> Es de algodón, no intentes pegarle un corte</li><li><strong>No funciona:</strong> Porque no te va a servir</li><li><strong>Regalo original:</strong> Poco mas podemos decir de este regalo tan original</li><li><strong>Toque distinto:</strong> Es muy distinto del resto de cojines y le dará un toque distinto a tu hogar</li></ul>",
+        "image": "/images/cojin jamon.webp",
+        "alt": "Cojín pata jamón ibérica - Cojín ultra realista con forma de pata de jamón",
+        "affiliateUrl": "https://amzn.to/43w895I",
+        "merchant": "Amazon",
+        "price": 23.00,
+        "currency": "EUR",
+        "categories": ["regalos-originales-para-casa", "regalos-wtf"],
+        "isFeatured": false,
+        "createdAt": "2025-10-22T14:00:00Z",
+        "tags": ["cojin", "jamon", "iberico", "pata", "wtf"]
+    },
+    {
         "id": "385",
         "slug": "beat-that",
         "title": "Beat That! - Regalos originales | Mierdas que molan",
