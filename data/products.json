@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "377",
+        "slug": "auriculares-minecraft",
+        "title": "Auriculares Minecraft - Regalos originales | Mierdas que molan",
+        "shortDescription": "Estos auriculares inalámbricos del creeper de Minecraft no explotan al ver acercarse a otras personas, no es tan rancio como en el juego, pero si son un gran regalo para todos los fans del videojuego.",
+        "description": "<p>Estos auriculares inalámbricos del creeper de Minecraft no explotan al ver acercarse a otras personas, no es tan rancio como en el juego, pero si son un gran regalo para todos los fans del videojuego. Trae funda de carga para que los puedas tener listos siempre que quieras y un sonido bastante correcto que hará que ninguna canción desentone. Tus hijos lo quieren y muchos de nosotros también, ¿lo pedimos como regalo?</p><h2>Características del producto</h2><ul><li><strong>Diseño Creeper:</strong> Auriculares inalámbricos del creeper de Minecraft</li><li><strong>No explotan:</strong> No explotan al ver acercarse a otras personas</li><li><strong>Menos rancio:</strong> No es tan rancio como en el juego</li><li><strong>Gran regalo:</strong> Si son un gran regalo para todos los fans del videojuego</li><li><strong>Funda de carga:</strong> Trae funda de carga para que los puedas tener listos siempre que quieras</li><li><strong>Sonido correcto:</strong> Un sonido bastante correcto que hará que ninguna canción desentone</li><li><strong>Para toda la familia:</strong> Tus hijos lo quieren y muchos de nosotros también</li><li><strong>Regalo perfecto:</strong> ¿Lo pedimos como regalo?</li></ul>",
+        "image": "/images/auriculares minecraft.webp",
+        "alt": "Auriculares Minecraft Creeper - Auriculares inalámbricos gaming con diseño del creeper de Minecraft",
+        "affiliateUrl": "https://amzn.to/42PfZaC",
+        "merchant": "Amazon",
+        "price": 30.90,
+        "currency": "EUR",
+        "categories": ["regalos-frikis", "mierdas-gamers"],
+        "isFeatured": false,
+        "createdAt": "2025-10-22T05:00:00Z",
+        "tags": ["minecraft", "auriculares", "creeper", "gaming", "inalambrico"]
+    },
+    {
         "id": "376",
         "slug": "maquina-arcade",
         "title": "Máquina arcade - Regalos originales | Mierdas que molan",
