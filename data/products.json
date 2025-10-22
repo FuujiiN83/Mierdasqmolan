@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "383",
+        "slug": "delantal-super-chef",
+        "title": "Delantal super chef - Regalos originales | Mierdas que molan",
+        "shortDescription": "Prepara las mejores cenas gracias a este delantal que te reconoce como super chef. Es como motivante, un incentivo. Te dicen que eres buenísimo, te lo crees y luego resulta que es verdad, pues con este delantal también puede pasar.",
+        "description": "<p>Prepara las mejores cenas gracias a este delantal que te reconoce como super chef. Es como motivante, un incentivo. Te dicen que eres buenísimo, te lo crees y luego resulta que es verdad, pues con este delantal también puede pasar. Cocina cenas que antes no quería ni el gato y que ahora te pedirá la receta hasta el primo del vecino. ¿Qué vas a preparar cuando lo tengas?</p><h2>Características del producto</h2><ul><li><strong>Mejores cenas:</strong> Prepara las mejores cenas gracias a este delantal</li><li><strong>Reconocimiento:</strong> Que te reconoce como super chef</li><li><strong>Motivación:</strong> Es como motivante, un incentivo</li><li><strong>Autoestima:</strong> Te dicen que eres buenísimo, te lo crees y luego resulta que es verdad</li><li><strong>Efecto delantal:</strong> Pues con este delantal también puede pasar</li><li><strong>Transformación culinaria:</strong> Cocina cenas que antes no quería ni el gato</li><li><strong>Demanda de recetas:</strong> Y que ahora te pedirá la receta hasta el primo del vecino</li><li><strong>Pregunta final:</strong> ¿Qué vas a preparar cuando lo tengas?</li></ul>",
+        "image": "/images/delantal chef.webp",
+        "alt": "Delantal super chef - Delantal de cocina para chefs profesionales",
+        "affiliateUrl": "https://amzn.to/3JmvgZE",
+        "merchant": "Amazon",
+        "price": 18.95,
+        "currency": "EUR",
+        "categories": ["regalos-frikis"],
+        "isFeatured": false,
+        "createdAt": "2025-10-22T11:00:00Z",
+        "tags": ["delantal", "chef", "cocina", "super", "profesional"]
+    },
+    {
         "id": "382",
         "slug": "creador-stickers-minecraft",
         "title": "Creador de stickers de Minecraft - Regalos originales | Mierdas que molan",
