@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "382",
+        "slug": "creador-stickers-minecraft",
+        "title": "Creador de stickers de Minecraft - Regalos originales | Mierdas que molan",
+        "shortDescription": "Crea stickers de Minecraft y haz que todos tengan uno personalizado. Muchas piezas, un cubo, un boton y la imaginación, el resto es cosa vuestra, si os sale un churrazo, no nos hacemos responsables jeje.",
+        "description": "<p>Crea stickers de Minecraft y haz que todos tengan uno personalizado. Muchas piezas, un cubo, un boton y la imaginación, el resto es cosa vuestra, si os sale un churrazo, no nos hacemos responsables jeje, aunque siempre se puede ver un tutorial por internet o sacar referencias para que salga medianamente bien la cosa.</p><h2>Características del producto</h2><ul><li><strong>Creatividad personalizada:</strong> Crea stickers de Minecraft y haz que todos tengan uno personalizado</li><li><strong>Muchas piezas:</strong> Muchas piezas, un cubo, un boton y la imaginación</li><li><strong>Tu responsabilidad:</strong> El resto es cosa vuestra</li><li><strong>Sin garantías:</strong> Si os sale un churrazo, no nos hacemos responsables jeje</li><li><strong>Ayuda disponible:</strong> Aunque siempre se puede ver un tutorial por internet</li><li><strong>Referencias:</strong> O sacar referencias para que salga medianamente bien la cosa</li><li><strong>Diversión garantizada:</strong> Perfecto para pasar tiempo creativo en familia</li><li><strong>Resultados únicos:</strong> Cada sticker será único y personalizado</li></ul>",
+        "image": "/images/stickers minecraft.webp",
+        "alt": "Creador stickers Minecraft - Kit para crear stickers personalizados de Minecraft",
+        "affiliateUrl": "https://amzn.to/47fpscs",
+        "merchant": "Amazon",
+        "price": 23.99,
+        "currency": "EUR",
+        "categories": ["regalos-frikis", "mierdas-gamers"],
+        "isFeatured": false,
+        "createdAt": "2025-10-22T10:00:00Z",
+        "tags": ["minecraft", "stickers", "creador", "manualidades", "gaming"]
+    },
+    {
         "id": "381",
         "slug": "nevera-creeper-minecraft",
         "title": "Nevera Creeper de Minecraft - Regalos originales | Mierdas que molan",
