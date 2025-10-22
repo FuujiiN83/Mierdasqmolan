@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "384",
+        "slug": "consola-retro",
+        "title": "Consola retro - Regalos originales | Mierdas que molan",
+        "shortDescription": "Miles de juegos retro instalados, forma de Game Boy y buena batería, sin pilas, ideal para echar unas cuantas tardes tumbado en el sofá escuchando llover por la venta.",
+        "description": "<p>Miles de juegos retro instalados, forma de Game Boy y buena batería, sin pilas, ideal para echar unas cuantas tardes tumbado en el sofá escuchando llover por la venta. Y si, sabemos que aparte del sofa irás con ella al WC, pero bueno, que cada uno la use donde quiera.</p><h2>Características del producto</h2><ul><li><strong>Miles de juegos:</strong> Miles de juegos retro instalados</li><li><strong>Diseño clásico:</strong> Forma de Game Boy y buena batería</li><li><strong>Sin pilas:</strong> Sin pilas, ideal para echar unas cuantas tardes</li><li><strong>Momento perfecto:</strong> Tumbado en el sofá escuchando llover por la venta</li><li><strong>Uso universal:</strong> Y si, sabemos que aparte del sofa irás con ella al WC</li><li><strong>Libertad total:</strong> Pero bueno, que cada uno la use donde quiera</li><li><strong>Nostalgia gaming:</strong> Revive los mejores juegos de tu infancia</li><li><strong>Portabilidad:</strong> Llévala contigo a cualquier lugar</li></ul>",
+        "image": "/images/consola retro.webp",
+        "alt": "Consola retro gaming - Consola portátil con miles de juegos retro instalados",
+        "affiliateUrl": "https://amzn.to/473xwOD",
+        "merchant": "Amazon",
+        "price": 69.99,
+        "currency": "EUR",
+        "categories": ["regalos-para-cumpleanos", "mierdas-gamers", "regalos-para-pasarlo-bien"],
+        "isFeatured": false,
+        "createdAt": "2025-10-22T12:00:00Z",
+        "tags": ["consola", "retro", "gaming", "gameboy", "juegos"]
+    },
+    {
         "id": "383",
         "slug": "delantal-super-chef",
         "title": "Delantal super chef - Regalos originales | Mierdas que molan",
