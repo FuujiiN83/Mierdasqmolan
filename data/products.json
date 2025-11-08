@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "421",
+        "slug": "anillo-flotante",
+        "title": "Anillo flotante - Regalos originales | Mierdas que molan",
+        "shortDescription": "¿es un pájaro? ¿Es un avión? No, ¡es el anillo flotante! Practica y vuelve a hacerlo para mostrar este pedazo de truco de magia a tus amigos y quédate con todos ellos y cuando te preguntes como lo haces diles: \"Magic…\"",
+        "description": "<p>¿es un pájaro? ¿Es un avión? No, ¡es el anillo flotante! Practica y vuelve a hacerlo para mostrar este pedazo de truco de magia a tus amigos y quédate con todos ellos y cuando te preguntes como lo haces diles: \"Magic…\"</p><h2>Características del producto</h2><ul><li><strong>Truco de magia:</strong> Muestra este pedazo de truco de magia a tus amigos</li><li><strong>Anillo flotante:</strong> Anillo que parece flotar mágicamente en el aire</li><li><strong>Fácil de aprender:</strong> Practica y vuelve a hacerlo hasta dominarlo</li><li><strong>Impresiona a todos:</strong> Quédate con todos tus amigos con este truco</li><li><strong>Misterio mágico:</strong> Cuando te pregunten cómo lo haces, diles: \"Magic…\"</li><li><strong>Perfecto para fiestas:</strong> Ideal para entretener en fiestas y reuniones</li><li><strong>Para todas las edades:</strong> Divertido tanto para niños como para adultos</li><li><strong>Regalo original:</strong> Un regalo único que sorprenderá a cualquiera</li></ul>",
+        "image": "/images/anillo flotante.webp",
+        "alt": "Anillo flotante - Truco de magia con anillo que parece flotar en el aire",
+        "affiliateUrl": "https://amzn.to/4oRz3gE",
+        "merchant": "Amazon",
+        "price": 8.00,
+        "currency": "EUR",
+        "categories": ["regalos-para-cumpleanos", "regalos-para-todo-tipo-de-edades", "regalos-para-pasarlo-bien"],
+        "isFeatured": false,
+        "createdAt": "2025-11-09T01:00:00Z",
+        "tags": ["anillo", "flotante", "magia", "truco", "diversion"]
+    },
+    {
         "id": "420",
         "slug": "molde-para-dados",
         "title": "Molde para dados - Regalos originales | Mierdas que molan",
