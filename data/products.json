@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "422",
+        "slug": "reloj-blando",
+        "title": "Reloj blando - Regalos originales | Mierdas que molan",
+        "shortDescription": "El mismísimo Salvador Dalí estaría orgulloso de este reloj. Es un reloj si, pero es cuanto menos original y único en su especie. ¿necesitas más? Yo creo que no. Pues ya sabes, dale al botón y hazte con el antes de que termine de derretirse.",
+        "description": "<p>El mismísimo Salvador Dalí estaría orgulloso de este reloj. Es un reloj si, pero es cuanto menos original y único en su especie. ¿necesitas más? Yo creo que no. Pues ya sabes, dale al botón y hazte con el antes de que termine de derretirse.</p><h2>Características del producto</h2><ul><li><strong>Inspirado en Dalí:</strong> El mismísimo Salvador Dalí estaría orgulloso de este reloj</li><li><strong>Original y único:</strong> Es cuanto menos original y único en su especie</li><li><strong>Diseño blando:</strong> Reloj con diseño blando y flexible</li><li><strong>Decorativo:</strong> Perfecto como elemento decorativo en casa</li><li><strong>Estilo surrealista:</strong> Inspirado en el arte surrealista de Dalí</li><li><strong>Funcional:</strong> Además de decorativo, también funciona como reloj</li><li><strong>Conversación:</strong> Será el centro de atención y tema de conversación</li><li><strong>Regalo único:</strong> Un regalo original que sorprenderá a cualquiera</li></ul>",
+        "image": "/images/reloj blando.webp",
+        "alt": "Reloj blando - Reloj decorativo inspirado en Salvador Dalí con diseño blando",
+        "affiliateUrl": "https://amzn.to/4oO9vBP",
+        "merchant": "Amazon",
+        "price": 14.99,
+        "currency": "EUR",
+        "categories": ["regalos-originales-para-casa", "regalos-para-cumpleanos"],
+        "isFeatured": false,
+        "createdAt": "2025-11-09T02:00:00Z",
+        "tags": ["reloj", "blando", "dali", "decorativo", "original"]
+    },
+    {
         "id": "421",
         "slug": "anillo-flotante",
         "title": "Anillo flotante - Regalos originales | Mierdas que molan",
