@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id": "412",
+        "slug": "pendulo-de-newton",
+        "title": "Péndulo de Newton - Regalos originales | Mierdas que molan",
+        "shortDescription": "No amigo, Newton no solo descubrió la fuerza de la gravedad y por ende su ley, hizo bastantes mas cosas a lo largo de su vida y este péndulo te ayudará a comprender mejor las leyes de conservación del impulso y la energía. ¿Qué suena aburrido? Bueno, tus historias inventadas para quedar bien también lo son, pero nadie se queda embobado con ellas como si lo hacen con este péndulo. Newton 1 tus historias 0.",
+        "description": "<p>No amigo, Newton no solo descubrió la fuerza de la gravedad y por ende su ley, hizo bastantes mas cosas a lo largo de su vida y este péndulo te ayudará a comprender mejor las leyes de conservación del impulso y la energía. ¿Qué suena aburrido? Bueno, tus historias inventadas para quedar bien también lo son, pero nadie se queda embobado con ellas como si lo hacen con este péndulo. Newton 1 tus historias 0.</p><h2>Características del producto</h2><ul><li><strong>Leyes de Newton:</strong> Este péndulo te ayudará a comprender mejor las leyes de conservación del impulso y la energía</li><li><strong>Fuerza de la gravedad:</strong> Descubre la fuerza de la gravedad y las leyes de Newton de forma visual</li><li><strong>Conservación del impulso:</strong> Observa cómo se conserva el impulso en cada movimiento</li><li><strong>Conservación de la energía:</strong> Comprende cómo funciona la conservación de la energía</li><li><strong>Efecto hipnótico:</strong> Nadie se queda embobado con tus historias como con este péndulo</li><li><strong>Educativo y decorativo:</strong> Perfecto para aprender física mientras decoras tu espacio</li><li><strong>Mecanismo preciso:</strong> Péndulo de alta calidad con movimiento suave y preciso</li><li><strong>Ideal para todas las edades:</strong> Regalo perfecto para curiosos de todas las edades</li></ul>",
+        "image": "/images/Pendulo newton.webp",
+        "alt": "Péndulo de Newton - Péndulo educativo para comprender las leyes de conservación del impulso y la energía",
+        "affiliateUrl": "https://amzn.to/3WHq4Tt",
+        "merchant": "Amazon",
+        "price": 15.99,
+        "currency": "EUR",
+        "categories": ["regalos-para-todo-tipo-de-edades"],
+        "isFeatured": false,
+        "createdAt": "2025-11-08T16:00:00Z",
+        "tags": ["newton", "pendulo", "fisica", "ciencia", "educativo"]
+    },
+    {
         "id": "411",
         "slug": "consola-retro-con-mas-de-20000-juegos",
         "title": "Consola retro con mas de 20.000 juegos - Regalos originales | Mierdas que molan",
