@@ -137,8 +137,8 @@ export default function HomeContent() {
             <div className="relative rounded-2xl overflow-hidden cursor-pointer hover:scale-[1.02] transition-transform duration-300 h-[30rem] sm:h-[34rem] lg:h-[38rem]" style={{ aspectRatio: '16/9' }}>
               <div className="absolute inset-0">
                 <Image
-                  src="/portada halloween.webp"
-                  alt="Portada Halloween - Productos terroríficos"
+                  src="/black friday.webp"
+                  alt="Black Friday - Las mejores ofertas y productos que molan"
                   fill
                   className="object-cover"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1216px"
@@ -153,17 +153,8 @@ export default function HomeContent() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-4">
-                  🎃 Halloween Special
+                  ¡Especial Black Friday!
                 </h2>
-                <p className="text-lg sm:text-xl text-white/90 mb-4 sm:mb-6">
-                  Productos terroríficos y divertidos para la noche más espeluznante del año
-                </p>
-                <div className="flex items-center text-white/80 text-sm sm:text-base">
-                  <span>Explorar productos Halloween</span>
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
               </div>
             </div>
           </Link>
