@@ -63,8 +63,8 @@ export const ProductCard = memo(function ProductCard({
     >
       {/* Header de la tarjeta */}
       <div className="flex flex-col sm:flex-row">
-        {/* Imagen */}
-        <div className="relative w-full sm:w-48 h-48 sm:h-auto flex-shrink-0" style={{ minHeight: '192px' }}>
+        {/* Imagen - Dimensiones fijas para evitar CLS */}
+        <div className="relative w-full sm:w-48 h-48 sm:h-48 flex-shrink-0" style={{ minHeight: '192px', aspectRatio: '1/1' }}>
           <OptimizedImage
             src={product.image}
             alt={product.alt || `${product.title} - Oferta en ${product.merchant || 'tienda online'}`}
@@ -72,7 +72,7 @@ export const ProductCard = memo(function ProductCard({
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 256px"
             quality={80}
             priority={priority}
-            className="w-full h-full"
+            className="w-full h-full object-cover"
           />
           
           {/* Badge de destacado */}

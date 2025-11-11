@@ -24,10 +24,64 @@
   /* Tipografía mejorada */
   html {
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    /* Mejora de tamaño de fuente base para móvil - mínimo 16px para evitar zoom automático */
+    font-size: 16px;
   }
   
   body {
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    /* Tamaño de fuente base mejorado para legibilidad móvil */
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Objetivos táctiles mejorados para móvil - mínimo 44x44px según recomendaciones de accesibilidad */
+  button,
+  a,
+  input[type="button"],
+  input[type="submit"],
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation; /* Mejora la respuesta táctil */
+  }
+
+  /* Mejora de legibilidad en móvil */
+  @media (max-width: 640px) {
+    html {
+      font-size: 16px; /* Evita zoom automático en iOS */
+    }
+    
+    body {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Aumentar tamaños de fuente en móvil para mejor legibilidad */
+    h1 {
+      font-size: 1.875rem; /* 30px */
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 1.5rem; /* 24px */
+      line-height: 1.3;
+    }
+
+    h3 {
+      font-size: 1.25rem; /* 20px */
+      line-height: 1.4;
+    }
+
+    /* Asegurar que los botones sean fácilmente pulsables */
+    button,
+    .btn-primary,
+    .btn-secondary,
+    .btn-accent {
+      min-height: 44px;
+      padding: 12px 24px;
+      font-size: 16px; /* Evita zoom en iOS */
+    }
   }
 }
 

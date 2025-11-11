@@ -5,14 +5,14 @@ import Script from 'next/script';
 export default function Analytics() {
   return (
     <>
-      {/* Google Analytics 4 */}
+      {/* Google Analytics 4 - Optimizado para INP: diferido y con prioridad baja */}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-FCD8D2QZEZ"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
       <Script
         id="ga4-init"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
@@ -23,7 +23,7 @@ export default function Analytics() {
         }}
       />
 
-      {/* Microsoft Clarity */}
+      {/* Microsoft Clarity - Ya optimizado con lazyOnload */}
       <Script
         id="clarity"
         strategy="lazyOnload"

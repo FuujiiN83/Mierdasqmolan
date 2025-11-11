@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL(siteConfig.url),
   alternates: {
-    canonical: '/',
+    canonical: siteConfig.url,
   },
   openGraph: {
     title: siteConfig.name,
@@ -100,6 +100,9 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         
+        {/* Viewport para compatibilidad móvil - CRÍTICO para SEO */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+        
         {/* DNS Prefetch y Preconnect para dominios críticos */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
@@ -129,6 +132,12 @@ export default function RootLayout({
         <meta name="language" content="Spanish" />
         <meta name="revisit-after" content="1 days" />
         <meta name="author" content="Deep code studio" />
+        
+        {/* Hreflang - Solo español por ahora, pero preparado para futuras versiones multiidioma */}
+        {/* Si en el futuro se añaden más idiomas, descomentar y configurar:
+        <link rel="alternate" hreflang="es" href="https://www.mierdasquemolan.com" />
+        <link rel="alternate" hreflang="x-default" href="https://www.mierdasquemolan.com" />
+        */}
         
         {/* Schema.org structured data - WebSite */}
         <script
@@ -176,7 +185,9 @@ export default function RootLayout({
               "description": "Tienda online de regalos originales y divertidos para todos los públicos",
               "sameAs": [
                 "https://www.facebook.com/mierdasquemolan",
-                "https://www.instagram.com/mierdasquemolan"
+                "https://www.instagram.com/mierdasquemolan",
+                "https://www.youtube.com/@mierdasquemolan",
+                "https://www.linkedin.com/company/mierdasquemolan"
               ],
               "contactPoint": {
                 "@type": "ContactPoint",

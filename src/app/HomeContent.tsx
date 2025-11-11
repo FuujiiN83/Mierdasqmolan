@@ -134,8 +134,9 @@ export default function HomeContent() {
       {!searchQuery && currentPage === 1 && (
         <section className="mb-8">
           <Link href="/categoria/halloween" className="block">
-            <div className="relative rounded-2xl overflow-hidden cursor-pointer hover:scale-[1.02] transition-transform duration-300 h-[30rem] sm:h-[34rem] lg:h-[38rem]" style={{ aspectRatio: '16/9' }}>
-              <div className="absolute inset-0">
+            {/* Hero con dimensiones fijas para evitar CLS */}
+            <div className="relative rounded-2xl overflow-hidden cursor-pointer hover:scale-[1.02] transition-transform duration-300 w-full" style={{ aspectRatio: '16/9', minHeight: '300px', maxHeight: '600px' }}>
+              <div className="absolute inset-0" style={{ width: '100%', height: '100%' }}>
                 <Image
                   src="/black friday.webp"
                   alt="Black Friday - Las mejores ofertas y productos que molan"
@@ -144,6 +145,7 @@ export default function HomeContent() {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1216px"
                   quality={75}
                   priority
+                  style={{ objectFit: 'cover' }}
                   onError={(e) => {
                     // Si la imagen no existe, ocultar el contenedor
                     (e.target as HTMLImageElement).style.display = 'none';
