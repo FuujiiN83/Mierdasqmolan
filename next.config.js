@@ -22,8 +22,6 @@ const nextConfig = {
   },
   experimental: {
     typedRoutes: false,
-    // Optimizaciones experimentales para rendimiento
-    optimizeCss: true,
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
