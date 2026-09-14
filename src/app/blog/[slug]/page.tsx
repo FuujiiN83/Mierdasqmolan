@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
+import { encodeLocalImageSrc } from '@/lib/image-src';
 // Iconos SVG inline para evitar dependencias
 import blogData from '../../../../data/blog.json';
 
@@ -119,7 +120,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="relative w-full h-64 sm:h-96 rounded-lg overflow-hidden shadow-lg">
           <Image
-            src={post.featuredImage}
+            src={encodeLocalImageSrc(post.featuredImage)}
             alt={post.alt}
             fill
             className="object-cover"

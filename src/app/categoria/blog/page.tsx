@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { encodeLocalImageSrc } from '@/lib/image-src';
 // Iconos SVG inline para evitar dependencias
 import { AdSlot } from '@/components/AdSlot';
 import blogData from '@/data/blog.json';
@@ -127,7 +128,7 @@ export default function BlogPage() {
                 {/* Featured Image */}
                 <div className="w-full sm:w-48 h-48 sm:h-auto relative">
                   <Image
-                    src={post.featuredImage}
+                    src={encodeLocalImageSrc(post.featuredImage)}
                     alt={post.alt}
                     fill
                     className="object-cover"

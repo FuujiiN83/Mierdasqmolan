@@ -1,3 +1,5 @@
+import { encodeLocalImageSrc } from '@/lib/image-src';
+
 export interface Product {
   id: string;
   title: string;
@@ -98,7 +100,7 @@ export function validateProducts(data: any[]): Product[] {
       currency: item.currency || 'EUR',
       originalPrice: item.originalPrice ? Number(item.originalPrice) : undefined,
       discount: item.discount ? String(item.discount) : undefined,
-      image: String(item.image),
+      image: encodeLocalImageSrc(String(item.image)),
       affiliateUrl: String(item.affiliateUrl),
       amazonUrl: item.amazonUrl ? String(item.amazonUrl) : undefined,
       categories: Array.isArray(item.categories) ? item.categories : [item.category || 'general'],

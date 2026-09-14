@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
+import { encodeLocalImageSrc } from '@/lib/image-src';
 
 interface OptimizedImageProps {
   src: string;
@@ -51,7 +52,7 @@ export function OptimizedImage({
 
   // Configuración optimizada con fetchPriority
   const imageProps: any = {
-    src,
+    src: encodeLocalImageSrc(src),
     alt,
     priority,
     onError: () => setImageError(true),

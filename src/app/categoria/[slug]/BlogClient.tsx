@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { encodeLocalImageSrc } from '@/lib/image-src';
 import { AdSlot, useInlineAds } from '@/components/AdSlot';
 import { Pagination, ResultsInfo } from '@/components/Pagination';
 import { categoryConfig, CategorySlug } from '@/config/site';
@@ -186,7 +187,7 @@ export function BlogClient({ categorySlug, initialProducts }: BlogClientProps) {
                       {/* Featured Image */}
                       <div className="w-full sm:w-48 h-48 sm:h-auto relative">
                         <Image
-                          src={post.featuredImage}
+                          src={encodeLocalImageSrc(post.featuredImage)}
                           alt={post.alt}
                           fill
                           className="object-cover"
