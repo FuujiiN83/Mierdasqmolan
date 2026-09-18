@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { encodeLocalImageSrc } from '@/lib/image-src';
+import { sanitizeHtml } from '@/lib/utils';
 // Iconos SVG inline para evitar dependencias
 import blogData from '../../../../data/blog.json';
 
@@ -135,7 +136,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-8">
           <div 
             className="prose prose-lg max-w-none prose-headings:text-gray-900 dark:prose-headings:text-white prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900 dark:prose-strong:text-white"
-            dangerouslySetInnerHTML={{ __html: post.content }}
+            dangerouslySetInnerHTML={{ __html: sanitizeHtml(post.content) }}
           />
         </div>
 

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { OptimizedImage } from './OptimizedImage';
 import { Product } from '@/types';
+import { sanitizeHtml } from '@/lib/utils';
 import styles from './BlogCard.module.css';
 
 interface BlogCardProps {
@@ -99,7 +100,7 @@ export function BlogCard({ product, isExpanded, onToggleExpand, priority = false
           <div className="mt-6 pt-6 border-t border-gray-100">
             <div 
               className={`text-gray-700 text-base leading-relaxed ${styles.blogContent}`}
-              dangerouslySetInnerHTML={{ __html: product.description }}
+              dangerouslySetInnerHTML={{ __html: sanitizeHtml(product.description) }}
             />
             
             {/* Fecha de publicación */}

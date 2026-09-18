@@ -12,21 +12,12 @@ interface AdSlotProps extends AdPosition {
 export const AdSlot = memo(function AdSlot({ position, size, className = '' }: AdSlotProps) {
   const [isVisible, setIsVisible] = useState(false);
 
-  // No mostrar anuncios si están desactivados globalmente
-  if (!siteConfig.ads.enabled) {
-    return null;
-  }
-
-  // No mostrar anuncios si la posición específica está desactivada
-  const positionKey = position === 'hero-under' ? 'hero' : 
-                     position === 'sidebar-sticky' ? 'sidebar' : 
-                     position === 'inline' ? 'inline' : 'inline';
-  
-  if (!siteConfig.ads.positions[positionKey as keyof typeof siteConfig.ads.positions]) {
-    return null;
-  }
-
+  // Los hooks van SIEMPRE antes de cualquier return: antes había dos
+  // `return null` por encima de este useEffect, lo que rompe la regla de
+  // hooks de React en cuanto la condición cambie entre renders.
   useEffect(() => {
+    if (!siteConfig.ads.enabled) return;
+
     // Simular carga de anuncios
     const timer = setTimeout(() => {
       setIsVisible(true);
@@ -34,6 +25,20 @@ export const AdSlot = memo(function AdSlot({ position, size, className = '' }: A
 
     return () => clearTimeout(timer);
   }, []);
+
+  // No mostrar anuncios si están desactivados globalmente
+  if (!siteConfig.ads.enabled) {
+    return null;
+  }
+
+  // No mostrar anuncios si la posición específica está desactivada
+  const positionKey = position === 'hero-under' ? 'hero' :
+                     position === 'sidebar-sticky' ? 'sidebar' :
+                     position === 'inline' ? 'inline' : 'inline';
+
+  if (!siteConfig.ads.positions[positionKey as keyof typeof siteConfig.ads.positions]) {
+    return null;
+  }
 
   const getSizeClasses = () => {
     switch (size) {

@@ -51,30 +51,36 @@ export function CategoryMenu({
     count: 0
   };
 
-  // Separar categoría "hogar" para asegurar que aparezca en las primeras 8
-  const hogarCategory = otherCategories.find(cat => cat.slug === 'hogar');
-  const otherCategoriesWithoutHogar = otherCategories.filter(cat => cat.slug !== 'hogar');
-  
-  const menuItems = [
-    { href: '/', label: 'Inicio', isActive: isHomePage },
-    { href: '/destacados', label: 'Destacados', isActive: isFeaturedPage },
+  // NOTA: aquí había un bloque que intentaba fijar la categoría "hogar" arriba
+  // del menú, pero comparaba contra el slug 'hogar', que no existe en
+  // categoryConfig (la real es 'regalos-originales-para-casa'). El resultado era
+  // código muerto que además rompía el type-check. Se ha eliminado sin cambiar
+  // lo que ve el usuario: ese bloque nunca llegaba a renderizarse.
+  // Si se quiere fijar una categoría arriba, hay que hacerlo con su slug real.
+
+  // Tipo explícito: antes la forma del array se infería de los elementos y
+  // acceder a `hasSubcategories` daba error de tipos según qué rama.
+  interface MenuItem {
+    href: string;
+    label: string;
+    isActive: boolean;
+    description?: string;
+    hasSubcategories: boolean;
+  }
+
+  const menuItems: MenuItem[] = [
+    { href: '/', label: 'Inicio', isActive: isHomePage, hasSubcategories: false },
+    { href: '/destacados', label: 'Destacados', isActive: isFeaturedPage, hasSubcategories: false },
     // Blog siempre visible
     {
       href: `/categoria/${blogCategoryForMenu.slug}`,
       label: `${blogCategoryForMenu.name}${showCounts ? ` (${blogCategoryForMenu.count})` : ''}`,
       isActive: isActiveCategory(blogCategoryForMenu.slug),
-      description: blogCategoryForMenu.description
+      description: blogCategoryForMenu.description,
+      hasSubcategories: false
     },
-    // Hogar siempre visible si existe
-    ...(hogarCategory ? [{
-      href: `/categoria/${hogarCategory.slug}`,
-      label: `${hogarCategory.name}${showCounts ? ` (${hogarCategory.count})` : ''}`,
-      isActive: isActiveCategory(hogarCategory.slug),
-      description: hogarCategory.description,
-      hasSubcategories: true
-    }] : []),
-    // Resto de categorías (máximo 5 para que Hogar quepa en las primeras 8)
-    ...otherCategoriesWithoutHogar.slice(0, 5).map(category => ({
+    // Resto de categorías (máximo 5 para que el menú no se desborde)
+    ...otherCategories.slice(0, 5).map(category => ({
       href: `/categoria/${category.slug}`,
       label: `${category.name}${showCounts ? ` (${category.count})` : ''}`,
       isActive: isActiveCategory(category.slug),
@@ -87,6 +93,11 @@ export function CategoryMenu({
     const category = categoryConfig[categorySlug as keyof typeof categoryConfig] as CategoryConfigWithSubcategories;
     return category?.subcategories || {};
   };
+
+  // Las llamadas a getSubcategories() tenían 'hogar' hardcodeado; ahora se
+  // derivan del propio elemento del menú, para que funcionen con cualquier
+  // categoría que algún día declare subcategorías.
+  const subcategoriesOf = (href: string) => getSubcategories(href.replace('/categoria/', ''));
 
   if (variant === 'vertical') {
     return (
@@ -109,7 +120,7 @@ export function CategoryMenu({
             {/* Subcategorías para versión vertical */}
             {item.hasSubcategories && (
               <div className="ml-4 space-y-1">
-                {Object.entries(getSubcategories('hogar')).map(([subSlug, subCategory]) => (
+                {Object.entries(subcategoriesOf(item.href)).map(([subSlug, subCategory]) => (
                   <Link
                     key={`/categoria/${subSlug}`}
                     href={`/categoria/${subSlug}`}
@@ -162,7 +173,7 @@ export function CategoryMenu({
             {item.hasSubcategories && hoveredCategory === item.href && (
               <div className="absolute top-full left-0 mt-1 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg border border-gray-200 dark:border-gray-600 z-20">
                 <div className="py-1" role="menu">
-                  {Object.entries(getSubcategories('hogar')).map(([subSlug, subCategory]) => (
+                  {Object.entries(subcategoriesOf(item.href)).map(([subSlug, subCategory]) => (
                     <Link
                       key={`/categoria/${subSlug}`}
                       href={`/categoria/${subSlug}`}
@@ -180,8 +191,8 @@ export function CategoryMenu({
           </div>
         ))}
         
-        {/* Menú desplegable para más categorías (excluyendo blog y hogar) */}
-        {otherCategoriesWithoutHogar.length > 5 && (
+        {/* Menú desplegable para más categorías (excluyendo blog) */}
+        {otherCategories.length > 5 && (
           <div className="relative">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -209,7 +220,7 @@ export function CategoryMenu({
                 />
                 <div className="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-md shadow-lg border border-gray-200 dark:border-gray-600 z-20">
                   <div className="py-1" role="menu">
-                    {otherCategoriesWithoutHogar.slice(5).map((category) => (
+                    {otherCategories.slice(5).map((category) => (
                       <Link
                         key={`/categoria/${category.slug}`}
                         href={`/categoria/${category.slug}`}
@@ -276,7 +287,7 @@ export function CategoryMenu({
                   {/* Subcategorías para versión mobile */}
                   {item.hasSubcategories && (
                     <div className="ml-4 space-y-1">
-                      {Object.entries(getSubcategories('hogar')).map(([subSlug, subCategory]) => (
+                      {Object.entries(subcategoriesOf(item.href)).map(([subSlug, subCategory]) => (
                         <Link
                           key={`/categoria/${subSlug}`}
                           href={`/categoria/${subSlug}`}

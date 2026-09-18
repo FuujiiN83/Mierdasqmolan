@@ -14,15 +14,19 @@ interface ProductCardProps {
   onToggleExpand?: () => void;
   showExpandButton?: boolean;
   priority?: boolean;
+  /** Clases extra para la tarjeta. Antes se pasaba desde la página de producto
+   *  pero no estaba declarada, así que se descartaba en silencio. */
+  className?: string;
 }
 
 // Optimizado con memo para evitar re-renders innecesarios de cards
-export const ProductCard = memo(function ProductCard({ 
-  product, 
-  isExpanded = false, 
+export const ProductCard = memo(function ProductCard({
+  product,
+  isExpanded = false,
   onToggleExpand,
   showExpandButton = true,
-  priority = false
+  priority = false,
+  className = ''
 }: ProductCardProps) {
   const [imageError, setImageError] = useState(false);
 
@@ -49,11 +53,12 @@ export const ProductCard = memo(function ProductCard({
   const merchantDomain = getDomainFromUrl(product.affiliateUrl);
 
   return (
-    <article 
+    <article
       className={`
         bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden
         transition-all duration-300 hover:shadow-md cursor-pointer
         ${isExpanded ? 'ring-2 ring-primary-500' : ''}
+        ${className}
       `}
       onClick={handleCardClick}
       onKeyDown={handleKeyDown}

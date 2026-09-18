@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { debounce } from '@/lib/utils';
-import { searchProducts } from '@/lib/data';
+import { searchProducts, generateAffiliateUrl } from '@/lib/data';
 import { Product } from '@/types';
 
 interface SearchBarProps {
@@ -145,7 +145,7 @@ export function SearchBar({
               {results.map((product) => (
                 <a
                   key={product.id}
-                  href={product.affiliateUrl}
+                  href={generateAffiliateUrl(product)}
                   target="_blank"
                   rel="nofollow sponsored noopener"
                   onClick={handleResultClick}

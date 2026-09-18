@@ -2,40 +2,30 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-
-interface CookieSettings {
-  necessary: boolean;
-  analytics: boolean;
-  marketing: boolean;
-  personalization: boolean;
-}
+import {
+  readConsent,
+  saveConsent,
+  ACCEPT_ALL,
+  DENY_ALL,
+  type CookieSettings,
+} from '@/lib/consent';
 
 export function CookieConsentBanner() {
   const [showBanner, setShowBanner] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
-  const [cookieSettings, setCookieSettings] = useState<CookieSettings>({
-    necessary: true, // Siempre true, no se puede desactivar
-    analytics: false,
-    marketing: false,
-    personalization: false,
-  });
+  const [cookieSettings, setCookieSettings] = useState<CookieSettings>(DENY_ALL);
 
   useEffect(() => {
-    // Verificar si ya se ha dado consentimiento
-    const consent = localStorage.getItem('cookie-consent');
-    if (!consent) {
+    const saved = readConsent();
+
+    // Si aún no ha elegido nada, se muestra el banner
+    if (!saved) {
       setShowBanner(true);
-    } else {
-      // Cargar configuración guardada
-      try {
-        const savedSettings = JSON.parse(consent);
-        setCookieSettings(savedSettings);
-        applyCookieSettings(savedSettings);
-      } catch (error) {
-        // Si hay error, mostrar banner de nuevo
-        setShowBanner(true);
-      }
+      return;
     }
+
+    setCookieSettings(saved);
+    applyCookieSettings(saved);
   }, []);
 
   const applyCookieSettings = (settings: CookieSettings) => {
@@ -50,47 +40,30 @@ export function CookieConsentBanner() {
       });
     }
 
-    // Guardar configuración para otras funcionalidades
-    if (typeof window !== 'undefined') {
-      (window as any).cookieSettings = settings;
-    }
-
-    console.log('Cookie settings applied:', settings);
   };
 
+  // `saveConsent` persiste y emite el evento al que se suscribe Analytics,
+  // así que la analítica solo arranca después de que el usuario decida.
   const acceptAll = () => {
-    const allAccepted = {
-      necessary: true,
-      analytics: true,
-      marketing: true,
-      personalization: true,
-    };
-    
-    setCookieSettings(allAccepted);
-    localStorage.setItem('cookie-consent', JSON.stringify(allAccepted));
-    applyCookieSettings(allAccepted);
+    setCookieSettings(ACCEPT_ALL);
+    saveConsent(ACCEPT_ALL);
+    applyCookieSettings(ACCEPT_ALL);
     setShowBanner(false);
     setShowSettings(false);
   };
 
   const acceptNecessaryOnly = () => {
-    const necessaryOnly = {
-      necessary: true,
-      analytics: false,
-      marketing: false,
-      personalization: false,
-    };
-    
-    setCookieSettings(necessaryOnly);
-    localStorage.setItem('cookie-consent', JSON.stringify(necessaryOnly));
-    applyCookieSettings(necessaryOnly);
+    setCookieSettings(DENY_ALL);
+    saveConsent(DENY_ALL);
+    applyCookieSettings(DENY_ALL);
     setShowBanner(false);
     setShowSettings(false);
   };
 
   const acceptCustom = () => {
-    localStorage.setItem('cookie-consent', JSON.stringify(cookieSettings));
-    applyCookieSettings(cookieSettings);
+    const settings: CookieSettings = { ...cookieSettings, necessary: true };
+    saveConsent(settings);
+    applyCookieSettings(settings);
     setShowBanner(false);
     setShowSettings(false);
   };

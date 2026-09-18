@@ -106,20 +106,21 @@ export function generateProductStructuredData(product: Product, affiliateUrl: st
     },
     offers: {
       '@type': 'Offer',
+      // Un Offer sin precio ni moneda es inválido para rich results de Google.
       availability: 'https://schema.org/InStock',
       url: affiliateUrl,
+      ...(typeof product.price === 'number'
+        ? { price: product.price, priceCurrency: product.currency || 'EUR' }
+        : {}),
       seller: {
         '@type': 'Organization',
         name: product.merchant || siteConfig.name,
       },
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.5',
-      reviewCount: '127',
-      bestRating: '5',
-      worstRating: '1',
-    },
+    // OJO: aquí había un aggregateRating con ratingValue 4.5 y 127 reseñas
+    // inventadas. Google penaliza las valoraciones fabricadas, así que se ha
+    // eliminado. Si algún día hay reseñas reales, se añaden desde una fuente
+    // verificable (no desde el "mola score" interno).
     identifier: {
       '@type': 'PropertyValue',
       name: 'SKU',
@@ -192,13 +193,22 @@ export function generateOrganizationStructuredData() {
 }
 
 /**
+ * Elemento que puede listarse en el ItemList de una página de categoría.
+ * Es estructural a propósito: lo cumplen tanto `Product` como `BlogPost`.
+ */
+export interface ListableItem {
+  title: string;
+  slug: string;
+}
+
+/**
  * Genera structured data para páginas de categorías (JSON-LD)
  */
 export function generateCategoryStructuredData(
   categoryName: string,
   categoryDescription: string,
   categorySlug: string,
-  productCount: number
+  products: ListableItem[]
 ) {
   return {
     '@context': 'https://schema.org',
@@ -210,7 +220,16 @@ export function generateCategoryStructuredData(
       '@type': 'ItemList',
       name: `Productos de ${categoryName}`,
       description: categoryDescription,
-      numberOfItems: productCount,
+      // Antes declaraba numberOfItems pero NO emitía itemListElement: un
+      // ItemList con conteo y sin elementos es incoherente. Ahora se listan los
+      // productos que se están mostrando y el conteo sale de esa misma lista.
+      numberOfItems: products.length,
+      itemListElement: products.map((product, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: product.title,
+        url: `${siteConfig.url}/producto/${product.slug}`,
+      })),
     },
     breadcrumb: {
       '@type': 'BreadcrumbList',

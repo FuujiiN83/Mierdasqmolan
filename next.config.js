@@ -1,5 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Permite compilar en un directorio aparte (p. ej. NEXT_DIST_DIR=.next-new)
+  // y luego hacer un swap instantáneo con .next. Sin esto, `next build`
+  // reescribe .next mientras el proceso en marcha sirve de ahí y los estáticos
+  // devuelven 500 durante todo el build. Por defecto se comporta como siempre.
+  distDir: process.env.NEXT_DIST_DIR || '.next',
   images: {
     // Solo imágenes locales de /public: sin remotePatterns el optimizador rechaza
     // URLs externas y nadie puede hacerle procesar ficheros arbitrarios.
@@ -12,9 +17,15 @@ const nextConfig = {
   },
   swcMinify: true,
   typescript: {
-    ignoreBuildErrors: true,
+    // Estaba en `true`, y eso escondía errores reales: la página de producto
+    // pasaba `className` a ProductCard, que no lo aceptaba, y el type-check
+    // llevaba rojo desde tiempo sin que nadie se enterara. Ya está en verde,
+    // así que a partir de ahora el build falla si vuelve a romperse.
+    ignoreBuildErrors: false,
   },
   eslint: {
+    // Se mantiene en true a propósito: el lint solo da avisos (no errores), y
+    // no queremos que un aviso de estilo tumbe un despliegue.
     ignoreDuringBuilds: true,
   },
   experimental: {

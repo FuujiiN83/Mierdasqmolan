@@ -72,6 +72,66 @@ export function truncateText(text: string, maxLength: number): string {
 }
 
 /**
+ * Normaliza texto para buscar: minúsculas y sin acentos.
+ *
+ * Sin esto el buscador era sensible a los acentos: "lampara" no encontraba
+ * "Lámpara" (se perdían 16 de 22 productos) y "camara"/"pinata" devolvían 0.
+ * Es lo que teclea cualquiera desde el móvil, así que no se puede ignorar.
+ */
+export function normalizeForSearch(text: string): string {
+  return text
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+}
+
+// Etiquetas que nunca deben llegar al DOM desde contenido de producto.
+const DANGEROUS_TAGS = /<\s*(script|style|iframe|object|embed|form|link|meta|base)\b[^>]*>[\s\S]*?<\s*\/\s*\1\s*>/gi;
+const DANGEROUS_SELF_CLOSING = /<\s*(script|style|iframe|object|embed|form|link|meta|base)\b[^>]*\/?>/gi;
+// onclick=, onerror=, onload=…
+const INLINE_EVENT_HANDLERS = /\son\w+\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi;
+// href="javascript:…" / src='javascript:…' / href=data:text/html…
+const DANGEROUS_URL_ATTRS = /(href|src)\s*=\s*(?:"|')?\s*(?:javascript|data|vbscript):[^"'>\s]*(?:"|')?/gi;
+
+/**
+ * Sanea HTML que va a inyectarse con dangerouslySetInnerHTML.
+ *
+ * IMPORTANTE: esto es una *mitigación*, no un sanitizador completo. Quita los
+ * vectores habituales (script/iframe/handlers/javascript:) para que el día que
+ * las descripciones lleguen de las APIs de Amazon o AliExpress no entren sin
+ * barrera. Si se conectan fuentes externas de verdad, hay que sustituirlo por
+ * un sanitizador con allowlist (DOMPurify o similar).
+ *
+ * No se puede simplemente escapar el HTML: el contenido actual de productos y
+ * blog ya viene como HTML (`<p>`, `<h2>`, `<strong>`), así que escaparlo
+ * dejaría las descripciones a la vista como texto plano.
+ */
+export function sanitizeHtml(html: string): string {
+  return html
+    .replace(DANGEROUS_TAGS, '')
+    .replace(DANGEROUS_SELF_CLOSING, '')
+    .replace(INLINE_EVENT_HANDLERS, '')
+    .replace(DANGEROUS_URL_ATTRS, '$1="#"');
+}
+
+/**
+ * Devuelve la URL solo si es http(s); si no, el fallback.
+ *
+ * `new URL('javascript:alert(1)')` NO lanza, así que un `javascript:` colado
+ * en el feed de afiliados llegaría intacto al href. Esto lo corta.
+ */
+export function safeUrl(url: string, fallback = '#'): string {
+  try {
+    const parsed = new URL(url);
+    return parsed.protocol === 'http:' || parsed.protocol === 'https:'
+      ? parsed.toString()
+      : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+/**
  * Genera slug a partir de texto
  */
 export function generateSlug(text: string): string {
@@ -102,10 +162,15 @@ export function debounce<T extends (...args: any[]) => any>(
 }
 
 /**
- * Convierte markdown básico a HTML
+ * Convierte markdown básico a HTML y lo sanea.
+ *
+ * Ojo: en la práctica la mayoría de las descripciones ya son HTML, no markdown,
+ * así que esto funciona como conversor tolerante + saneado. El resultado se
+ * inyecta con dangerouslySetInnerHTML, y por eso pasa por sanitizeHtml.
  */
 export function markdownToHtml(markdown: string): string {
-  return markdown
+  return sanitizeHtml(
+    markdown
     // Headers
     .replace(/^### (.*$)/gim, '<h3 class="text-lg font-semibold mt-4 mb-2">$1</h3>')
     .replace(/^## (.*$)/gim, '<h2 class="text-xl font-bold mt-6 mb-3">$1</h2>')
@@ -122,7 +187,8 @@ export function markdownToHtml(markdown: string): string {
     // Wrap in paragraphs
     .replace(/^(?!<[h1-6]|<li)(.+)$/gim, '<p class="mb-3">$1</p>')
     // Clean up
-    .replace(/<p class="mb-3"><\/p>/g, '');
+    .replace(/<p class="mb-3"><\/p>/g, '')
+  );
 }
 
 /**

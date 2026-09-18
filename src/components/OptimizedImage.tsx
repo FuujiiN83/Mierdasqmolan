@@ -50,38 +50,30 @@ export function OptimizedImage({
     );
   }
 
-  // Configuración optimizada con fetchPriority
-  const imageProps: any = {
+  // Props comunes, tipadas (antes esto era un `any`, lo que impedía al linter
+  // ver que sí se pasa `alt` y daba un falso positivo de accesibilidad).
+  // `priority` ya implica carga eager, así que no hace falta `loading`.
+  const commonProps = {
     src: encodeLocalImageSrc(src),
     alt,
     priority,
-    onError: () => setImageError(true),
     quality,
-    className: className || "object-cover",
-    loading: priority ? 'eager' : 'lazy',
+    className: className || 'object-cover',
+    sizes: sizes || '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw',
+    onError: () => setImageError(true),
+    ...(priority ? { fetchPriority: 'high' as const } : {}),
   };
 
-  // Añadir fetchPriority para imágenes priority
-  if (priority) {
-    imageProps.fetchPriority = 'high';
-  }
-
   if (fill) {
-    return (
-      <Image
-        {...imageProps}
-        fill
-        sizes={sizes || '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'}
-      />
-    );
+    return <Image {...commonProps} alt={alt} fill />;
   }
 
   return (
     <Image
-      {...imageProps}
+      {...commonProps}
+      alt={alt}
       width={width || 400}
       height={height || 300}
-      sizes={sizes || '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'}
     />
   );
 }

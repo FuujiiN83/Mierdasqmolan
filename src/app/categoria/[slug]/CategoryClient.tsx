@@ -42,12 +42,14 @@ export function CategoryClient({ categorySlug, initialProducts }: CategoryClient
   const totalPages = Math.ceil(totalProducts / productsPerPage);
   // const inlineAdPositions = useInlineAds(products.length);
 
-  // Generar structured data para SEO
+  // Generar structured data para SEO.
+  // Se le pasan los productos de la página actual: el ItemList debe describir
+  // lo que realmente se ve, no el total de la categoría.
   const structuredData = generateCategoryStructuredData(
     category.name,
     category.description,
     categorySlug,
-    totalProducts
+    products
   );
 
   return (

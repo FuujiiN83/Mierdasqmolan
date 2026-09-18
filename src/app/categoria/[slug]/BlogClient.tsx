@@ -73,12 +73,13 @@ export function BlogClient({ categorySlug, initialProducts }: BlogClientProps) {
   const totalPages = Math.ceil(totalProducts / productsPerPage);
   const inlineAdPositions = useInlineAds(paginatedPosts.length);
 
-  // Generar structured data para SEO
+  // Generar structured data para SEO.
+  // Igual que en las categorías: el ItemList describe lo que se ve en la página.
   const structuredData = generateCategoryStructuredData(
     category.name,
     category.description,
     categorySlug,
-    totalProducts
+    paginatedPosts
   );
 
   function formatDate(dateString: string) {

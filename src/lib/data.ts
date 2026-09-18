@@ -1,5 +1,6 @@
 import { Product, validateProducts, ProductFilters } from '@/types';
 import { categoryConfig, CategorySlug } from '@/config/site';
+import { normalizeForSearch, safeUrl } from '@/lib/utils';
 import productsData from '../../data/products.json';
 
 // Cache para productos validados
@@ -62,15 +63,24 @@ export function getFilteredProducts(filters: ProductFilters = {}): Product[] {
     });
   }
 
-  // Filtrar por búsqueda
+  // Filtrar por búsqueda.
+  // Se normalizan ambos lados (término y campos) para que dé igual escribir
+  // "lampara" que "Lámpara", o "pinata" que "piñata".
   if (filters.search) {
-    const searchTerm = filters.search.toLowerCase();
-    filtered = filtered.filter(product =>
-      product.title.toLowerCase().includes(searchTerm) ||
-      product.shortDescription.toLowerCase().includes(searchTerm) ||
-      product.description.toLowerCase().includes(searchTerm) ||
-      product.tags?.some(tag => tag.toLowerCase().includes(searchTerm))
-    );
+    // El trim importa: sin él, " lampara " (con espacios al pegar o al teclear)
+    // buscaba la cadena con espacios y no encontraba nada. Y si tras el trim
+    // queda vacío, no se filtra: un término vacío hace `includes('')`, que es
+    // true para todo y devolvería el catálogo entero.
+    const searchTerm = normalizeForSearch(filters.search).trim();
+
+    if (searchTerm) {
+      filtered = filtered.filter(product =>
+        normalizeForSearch(product.title).includes(searchTerm) ||
+        normalizeForSearch(product.shortDescription).includes(searchTerm) ||
+        normalizeForSearch(product.description).includes(searchTerm) ||
+        product.tags?.some(tag => normalizeForSearch(tag).includes(searchTerm))
+      );
+    }
   }
 
   // Filtrar por destacados
@@ -270,14 +280,14 @@ export function generateAffiliateUrl(
   medium = 'affiliate'
 ): string {
   try {
-    const url = new URL(product.affiliateUrl);
+    const url = new URL(safeUrl(product.affiliateUrl, ''));
     url.searchParams.set('utm_source', source);
     url.searchParams.set('utm_medium', medium);
     url.searchParams.set('utm_campaign', product.slug);
     url.searchParams.set('utm_content', product.id);
     return url.toString();
   } catch {
-    // Si la URL no es válida, devolver tal como está
-    return product.affiliateUrl;
+    // URL ausente o con esquema no permitido: no se enlaza a ningún sitio
+    return '#';
   }
 }

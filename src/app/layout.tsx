@@ -103,15 +103,14 @@ export default function RootLayout({
         {/* Viewport para compatibilidad móvil - CRÍTICO para SEO */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
         
-        {/* DNS Prefetch y Preconnect para dominios críticos */}
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        <link rel="dns-prefetch" href="https://www.clarity.ms" />
-        <link rel="dns-prefetch" href="https://scripts.clarity.ms" />
-        
-        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
-        
+        {/*
+          Aquí había dns-prefetch/preconnect a googletagmanager.com,
+          google-analytics.com y clarity.ms. Se han quitado: la analítica ahora
+          solo se carga si el usuario acepta, así que estos hints solo servían
+          para abrir conexión con Google y Microsoft ANTES de que decidiera, sin
+          cargar nada. Con el consentimiento previo, además, ya no aceleran nada.
+        */}
+
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
