@@ -36,17 +36,17 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
   const merchantDomain = getDomainFromUrl(product.affiliateUrl);
 
   return {
-    title: `${product.title} - Oferta en ${merchantDomain}`,
+    title: product.title,
     description: product.shortDescription,
     openGraph: {
-      title: `${product.title} - Oferta en ${merchantDomain}`,
+      title: product.title,
       description: product.shortDescription,
       images: [product.image],
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${product.title} - Oferta en ${merchantDomain}`,
+      title: product.title,
       description: product.shortDescription,
       images: [product.image],
     },

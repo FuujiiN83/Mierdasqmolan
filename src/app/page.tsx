@@ -1,7 +1,15 @@
 import { Suspense } from 'react';
+import type { Metadata } from 'next';
 import HomeContent from './HomeContent';
 import { getFilteredProducts, getFeaturedProducts } from '@/lib/data';
 import { siteConfig } from '@/config/site';
+
+// La canónica se define por página (el layout ya no impone la de la portada).
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+};
 
 // Loading component para Suspense
 function LoadingHome() {

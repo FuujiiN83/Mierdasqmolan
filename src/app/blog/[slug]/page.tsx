@@ -45,8 +45,12 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   }
 
   return {
-    title: `${post.title} | Blog MQM Web`,
+    // Sin la marca: el template del layout ya añade "| Mierdas que molan"
+    title: post.title,
     description: post.excerpt,
+    alternates: {
+      canonical: `/blog/${post.slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,

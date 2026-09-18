@@ -2,7 +2,8 @@ import FeaturedClient from './FeaturedClient';
 import { getFeaturedProducts, getAvailableCategories } from '@/lib/data';
 
 export const metadata = {
-  title: 'Productos destacados | Mierdas que molan',
+  // Sin la marca: el template del layout ya añade "| Mierdas que molan"
+  title: 'Productos destacados',
   description:
     'Los mejores productos seleccionados por nuestro equipo: calidad, ofertas increíbles y cosas que realmente molan.',
   alternates: { canonical: 'https://www.mierdasquemolan.com/destacados' },

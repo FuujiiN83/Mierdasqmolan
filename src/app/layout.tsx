@@ -47,9 +47,12 @@ export const metadata: Metadata = {
     telephone: false,
   },
   metadataBase: new URL(siteConfig.url),
-  alternates: {
-    canonical: siteConfig.url,
-  },
+  // NO se pone `alternates.canonical` aquí. Estaba puesto a la portada, y las
+  // páginas que no definían el suyo lo heredaban: /categoria/blog, los
+  // artículos del blog y las cuatro legales declaraban como canónica la
+  // portada, así que Google las trataba como duplicadas y no las indexaba.
+  // La canónica se define en cada página (o no hay, que es mucho menos malo
+  // que una equivocada).
   openGraph: {
     title: siteConfig.name,
     description: siteConfig.description,
@@ -122,16 +125,16 @@ export default function RootLayout({
         <meta name="theme-color" content="#3b82f6" />
         <meta name="msapplication-TileColor" content="#3b82f6" />
         
-        {/* SEO Meta Tags */}
-        <meta name="title" content="Mierdas que molan, regalos originales para pasarlo bien" />
-        <meta name="description" content="regalos originales para frikis, parejas, pasarlo bien, fiestas y mucho más. Entra ahora y encuentra tu regalo original favorito" />
-        <meta name="keywords" content="Regalos originales, regalos divertidos, regalos frikis, regalos para parejas, regalos originales para parejas, regalos para cumpleaños, regalos originales para casa" />
-        <meta name="robots" content="index, follow" />
-        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="language" content="Spanish" />
-        <meta name="revisit-after" content="1 days" />
-        <meta name="author" content="Deep code studio" />
-        
+        {/*
+          Aquí había meta tags de SEO escritos a mano (title, description,
+          keywords, robots, author...). Estaban HARDCODEADOS a los valores de la
+          portada y se emitían en TODAS las páginas, a la vez que el
+          `export const metadata` de arriba emitía los suyos. Resultado: cada
+          página servía dos <meta name="description"> —el de la portada primero—
+          y las descripciones propias de producto, blog y legales quedaban
+          tapadas. Ahora el `metadata` es la única fuente.
+        */}
+
         {/* Hreflang - Solo español por ahora, pero preparado para futuras versiones multiidioma */}
         {/* Si en el futuro se añaden más idiomas, descomentar y configurar:
         <link rel="alternate" hreflang="es" href="https://www.mierdasquemolan.com" />
