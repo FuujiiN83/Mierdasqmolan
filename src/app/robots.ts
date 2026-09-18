@@ -16,7 +16,10 @@ export default function robots(): MetadataRoute.Robots {
       disallow: [
         '/admin/',
         '/api/',
-        '/_next/',
+        // NO se bloquea /_next/: ahí viven el CSS y el JS que Google necesita
+        // para renderizar la página. Google recomienda explícitamente no
+        // bloquear esos recursos; si no los puede descargar, evalúa la página
+        // sin estilos ni layout (y perjudica la valoración móvil).
         '/private/',
         ...CRAWLER_GUESSED_PATHS,
       ],

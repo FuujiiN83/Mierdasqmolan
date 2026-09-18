@@ -6,7 +6,14 @@ describe('robots', () => {
 
   it('keeps the existing private paths disallowed', () => {
     expect(rules.allow).toBe('/');
-    expect(rules.disallow).toEqual(expect.arrayContaining(['/admin/', '/api/', '/_next/', '/private/']));
+    expect(rules.disallow).toEqual(expect.arrayContaining(['/admin/', '/api/', '/private/']));
+  });
+
+  it('NO bloquea /_next/, porque ahí están el CSS y el JS que Google necesita para renderizar', () => {
+    // Regresión: estaba en la lista. Bloquearlo impide a Googlebot descargar
+    // los recursos con los que renderiza la página.
+    expect(rules.disallow).not.toContain('/_next/');
+    expect(rules.disallow.some(p => p.startsWith('/_next'))).toBe(false);
   });
 
   it('disallows the URLs crawlers fabricate by evaluating template literals with null', () => {
