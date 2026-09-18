@@ -56,7 +56,10 @@ export function generateCategoryMetadata(
   categorySlug: string,
   productCount: number
 ): Metadata {
-  const title = `${categoryName} - ${productCount} productos | ${siteConfig.name}`;
+  // Sin la marca: el template del layout ya añade "| Mierdas que molan", y
+  // siteConfig.name es la versión larga ("Mierdas que molan - Regalos
+  // originales y mucho más"), así que el título acababa con la marca TRES veces.
+  const title = `${categoryName} - ${productCount} productos`;
   const description = `${categoryDescription}. Descubre ${productCount} productos en la categoría ${categoryName}.`;
   const url = `${siteConfig.url}/categoria/${categorySlug}`;
   
