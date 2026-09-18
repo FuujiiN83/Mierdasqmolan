@@ -1,4 +1,34 @@
 import { encodeLocalImageSrc } from '@/lib/image-src';
+import { isKnownCategoryValue } from '@/config/site';
+
+/**
+ * Normaliza y valida el campo `categories` de un producto.
+ *
+ * Sin esto, una errata en data/products.json ("Regalos originales para la
+ * casa", "Regalo para pasarlo bien") crea una categoría fantasma: el producto
+ * no sale en ninguna categoría real y su chip enlaza a una página que no
+ * existe. Llegaron a acumularse 9 cadenas distintas así. Ahora se avisa por
+ * consola y se descartan, en vez de propagarse en silencio.
+ */
+function validateCategories(item: any, index: number): string[] {
+  const crudas: unknown[] = Array.isArray(item.categories)
+    ? item.categories
+    : [item.category ?? ''];
+
+  const limpias = crudas
+    .filter((c): c is string => typeof c === 'string' && c.trim() !== '')
+    .map(c => c.trim());
+
+  const desconocidas = limpias.filter(c => !isKnownCategoryValue(c));
+  if (desconocidas.length > 0) {
+    console.error(
+      `Producto ${item.id ?? index}: categorías desconocidas ${JSON.stringify(desconocidas)}. ` +
+      `Añádelas a categoryConfig en src/config/site.ts o corrige data/products.json.`
+    );
+  }
+
+  return limpias.filter(isKnownCategoryValue);
+}
 
 export interface Product {
   id: string;
@@ -103,7 +133,7 @@ export function validateProducts(data: any[]): Product[] {
       image: encodeLocalImageSrc(String(item.image)),
       affiliateUrl: String(item.affiliateUrl),
       amazonUrl: item.amazonUrl ? String(item.amazonUrl) : undefined,
-      categories: Array.isArray(item.categories) ? item.categories : [item.category || 'general'],
+      categories: validateCategories(item, index),
       tags: Array.isArray(item.tags) ? item.tags : [],
       rating: item.rating ? Number(item.rating) : undefined,
       reviewCount: item.reviewCount ? Number(item.reviewCount) : undefined,

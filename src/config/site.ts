@@ -91,6 +91,39 @@ export const categoryConfig = {
 
 export type CategorySlug = keyof typeof categoryConfig;
 
+/** Todos los nombres canónicos de categoría, en un Set para búsquedas rápidas. */
+export const CATEGORY_NAMES: ReadonlySet<string> = new Set(
+  Object.values(categoryConfig).map(c => c.name)
+);
+
+/** ¿Es `name` el nombre canónico de alguna categoría? */
+export function isKnownCategoryName(name: string): boolean {
+  return CATEGORY_NAMES.has(name);
+}
+
+/**
+ * ¿Es un valor admisible del campo `categories` de un producto?
+ * Acepta los nombres canónicos y 'blog', que se etiqueta en minúscula porque
+ * los artículos viven en data/blog.json y no son productos.
+ */
+export function isKnownCategoryValue(value: string): boolean {
+  return CATEGORY_NAMES.has(value) || value === 'blog';
+}
+
+/**
+ * Slug de categoría a partir de su nombre canónico.
+ *
+ * Sustituye a los mapas manuales que había repartidos por `data.ts` y
+ * `ProductCard.tsx`: estaban incompletos (les faltaban "Halloween" y
+ * "Mierdas gamers") y se desincronizaban cada vez que cambiaba el catálogo.
+ * Si el nombre no se reconoce, se devuelve tal cual.
+ */
+export function categorySlugFromName(name: string): string {
+  const entrada = (Object.entries(categoryConfig) as [string, { name: string }][])
+    .find(([, config]) => config.name === name);
+  return entrada ? entrada[0] : name;
+}
+
 // Tipo para subcategorías
 export type SubcategoryConfig = {
   name: string;

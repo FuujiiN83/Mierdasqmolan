@@ -1,5 +1,5 @@
 import { Product, validateProducts, ProductFilters } from '@/types';
-import { categoryConfig, CategorySlug } from '@/config/site';
+import { categoryConfig, CategorySlug, categorySlugFromName } from '@/config/site';
 import { normalizeForSearch, safeUrl } from '@/lib/utils';
 import productsData from '../../data/products.json';
 
@@ -126,41 +126,20 @@ export function getProductBySlug(slug: string): Product | null {
  * Obtiene productos por categoría
  */
 export function getProductsByCategory(categorySlug: CategorySlug): Product[] {
-  // Mapear el slug de la categoría a los nombres en el JSON
-  const categoryNameMap: Record<string, string> = {
-    'regalos-originales-para-casa': 'Regalos originales para casa',
-    'regalos-frikis': 'Regalos frikis',
-    'regalos-wtf': 'Regalos WTF',
-    'regalos-para-todo-tipo-de-edades': 'Regalos para todo tipo de edades',
-    'regalos-para-pasarlo-bien': 'Regalos para pasarlo bien',
-    'regalos-para-cumpleanos': 'Regalos para cumpleaños',
-    'halloween': 'Halloween',
-    'regalos-originales-para-parejas': 'Regalos originales para parejas',
-    'blog': 'blog'
-  };
-  
-  const categoryName = categoryNameMap[categorySlug] || categorySlug;
-  
-  // Para Halloween, buscar tanto en categorías como en tags
-  if (categorySlug === 'halloween') {
-    const allProducts = getAllProducts();
-    return allProducts.filter(product => 
-      product.categories.includes('Halloween') || 
-      (product.tags && product.tags.some(tag => tag.toLowerCase() === 'halloween'))
-    );
+  // El blog vive en data/blog.json y sus productos se etiquetan en minúscula
+  if (categorySlug === 'blog') {
+    return getFilteredProducts({ categories: ['blog'], includeBlog: true });
   }
-  
-  // Para regalos originales para parejas, buscar ambas versiones (mayúsculas y minúsculas)
-  if (categorySlug === 'regalos-originales-para-parejas') {
-    return getFilteredProducts({ 
-      categories: ['regalos originales para parejas'],
-      includeBlog: false
-    });
-  }
-  
-  return getFilteredProducts({ 
-    categories: [categoryName],
-    includeBlog: categorySlug === 'blog'
+
+  const config = categoryConfig[categorySlug];
+  if (!config) return [];
+
+  // El nombre canónico sale de categoryConfig, no de un mapa paralelo.
+  // Halloween se resuelve solo: getFilteredProducts ya sabe que esa categoría
+  // también se busca por etiqueta.
+  return getFilteredProducts({
+    categories: [config.name],
+    includeBlog: false,
   });
 }
 
@@ -172,26 +151,20 @@ export function getFeaturedProducts(): Product[] {
 }
 
 /**
- * Mapea categorías del JSON a slugs de configuración
+ * Mapea el nombre de una categoría del JSON a su slug de configuración.
+ * Delega en la config para no volver a tener un mapa manual desincronizado.
  */
 export function mapCategoryToSlug(category: string): string {
-  const categoryMap: Record<string, string> = {
-    'Regalos originales para casa': 'regalos-originales-para-casa',
-    'Regalos frikis': 'regalos-frikis',
-    'Regalos WTF': 'regalos-wtf',
-    'Regalos para todo tipo de edades': 'regalos-para-todo-tipo-de-edades',
-    'Regalos para pasarlo bien': 'regalos-para-pasarlo-bien',
-    'Regalos para cumpleaños': 'regalos-para-cumpleanos',
-    'Regalos originales para parejas': 'regalos-originales-para-parejas',
-    'regalos originales para parejas': 'regalos-originales-para-parejas',
-    'blog': 'blog'
-  };
-  
-  return categoryMap[category] || category;
+  return categorySlugFromName(category);
 }
 
 /**
- * Obtiene categorías disponibles con conteo de productos
+ * Obtiene categorías disponibles con conteo de productos.
+ *
+ * El conteo se calcula con la MISMA función que sirve la página de la
+ * categoría. Antes se contaba por un lado (mapa manual) y se listaba por otro,
+ * así que el menú anunciaba números que la página luego no cumplía: llegó a
+ * haber 8 categorías descuadradas a la vez (hasta 36 productos de diferencia).
  */
 export function getAvailableCategories(): Array<{
   slug: CategorySlug;
@@ -199,20 +172,14 @@ export function getAvailableCategories(): Array<{
   description: string;
   count: number;
 }> {
-  const products = getAllProducts();
-  
-  return Object.entries(categoryConfig).map(([slug, config]) => {
-    const count = products.filter(product =>
-      product.categories.some(cat => mapCategoryToSlug(cat) === slug)
-    ).length;
-    
-    return {
-      slug: slug as CategorySlug,
+  return (Object.entries(categoryConfig) as [CategorySlug, { name: string; description: string }][])
+    .map(([slug, config]) => ({
+      slug,
       name: config.name,
       description: config.description,
-      count
-    };
-  }).filter(category => category.count > 0);
+      count: getProductsByCategory(slug).length,
+    }))
+    .filter(category => category.count > 0);
 }
 
 /**

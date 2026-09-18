@@ -6,7 +6,7 @@ import { OptimizedImage } from './OptimizedImage';
 import { Product } from '@/types';
 import { formatPrice, formatRelativeDate, markdownToHtml, getDomainFromUrl } from '@/lib/utils';
 import { generateAffiliateUrl } from '@/lib/data';
-import { categoryConfig } from '@/config/site';
+import { categoryConfig, categorySlugFromName } from '@/config/site';
 
 interface ProductCardProps {
   product: Product;
@@ -137,23 +137,11 @@ export const ProductCard = memo(function ProductCard({
               {/* Categorías */}
               <div className="flex flex-wrap gap-1">
                 {product.categories.slice(0, 3).map((category) => {
-                  // Mapear nombre de categoría a slug
-                  const categorySlugMap: Record<string, string> = {
-                    'Regalos originales para casa': 'regalos-originales-para-casa',
-                    'Regalos frikis': 'regalos-frikis',
-                    'Regalos WTF': 'regalos-wtf',
-                    'Regalos para todo tipo de edades': 'regalos-para-todo-tipo-de-edades',
-                    'Regalos para pasarlo bien': 'regalos-para-pasarlo-bien',
-                    'Regalos para cumpleaños': 'regalos-para-cumpleanos',
-                    'Regalos originales para parejas': 'regalos-originales-para-parejas',
-                    'regalos originales para parejas': 'regalos-originales-para-parejas',
-                    'regalos para pasarlo bien': 'regalos-para-pasarlo-bien',
-                    'regalos para cumpleaños': 'regalos-para-cumpleanos',
-                    'blog': 'blog'
-                  };
-                  
-                  const categorySlug = categorySlugMap[category] || category;
-                  
+                  // El slug sale de la config. Antes había aquí otro mapa manual
+                  // que, igual que el de data.ts, no conocía "Halloween" ni
+                  // "Mierdas gamers" y generaba enlaces a categorías inexistentes.
+                  const categorySlug = categorySlugFromName(category);
+
                   return (
                     <Link
                       key={category}
