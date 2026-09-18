@@ -96,8 +96,18 @@ export const ProductCard = memo(function ProductCard({
             {/* Título y precio */}
             <div className="flex-1">
               <div className="flex justify-between items-start gap-3 mb-2">
+                {/* Título como enlace real a la ficha.
+                    Antes no existía NINGÚN enlace interno a /producto/<slug>:
+                    la tarjeta navegaba con onClick + window.location.href, que
+                    los rastreadores no pueden seguir, así que las 420 fichas
+                    quedaban huérfanas y solo se descubrían por el sitemap. */}
                 <h2 className="text-lg sm:text-xl font-bold font-potta-one text-product-orange line-clamp-2 leading-tight">
-                  {product.title}
+                  <Link
+                    href={`/producto/${product.slug}`}
+                    className="hover:underline"
+                  >
+                    {product.title}
+                  </Link>
                 </h2>
                 {product.price && (
                   <div className="flex-shrink-0 text-right hidden">

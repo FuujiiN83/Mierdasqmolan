@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { OptimizedImage } from './OptimizedImage';
 import { Product } from '@/types';
 import { sanitizeHtml } from '@/lib/utils';
@@ -44,9 +45,18 @@ export function BlogCard({ product, isExpanded, onToggleExpand, priority = false
 
       {/* Contenido */}
       <div className="p-6">
-        {/* Título */}
+        {/* Título: enlace real al artículo.
+            Antes era un <h2> suelto y no había ni un solo enlace interno a
+            /blog/<slug>, así que los artículos solo se descubrían por el
+            sitemap. Un <Link> real también permite abrir en pestaña nueva,
+            copiar la dirección y navegar con teclado. */}
         <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
-          {product.title}
+          <Link
+            href={`/blog/${product.slug}`}
+            className="hover:text-primary-600 transition-colors"
+          >
+            {product.title}
+          </Link>
         </h2>
 
         {/* Descripción corta */}
