@@ -3,27 +3,31 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { CategorySlug } from '@/config/site';
-import { getAvailableCategories } from '@/lib/data';
+import { CategoryOption, CategorySlug } from '@/config/site';
 
 interface CategoryMenuProps {
+  /**
+   * Categorías ya calculadas en el servidor.
+   *
+   * Antes este componente llamaba a getAvailableCategories() por su cuenta, lo
+   * que obligaba a importar `lib/data.ts` —y con él `data/products.json`, de
+   * 1,9 MB— dentro del bundle de cliente. Como el menú vive en el layout, ese
+   * JSON se lo descargaba TODAS las páginas. Ahora llega como prop.
+   */
+  categories: CategoryOption[];
   className?: string;
   variant?: 'horizontal' | 'vertical';
   showCounts?: boolean;
 }
 
-export function CategoryMenu({ 
-  className = '', 
+export function CategoryMenu({
+  categories,
+  className = '',
   variant = 'horizontal',
-  showCounts = false 
+  showCounts = false
 }: CategoryMenuProps) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-
-  // getAvailableCategories() es síncrona y determinista (sale de un JSON
-  // estático), así que se calcula en el render. Antes se hacía en un useEffect
-  // y el menú llegaba al HTML sin las categorías: aparecían solo al hidratar.
-  const categories = getAvailableCategories();
 
   const isActiveCategory = (slug: string) => {
     return pathname === `/categoria/${slug}`;
@@ -223,29 +227,5 @@ export function CategoryMenu({
   );
 }
 
-// Chips de categorías para la home
-export function CategoryChips({ className = '' }: { className?: string }) {
-  // Igual que en CategoryMenu: se calcula en el render para que los chips
-  // salgan en el HTML servido y no solo tras hidratar. Antes además ordenaba
-  // con .sort() directamente sobre el array que devuelve getAvailableCategories().
-  const categories = [...getAvailableCategories()]
-    .sort((a, b) => b.count - a.count)
-    .slice(0, 6);
-
-  return (
-    <div className={`flex flex-wrap gap-2 ${className}`}>
-      {categories.map((category) => (
-        <Link
-          key={category.slug}
-          href={`/categoria/${category.slug}`}
-          className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium font-potta-one bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900 hover:text-primary-700 dark:hover:text-primary-300 hover:border-primary-200 dark:hover:border-primary-700 transition-colors"
-        >
-          {category.name}
-          <span className="ml-1.5 text-xs text-gray-500">
-            {category.count}
-          </span>
-        </Link>
-      ))}
-    </div>
-  );
-}
+// Aquí vivía `CategoryChips`, los chips de categorías para la home. Se eliminó
+// porque era código muerto: `HomeContent` lo importaba pero nunca lo renderizaba.

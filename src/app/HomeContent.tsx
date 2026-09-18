@@ -4,12 +4,20 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ProductCard } from '@/components/ProductCard';
-import { CategoryChips } from '@/components/CategoryMenu';
 import { AdSlot, useInlineAds } from '@/components/AdSlot';
 import { Pagination, ResultsInfo } from '@/components/Pagination';
-import { getFilteredProducts, getFeaturedProducts, clearProductsCache } from '@/lib/data';
 import { Product } from '@/types';
 import { siteConfig } from '@/config/site';
+
+/**
+ * El catálogo se carga en diferido.
+ *
+ * `lib/data.ts` importa `data/products.json` (1,9 MB). La portada ya recibe del
+ * servidor los productos de la primera página, así que ese JSON solo hace falta
+ * cuando el usuario pagina o busca. Con un import estático se lo descargaba
+ * siempre nada más entrar.
+ */
+const cargarCatalogo = () => import('@/lib/data');
 
 interface HomeContentProps {
   /** Productos de la primera página, ya calculados en el servidor. */
@@ -64,9 +72,11 @@ export default function HomeContent({
   const loadProducts = async () => {
     setLoading(true);
     try {
-      // Limpiar cache para asegurar datos actualizados
-      clearProductsCache();
-      
+      // `clearProductsCache()` se llamaba aquí en cada carga. Era inútil (los
+      // datos son un JSON estático, el cache del módulo no envejece) y costoso:
+      // obligaba a revalidar los 420 productos cada vez.
+      const { getFilteredProducts, getFeaturedProducts } = await cargarCatalogo();
+
       const filters: any = {
         search: searchQuery,
         sortBy: 'newest',

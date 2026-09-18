@@ -6,9 +6,9 @@ import { SearchBar, CompactSearchBar } from './SearchBar';
 import { CategoryMenu } from './CategoryMenu';
 import { SocialIcons } from './SocialIcons';
 import { ThemeToggle } from './ThemeToggle';
-import { siteConfig } from '@/config/site';
+import { siteConfig, CategoryOption } from '@/config/site';
 
-export function Header() {
+export function Header({ categories }: { categories: CategoryOption[] }) {
   return (
     <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 shadow-sm">
       {/* Top bar */}
@@ -72,7 +72,7 @@ export function Header() {
       <div className="border-t border-gray-100 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="py-2">
-            <CategoryMenu />
+            <CategoryMenu categories={categories} />
           </div>
         </div>
       </div>

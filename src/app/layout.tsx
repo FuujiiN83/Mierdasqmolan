@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, Potta_One, Preahvihear } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/Header';
+import { getAvailableCategories } from '@/lib/data';
 import { Footer } from '@/components/Footer';
 import { CookieConsentBanner } from '@/components/CookieConsentBanner';
 import Analytics from '@/components/Analytics';
@@ -203,7 +204,13 @@ export default function RootLayout({
       </head>
       <body className={`${preahvihear.className} ${pottaOne.variable} ${preahvihear.variable} antialiased bg-gray-50 dark:bg-gray-900`}>
         <div className="min-h-screen flex flex-col">
-          <Header />
+          {/*
+            Las categorías se calculan aquí, en el servidor, y se pasan al
+            Header. Antes el menú las pedía por su cuenta desde un componente de
+            cliente, y eso metía `data/products.json` (1,9 MB) en el bundle de
+            cliente de TODAS las páginas.
+          */}
+          <Header categories={getAvailableCategories()} />
           <main className="flex-1">
             {children}
           </main>

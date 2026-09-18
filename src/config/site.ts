@@ -91,6 +91,20 @@ export const categoryConfig = {
 
 export type CategorySlug = keyof typeof categoryConfig;
 
+/**
+ * Categoría lista para pintar en un menú (con su número de productos).
+ *
+ * El tipo vive aquí, en la config pura, y no en `lib/data.ts`, para que los
+ * componentes de cliente puedan tiparlo sin importar el módulo que carga el
+ * catálogo de 1,9 MB.
+ */
+export interface CategoryOption {
+  slug: CategorySlug;
+  name: string;
+  description: string;
+  count: number;
+}
+
 /** Todos los nombres canónicos de categoría, en un Set para búsquedas rápidas. */
 export const CATEGORY_NAMES: ReadonlySet<string> = new Set(
   Object.values(categoryConfig).map(c => c.name)

@@ -6,12 +6,7 @@ import { ProductCard } from '@/components/ProductCard';
 import { AdSlot, useInlineAds } from '@/components/AdSlot';
 import { Pagination, ResultsInfo } from '@/components/Pagination';
 import { Product } from '@/types';
-import { siteConfig, CategorySlug } from '@/config/site';
-
-interface CategoryOption {
-  slug: CategorySlug;
-  name: string;
-}
+import { siteConfig, CategoryOption } from '@/config/site';
 
 interface FeaturedClientProps {
   /** Todos los productos destacados, ya calculados en el servidor. */

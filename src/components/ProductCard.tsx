@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { OptimizedImage } from './OptimizedImage';
 import { Product } from '@/types';
 import { formatPrice, formatRelativeDate, markdownToHtml, getDomainFromUrl } from '@/lib/utils';
-import { generateAffiliateUrl } from '@/lib/data';
+import { generateAffiliateUrl } from '@/lib/affiliate';
 import { categoryConfig, categorySlugFromName } from '@/config/site';
 
 interface ProductCardProps {

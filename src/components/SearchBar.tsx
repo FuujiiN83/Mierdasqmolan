@@ -4,8 +4,19 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { debounce } from '@/lib/utils';
-import { searchProducts, generateAffiliateUrl } from '@/lib/data';
+import { generateAffiliateUrl } from '@/lib/affiliate';
 import { Product } from '@/types';
+
+/**
+ * El módulo de búsqueda se carga en diferido.
+ *
+ * `lib/data.ts` importa `data/products.json`, que pesa 1,9 MB. Con un import
+ * estático, la barra de búsqueda —que vive en el header, o sea en TODAS las
+ * páginas— arrastraba el catálogo entero a cada visita. Con `import()` se
+ * descarga la primera vez que alguien busca de verdad, y el navegador lo
+ * cachea para las siguientes.
+ */
+const cargarBuscador = () => import('@/lib/data');
 
 interface SearchBarProps {
   className?: string;
@@ -36,8 +47,8 @@ export function SearchBar({
 
     setIsLoading(true);
     try {
-      const searchResults = searchProducts(searchQuery, 5);
-      setResults(searchResults);
+      const { searchProducts } = await cargarBuscador();
+      setResults(searchProducts(searchQuery, 5));
     } catch (error) {
       console.error('Error searching products:', error);
       setResults([]);

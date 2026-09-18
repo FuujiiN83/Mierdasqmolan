@@ -1,5 +1,5 @@
 import { Product, validateProducts, ProductFilters } from '@/types';
-import { categoryConfig, CategorySlug, categorySlugFromName } from '@/config/site';
+import { categoryConfig, CategorySlug, CategoryOption, categorySlugFromName } from '@/config/site';
 import { normalizeForSearch, safeUrl } from '@/lib/utils';
 import productsData from '../../data/products.json';
 
@@ -166,12 +166,7 @@ export function mapCategoryToSlug(category: string): string {
  * así que el menú anunciaba números que la página luego no cumplía: llegó a
  * haber 8 categorías descuadradas a la vez (hasta 36 productos de diferencia).
  */
-export function getAvailableCategories(): Array<{
-  slug: CategorySlug;
-  name: string;
-  description: string;
-  count: number;
-}> {
+export function getAvailableCategories(): CategoryOption[] {
   return (Object.entries(categoryConfig) as [CategorySlug, { name: string; description: string }][])
     .map(([slug, config]) => ({
       slug,
@@ -238,23 +233,4 @@ export function getRelatedProducts(product: Product, limit = 4): Product[] {
     .map(item => item.product);
 }
 
-/**
- * Genera URL de afiliado con parámetros UTM
- */
-export function generateAffiliateUrl(
-  product: Product,
-  source = 'mqm-web',
-  medium = 'affiliate'
-): string {
-  try {
-    const url = new URL(safeUrl(product.affiliateUrl, ''));
-    url.searchParams.set('utm_source', source);
-    url.searchParams.set('utm_medium', medium);
-    url.searchParams.set('utm_campaign', product.slug);
-    url.searchParams.set('utm_content', product.id);
-    return url.toString();
-  } catch {
-    // URL ausente o con esquema no permitido: no se enlaza a ningún sitio
-    return '#';
-  }
-}
+
