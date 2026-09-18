@@ -1,5 +1,7 @@
 import { Suspense } from 'react';
 import HomeContent from './HomeContent';
+import { getFilteredProducts, getFeaturedProducts } from '@/lib/data';
+import { siteConfig } from '@/config/site';
 
 // Loading component para Suspense
 function LoadingHome() {
@@ -24,9 +26,26 @@ function LoadingHome() {
 }
 
 export default function HomePage() {
+  // Los datos de la primera página se calculan aquí, en el servidor, para que
+  // la portada llegue con productos y enlaces reales en el HTML. Antes se
+  // cargaban en un useEffect del cliente y el HTML servido era un esqueleto
+  // vacío: sin contenido y sin un solo enlace interno a las fichas.
+  const { productsPerPage } = siteConfig.pagination;
+  const initialProducts = getFilteredProducts({
+    sortBy: 'newest',
+    limit: productsPerPage,
+    offset: 0,
+  });
+  const initialTotalProducts = getFilteredProducts({ sortBy: 'newest' }).length;
+  const initialFeaturedProducts = getFeaturedProducts();
+
   return (
     <Suspense fallback={<LoadingHome />}>
-      <HomeContent />
+      <HomeContent
+        initialProducts={initialProducts}
+        initialTotalProducts={initialTotalProducts}
+        initialFeaturedProducts={initialFeaturedProducts}
+      />
     </Suspense>
   );
 }

@@ -4,7 +4,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { AdSlot } from './AdSlot';
 import { SocialIcons } from './SocialIcons';
-import { siteConfig } from '@/config/site';
+import { siteConfig, categoryConfig } from '@/config/site';
+import { requestOpenConsentSettings } from '@/lib/consent';
+
+// Categorías reales para el footer. Antes había tres escritas a mano
+// ('viral', 'random', 'ofertas') que no existen en categoryConfig, así que
+// sus enlaces daban 404 desde el pie de TODAS las páginas del sitio.
+const FOOTER_CATEGORIES = (Object.entries(categoryConfig) as [string, { name: string }][])
+  .filter(([slug]) => slug !== 'blog')
+  .slice(0, 4);
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -68,21 +76,16 @@ export function Footer() {
                   Destacados
                 </Link>
               </li>
-              <li>
-                <Link href="/categoria/viral" className="text-gray-600 hover:text-primary-600 transition-colors">
-                  Viral
-                </Link>
-              </li>
-              <li>
-                <Link href="/categoria/random" className="text-gray-600 hover:text-primary-600 transition-colors">
-                  Random
-                </Link>
-              </li>
-              <li>
-                <Link href="/categoria/ofertas" className="text-gray-600 hover:text-primary-600 transition-colors">
-                  Ofertas
-                </Link>
-              </li>
+              {FOOTER_CATEGORIES.map(([slug, categoria]) => (
+                <li key={slug}>
+                  <Link
+                    href={`/categoria/${slug}`}
+                    className="text-gray-600 hover:text-primary-600 transition-colors"
+                  >
+                    {categoria.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -111,12 +114,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => {
-                    if (typeof window !== 'undefined' && (window as any).showCookieSettings) {
-                      (window as any).showCookieSettings();
-                    }
-                  }}
+                <button
+                  onClick={requestOpenConsentSettings}
                   className="text-gray-600 hover:text-primary-600 transition-colors text-left w-full"
                 >
                   ⚙️ Configuración de cookies

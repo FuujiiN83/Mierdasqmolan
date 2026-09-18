@@ -5,6 +5,7 @@ import Link from 'next/link';
 import {
   readConsent,
   saveConsent,
+  onOpenConsentSettings,
   ACCEPT_ALL,
   DENY_ALL,
   type CookieSettings,
@@ -26,6 +27,16 @@ export function CookieConsentBanner() {
 
     setCookieSettings(saved);
     applyCookieSettings(saved);
+  }, []);
+
+  // El botón "Configuración de cookies" del footer pide reabrir el panel.
+  // Hace falta para poder retirar el consentimiento, que el RGPD exige tan
+  // fácil como darlo.
+  useEffect(() => {
+    return onOpenConsentSettings(() => {
+      setShowBanner(true);
+      setShowSettings(true);
+    });
   }, []);
 
   const applyCookieSettings = (settings: CookieSettings) => {

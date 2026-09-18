@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ProductCard } from '@/components/ProductCard';
@@ -11,14 +11,30 @@ import { getFilteredProducts, getFeaturedProducts, clearProductsCache } from '@/
 import { Product } from '@/types';
 import { siteConfig } from '@/config/site';
 
-export default function HomeContent() {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(true);
+interface HomeContentProps {
+  /** Productos de la primera página, ya calculados en el servidor. */
+  initialProducts: Product[];
+  initialTotalProducts: number;
+  initialFeaturedProducts: Product[];
+}
+
+export default function HomeContent({
+  initialProducts,
+  initialTotalProducts,
+  initialFeaturedProducts,
+}: HomeContentProps) {
+  const [products, setProducts] = useState<Product[]>(initialProducts);
+  const [featuredProducts, setFeaturedProducts] = useState<Product[]>(initialFeaturedProducts);
+  const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
-  const [totalProducts, setTotalProducts] = useState(0);
+  const [totalProducts, setTotalProducts] = useState(initialTotalProducts);
   const [searchQuery, setSearchQuery] = useState('');
+  // El primer render ya viene con datos del servidor, así que no hay que
+  // volver a pedirlos. Antes los productos se cargaban solo en un useEffect y
+  // la portada se servía como un esqueleto vacío: el HTML no tenía ni un
+  // producto ni un solo enlace a las fichas.
+  const primerRender = useRef(true);
 
   const { pagination } = siteConfig;
   const productsPerPage = pagination.productsPerPage;
@@ -38,6 +54,10 @@ export default function HomeContent() {
 
 
   useEffect(() => {
+    if (primerRender.current) {
+      primerRender.current = false;
+      return;
+    }
     loadProducts();
   }, [searchQuery, currentPage]);
 

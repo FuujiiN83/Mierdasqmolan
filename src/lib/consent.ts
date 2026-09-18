@@ -16,6 +16,7 @@ export interface CookieSettings {
 
 export const CONSENT_STORAGE_KEY = 'cookie-consent';
 export const CONSENT_CHANGED_EVENT = 'mqm:consent-changed';
+export const CONSENT_OPEN_SETTINGS_EVENT = 'mqm:open-cookie-settings';
 
 export const DENY_ALL: CookieSettings = {
   necessary: true,
@@ -78,4 +79,25 @@ export function onConsentChange(
 
   window.addEventListener(CONSENT_CHANGED_EVENT, handler);
   return () => window.removeEventListener(CONSENT_CHANGED_EVENT, handler);
+}
+
+/**
+ * Pide que se vuelva a abrir el panel de configuración de cookies.
+ *
+ * El RGPD exige que retirar el consentimiento sea tan fácil como darlo, así que
+ * tiene que haber una forma de reabrir el panel. El botón del footer llamaba a
+ * `window.showCookieSettings`, una función que no existía en ningún sitio: no
+ * hacía absolutamente nada.
+ */
+export function requestOpenConsentSettings(): void {
+  if (typeof window === 'undefined') return;
+  window.dispatchEvent(new Event(CONSENT_OPEN_SETTINGS_EVENT));
+}
+
+/** Se suscribe a las peticiones de abrir el panel. Devuelve la función para cancelar. */
+export function onOpenConsentSettings(callback: () => void): () => void {
+  if (typeof window === 'undefined') return () => {};
+
+  window.addEventListener(CONSENT_OPEN_SETTINGS_EVENT, callback);
+  return () => window.removeEventListener(CONSENT_OPEN_SETTINGS_EVENT, callback);
 }
