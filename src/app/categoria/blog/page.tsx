@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { encodeLocalImageSrc } from '@/lib/image-src';
@@ -35,38 +35,15 @@ function formatDate(dateString: string) {
 }
 
 export default function BlogPage() {
-  const [posts, setPosts] = useState<BlogPost[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Filtrar solo los posts publicados con categoría "blog"
-    const publishedPosts = blogData.filter((post: BlogPost) => 
-      post.isPublished && post.category === 'blog'
-    );
-    setPosts(publishedPosts);
-    setLoading(false);
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div className="space-y-6">
-          {[...Array(3)].map((_, i) => (
-            <div key={i} className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-              <div className="flex flex-col sm:flex-row">
-                <div className="w-full sm:w-48 h-48 skeleton-image"></div>
-                <div className="flex-1 p-6">
-                  <div className="skeleton-title"></div>
-                  <div className="skeleton-text"></div>
-                  <div className="skeleton-text w-3/4"></div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  }
+  // blogData es un import estático, así que está disponible también en el
+  // servidor: filtrando aquí, los artículos salen en el HTML prerenderizado.
+  // Antes se filtraban en un useEffect, así que lo que se servía era el
+  // esqueleto de carga y la página no tenía ni un solo enlace a los artículos.
+  const [posts] = useState<BlogPost[]>(() =>
+    (blogData as BlogPost[]).filter(
+      (post) => post.isPublished && post.category === 'blog'
+    )
+  );
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -74,9 +51,10 @@ export default function BlogPage() {
       <div className="mb-8">
         <div className="bg-gradient-to-r from-primary-50 to-primary-100 rounded-2xl p-6 sm:p-8">
           <div className="max-w-3xl">
-            <h2 className="text-3xl sm:text-4xl font-bold font-potta-one text-header-purple mb-4">
+            {/* h1: la página no tenía ninguno (el título era un h2) */}
+            <h1 className="text-3xl sm:text-4xl font-bold font-potta-one text-header-purple mb-4">
               Blog MQM Web
-            </h2>
+            </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 font-preahvihear mb-6">
               Descubre historias, curiosidades y contenido exclusivo sobre los productos más originales y divertidos.
             </p>

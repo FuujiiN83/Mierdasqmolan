@@ -1,6 +1,15 @@
 import { MetadataRoute } from 'next';
 import { getAllProducts, getAvailableCategories } from '@/lib/data';
 import { siteConfig } from '@/config/site';
+import blogData from '@/data/blog.json';
+
+interface BlogPostSitemap {
+  slug: string;
+  publishedAt?: string;
+  updatedAt?: string;
+  isPublished?: boolean;
+  category?: string;
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url;
@@ -21,7 +30,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/blog`,
+      // Antes ponía `${baseUrl}/blog`, que NO existe: esa ruta devuelve 404.
+      // El listado real del blog está en /categoria/blog.
+      url: `${baseUrl}/categoria/blog`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
@@ -70,7 +81,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...productPages, ...categoryPages];
+  // Artículos del blog.
+  // Faltaban por completo: los 7 artículos existen y responden 200, pero no
+  // estaban en el sitemap y tampoco tenían ningún enlace interno, así que
+  // estaban totalmente huérfanos.
+  const blogPages = (blogData as BlogPostSitemap[])
+    .filter((post) => post.isPublished !== false && Boolean(post.slug))
+    .map((post) => ({
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: new Date(post.updatedAt || post.publishedAt || currentDate),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    }));
+
+  return [...staticPages, ...productPages, ...categoryPages, ...blogPages];
 }
 
 

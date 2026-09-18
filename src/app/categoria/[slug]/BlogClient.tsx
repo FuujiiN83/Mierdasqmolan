@@ -37,21 +37,20 @@ interface BlogClientProps {
 export function BlogClient({ categorySlug, initialProducts }: BlogClientProps) {
   const [currentPage, setCurrentPage] = useState(1);
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
-  const [posts, setPosts] = useState<BlogPost[]>([]);
-  const [loading, setLoading] = useState(true);
-  
+  // blogData es un import estático, así que está disponible también en el
+  // servidor: filtrando aquí, los artículos salen en el HTML servido. Antes se
+  // filtraban en un useEffect, así que el HTML llegaba vacío y el listado del
+  // blog no tenía ni un enlace a los artículos.
+  const [posts] = useState<BlogPost[]>(() =>
+    (blogData as unknown as BlogPost[]).filter(
+      (post) => post.isPublished && post.category === 'blog'
+    )
+  );
+  const loading = false;
+
   const category = categoryConfig[categorySlug];
   const { pagination } = siteConfig;
   const productsPerPage = pagination.productsPerPage;
-
-  useEffect(() => {
-    // Filtrar solo los posts publicados con categoría "blog"
-    const publishedPosts = blogData.filter((post: BlogPost) => 
-      post.isPublished && post.category === 'blog'
-    );
-    setPosts(publishedPosts);
-    setLoading(false);
-  }, []);
 
   const totalProducts = posts.length;
 
