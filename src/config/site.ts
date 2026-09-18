@@ -124,32 +124,11 @@ export function categorySlugFromName(name: string): string {
   return entrada ? entrada[0] : name;
 }
 
-/**
- * Tipo para subcategorías.
- *
- * OJO: la funcionalidad está DORMIDA. Ninguna categoría de `categoryConfig`
- * declara `subcategories`, así que hoy no se renderiza ningún submenú (el
- * código de CategoryMenu está listo, pero nunca se ejecuta).
- *
- * Y hay una trampa si se activa: `CategoryMenu` genera los enlaces como
- * `/categoria/<clave>`, así que cada clave tendría que ser TAMBIÉN un slug
- * presente en `categoryConfig` (con su propia página). Si no, el submenú
- * enlazaría a rutas que no existen. Antes de rellenar esto, decide si las
- * subcategorías son categorías normales con jerarquía o solo agrupaciones
- * visuales dentro de una categoría.
- */
-export type SubcategoryConfig = {
-  name: string;
-  description: string;
-  color: string;
-  icon: string;
-};
+// Aquí vivían `SubcategoryConfig` y `CategoryConfigWithSubcategories`, junto
+// con el soporte de submenús en CategoryMenu. Se eliminaron: ninguna categoría
+// llegó a declarar `subcategories`, así que ese código no se ejecutó nunca, y
+// tal como estaba generaba enlaces a `/categoria/<clave>` que habrían dado 404
+// salvo que cada clave fuese también una categoría real. Si algún día se
+// quieren subcategorías, hay que decidir antes si son categorías con jerarquía
+// o solo agrupaciones visuales; está en el historial de git.
 
-// Tipo para categorías con subcategorías opcionales
-export type CategoryConfigWithSubcategories = {
-  name: string;
-  description: string;
-  color: string;
-  icon: string;
-  subcategories?: Record<string, SubcategoryConfig>;
-};

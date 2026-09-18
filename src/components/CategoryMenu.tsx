@@ -1,9 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { categoryConfig, CategorySlug, CategoryConfigWithSubcategories } from '@/config/site';
+import { CategorySlug } from '@/config/site';
 import { getAvailableCategories } from '@/lib/data';
 
 interface CategoryMenuProps {
@@ -19,18 +19,11 @@ export function CategoryMenu({
 }: CategoryMenuProps) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
-  const [categories, setCategories] = useState<Array<{
-    slug: CategorySlug;
-    name: string;
-    description: string;
-    count: number;
-  }>>([]);
 
-  useEffect(() => {
-    const availableCategories = getAvailableCategories();
-    setCategories(availableCategories);
-  }, []);
+  // getAvailableCategories() es síncrona y determinista (sale de un JSON
+  // estático), así que se calcula en el render. Antes se hacía en un useEffect
+  // y el menú llegaba al HTML sin las categorías: aparecían solo al hidratar.
+  const categories = getAvailableCategories();
 
   const isActiveCategory = (slug: string) => {
     return pathname === `/categoria/${slug}`;
@@ -51,33 +44,26 @@ export function CategoryMenu({
     count: 0
   };
 
-  // NOTA: aquí había un bloque que intentaba fijar la categoría "hogar" arriba
-  // del menú, pero comparaba contra el slug 'hogar', que no existe en
-  // categoryConfig (la real es 'regalos-originales-para-casa'). El resultado era
-  // código muerto que además rompía el type-check. Se ha eliminado sin cambiar
-  // lo que ve el usuario: ese bloque nunca llegaba a renderizarse.
-  // Si se quiere fijar una categoría arriba, hay que hacerlo con su slug real.
-
-  // Tipo explícito: antes la forma del array se infería de los elementos y
-  // acceder a `hasSubcategories` daba error de tipos según qué rama.
+  // Este menú construye los enlaces como `/categoria/<slug>`, así que cualquier
+  // entrada que se añada tiene que ser un slug real de categoryConfig. Aquí
+  // hubo dos bloques que no lo eran (una categoría "hogar" inexistente y unos
+  // submenús que nunca se activaron) y generaban enlaces a rutas que no existen.
   interface MenuItem {
     href: string;
     label: string;
     isActive: boolean;
     description?: string;
-    hasSubcategories: boolean;
   }
 
   const menuItems: MenuItem[] = [
-    { href: '/', label: 'Inicio', isActive: isHomePage, hasSubcategories: false },
-    { href: '/destacados', label: 'Destacados', isActive: isFeaturedPage, hasSubcategories: false },
+    { href: '/', label: 'Inicio', isActive: isHomePage },
+    { href: '/destacados', label: 'Destacados', isActive: isFeaturedPage },
     // Blog siempre visible
     {
       href: `/categoria/${blogCategoryForMenu.slug}`,
       label: `${blogCategoryForMenu.name}${showCounts ? ` (${blogCategoryForMenu.count})` : ''}`,
       isActive: isActiveCategory(blogCategoryForMenu.slug),
       description: blogCategoryForMenu.description,
-      hasSubcategories: false
     },
     // Resto de categorías (máximo 5 para que el menú no se desborde)
     ...otherCategories.slice(0, 5).map(category => ({
@@ -85,19 +71,8 @@ export function CategoryMenu({
       label: `${category.name}${showCounts ? ` (${category.count})` : ''}`,
       isActive: isActiveCategory(category.slug),
       description: category.description,
-      hasSubcategories: false
     }))
   ];
-
-  const getSubcategories = (categorySlug: string) => {
-    const category = categoryConfig[categorySlug as keyof typeof categoryConfig] as CategoryConfigWithSubcategories;
-    return category?.subcategories || {};
-  };
-
-  // Las llamadas a getSubcategories() tenían 'hogar' hardcodeado; ahora se
-  // derivan del propio elemento del menú, para que funcionen con cualquier
-  // categoría que algún día declare subcategorías.
-  const subcategoriesOf = (href: string) => getSubcategories(href.replace('/categoria/', ''));
 
   if (variant === 'vertical') {
     return (
@@ -113,24 +88,10 @@ export function CategoryMenu({
                   : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800'
                 }
               `}
-              title={'description' in item ? item.description : undefined}
+              title={item.description}
             >
               {item.label}
             </Link>
-            {/* Subcategorías para versión vertical */}
-            {item.hasSubcategories && (
-              <div className="ml-4 space-y-1">
-                {Object.entries(subcategoriesOf(item.href)).map(([subSlug, subCategory]) => (
-                  <Link
-                    key={`/categoria/${subSlug}`}
-                    href={`/categoria/${subSlug}`}
-                    className="block px-3 py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 rounded transition-colors"
-                  >
-                    {subCategory.name}
-                  </Link>
-                ))}
-              </div>
-            )}
           </div>
         ))}
       </nav>
@@ -152,42 +113,10 @@ export function CategoryMenu({
                   : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800'
                 }
               `}
-              title={'description' in item ? item.description : undefined}
-              onMouseEnter={() => item.hasSubcategories && setHoveredCategory(item.href)}
-              onMouseLeave={() => setHoveredCategory(null)}
+              title={item.description}
             >
               {item.label}
-              {item.hasSubcategories && (
-                <svg 
-                  className="inline w-3 h-3 ml-1"
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              )}
             </Link>
-            
-            {/* Subcategorías desplegables */}
-            {item.hasSubcategories && hoveredCategory === item.href && (
-              <div className="absolute top-full left-0 mt-1 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg border border-gray-200 dark:border-gray-600 z-20">
-                <div className="py-1" role="menu">
-                  {Object.entries(subcategoriesOf(item.href)).map(([subSlug, subCategory]) => (
-                    <Link
-                      key={`/categoria/${subSlug}`}
-                      href={`/categoria/${subSlug}`}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors"
-                      role="menuitem"
-                      title={subCategory.description}
-                    >
-                      <span className="mr-2">{subCategory.icon}</span>
-                      {subCategory.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
         ))}
         
@@ -280,26 +209,10 @@ export function CategoryMenu({
                       }
                     `}
                     role="menuitem"
-                    title={'description' in item ? item.description : undefined}
+                    title={item.description}
                   >
                     {item.label}
                   </Link>
-                  {/* Subcategorías para versión mobile */}
-                  {item.hasSubcategories && (
-                    <div className="ml-4 space-y-1">
-                      {Object.entries(subcategoriesOf(item.href)).map(([subSlug, subCategory]) => (
-                        <Link
-                          key={`/categoria/${subSlug}`}
-                          href={`/categoria/${subSlug}`}
-                          onClick={() => setIsOpen(false)}
-                          className="block px-4 py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 rounded transition-colors"
-                        >
-                          <span className="mr-2">{subCategory.icon}</span>
-                          {subCategory.name}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
                 </div>
               ))}
             </nav>
@@ -312,20 +225,12 @@ export function CategoryMenu({
 
 // Chips de categorías para la home
 export function CategoryChips({ className = '' }: { className?: string }) {
-  const [categories, setCategories] = useState<Array<{
-    slug: CategorySlug;
-    name: string;
-    count: number;
-  }>>([]);
-
-  useEffect(() => {
-    const availableCategories = getAvailableCategories();
-    // Mostrar solo las categorías más populares
-    const popularCategories = availableCategories
-      .sort((a, b) => b.count - a.count)
-      .slice(0, 6);
-    setCategories(popularCategories);
-  }, []);
+  // Igual que en CategoryMenu: se calcula en el render para que los chips
+  // salgan en el HTML servido y no solo tras hidratar. Antes además ordenaba
+  // con .sort() directamente sobre el array que devuelve getAvailableCategories().
+  const categories = [...getAvailableCategories()]
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 6);
 
   return (
     <div className={`flex flex-wrap gap-2 ${className}`}>
