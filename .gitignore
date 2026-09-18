@@ -54,5 +54,16 @@ ehthumbs.db
 *.temp
 
 # Backup files
+# OJO: `*_backup.json` solo casaba si el nombre ACABABA en "_backup.json", así
+# que ficheros como products_backup_1909.2.json no se ignoraban y acabaron
+# versionados (11 de ellos, ~10 MB). Este patrón los coge todos.
 *_backup.json
+*_backup*.json
 *_restore.json
+data/*backup*
+
+# Directorios de build alternativos (despliegue con NEXT_DIST_DIR y rollbacks)
+# Sin esto, el .next-old-XXXX que se deja para poder revertir aparece como
+# "untracked" en el repo.
+.next-*
+.next-new
