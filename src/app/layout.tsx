@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Potta_One, Preahvihear } from 'next/font/google';
+import { Potta_One, Preahvihear } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/Header';
 import { getAvailableCategories } from '@/lib/data';
@@ -7,8 +7,16 @@ import { Footer } from '@/components/Footer';
 import { CookieConsentBanner } from '@/components/CookieConsentBanner';
 import Analytics from '@/components/Analytics';
 import { siteConfig } from '@/config/site';
+import {
+  BRAND,
+  generateOrganizationStructuredData,
+  generateWebsiteStructuredData,
+  toJsonLd,
+} from '@/lib/seo';
 
-const inter = Inter({ subsets: ['latin', 'latin-ext'] });
+// Aquí se declaraba también `Inter`, que se descargaba en todas las páginas sin
+// aplicarse a ningún `className` (el <body> usa Preahvihear). Era una petición
+// de fuente de peso muerto en la ruta crítica.
 
 const pottaOne = Potta_One({
   weight: '400',
@@ -26,10 +34,12 @@ const preahvihear = Preahvihear({
 
 export const metadata: Metadata = {
   title: {
-    default: "Mierdas que molan, regalos originales para pasarlo bien",
-    template: `%s | Mierdas que molan`,
+    // El título por defecto lo redefine la portada (`page.tsx`); este es el
+    // que hereda cualquier página que no declare el suyo.
+    default: `${BRAND}, ${siteConfig.tagline.toLowerCase()}`,
+    template: `%s | ${BRAND}`,
   },
-  description: "regalos originales para frikis, parejas, pasarlo bien, fiestas y mucho más. Entra ahora y encuentra tu regalo original favorito",
+  description: "Regalos originales y frikis para parejas, fiestas y cumpleaños. Más de 400 ideas para sorprender. Entra y encuentra tu regalo favorito.",
   keywords: [
     'Regalos originales',
     'regalos divertidos',
@@ -55,16 +65,16 @@ export const metadata: Metadata = {
   // La canónica se define en cada página (o no hay, que es mucho menos malo
   // que una equivocada).
   openGraph: {
-    title: siteConfig.name,
+    title: `${BRAND}, ${siteConfig.tagline.toLowerCase()}`,
     description: siteConfig.description,
     url: siteConfig.url,
-    siteName: siteConfig.name,
+    siteName: BRAND,
     images: [
       {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: siteConfig.name,
+        alt: BRAND,
       },
     ],
     locale: 'es_ES',
@@ -72,7 +82,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: siteConfig.name,
+    title: `${BRAND}, ${siteConfig.tagline.toLowerCase()}`,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
     creator: '@mqmweb',
@@ -88,10 +98,10 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: '', // Añadir Google Search Console verification
-    yandex: '', // Añadir Yandex verification si aplica
-  },
+  // Search Console NO está verificado: había un `verification: { google: '' }`
+  // que Next omitía por estar vacío, así que no había ni etiqueta ni
+  // verificación. Hay que pegar aquí el token real de Search Console:
+  // verification: { google: '<token>' },
 };
 
 export default function RootLayout({
@@ -142,63 +152,24 @@ export default function RootLayout({
         <link rel="alternate" hreflang="x-default" href="https://www.mierdasquemolan.com" />
         */}
         
-        {/* Schema.org structured data - WebSite */}
+        {/*
+          Schema.org: WebSite + Organization.
+
+          Los dos bloques estaban escritos a mano aquí y con datos que no salían
+          de `siteConfig` (nombres distintos entre ellos, URLs duplicadas). Ahora
+          se generan desde `lib/seo.ts`, que es la única fuente.
+        */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              "name": "Mierdas que molan - Regalos originales y mucho más",
-              "alternateName": "MQM",
-              "url": "https://www.mierdasquemolan.com",
-              "description": "Regalos originales frikis, para parejas, fiestas, grandes ratos de diversión y mucho. Entra y busca tu regalo favorito.",
-              "potentialAction": {
-                "@type": "SearchAction",
-                "target": {
-                  "@type": "EntryPoint",
-                  "urlTemplate": "https://www.mierdasquemolan.com/?search={search_term_string}"
-                },
-                "query-input": "required name=search_term_string"
-              },
-              "publisher": {
-                "@type": "Organization",
-                "name": "Mierdas que molan - Regalos originales y mucho más",
-                "url": "https://www.mierdasquemolan.com",
-                "logo": {
-                  "@type": "ImageObject",
-                  "url": "https://www.mierdasquemolan.com/logo.png"
-                }
-              }
-            })
+            __html: toJsonLd(generateWebsiteStructuredData()),
           }}
         />
-        
-        {/* Schema.org structured data - Organization */}
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "Mierdas que molan",
-              "alternateName": "MQM",
-              "url": "https://www.mierdasquemolan.com",
-              "logo": "https://www.mierdasquemolan.com/logo.png",
-              "description": "Tienda online de regalos originales y divertidos para todos los públicos",
-              "sameAs": [
-                "https://www.facebook.com/mierdasquemolan",
-                "https://www.instagram.com/mierdasquemolan",
-                "https://www.youtube.com/@mierdasquemolan",
-                "https://www.linkedin.com/company/mierdasquemolan"
-              ],
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "contactType": "customer service",
-                "email": "info@mierdasquemolan.com",
-                "availableLanguage": "Spanish"
-              }
-            })
+            __html: toJsonLd(generateOrganizationStructuredData()),
           }}
         />
       </head>

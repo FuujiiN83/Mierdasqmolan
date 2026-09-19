@@ -5,12 +5,12 @@ import Link from 'next/link';
 import { ProductCard } from '@/components/ProductCard';
 import { AdSlot, useInlineAds } from '@/components/AdSlot';
 import { Pagination, ResultsInfo } from '@/components/Pagination';
-import { Product } from '@/types';
+import { ProductCardData } from '@/lib/card-data';
 import { siteConfig, CategoryOption } from '@/config/site';
 
 interface FeaturedClientProps {
-  /** Todos los productos destacados, ya calculados en el servidor. */
-  featuredProducts: Product[];
+  /** Todos los productos destacados, ya recortados en el servidor. */
+  featuredProducts: ProductCardData[];
   /** Categorías reales para el sidebar. */
   categories: CategoryOption[];
 }

@@ -1,12 +1,42 @@
-'use client';
-
-import { useState } from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { encodeLocalImageSrc } from '@/lib/image-src';
+import { siteConfig } from '@/config/site';
+import { BRAND, generateCategoryStructuredData, toJsonLd } from '@/lib/seo';
 // Iconos SVG inline para evitar dependencias
 import { AdSlot } from '@/components/AdSlot';
 import blogData from '@/data/blog.json';
+
+const descripcion =
+  `Artículos, guías e ideas de regalo de ${BRAND}: novedades, Halloween, juegos de mesa y todo lo que mola.`;
+
+// Este listado no tenía metadatos propios: heredaba del layout el título, la
+// descripción y sobre todo el `og:url` de la portada, y no emitía canónica
+// (justo el problema que se acababa de corregir en las páginas legales).
+export const metadata: Metadata = {
+  title: 'Blog',
+  description: descripcion,
+  alternates: {
+    canonical: '/categoria/blog',
+  },
+  openGraph: {
+    title: `Blog de ${BRAND}`,
+    description: descripcion,
+    url: '/categoria/blog',
+    siteName: BRAND,
+    locale: 'es_ES',
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: `Blog de ${BRAND}`,
+      },
+    ],
+    type: 'website',
+  },
+};
 
 interface BlogPost {
   id: string;
@@ -35,25 +65,36 @@ function formatDate(dateString: string) {
 }
 
 export default function BlogPage() {
-  // blogData es un import estático, así que está disponible también en el
-  // servidor: filtrando aquí, los artículos salen en el HTML prerenderizado.
-  // Antes se filtraban en un useEffect, así que lo que se servía era el
-  // esqueleto de carga y la página no tenía ni un solo enlace a los artículos.
-  const [posts] = useState<BlogPost[]>(() =>
-    (blogData as BlogPost[]).filter(
-      (post) => post.isPublished && post.category === 'blog'
-    )
+  // Este archivo era un componente de cliente con `'use client'` y un useState
+  // para el filtrado, así que los 44 KB de data/blog.json viajaban al navegador
+  // para nada: la página no tiene interactividad. Como componente de servidor
+  // el JSON se queda en el servidor y el HTML sale completo y prerenderizado.
+  const posts = (blogData as BlogPost[]).filter(
+    (post) => post.isPublished && post.category === 'blog'
+  );
+
+  const structuredData = generateCategoryStructuredData(
+    'Blog',
+    `Artículos, guías e ideas de regalo de ${BRAND}.`,
+    'blog',
+    posts,
+    '/blog'
   );
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: toJsonLd(structuredData) }}
+      />
+
       {/* Header del blog */}
       <div className="mb-8">
         <div className="bg-gradient-to-r from-primary-50 to-primary-100 rounded-2xl p-6 sm:p-8">
           <div className="max-w-3xl">
             {/* h1: la página no tenía ninguno (el título era un h2) */}
             <h1 className="text-3xl sm:text-4xl font-bold font-potta-one text-header-purple mb-4">
-              Blog MQM Web
+              Blog de {siteConfig.name}
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 font-preahvihear mb-6">
               Descubre historias, curiosidades y contenido exclusivo sobre los productos más originales y divertidos.

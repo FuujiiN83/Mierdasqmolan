@@ -61,7 +61,7 @@ const featuredProducts = getFeaturedProducts().slice(0, 2);
 
 **Ubicación:** Página completa accesible desde menú
 **Cantidad mostrada:** Todos los productos destacados
-**Paginación:** Sí (12 productos por página)
+**Paginación:** Sí (24 productos por página, `siteConfig.pagination.productsPerPage`)
 **URL:** `https://tu-dominio.com/destacados`
 
 ### 3. Badge Visual

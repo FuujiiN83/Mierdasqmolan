@@ -1,3 +1,5 @@
+import { siteConfig } from '@/config/site';
+
 // Función simple para combinar clases sin dependencias externas
 export function clsx(...inputs: (string | undefined | null | boolean)[]): string {
   return inputs.filter(Boolean).join(' ');
@@ -18,39 +20,17 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 
-/**
- * Formatea precio con moneda (función dummy para compatibilidad)
+/*
+ * Aquí vivía `formatPrice()`, que devolvía siempre cadena vacía porque el sitio
+ * no muestra precios. Se ha eliminado al quitar sus dos últimos usos (el hueco
+ * `hidden` de la ficha y el de la tarjeta): una función que promete formatear un
+ * precio y devuelve "" es una trampa para el siguiente que la llame, y además su
+ * presencia sostenía un `offers.price` en el structured data que no correspondía
+ * a nada visible.
+ *
+ * Si algún día se muestran precios, hay que crearla de nuevo Y volver a meter el
+ * precio en el JSON-LD de producto, que ahora mismo no lo emite a propósito.
  */
-export function formatPrice(price: number, currency = 'EUR'): string {
-  return ''; // No mostrar precios
-}
-
-/**
- * Formatea fecha relativa (ej: "hace 2 días")
- */
-export function formatRelativeDate(date: string | Date): string {
-  const now = new Date();
-  const target = new Date(date);
-  const diffInMs = now.getTime() - target.getTime();
-  const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
-  
-  if (diffInDays === 0) {
-    return 'Hoy';
-  } else if (diffInDays === 1) {
-    return 'Ayer';
-  } else if (diffInDays < 7) {
-    return `Hace ${diffInDays} días`;
-  } else if (diffInDays < 30) {
-    const weeks = Math.floor(diffInDays / 7);
-    return `Hace ${weeks} semana${weeks > 1 ? 's' : ''}`;
-  } else if (diffInDays < 365) {
-    const months = Math.floor(diffInDays / 30);
-    return `Hace ${months} mes${months > 1 ? 'es' : ''}`;
-  } else {
-    const years = Math.floor(diffInDays / 365);
-    return `Hace ${years} año${years > 1 ? 's' : ''}`;
-  }
-}
 
 /**
  * Formatea fecha absoluta
@@ -93,6 +73,154 @@ const INLINE_EVENT_HANDLERS = /\son\w+\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi;
 // href="javascript:…" / src='javascript:…' / href=data:text/html…
 const DANGEROUS_URL_ATTRS = /(href|src)\s*=\s*(?:"|')?\s*(?:javascript|data|vbscript):[^"'>\s]*(?:"|')?/gi;
 
+// Cualquier apertura de <a ...>, con o sin atributos.
+const ANCHOR_TAG = /<a\b[^>]*>/gi;
+
+/** Atributo troceado de una etiqueta de apertura. */
+interface Atributo {
+  name: string;
+  raw: string;
+}
+
+/**
+ * Trocea los atributos de una etiqueta respetando las comillas.
+ *
+ * Hace falta trocear de verdad en vez de buscar ` rel=` con una regex: dentro de
+ * `href="https://x.com/q?a=1 rel=2"` hay un ` rel=` que no es un atributo, y
+ * reescribirlo dejaba el `href` sin cerrar y se comía el resto del documento.
+ */
+function parseAttributes(tag: string): Atributo[] {
+  const cuerpo = tag.replace(/^<a\b/i, '').replace(/>$/, '').trim();
+  const atributos: Atributo[] = [];
+  let i = 0;
+
+  while (i < cuerpo.length) {
+    while (i < cuerpo.length && /\s/.test(cuerpo[i])) i++;
+    if (i >= cuerpo.length) break;
+
+    const inicio = i;
+    while (i < cuerpo.length && !/[\s=]/.test(cuerpo[i])) i++;
+
+    const nombre = cuerpo.slice(inicio, i);
+    if (!nombre) {
+      i++;
+      continue;
+    }
+
+    while (i < cuerpo.length && /\s/.test(cuerpo[i])) i++;
+
+    if (cuerpo[i] === '=') {
+      i++;
+      while (i < cuerpo.length && /\s/.test(cuerpo[i])) i++;
+
+      const comilla = cuerpo[i];
+      if (comilla === '"' || comilla === "'") {
+        i++;
+        while (i < cuerpo.length && cuerpo[i] !== comilla) i++;
+        i++; // cierre de la comilla
+      } else {
+        while (i < cuerpo.length && !/\s/.test(cuerpo[i])) i++;
+      }
+    }
+
+    atributos.push({ name: nombre, raw: cuerpo.slice(inicio, i) });
+  }
+
+  return atributos;
+}
+
+/** Valor de un atributo ya troceado: `href="x"` → `x`. */
+function valorDeAtributo(raw: string): string {
+  const igual = raw.indexOf('=');
+  if (igual === -1) return '';
+
+  const valor = raw
+    .slice(igual + 1)
+    .trim()
+    .replace(/^["']|["']$/g, '');
+
+  return valor;
+}
+
+/**
+ * Decodifica las entidades que el navegador resolvería antes de seguir el
+ * enlace: `&#104;ttps://…` es `https://…` para el navegador, así que si aquí se
+ * leyera en crudo, un enlace externo pasaría por interno y se quedaría dofollow.
+ *
+ * Solo se usa para DECIDIR; el HTML de salida no se toca con esto.
+ */
+function decodeEntities(texto: string): string {
+  return texto
+    .replace(/&#x([0-9a-f]+);/gi, (_, hex) => String.fromCodePoint(parseInt(hex, 16)))
+    .replace(/&#(\d+);/g, (_, dec) => String.fromCodePoint(Number(dec)))
+    .replace(/&amp;/gi, '&')
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>')
+    .replace(/&quot;/gi, '"')
+    .replace(/&apos;/gi, "'")
+    .replace(/&colon;/gi, ':')
+    .replace(/&sol;/gi, '/');
+}
+
+/**
+ * ¿Es un enlace que sale del dominio del sitio?
+ *
+ * Se normaliza antes de comparar: el navegador ignora los espacios de los
+ * extremos y convierte `//host/ruta` en una URL del protocolo actual, así que
+ * las dos formas son externas aunque no empiecen por `http`.
+ */
+function isExternalHttpLink(urlCruda: string): boolean {
+  const url = decodeEntities(urlCruda).trim();
+  if (!url) return false;
+
+  // `//amzn.to/x` es externa: el navegador le pone el protocolo de la página.
+  if (url.startsWith('//')) return true;
+
+  if (!/^https?:\/\//i.test(url)) return false;
+
+  try {
+    const host = new URL(url).hostname.replace(/^www\./, '').toLowerCase();
+    const propio = new URL(siteConfig.url).hostname.replace(/^www\./, '').toLowerCase();
+    return host !== propio;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Fuerza `rel="sponsored nofollow noopener"` en todo enlace externo del
+ * contenido.
+ *
+ * Los enlaces de afiliado del blog venían escritos a mano en `data/blog.json`
+ * con `rel="noopener noreferrer"`: 18 enlaces dofollow a Amazon desde el
+ * contenido editorial, que es justo el patrón por el que Google abre una acción
+ * manual por link spam. Las fichas y las tarjetas sí lo hacían bien, así que la
+ * incoherencia era además llamativa.
+ *
+ * Se reescribe el `rel` en vez de añadirlo porque los posts ya traen uno: si
+ * solo se añadiese, acabarían con dos atributos `rel` y el navegador se quedaría
+ * con el primero (el de origen).
+ */
+export function hardenExternalLinks(html: string): string {
+  return html.replace(ANCHOR_TAG, (tag) => {
+    const atributos = parseAttributes(tag);
+
+    const href = atributos.find((a) => a.name.toLowerCase() === 'href');
+    if (!href || !isExternalHttpLink(valorDeAtributo(href.raw))) return tag;
+
+    // Se reconstruye la etiqueta sin el `rel` viejo. El resto de atributos se
+    // conservan tal cual venían (incluido el `/` de cierre si lo hubiera).
+    const conservados = atributos
+      .filter((a) => a.name.toLowerCase() !== 'rel')
+      .map((a) => a.raw);
+    const autocierre = conservados.includes('/') ? ' /' : '';
+
+    const resto = conservados.filter((raw) => raw !== '/');
+
+    return `<a ${resto.join(' ')} rel="sponsored nofollow noopener"${autocierre}>`;
+  });
+}
+
 /**
  * Sanea HTML que va a inyectarse con dangerouslySetInnerHTML.
  *
@@ -107,11 +235,13 @@ const DANGEROUS_URL_ATTRS = /(href|src)\s*=\s*(?:"|')?\s*(?:javascript|data|vbsc
  * dejaría las descripciones a la vista como texto plano.
  */
 export function sanitizeHtml(html: string): string {
-  return html
-    .replace(DANGEROUS_TAGS, '')
-    .replace(DANGEROUS_SELF_CLOSING, '')
-    .replace(INLINE_EVENT_HANDLERS, '')
-    .replace(DANGEROUS_URL_ATTRS, '$1="#"');
+  return hardenExternalLinks(
+    html
+      .replace(DANGEROUS_TAGS, '')
+      .replace(DANGEROUS_SELF_CLOSING, '')
+      .replace(INLINE_EVENT_HANDLERS, '')
+      .replace(DANGEROUS_URL_ATTRS, '$1="#"')
+  );
 }
 
 /**
@@ -161,14 +291,28 @@ export function debounce<T extends (...args: any[]) => any>(
   };
 }
 
+/** ¿El texto ya viene como HTML en bloque, en vez de markdown? */
+const YA_ES_HTML = /<(p|h[1-6]|ul|ol|div|table|section|article|blockquote|figure|img|br)\b[^>]*>/i;
+
 /**
  * Convierte markdown básico a HTML y lo sanea.
  *
- * Ojo: en la práctica la mayoría de las descripciones ya son HTML, no markdown,
- * así que esto funciona como conversor tolerante + saneado. El resultado se
- * inyecta con dangerouslySetInnerHTML, y por eso pasa por sanitizeHtml.
+ * La mayoría de las descripciones ya son HTML (`<p>`, `<h2>`, `<ul>`), y encima
+ * en una sola línea. Eso rompía la conversión: la regla que envuelve cada línea
+ * suelta en un `<p>` no veía un inicio de `<h1-6` ni de `<li>`, así que envolvía
+ * el documento ENTERO, y el HTML servido empezaba literalmente con
+ * `<p class="mb-3"><p>¿Quieres marcha en tu relación…`. Eso son bloques `<p>`
+ * anidados (inválidos: el navegador cierra el exterior a la primera) y una
+ * jerarquía de encabezados rota, porque un `<h2>` acababa dentro de un `<p>`.
+ *
+ * Por eso ahora se decide primero qué es: si ya es HTML se sanea y se deja tal
+ * cual, y la conversión de markdown se reserva para el texto plano.
  */
 export function markdownToHtml(markdown: string): string {
+  if (YA_ES_HTML.test(markdown)) {
+    return sanitizeHtml(markdown);
+  }
+
   return sanitizeHtml(
     markdown
     // Headers

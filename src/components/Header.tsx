@@ -20,7 +20,7 @@ export function Header({ categories }: { categories: CategoryOption[] }) {
               <div className="w-8 h-8 flex items-center justify-center">
                 <OptimizedImage
                   src="/logo.png"
-                  alt="MQM Web Logo"
+                  alt={`${siteConfig.name} Logo`}
                   width={32}
                   height={32}
                   className="w-8 h-8 object-contain"
@@ -28,7 +28,7 @@ export function Header({ categories }: { categories: CategoryOption[] }) {
                 />
               </div>
               <div className="hidden sm:block">
-                <div className="text-xl font-bold font-potta-one text-gray-900 dark:text-white">MQM Web</div>
+                <div className="text-xl font-bold font-potta-one text-gray-900 dark:text-white">{siteConfig.name}</div>
                 <p className="text-xs text-gray-500 dark:text-gray-400 -mt-1">Las mejores ofertas</p>
               </div>
             </Link>
@@ -102,7 +102,7 @@ export function SimpleHeader({ title, showBack = false }: { title?: string; show
             <div className="w-8 h-8 flex items-center justify-center">
               <OptimizedImage
                 src="/logo.png"
-                alt="MQM Web Logo"
+                alt={`${siteConfig.name} Logo`}
                 width={32}
                 height={32}
                 className="w-8 h-8 object-contain"
@@ -111,7 +111,7 @@ export function SimpleHeader({ title, showBack = false }: { title?: string; show
             </div>
             <div>
               <h1 className="text-lg font-bold font-potta-one text-gray-900 dark:text-white">
-                {title || 'MQM Web'}
+                {title || siteConfig.name}
               </h1>
             </div>
           </Link>

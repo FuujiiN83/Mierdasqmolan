@@ -3,6 +3,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { encodeLocalImageSrc } from '@/lib/image-src';
 import { sanitizeHtml } from '@/lib/utils';
+import {
+  absoluteUrl,
+  BRAND,
+  generateBlogPostingStructuredData,
+  generateBreadcrumbStructuredData,
+  toJsonLd,
+  truncateForMeta,
+} from '@/lib/seo';
 // Iconos SVG inline para evitar dependencias
 import blogData from '../../../../data/blog.json';
 
@@ -44,17 +52,33 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     };
   }
 
+  const description = truncateForMeta(post.excerpt);
+  const path = `/blog/${post.slug}`;
+  const image = absoluteUrl(post.featuredImage);
+
   return {
     // Sin la marca: el template del layout ya añade "| Mierdas que molan"
     title: post.title,
-    description: post.excerpt,
+    description,
     alternates: {
-      canonical: `/blog/${post.slug}`,
+      canonical: path,
     },
     openGraph: {
       title: post.title,
-      description: post.excerpt,
-      images: [post.featuredImage],
+      description,
+      url: path,
+      siteName: BRAND,
+      locale: 'es_ES',
+      images: [{ url: image, alt: post.alt || post.title }],
+      type: 'article',
+      publishedTime: post.publishedAt,
+      modifiedTime: post.updatedAt || post.publishedAt,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description,
+      images: [image],
     },
   };
 }
@@ -75,8 +99,29 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
+  const articleStructuredData = generateBlogPostingStructuredData(post);
+
+  const breadcrumbStructuredData = generateBreadcrumbStructuredData([
+    { name: 'Inicio', url: '/' },
+    { name: 'Blog', url: '/categoria/blog' },
+    { name: post.title, url: `/blog/${post.slug}` },
+  ]);
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      {/* Structured data del artículo y sus breadcrumbs. No había ninguno: el
+          HTML ya mostraba autor, fecha y tiempo de lectura, pero no se
+          declaraba, así que los artículos no eran elegibles para Top Stories
+          ni para el tratamiento de artículo en Discover. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: toJsonLd(articleStructuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: toJsonLd(breadcrumbStructuredData) }}
+      />
+
       {/* Header */}
       <div className="bg-white dark:bg-gray-800 shadow-sm">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">

@@ -1,14 +1,25 @@
 import type { Metadata } from 'next';
+import { BRAND } from '@/lib/seo';
+
+const descripcion = `Términos y condiciones de uso de ${BRAND}: titularidad del sitio, responsabilidad y propiedad de los contenidos.`;
 
 export const metadata: Metadata = {
   title: 'Aviso Legal',
-  description: 'Aviso legal de MQM Web - Términos y condiciones de uso del sitio web',
+  description: descripcion,
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
     canonical: '/legal/terminos',
+  },
+  openGraph: {
+    title: 'Aviso Legal',
+    description: descripcion,
+    url: '/legal/terminos',
+    siteName: BRAND,
+    locale: 'es_ES',
+    type: 'website',
   },
 };
 

@@ -11,7 +11,9 @@ import { safeUrl } from '@/lib/utils';
  * datos. Al separarla, las tarjetas dejan de arrastrar el JSON.
  */
 export function generateAffiliateUrl(
-  product: Product,
+  // Solo estos tres campos: así vale tanto un `Product` completo como el
+  // `ProductCardData` recortado que reciben las tarjetas.
+  product: Pick<Product, 'affiliateUrl' | 'slug' | 'id'>,
   source = 'mqm-web',
   medium = 'affiliate'
 ): string {

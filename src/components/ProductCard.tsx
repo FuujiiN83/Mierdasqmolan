@@ -1,15 +1,15 @@
 'use client';
 
-import { useState, memo, useCallback } from 'react';
+import { useState, useEffect, memo, useCallback } from 'react';
 import Link from 'next/link';
 import { OptimizedImage } from './OptimizedImage';
-import { Product } from '@/types';
-import { formatPrice, formatRelativeDate, markdownToHtml, getDomainFromUrl } from '@/lib/utils';
+import { ProductCardData } from '@/lib/card-data';
+import { getDomainFromUrl } from '@/lib/utils';
 import { generateAffiliateUrl } from '@/lib/affiliate';
-import { categoryConfig, categorySlugFromName } from '@/config/site';
+import { categorySlugFromName } from '@/config/site';
 
 interface ProductCardProps {
-  product: Product;
+  product: ProductCardData;
   isExpanded?: boolean;
   onToggleExpand?: () => void;
   showExpandButton?: boolean;
@@ -28,7 +28,38 @@ export const ProductCard = memo(function ProductCard({
   priority = false,
   className = ''
 }: ProductCardProps) {
-  const [imageError, setImageError] = useState(false);
+  const [description, setDescription] = useState<string | null>(null);
+  const [descriptionFailed, setDescriptionFailed] = useState(false);
+
+  /**
+   * La descripción completa ya no viaja en las props.
+   *
+   * `description` es de mediana 2.200 caracteres por ficha, y en una categoría
+   * de 93 productos eso eran 578 KB de HTML (172 KB comprimidos) para un texto
+   * que solo se ve al pulsar "Ver más". Ahora se pide al servidor la primera
+   * vez que se despliega esa tarjeta y se queda en memoria.
+   */
+  useEffect(() => {
+    if (!isExpanded || description !== null || descriptionFailed) return;
+
+    let cancelado = false;
+
+    fetch(`/api/producto/${encodeURIComponent(product.slug)}`)
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then((data: { html?: string }) => {
+        if (!cancelado) setDescription(data.html ?? '');
+      })
+      .catch(() => {
+        if (!cancelado) setDescriptionFailed(true);
+      });
+
+    return () => {
+      cancelado = true;
+    };
+  }, [isExpanded, description, descriptionFailed, product.slug]);
 
   // Usar useCallback para evitar crear nuevas funciones en cada render
   const handleCardClick = useCallback((e: React.MouseEvent) => {
@@ -39,14 +70,6 @@ export const ProductCard = memo(function ProductCard({
     
     // Navegar a la página del producto
     window.location.href = `/producto/${product.slug}`;
-  }, [product.slug]);
-
-  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      // Navegar a la página del producto
-      window.location.href = `/producto/${product.slug}`;
-    }
   }, [product.slug]);
 
   const affiliateUrl = generateAffiliateUrl(product);
@@ -60,11 +83,21 @@ export const ProductCard = memo(function ProductCard({
         ${isExpanded ? 'ring-2 ring-primary-500' : ''}
         ${className}
       `}
+      /*
+       * Solo `onClick`, sin `role="button"` ni `tabIndex` ni `onKeyDown`.
+       *
+       * `role="button"` marca el contenido como "children presentational", así
+       * que el <h2> con el enlace a la ficha, los chips de categoría y el botón
+       * "Ver más" desaparecían del árbol de accesibilidad. Y el `onKeyDown` que
+       * había aquí escuchaba el keydown burbujeado de los hijos: con teclado,
+       * Enter sobre "Comprar" no abría el afiliado, te mandaba a la ficha, y
+       * Enter sobre "Ver más" no desplegaba.
+       *
+       * El clic en cualquier parte de la tarjeta se mantiene para el ratón. Con
+       * teclado se navega por los enlaces reales que hay dentro, que además son
+       * los que hacen rastreable la ficha.
+       */
       onClick={handleCardClick}
-      onKeyDown={handleKeyDown}
-      tabIndex={0}
-      role="button"
-      aria-label={`Ver página de ${product.title}`}
     >
       {/* Header de la tarjeta */}
       <div className="flex flex-col sm:flex-row">
@@ -109,13 +142,6 @@ export const ProductCard = memo(function ProductCard({
                     {product.title}
                   </Link>
                 </h2>
-                {product.price && (
-                  <div className="flex-shrink-0 text-right hidden">
-                    <span className="text-xl sm:text-2xl font-bold font-potta-one text-header-purple">
-                      {formatPrice(product.price, product.currency)}
-                    </span>
-                  </div>
-                )}
               </div>
 
               {/* Botón Ver Oferta - SIEMPRE VISIBLE */}
@@ -173,9 +199,10 @@ export const ProductCard = memo(function ProductCard({
               {/* Metadatos */}
               <div className="flex justify-between items-center text-xs text-gray-500 dark:text-gray-400">
                 <div className="flex items-center gap-3">
-                  <time dateTime={product.createdAt} className="font-preahvihear">
-                    {formatRelativeDate(product.createdAt)}
-                  </time>
+                  {/* La fecha de publicación ya no se muestra en la ficha: solo
+                      servía para que un catálogo con productos de hace meses
+                      pareciera abandonado. Se sigue usando para ordenar y para
+                      el sitemap / structured data. */}
                   {product.merchant && (
                     <span className="flex items-center gap-1 font-preahvihear">
                       <span>en</span>
@@ -214,13 +241,30 @@ export const ProductCard = memo(function ProductCard({
       {isExpanded && (
         <div className="border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 animate-slide-down">
           <div className="p-4 sm:p-6">
-            {/* Descripción completa */}
-            <div 
-              className="prose prose-sm max-w-none mb-6 text-gray-700 dark:text-gray-300"
-              dangerouslySetInnerHTML={{ 
-                __html: markdownToHtml(product.description) 
-              }}
-            />
+            {/* Descripción completa, pedida al servidor al desplegar */}
+            {descriptionFailed ? (
+              <p className="text-sm text-gray-600 dark:text-gray-300 mb-6">
+                No hemos podido cargar la descripción.{' '}
+                <Link
+                  href={`/producto/${product.slug}`}
+                  className="text-primary-600 hover:text-primary-700 underline"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  Ver la ficha completa
+                </Link>
+              </p>
+            ) : description === null ? (
+              <div className="space-y-2 mb-6" aria-hidden="true">
+                <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded animate-pulse" />
+                <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded animate-pulse w-5/6" />
+                <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded animate-pulse w-2/3" />
+              </div>
+            ) : (
+              <div
+                className="prose prose-sm max-w-none mb-6 text-gray-700 dark:text-gray-300"
+                dangerouslySetInnerHTML={{ __html: description }}
+              />
+            )}
 
             {/* Tags */}
             {product.tags && product.tags.length > 0 && (

@@ -1,16 +1,28 @@
 import { Metadata } from 'next';
-import { SimpleHeader } from '@/components/Header';
-import { siteConfig } from '@/config/site';
+import { siteConfig, LEGAL_LAST_UPDATED } from '@/config/site';
+import { formatDate } from '@/lib/utils';
+import { BRAND } from '@/lib/seo';
+
+const descripcion =
+  `Cómo se financia ${BRAND}: enlaces de afiliado, comisiones por ventas y qué implica para ti como comprador.`;
 
 export const metadata: Metadata = {
   title: 'Política de Afiliación',
-  description: 'Información sobre nuestro programa de afiliación y comisiones por ventas.',
+  description: descripcion,
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
     canonical: '/legal/afiliados',
+  },
+  openGraph: {
+    title: 'Política de Afiliación',
+    description: descripcion,
+    url: '/legal/afiliados',
+    siteName: BRAND,
+    locale: 'es_ES',
+    type: 'website',
   },
 };
 
@@ -118,7 +130,8 @@ export default function AffiliatesPage() {
 
         <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mt-8">
           <p className="text-sm text-gray-600 mb-0">
-            <strong>Última actualización:</strong> {new Date().toLocaleDateString('es-ES')}
+            <strong>Última actualización:</strong>{' '}
+            {formatDate(LEGAL_LAST_UPDATED)}
           </p>
         </div>
       </div>

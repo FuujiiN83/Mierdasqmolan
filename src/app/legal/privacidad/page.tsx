@@ -1,14 +1,28 @@
 import type { Metadata } from 'next';
+import { BRAND } from '@/lib/seo';
+
+const descripcion =
+  `Información sobre el tratamiento de datos personales en ${BRAND}: responsable, finalidades, base legal y derechos.`;
 
 export const metadata: Metadata = {
   title: 'Política de Privacidad',
-  description: 'Política de privacidad de MQM Web - Información sobre el tratamiento de datos personales',
+  description: descripcion,
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
     canonical: '/legal/privacidad',
+  },
+  // Sin openGraph propio, estas páginas heredaban el de la portada: al
+  // compartirlas se veía el título y la URL de la home.
+  openGraph: {
+    title: 'Política de Privacidad',
+    description: descripcion,
+    url: '/legal/privacidad',
+    siteName: BRAND,
+    locale: 'es_ES',
+    type: 'website',
   },
 };
 

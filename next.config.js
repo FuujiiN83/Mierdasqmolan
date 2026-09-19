@@ -42,7 +42,11 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/:path*',
+        // Todo menos /api/*: cada endpoint declara su propia caché, y si además
+        // le aplicara esta regla, la respuesta saldría con DOS cabeceras
+        // `cache-control`. Un intermediario se queda con la primera que lee, así
+        // que el `s-maxage` del endpoint se perdería por el camino.
+        source: '/((?!api/).*)',
         headers: [
           {
             key: 'Cache-Control',

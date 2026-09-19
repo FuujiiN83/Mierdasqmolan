@@ -5,18 +5,17 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { debounce } from '@/lib/utils';
 import { generateAffiliateUrl } from '@/lib/affiliate';
-import { Product } from '@/types';
+import { ProductCardData } from '@/lib/card-data';
 
 /**
- * El módulo de búsqueda se carga en diferido.
+ * La búsqueda se resuelve en el servidor, contra `/api/productos`.
  *
- * `lib/data.ts` importa `data/products.json`, que pesa 1,9 MB. Con un import
- * estático, la barra de búsqueda —que vive en el header, o sea en TODAS las
- * páginas— arrastraba el catálogo entero a cada visita. Con `import()` se
- * descarga la primera vez que alguien busca de verdad, y el navegador lo
- * cachea para las siguientes.
+ * Antes se traía el catálogo al navegador con `import('@/lib/data')` para
+ * filtrarlo aquí: 1,9 MB de JSON, o sea un chunk de 1,63 MB de JavaScript que se
+ * descargaba y parseaba la primera vez que alguien tecleaba en el buscador —y el
+ * buscador está en el header, así que eso pasaba en TODAS las páginas—. Ahora la
+ * respuesta son unos pocos KB de JSON con los 5 resultados.
  */
-const cargarBuscador = () => import('@/lib/data');
 
 interface SearchBarProps {
   className?: string;
@@ -30,11 +29,15 @@ export function SearchBar({
   showResults = true 
 }: SearchBarProps) {
   const [query, setQuery] = useState('');
-  const [results, setResults] = useState<Product[]>([]);
+  const [results, setResults] = useState<ProductCardData[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
+  // Con red de por medio, dos búsquedas pueden volver desordenadas: sin este
+  // contador, la respuesta de "lam" podía pisar a la de "lampara" si llegaba
+  // después. Solo se pinta la respuesta de la última petición lanzada.
+  const ultimaPeticion = useRef(0);
   const router = useRouter();
 
   // Debounced search function
@@ -45,15 +48,22 @@ export function SearchBar({
       return;
     }
 
+    const peticion = ++ultimaPeticion.current;
     setIsLoading(true);
+
     try {
-      const { searchProducts } = await cargarBuscador();
-      setResults(searchProducts(searchQuery, 5));
+      const respuesta = await fetch(
+        `/api/productos?limit=5&search=${encodeURIComponent(searchQuery)}`
+      );
+      if (!respuesta.ok) throw new Error(`HTTP ${respuesta.status}`);
+
+      const datos: { items?: ProductCardData[] } = await respuesta.json();
+      if (peticion === ultimaPeticion.current) setResults(datos.items ?? []);
     } catch (error) {
       console.error('Error searching products:', error);
-      setResults([]);
+      if (peticion === ultimaPeticion.current) setResults([]);
     } finally {
-      setIsLoading(false);
+      if (peticion === ultimaPeticion.current) setIsLoading(false);
     }
   }, 300);
 

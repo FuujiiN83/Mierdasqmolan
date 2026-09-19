@@ -6,24 +6,14 @@ import Link from 'next/link';
 import { ProductCard } from '@/components/ProductCard';
 import { AdSlot, useInlineAds } from '@/components/AdSlot';
 import { Pagination, ResultsInfo } from '@/components/Pagination';
-import { Product } from '@/types';
-import { siteConfig } from '@/config/site';
-
-/**
- * El catálogo se carga en diferido.
- *
- * `lib/data.ts` importa `data/products.json` (1,9 MB). La portada ya recibe del
- * servidor los productos de la primera página, así que ese JSON solo hace falta
- * cuando el usuario pagina o busca. Con un import estático se lo descargaba
- * siempre nada más entrar.
- */
-const cargarCatalogo = () => import('@/lib/data');
+import { ProductCardData } from '@/lib/card-data';
+import { siteConfig, categoryConfig } from '@/config/site';
 
 interface HomeContentProps {
-  /** Productos de la primera página, ya calculados en el servidor. */
-  initialProducts: Product[];
+  /** Productos de la primera página, ya calculados y recortados en el servidor. */
+  initialProducts: ProductCardData[];
   initialTotalProducts: number;
-  initialFeaturedProducts: Product[];
+  initialFeaturedProducts: ProductCardData[];
 }
 
 export default function HomeContent({
@@ -31,8 +21,8 @@ export default function HomeContent({
   initialTotalProducts,
   initialFeaturedProducts,
 }: HomeContentProps) {
-  const [products, setProducts] = useState<Product[]>(initialProducts);
-  const [featuredProducts, setFeaturedProducts] = useState<Product[]>(initialFeaturedProducts);
+  const [products, setProducts] = useState<ProductCardData[]>(initialProducts);
+  const [featuredProducts, setFeaturedProducts] = useState<ProductCardData[]>(initialFeaturedProducts);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
@@ -72,52 +62,26 @@ export default function HomeContent({
   const loadProducts = async () => {
     setLoading(true);
     try {
-      // `clearProductsCache()` se llamaba aquí en cada carga. Era inútil (los
-      // datos son un JSON estático, el cache del módulo no envejece) y costoso:
-      // obligaba a revalidar los 420 productos cada vez.
-      const { getFilteredProducts, getFeaturedProducts } = await cargarCatalogo();
+      // El catálogo NO se carga en el navegador: se pide la página al servidor.
+      // Antes esto hacía `import('@/lib/data')`, que bajaba y parseaba un chunk
+      // de 1,63 MB de JavaScript (los 1,9 MB de products.json) cada vez que
+      // alguien pasaba de página o buscaba.
+      const params = new URLSearchParams({ page: String(currentPage) });
+      if (searchQuery) params.set('search', searchQuery);
 
-      const filters: any = {
-        search: searchQuery,
-        sortBy: 'newest',
-        limit: productsPerPage,
-        offset: (currentPage - 1) * productsPerPage,
-      };
-      
-      // Obtener productos filtrados con manejo de errores
-      const allProducts = getFilteredProducts(filters);
-      if (!Array.isArray(allProducts)) {
-        throw new Error('getFilteredProducts no devolvió un array');
-      }
+      const respuesta = await fetch(`/api/productos?${params.toString()}`);
+      if (!respuesta.ok) throw new Error(`HTTP ${respuesta.status}`);
 
-      // Obtener el total para paginación
-      const totalFiltered = getFilteredProducts({
-        search: searchQuery,
-        sortBy: 'newest'
-      });
-      if (!Array.isArray(totalFiltered)) {
-        throw new Error('getFilteredProducts para total no devolvió un array');
-      }
+      const datos: { items: ProductCardData[]; totalItems: number } =
+        await respuesta.json();
 
-      setProducts(allProducts);
-      setTotalProducts(totalFiltered.length);
+      setProducts(datos.items);
+      setTotalProducts(datos.totalItems);
 
-      // Obtener productos destacados solo en la primera página sin búsqueda
-      if (currentPage === 1 && !searchQuery) {
-        try {
-          const featured = getFeaturedProducts();
-          if (Array.isArray(featured)) {
-            setFeaturedProducts(featured);
-          } else {
-            setFeaturedProducts([]);
-          }
-        } catch (featuredError) {
-          console.error('Error cargando productos destacados:', featuredError);
-          setFeaturedProducts([]);
-        }
-      } else {
-        setFeaturedProducts([]);
-      }
+      // Los destacados solo salen en la primera página y sin búsqueda. Se
+      // reutilizan los que ya vinieron del servidor en lugar de volver a
+      // pedirlos.
+      setFeaturedProducts(currentPage === 1 && !searchQuery ? initialFeaturedProducts : []);
     } catch (error) {
       console.error('Error cargando productos:', error);
       setProducts([]);
@@ -365,12 +329,27 @@ export default function HomeContent({
                 Nuestras Categorías de Regalos
               </h3>
 
+              {/*
+                Esta lista era texto plano con <strong>, sin un solo enlace: era
+                el bloque con más texto de la portada y no repartía autoridad
+                hacia ninguna categoría. Además describía categorías que no
+                existen ("Gadgets originales", "Ideas creativas"). Ahora son las
+                categorías reales, enlazadas, con su descripción de verdad.
+              */}
               <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2 mb-4">
-                <li><strong>Regalos para parejas:</strong> Juguetes sexuales, juegos íntimos y productos para momentos especiales</li>
-                <li><strong>Gadgets originales:</strong> Tecnología innovadora y productos únicos para el día a día</li>
-                <li><strong>Regalos divertidos:</strong> Productos que arrancarán una sonrisa garantizada</li>
-                <li><strong>Ideas creativas:</strong> Artículos sorprendentes para regalar en cualquier ocasión</li>
-                <li><strong>Ofertas y chollos:</strong> Los mejores precios en productos originales</li>
+                {Object.entries(categoryConfig)
+                  .filter(([slug]) => slug !== 'blog')
+                  .map(([slug, category]) => (
+                    <li key={slug}>
+                      <Link
+                        href={`/categoria/${slug}`}
+                        className="font-semibold text-primary-700 dark:text-primary-400 hover:underline"
+                      >
+                        {category.name}
+                      </Link>
+                      : {category.description}
+                    </li>
+                  ))}
               </ul>
 
               <p className="text-gray-700 dark:text-gray-300 mb-4">

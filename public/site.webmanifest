@@ -1,11 +1,12 @@
 {
-  "name": "MQM Web - Las Mejores Ofertas",
-  "short_name": "MQM Web",
-  "description": "Descubre las mejores ofertas y productos destacados. Todo lo que mola en un solo lugar.",
+  "name": "Mierdas que molan - Regalos originales y frikis",
+  "short_name": "Mierdas que molan",
+  "description": "Regalos originales, frikis y gadgets absurdos: más de 400 ideas para sorprender.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#3b82f6",
+  "lang": "es",
   "icons": [
     {
       "src": "/logo.png",

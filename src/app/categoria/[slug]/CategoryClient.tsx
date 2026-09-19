@@ -5,42 +5,30 @@ import Link from 'next/link';
 import { ProductCard } from '@/components/ProductCard';
 // import { AdSlot, useInlineAds } from '@/components/AdSlot';
 import { Pagination, ResultsInfo } from '@/components/Pagination';
-import { categoryConfig, CategorySlug } from '@/config/site';
-import { Product } from '@/types';
-import { siteConfig } from '@/config/site';
-import { generateCategoryStructuredData } from '@/lib/seo';
+import { categoryConfig, CategorySlug, siteConfig } from '@/config/site';
+import { ProductCardData } from '@/lib/card-data';
+import { PageOf } from '@/lib/pagination';
+import { generateCategoryStructuredData, toJsonLd } from '@/lib/seo';
 
 interface CategoryClientProps {
   categorySlug: CategorySlug;
-  initialProducts: Product[];
+  /**
+   * La página ya viene recortada y paginada desde el servidor: el cliente no
+   * recibe el resto del catálogo de la categoría ni las descripciones.
+   */
+  page: PageOf<ProductCardData>;
 }
 
-export function CategoryClient({ categorySlug, initialProducts }: CategoryClientProps) {
-  const [currentPage, setCurrentPage] = useState(1);
+export function CategoryClient({ categorySlug, page }: CategoryClientProps) {
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
-  
-  const category = categoryConfig[categorySlug];
-  const { pagination } = siteConfig;
-  const productsPerPage = pagination.productsPerPage;
-  const totalProducts = initialProducts.length;
 
-  // Paginar los resultados
-  const startIndex = (currentPage - 1) * productsPerPage;
-  const endIndex = startIndex + productsPerPage;
-  const products = initialProducts.slice(startIndex, endIndex);
+  const category = categoryConfig[categorySlug];
+  const products = page.items;
+  const totalProducts = page.totalItems;
 
   const handleToggleExpand = (productId: string) => {
     setExpandedCard(expandedCard === productId ? null : productId);
   };
-
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page);
-    setExpandedCard(null);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const totalPages = Math.ceil(totalProducts / productsPerPage);
-  // const inlineAdPositions = useInlineAds(products.length);
 
   // Generar structured data para SEO.
   // Se le pasan los productos de la página actual: el ItemList debe describir
@@ -58,10 +46,10 @@ export function CategoryClient({ categorySlug, initialProducts }: CategoryClient
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(structuredData),
+          __html: toJsonLd(structuredData),
         }}
       />
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       {/* Header de la categoría */}
       <div className="mb-8">
@@ -84,11 +72,6 @@ export function CategoryClient({ categorySlug, initialProducts }: CategoryClient
             </div>
           </div>
         </div>
-
-        {/* Ad space after header */}
-        {/* <div className="mt-8">
-          <AdSlot position="hero-under" size="leaderboard" className="text-center" />
-        </div> */}
       </div>
 
       {/* Breadcrumb */}
@@ -120,8 +103,8 @@ export function CategoryClient({ categorySlug, initialProducts }: CategoryClient
             {/* Results info */}
             <div className="mb-6">
               <ResultsInfo
-                currentPage={currentPage}
-                itemsPerPage={productsPerPage}
+                currentPage={page.currentPage}
+                itemsPerPage={siteConfig.pagination.productsPerPage}
                 totalItems={totalProducts}
               />
             </div>
@@ -135,34 +118,24 @@ export function CategoryClient({ categorySlug, initialProducts }: CategoryClient
                     onToggleExpand={() => handleToggleExpand(product.id)}
                     priority={index < 2}
                   />
-                  
-                  {/* Inline ads */}
-                  {/* {inlineAdPositions.includes(index + 1) && (
-                    <div className="mt-6">
-                      <AdSlot position="inline" size="medium" className="text-center" />
-                    </div>
-                  )} */}
                 </div>
               ))}
             </div>
 
             {/* Pagination */}
-            {totalPages > 1 && (
-              <Pagination
-                currentPage={currentPage}
-                totalPages={totalPages}
-                onPageChange={handlePageChange}
-                loading={false}
-                className="mt-12"
-              />
-            )}
+            <Pagination
+              currentPage={page.currentPage}
+              totalPages={page.totalPages}
+              basePath={`/categoria/${categorySlug}`}
+              className="mt-12"
+            />
           </div>
 
           {/* Sidebar with sticky ad */}
           <aside className="hidden lg:block w-80 flex-shrink-0">
             <div className="sticky top-6 space-y-6">
               {/* <AdSlot position="sidebar-sticky" size="large" /> */}
-              
+
               {/* Category info card */}
               <div className="bg-white rounded-lg border border-gray-200 p-6">
                 <h3 className="font-semibold text-gray-900 mb-3">
@@ -221,7 +194,7 @@ export function CategoryClient({ categorySlug, initialProducts }: CategoryClient
               No hay productos en esta categoría
             </h3>
             <p className="text-gray-600 mb-6">
-              Aún no hemos añadido productos para {category.name}. 
+              Aún no hemos añadido productos para {category.name}.
               Vuelve pronto para ver las novedades.
             </p>
             <div className="space-x-4">
@@ -245,5 +218,3 @@ export function CategoryClient({ categorySlug, initialProducts }: CategoryClient
     </>
   );
 }
-
-

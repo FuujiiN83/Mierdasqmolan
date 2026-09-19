@@ -4,11 +4,16 @@ import Link from 'next/link';
 import { OptimizedImage } from '@/components/OptimizedImage';
 import { getProductBySlug, getRelatedProducts, getAllProducts, mapCategoryToSlug } from '@/lib/data';
 import { generateAffiliateUrl } from '@/lib/affiliate';
-import { Product } from '@/types';
-import { formatPrice, formatDate, markdownToHtml, getDomainFromUrl } from '@/lib/utils';
+import { markdownToHtml } from '@/lib/utils';
+import { toCardData } from '@/lib/card-data';
 import { categoryConfig } from '@/config/site';
+import {
+  generateBreadcrumbStructuredData,
+  generateProductMetadata,
+  generateProductStructuredData,
+  toJsonLd,
+} from '@/lib/seo';
 import { ProductCard } from '@/components/ProductCard';
-import { AdSlot } from '@/components/AdSlot';
 import { ShareButtons } from '@/components/ShareButtons';
 
 interface ProductPageProps {
@@ -26,35 +31,18 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
   const product = getProductBySlug(params.slug);
-  
+
   if (!product) {
     return {
       title: 'Producto no encontrado',
     };
   }
 
-  const affiliateUrl = generateAffiliateUrl(product);
-  const merchantDomain = getDomainFromUrl(product.affiliateUrl);
-
-  return {
-    title: product.title,
-    description: product.shortDescription,
-    openGraph: {
-      title: product.title,
-      description: product.shortDescription,
-      images: [product.image],
-      type: 'website',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: product.title,
-      description: product.shortDescription,
-      images: [product.image],
-    },
-    alternates: {
-      canonical: `/producto/${product.slug}`,
-    },
-  };
+  // Los metadatos salen del helper para que la descripción se recorte a 155
+  // caracteres (antes se usaba `shortDescription` en crudo y 395 de 420 fichas
+  // se pasaban, hasta 619) y para que `og:url` y el tipo correcto se emitan
+  // siempre igual.
+  return generateProductMetadata(product);
 }
 
 export default function ProductPage({ params }: ProductPageProps) {
@@ -65,38 +53,46 @@ export default function ProductPage({ params }: ProductPageProps) {
   }
 
   const affiliateUrl = generateAffiliateUrl(product);
-  const relatedProducts = getRelatedProducts(product, 4);
-  const merchantDomain = getDomainFromUrl(product.affiliateUrl);
+  // Las tarjetas reciben solo lo que pintan y sin descripción (1,9 MB menos de
+  // HTML en el caso de las listas; aquí son 4 fichas, pero se usa el mismo tipo).
+  const relatedProducts = getRelatedProducts(product, 4).map(toCardData);
 
-  // Generar structured data para SEO
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'Product',
-    name: product.title,
-    description: product.shortDescription,
-    image: product.image,
-    brand: product.merchant || 'MQM Web',
-    offers: product.price ? {
-      '@type': 'Offer',
-      price: product.price,
-      priceCurrency: product.currency || 'EUR',
-      availability: 'https://schema.org/InStock',
-      url: affiliateUrl,
-    } : undefined,
-    aggregateRating: product.rating ? {
-      '@type': 'AggregateRating',
-      ratingValue: product.rating,
-      reviewCount: product.reviewCount || 0,
-    } : undefined,
-  };
+  const primaryCategory = product.categories[0];
+  const primaryCategoryName = primaryCategory
+    ? categoryConfig[primaryCategory as keyof typeof categoryConfig]?.name || primaryCategory
+    : null;
+
+  // Structured data: antes había aquí un bloque escrito a mano que duplicaba (y
+  // contradecía) a `generateProductStructuredData`, que existía sin usarse. El
+  // inline declaraba un precio que la página no muestra, una imagen relativa y
+  // `brand: "Amazon"`, que es el vendedor, no la marca. Ahora hay una sola
+  // definición, en `lib/seo.ts`.
+  const productStructuredData = generateProductStructuredData(product, affiliateUrl);
+
+  const breadcrumbStructuredData = generateBreadcrumbStructuredData([
+    { name: 'Inicio', url: '/' },
+    ...(primaryCategoryName && primaryCategory
+      ? [
+          {
+            name: primaryCategoryName,
+            url: `/categoria/${mapCategoryToSlug(primaryCategory)}`,
+          },
+        ]
+      : []),
+    { name: product.title, url: `/producto/${product.slug}` },
+  ]);
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        dangerouslySetInnerHTML={{ __html: toJsonLd(productStructuredData) }}
       />
-      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: toJsonLd(breadcrumbStructuredData) }}
+      />
+
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
         {/* Breadcrumb */}
         <nav className="bg-white dark:bg-gray-800 shadow-sm">
@@ -125,14 +121,14 @@ export default function ProductPage({ params }: ProductPageProps) {
                         <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                       </svg>
                     </li>
-                    {product.categories[0] && (
+                    {primaryCategory && primaryCategoryName && (
                       <>
                         <li>
-                          <Link 
-                            href={`/categoria/${mapCategoryToSlug(product.categories[0])}`}
+                          <Link
+                            href={`/categoria/${mapCategoryToSlug(primaryCategory)}`}
                             className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                           >
-                            {categoryConfig[product.categories[0] as keyof typeof categoryConfig]?.name || product.categories[0]}
+                            {primaryCategoryName}
                           </Link>
                         </li>
                         <li>
@@ -173,19 +169,16 @@ export default function ProductPage({ params }: ProductPageProps) {
 
               {/* Product info */}
               <div className="mt-10 px-4 sm:px-0 sm:mt-16 lg:mt-0">
-                {/* Title and price */}
+                {/* Título */}
                 <h1 className="text-3xl font-bold font-potta-one tracking-tight text-product-orange sm:text-4xl">
                   {product.title}
                 </h1>
 
-                <div className="mt-3">
-                  <h2 className="sr-only">Información del producto</h2>
-                  {product.price && (
-                    <p className="text-3xl tracking-tight font-bold font-potta-one text-header-purple hidden">
-                      {formatPrice(product.price, product.currency)}
-                    </p>
-                  )}
-                </div>
+                {/* Aquí había un bloque de precio con `hidden` y `formatPrice`,
+                    que devuelve cadena vacía: no pintaba nada, pero el JSON-LD
+                    sí declaraba ese precio invisible. Se han quitado los dos:
+                    el precio no se muestra en ninguna parte del sitio. */}
+                <h2 className="sr-only">Información del producto</h2>
 
                 {/* Short description */}
                 <div className="mt-6">
@@ -233,9 +226,13 @@ export default function ProductPage({ params }: ProductPageProps) {
                   </div>
                 )}
 
-                {/* Descripción completa */}
+                {/* Descripción completa.
+                    Va como h2, no h3: al ser el encabezado de la sección
+                    principal de la ficha, un h3 saltándose el h2 dejaba la
+                    jerarquía h1 → h3 → h2 (los h2 del contenido ya convertido)
+                    rota. */}
                 <div className="mt-8">
-                  <h3 className="text-lg font-semibold font-potta-one text-header-purple mb-4">Descripción del producto</h3>
+                  <h2 className="text-lg font-semibold font-potta-one text-header-purple mb-4">Descripción del producto</h2>
                   <div 
                     className="prose prose-lg max-w-none text-gray-600 dark:text-gray-300"
                     dangerouslySetInnerHTML={{ __html: markdownToHtml(product.description) }}
@@ -256,6 +253,9 @@ export default function ProductPage({ params }: ProductPageProps) {
                     key={relatedProduct.id}
                     product={relatedProduct}
                     className="h-full"
+                    // Sin esto se pintaba un "Ver más" que no hacía nada: aquí
+                    // no hay estado de expansión ni `onToggleExpand` que pasar.
+                    showExpandButton={false}
                   />
                 ))}
               </div>

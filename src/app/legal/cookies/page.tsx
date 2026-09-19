@@ -1,14 +1,25 @@
 import type { Metadata } from 'next';
+import { BRAND } from '@/lib/seo';
+
+const descripcion = `Qué cookies usa ${BRAND}, para qué sirve cada una y cómo aceptarlas, rechazarlas o eliminarlas.`;
 
 export const metadata: Metadata = {
   title: 'Política de Cookies',
-  description: 'Política de cookies de MQM Web - Información sobre el uso de cookies en nuestro sitio web',
+  description: descripcion,
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
     canonical: '/legal/cookies',
+  },
+  openGraph: {
+    title: 'Política de Cookies',
+    description: descripcion,
+    url: '/legal/cookies',
+    siteName: BRAND,
+    locale: 'es_ES',
+    type: 'website',
   },
 };
 

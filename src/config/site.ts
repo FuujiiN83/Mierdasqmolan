@@ -1,10 +1,19 @@
 export const siteConfig = {
-  name: "Mierdas que molan - Regalos originales y mucho más",
+  // La marca, corta y sola: es la que firma el structured data, el
+  // `og:site_name`, el manifest y el copyright. Antes aquí vivía la versión
+  // larga ("… - Regalos originales y mucho más"), que acababa duplicando la
+  // marca en los títulos ("… | Mierdas que molan - Regalos originales y mucho
+  // más | Mierdas que molan").
+  name: "Mierdas que molan",
+  tagline: "Regalos originales y mucho más",
   description: "Regalos originales frikis, para parejas, fiestas, grandes ratos de diversión y mucho. Entra y busca tu regalo favorito.",
   url: "https://www.mierdasquemolan.com",
   ogImage: "/og-image.png",
   pagination: {
-    productsPerPage: 12
+    // 24 y no 12: con 12 fichas por página la categoría más grande se partía en
+    // 15 URLs y cada una arrastraba un <nav> de paginación enorme. Con 24 el
+    // reparto de enlaces internos mejora y sobran la mitad de páginas.
+    productsPerPage: 24
   },
   ads: {
     enabled: false, // ← Temporalmente desactivado
@@ -18,12 +27,32 @@ export const siteConfig = {
   analytics: {
     googleAnalyticsId: "G-FCD8D2QZEZ"
   },
+  // Perfiles oficiales. Alimentan el `sameAs` del schema de Organization, que es
+  // como se le dice a Google que esta web y esas cuentas son la misma entidad.
+  social: {
+    facebook: "https://www.facebook.com/mierdasquemolan",
+    instagram: "https://www.instagram.com/mierdasquemolan",
+    youtube: "https://www.youtube.com/@mierdasquemolan",
+    linkedin: "https://www.linkedin.com/company/mierdasquemolan"
+  },
   affiliate: {
     disclaimer: "Este sitio contiene enlaces de afiliación. Podemos recibir una comisión por las compras realizadas a través de estos enlaces, sin coste adicional para ti. Esto nos ayuda a mantener el sitio funcionando y a seguir encontrando las mejores ofertas."
   }
 };
 
 export type SiteConfig = typeof siteConfig;
+
+/**
+ * Fecha de la última revisión de los textos legales (aviso legal, privacidad,
+ * cookies y afiliados).
+ *
+ * Es una constante a propósito. En la página de afiliados ponía
+ * `new Date().toLocaleDateString()`, así que anunciaba la fecha del build como
+ * "última actualización" en cada despliegue hubiese cambiado algo o no; y en el
+ * sitemap esas cuatro URLs llevaban la hora del build. Se actualiza a mano
+ * cuando se toquen los textos legales (y entonces se cambia aquí, en un sitio).
+ */
+export const LEGAL_LAST_UPDATED = '2025-07-23';
 
 // Configuración de categorías unificadas
 export const categoryConfig = {
@@ -35,7 +64,10 @@ export const categoryConfig = {
   },
   "regalos-frikis": {
     name: "Regalos frikis",
-    description: "Regalos originales para frikis. porque no es una moda, es un estilo de vida que nos encanta. ¡Viva el orgullo friki!",
+    // Corta a propósito: esta descripción es la meta description (155 máx.) y
+    // el texto de entrada de la categoría. Con 141 caracteres no cabía el
+    // recuento de productos y la meta salía cortada a media frase.
+    description: "Regalos frikis y originales: ser friki no es una moda, es un estilo de vida.",
     color: "#8B5CF6",
     icon: "🤓"
   },
@@ -47,7 +79,7 @@ export const categoryConfig = {
   },
   "regalos-para-todo-tipo-de-edades": {
     name: "Regalos para todo tipo de edades",
-    description: "regalos originales para niños, adolescentes, adultos y para pasar buenos momentos.",
+    description: "Regalos originales para niños, adolescentes y adultos, para acertar con cualquier edad y pasar un buen rato.",
     color: "#06B6D4",
     icon: "👥"
   },

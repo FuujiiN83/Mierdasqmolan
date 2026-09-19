@@ -63,14 +63,6 @@ export interface Category {
   color?: string;
 }
 
-export interface PaginationProps {
-  currentPage: number;
-  totalPages: number;
-  onPageChange: (page: number) => void;
-  loading?: boolean;
-  className?: string;
-}
-
 export interface AdPosition {
   position: 'hero-under' | 'inline' | 'sidebar-sticky' | 'footer';
   size: 'small' | 'medium' | 'large' | 'leaderboard';
@@ -134,7 +126,10 @@ export function validateProducts(data: any[]): Product[] {
       affiliateUrl: String(item.affiliateUrl),
       amazonUrl: item.amazonUrl ? String(item.amazonUrl) : undefined,
       categories: validateCategories(item, index),
-      tags: Array.isArray(item.tags) ? item.tags : [],
+      // Sin duplicados: 49 de 420 productos repiten etiquetas en el JSON (uno
+      // llega a repetir "ruleta" 6 veces). Como se pintan con `key={tag}`, React
+      // avisaba por consola y podía descartar o duplicar nodos al reconciliar.
+      tags: Array.isArray(item.tags) ? [...new Set<string>(item.tags.map(String))] : [],
       rating: item.rating ? Number(item.rating) : undefined,
       reviewCount: item.reviewCount ? Number(item.reviewCount) : undefined,
       isFeatured: Boolean(item.isFeatured || item.featured),

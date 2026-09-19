@@ -1,6 +1,8 @@
 import { Product, validateProducts, ProductFilters } from '@/types';
-import { categoryConfig, CategorySlug, CategoryOption, categorySlugFromName } from '@/config/site';
+import { categoryConfig, CategorySlug, CategoryOption, categorySlugFromName, siteConfig } from '@/config/site';
 import { normalizeForSearch, safeUrl } from '@/lib/utils';
+import { paginate, PageOf } from '@/lib/pagination';
+import { ProductCardData, toCardData } from '@/lib/card-data';
 import productsData from '../../data/products.json';
 
 // Cache para productos validados
@@ -9,7 +11,6 @@ let validatedProducts: Product[] | null = null;
 // Función para limpiar el cache
 export function clearProductsCache() {
   validatedProducts = null;
-  console.log('🧹 Cache de productos limpiado');
 }
 
 // Limpiar caché automáticamente al cargar el módulo
@@ -21,9 +22,7 @@ clearProductsCache();
 export function getAllProducts(): Product[] {
   if (validatedProducts === null) {
     try {
-      console.log(`📊 Cargando productos desde archivo: ${productsData.length}`);
       validatedProducts = validateProducts(productsData);
-      console.log(`✅ Productos validados: ${validatedProducts.length}`);
     } catch (error) {
       console.error('Error validando productos:', error);
       return [];
@@ -37,15 +36,12 @@ export function getAllProducts(): Product[] {
  */
 export function getFilteredProducts(filters: ProductFilters = {}): Product[] {
   const allProducts = getAllProducts();
-  console.log(`🔍 Filtrando productos: ${allProducts.length} productos iniciales`);
-  
+
   let filtered = [...allProducts];
 
   // Excluir productos de blog por defecto (solo se muestran en página específica de blog)
   if (!filters.includeBlog) {
-    const beforeBlog = filtered.length;
     filtered = filtered.filter(product => !product.categories.includes('blog'));
-    console.log(`📝 Después de excluir blog: ${filtered.length} (eliminados: ${beforeBlog - filtered.length})`);
   }
 
   // Filtrar por categorías
@@ -107,10 +103,8 @@ export function getFilteredProducts(filters: ProductFilters = {}): Product[] {
   if (filters.limit !== undefined) {
     const offset = filters.offset || 0;
     filtered = filtered.slice(offset, offset + filters.limit);
-    console.log(`📄 Después de paginación: ${filtered.length} productos`);
   }
 
-  console.log(`🎯 Resultado final: ${filtered.length} productos`);
   return filtered;
 }
 
@@ -141,6 +135,25 @@ export function getProductsByCategory(categorySlug: CategorySlug): Product[] {
     categories: [config.name],
     includeBlog: false,
   });
+}
+
+/**
+ * Una página de categoría, ya recortada para enviarla al cliente.
+ *
+ * La paginación se hace AQUÍ, en el servidor, y no en el componente de cliente:
+ * antes se mandaban los 93 productos de una categoría y el navegador recortaba
+ * a 12, así que el HTML pesaba 578 KB y las páginas 2+ no existían como URL
+ * (la paginación eran botones, y los botones no se rastrean). Ahora cada página
+ * es una URL con sus enlaces reales.
+ */
+export function getCategoryPage(
+  categorySlug: CategorySlug,
+  page: number
+): PageOf<ProductCardData> {
+  const products = getProductsByCategory(categorySlug);
+  const { items, ...resto } = paginate(products, page, siteConfig.pagination.productsPerPage);
+
+  return { ...resto, items: items.map(toCardData) };
 }
 
 /**

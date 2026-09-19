@@ -220,8 +220,14 @@ Los chips de categorías se adaptan:
 
 Cada categoría genera:
 - URL: `/categoria/slug-categoria`
-- Título SEO: "Nombre Categoría - X productos | MQM Web"
-- Meta description: Incluye descripción y número de productos
+- Título SEO: "Nombre Categoría | Mierdas que molan" (sin el recuento: obligaba a
+  reescribir el título de las 9 categorías cada vez que cambiaba el catálogo).
+  En las páginas 2+ se añade " - Página N".
+- Meta description: la descripción de la categoría, recortada a 155 caracteres,
+  más el recuento de productos si cabe entero.
+- Paginación: `/categoria/slug-categoria?page=N`, con canónica autorreferencial
+  por página. Son enlaces reales (`<Link>`), no botones: Googlebot no pulsa
+  botones, así que antes las páginas 2+ eran invisibles para los rastreadores.
 
 ### Breadcrumbs
 

@@ -2,10 +2,18 @@ import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import HomeContent from './HomeContent';
 import { getFilteredProducts, getFeaturedProducts } from '@/lib/data';
+import { toCardData } from '@/lib/card-data';
+import { generateHomeStructuredData, toJsonLd } from '@/lib/seo';
 import { siteConfig } from '@/config/site';
 
-// La canónica se define por página (el layout ya no impone la de la portada).
+// Retargetizado para no canibalizar con /categoria/regalos-para-pasarlo-bien:
+// la portada apuntaba a "regalos originales para pasarlo bien", que es
+// exactamente la consulta de esa categoría. La portada se queda con el término
+// cabeza ("regalos originales y frikis") y la categoría con "pasarlo bien".
 export const metadata: Metadata = {
+  title: 'Regalos originales y frikis que molan',
+  description:
+    'Catálogo de regalos originales, frikis y gadgets absurdos: más de 400 ideas para sorprender en cumpleaños, parejas, fiestas o para ti. Entra y encuentra la tuya.',
   alternates: {
     canonical: '/',
   },
@@ -43,17 +51,32 @@ export default function HomePage() {
     sortBy: 'newest',
     limit: productsPerPage,
     offset: 0,
-  });
+  }).map(toCardData);
   const initialTotalProducts = getFilteredProducts({ sortBy: 'newest' }).length;
-  const initialFeaturedProducts = getFeaturedProducts();
+  // Se recorta en el servidor: antes se mandaban los 35 destacados para pintar
+  // 4, y cada uno llevaba su descripción completa.
+  const initialFeaturedProducts = getFeaturedProducts().slice(0, 4).map(toCardData);
+
+  // La portada listaba productos sin declararlos: solo publicaba el WebSite y
+  // la Organization del layout.
+  const structuredData = generateHomeStructuredData([
+    ...initialFeaturedProducts,
+    ...initialProducts.slice(0, 4),
+  ]);
 
   return (
-    <Suspense fallback={<LoadingHome />}>
-      <HomeContent
-        initialProducts={initialProducts}
-        initialTotalProducts={initialTotalProducts}
-        initialFeaturedProducts={initialFeaturedProducts}
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: toJsonLd(structuredData) }}
       />
-    </Suspense>
+      <Suspense fallback={<LoadingHome />}>
+        <HomeContent
+          initialProducts={initialProducts}
+          initialTotalProducts={initialTotalProducts}
+          initialFeaturedProducts={initialFeaturedProducts}
+        />
+      </Suspense>
+    </>
   );
 }

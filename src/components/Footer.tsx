@@ -33,14 +33,14 @@ export function Footer() {
               <div className="w-8 h-8 flex items-center justify-center">
                 <Image
                   src="/logo.png"
-                  alt="MQM Web Logo"
+                  alt={`${siteConfig.name} Logo`}
                   width={32}
                   height={32}
                   className="w-8 h-8 object-contain"
                 />
               </div>
               <div>
-                <h3 className="text-lg font-bold font-potta-one text-header-purple">MQM Web</h3>
+                <h3 className="text-lg font-bold font-potta-one text-header-purple">{siteConfig.name}</h3>
                 <p className="text-sm text-gray-500">Las mejores ofertas</p>
               </div>
             </div>
@@ -130,7 +130,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700 flex justify-center items-center">
           <p className="text-gray-500 dark:text-gray-400 text-sm">
-            © {currentYear} MQM Web. Hecho con ❤️ para los que saben lo que mola.
+            © {currentYear} {siteConfig.name}. Hecho con ❤️ para los que saben lo que mola.
           </p>
         </div>
       </div>
